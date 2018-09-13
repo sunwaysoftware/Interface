@@ -1,0 +1,25 @@
+create table CD002
+(
+  fc_id VARCHAR2(50) not null,
+  fc_nm NVARCHAR2(200),
+  pg_id VARCHAR2(50) not null,
+  pg_nm NVARCHAR2(200)
+)
+tablespace CLF_DATA
+  pctfree 10
+  initrans 1
+  maxtrans 255;
+comment on table CD002
+  is '证件类型';
+comment on column CD002.fc_id
+  is '房产证件类型ID';
+comment on column CD002.pg_id
+  is '评估证件类型ID';
+create unique index IN_CD002_PGID on CD002 (FC_ID)
+  tablespace CLF_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255;
+alter table CD002
+  add constraint PK_CD002 primary key (FC_ID);
+

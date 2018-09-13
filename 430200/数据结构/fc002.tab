@@ -1,0 +1,79 @@
+create table FC002
+(
+  slid       VARCHAR2(50) not null,
+  ssqy       VARCHAR2(50) not null,
+  djz_qs     NUMBER,
+  djz_yys    NUMBER,
+  djz_cjs    NUMBER,
+  djz_dfjys  NUMBER,
+  djz_grsds  NUMBER,
+  djz_yhs    NUMBER,
+  djz_tdzzs  NUMBER,
+  fphm       VARCHAR2(50),
+  qssphm     VARCHAR2(50),
+  dfgssphm   VARCHAR2(50),
+  updatetime DATE default sysdate,
+  pgid       VARCHAR2(21),
+  pgjg       NUMBER,
+  note       VARCHAR2(500)
+)
+tablespace CLF_DATA
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+comment on table FC002
+  is '完税信息';
+comment on column FC002.slid
+  is '房产受理号';
+comment on column FC002.ssqy
+  is '所属区域';
+comment on column FC002.djz_qs
+  is '契税';
+comment on column FC002.djz_yys
+  is '营业税';
+comment on column FC002.djz_cjs
+  is '城市维护建设税';
+comment on column FC002.djz_dfjys
+  is '教育费附加、地方教育附加';
+comment on column FC002.djz_grsds
+  is '个人所得税';
+comment on column FC002.djz_yhs
+  is '印花税';
+comment on column FC002.djz_tdzzs
+  is '土地增值税';
+comment on column FC002.fphm
+  is '发票号码';
+comment on column FC002.qssphm
+  is '契税税票号码';
+comment on column FC002.dfgssphm
+  is '地方各税税票号码';
+comment on column FC002.updatetime
+  is '更新日期';
+comment on column FC002.pgid
+  is '评估业务号';
+comment on column FC002.pgjg
+  is '评估结果';
+comment on column FC002.note
+  is '备注信息';
+alter table FC002
+  add constraint FC002_PK primary key (SLID, SSQY)
+  using index 
+  tablespace CLF_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+

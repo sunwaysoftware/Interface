@@ -1,0 +1,25 @@
+create table CD007
+(
+  fc_id VARCHAR2(50) not null,
+  fc_nm NVARCHAR2(200),
+  pg_id VARCHAR2(50) not null,
+  pg_nm NVARCHAR2(200)
+)
+tablespace CLF_DATA
+  pctfree 10
+  initrans 1
+  maxtrans 255;
+comment on table CD007
+  is '朝向';
+comment on column CD007.fc_id
+  is '房产朝向ID';
+comment on column CD007.pg_id
+  is '评估朝向ID';
+create unique index IN_CD007_PGID on CD007 (FC_ID)
+  tablespace CLF_DATA
+  pctfree 10
+  initrans 2
+  maxtrans 255;
+alter table CD007
+  add constraint PK_CD007 primary key (FC_ID);
+
