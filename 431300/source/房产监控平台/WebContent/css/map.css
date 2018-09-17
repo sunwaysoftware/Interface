@@ -1,0 +1,17 @@
+/* CSS file */
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace mx "library://ns.adobe.com/flex/mx";
+@namespace esri "http://www.esri.com/2008/ags";
+
+/* The "header" of the InfoWindow */
+esri|InfoWindowLabel
+{
+	color: blue;
+}
+esri|InfoWindow
+{
+	content-background-alpha : 0;
+	background-color : #EEEEEE;
+	background-alpha : 0.9;
+	border-style : solid;
+}

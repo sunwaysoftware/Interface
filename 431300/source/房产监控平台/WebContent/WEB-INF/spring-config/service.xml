@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- ****************** DAO ****************** -->
+	<bean id="T00001ServiceBean" class="com.sunway.service.impl.Pgt00001Service" scope="request">
+		<property name="t00001Dao" ref="T00001DaoBean" />
+	</bean>
+  <bean id="TFC001ServiceBean" class="com.sunway.service.impl.PgtFc001Service" scope="request">
+		<property name="tFc001Dao" ref="TFC001DaoBean" />
+	</bean>
+	<bean id="T00002ServiceBean" class="com.sunway.service.impl.Pgt00002Service" scope="request">
+		<property name="t00002Dao" ref="T00002DaoBean" />
+	</bean>
+
+	<bean id="T00003ServiceBean" class="com.sunway.service.impl.Pgt00003Service" scope="request">
+		<property name="t00003Dao" ref="T00003DaoBean" />
+	</bean>
+
+	<bean id="T00004ServiceBean" class="com.sunway.service.impl.Pgt00004Service" scope="request">
+		<property name="t00004Dao" ref="T00004DaoBean" />
+	</bean>
+
+	<bean id="T00005ServiceBean" class="com.sunway.service.impl.Pgt00005Service" scope="request">
+		<property name="t00005Dao" ref="T00005DaoBean" />
+	</bean>
+
+	<bean id="T00006ServiceBean" class="com.sunway.service.impl.Pgt00006Service" scope="request">
+		<property name="t00006Dao" ref="T00006DaoBean" />
+	</bean>
+
+	<bean id="T00009ServiceBean" class="com.sunway.service.impl.Pgt00009Service" scope="request">
+		<property name="t00009Dao" ref="T00009DaoBean" />
+	</bean>
+
+	<bean id="T00010ServiceBean" class="com.sunway.service.impl.Pgt00010Service" scope="request">
+		<property name="t00010Dao" ref="T00010DaoBean" />
+	</bean>
+
+	<bean id="T00012ServiceBean" class="com.sunway.service.impl.Pgt00012Service" scope="request">
+		<property name="t00012Dao" ref="T00012DaoBean" />
+	</bean>
+
+	<bean id="T00013ServiceBean" class="com.sunway.service.impl.Pgt00013Service" scope="request">
+		<property name="t00013Dao" ref="T00013DaoBean" />
+	</bean>
+
+	<bean id="T12081ServiceBean" class="com.sunway.service.impl.Pgt12081Service" scope="request">
+		<property name="t12081Dao" ref="T12081DaoBean" />
+	</bean>
+
+	<bean id="T12082ServiceBean" class="com.sunway.service.impl.Pgt12082Service" scope="request">
+		<property name="t12082Dao" ref="T12082DaoBean" />
+	</bean>
+
+	<bean id="T12083ServiceBean" class="com.sunway.service.impl.Pgt12083Service" scope="request">
+		<property name="t12083Dao" ref="T12083DaoBean" />
+	</bean>
+
+	<bean id="T12085ServiceBean" class="com.sunway.service.impl.Pgt12085Service" scope="request">
+		<property name="t12085Dao" ref="T12085DaoBean" />
+	</bean>
+
+	<bean id="T00301ServiceBean" class="com.sunway.service.impl.Pgt00301Service" scope="request">
+		<property name="t00301Dao" ref="T00301DaoBean" />
+	</bean>
+
+	<bean id="T12001ServiceBean" class="com.sunway.service.impl.Pgt12001Service" scope="request">
+		<property name="t12001Dao" ref="T12001DaoBean" />
+	</bean>
+
+	<bean id="T12006ServiceBean" class="com.sunway.service.impl.Pgt12006Service" scope="request">
+		<property name="t12006Dao" ref="T12006DaoBean" />
+	</bean>
+
+	<bean id="T02051ServiceBean" class="com.sunway.service.impl.Pgt02051Service" scope="request">
+		<property name="t02051Dao" ref="T02051DaoBean" />
+	</bean>
+
+	<bean id="T02052ServiceBean" class="com.sunway.service.impl.Pgt02052Service" scope="request">
+		<property name="t02052Dao" ref="T02052DaoBean" />
+	</bean>
+
+	<bean id="T02053ServiceBean" class="com.sunway.service.impl.Pgt02053Service" scope="request">
+		<property name="t02053Dao" ref="T02053DaoBean" />
+	</bean>
+
+	<bean id="T02054ServiceBean" class="com.sunway.service.impl.Pgt02054Service" scope="request">
+		<property name="t02054Dao" ref="T02054DaoBean" />
+	</bean>
+
+	<bean id="T02055ServiceBean" class="com.sunway.service.impl.Pgt02055Service" scope="request">
+		<property name="t02055Dao" ref="T02055DaoBean" />
+	</bean>
+
+	<bean id="T02056ServiceBean" class="com.sunway.service.impl.Pgt02056Service" scope="request">
+		<property name="t02056Dao" ref="T02056DaoBean" />
+	</bean>
+
+	<bean id="T02057ServiceBean" class="com.sunway.service.impl.Pgt02057Service" scope="request">
+		<property name="t02057Dao" ref="T02057DaoBean" />
+	</bean>
+
+	<bean id="T02058ServiceBean" class="com.sunway.service.impl.Pgt02058Service" scope="request">
+		<property name="t02058Dao" ref="T02058DaoBean" />
+	</bean>
+
+	<bean id="T02059ServiceBean" class="com.sunway.service.impl.Pgt02059Service" scope="request">
+		<property name="t02059Dao" ref="T02059DaoBean" />
+	</bean>
+
+	<bean id="T10051ServiceBean" class="com.sunway.service.impl.Pgt10051Service" scope="request">
+		<property name="t10051Dao" ref="T10051DaoBean" />
+	</bean>
+
+	<bean id="T10052ServiceBean" class="com.sunway.service.impl.Pgt10052Service" scope="request">
+		<property name="t10052Dao" ref="T10052DaoBean" />
+	</bean>
+
+	<bean id="T10053ServiceBean" class="com.sunway.service.impl.Pgt10053Service" scope="request">
+		<property name="t10053Dao" ref="T10053DaoBean" />
+	</bean>
+
+	<bean id="T10054ServiceBean" class="com.sunway.service.impl.Pgt10054Service" scope="request">
+		<property name="t10054Dao" ref="T10054DaoBean" />
+	</bean>
+
+	<bean id="T10055ServiceBean" class="com.sunway.service.impl.Pgt10055Service" scope="request">
+		<property name="t10055Dao" ref="T10055DaoBean" />
+	</bean>
+
+	<bean id="T10056ServiceBean" class="com.sunway.service.impl.Pgt10056Service" scope="request">
+		<property name="t10056Dao" ref="T10056DaoBean" />
+	</bean>
+
+	<bean id="T10057ServiceBean" class="com.sunway.service.impl.Pgt10057Service" scope="request">
+		<property name="t10057Dao" ref="T10057DaoBean" />
+	</bean>
+
+	<bean id="T12002ServiceBean" class="com.sunway.service.impl.Pgt12002Service" scope="request">
+		<property name="t12002Dao" ref="T12002DaoBean" />
+	</bean>
+
+	<bean id="T00051ServiceBean" class="com.sunway.service.impl.Pgt00051Service" scope="request">
+		<property name="t00051Dao" ref="T00051DaoBean" />
+	</bean>
+
+	<bean id="T00052ServiceBean" class="com.sunway.service.impl.Pgt00052Service" scope="request">
+		<property name="t00052Dao" ref="T00052DaoBean" />
+	</bean>
+
+	<bean id="T12002bServiceBean" class="com.sunway.service.impl.Pgt12002bService" scope="request">
+		<property name="t12002bDao" ref="T12002bDaoBean" />
+	</bean>
+
+	<bean id="T12002fServiceBean" class="com.sunway.service.impl.Pgt12002fService" scope="request">
+		<property name="t12002fDao" ref="T12002fDaoBean" />
+	</bean>
+
+	<bean id="T00053ServiceBean" class="com.sunway.service.impl.Pgt00053Service" scope="request">
+		<property name="t00053Dao" ref="T00053DaoBean" />
+	</bean>
+
+	<bean id="T00054ServiceBean" class="com.sunway.service.impl.Pgt00054Service" scope="request">
+		<property name="t00054Dao" ref="T00054DaoBean" />
+	</bean>
+
+	<bean id="T00055ServiceBean" class="com.sunway.service.impl.Pgt00055Service" scope="request">
+		<property name="t00055Dao" ref="T00055DaoBean" />
+	</bean>
+	
+	<bean id="T12002cServiceBean" class="com.sunway.service.impl.Pgt12002cService" scope="request">
+		<property name="t12002cDao" ref="T12002cDaoBean" />
+	</bean>
+
+	<bean id="T12003ServiceBean" class="com.sunway.service.impl.Pgt12003Service" scope="request">
+		<property name="t12003Dao" ref="T12003DaoBean" />
+	</bean>
+
+	<bean id="T12003bServiceBean" class="com.sunway.service.impl.Pgt12003bService" scope="request">
+		<property name="t12003bDao" ref="T12003bDaoBean" />
+	</bean>
+
+	<bean id="T12003cServiceBean" class="com.sunway.service.impl.Pgt12003cService" scope="request">
+		<property name="t12003cDao" ref="T12003cDaoBean" />
+	</bean>
+
+	<bean id="T12003fServiceBean" class="com.sunway.service.impl.Pgt12003fService" scope="request">
+		<property name="t12003fDao" ref="T12003fDaoBean" />
+	</bean>
+
+	<bean id="T00352ServiceBean" class="com.sunway.service.impl.Pgt00352Service" scope="request">
+		<property name="t00352Dao" ref="T00352DaoBean" />
+	</bean>
+	
+	<bean id="T00352fServiceBean" class="com.sunway.service.impl.Pgt00352fService" scope="request">
+		<property name="t00352fDao" ref="T00352fDaoBean" />
+	</bean>
+
+	<bean id="T00353ServiceBean" class="com.sunway.service.impl.Pgt00353Service" scope="request">
+		<property name="t00353Dao" ref="T00353DaoBean" />
+	</bean>
+
+	<bean id="T00354ServiceBean" class="com.sunway.service.impl.Pgt00354Service" scope="request">
+		<property name="t00354Dao" ref="T00354DaoBean" />
+	</bean>
+
+	<bean id="T00355ServiceBean" class="com.sunway.service.impl.Pgt00355Service" scope="request">
+		<property name="t00355Dao" ref="T00355DaoBean" />
+	</bean>
+
+    <bean id="T00321ServiceBean" class="com.sunway.service.impl.Pgt00321Service" scope="request">
+		<property name="t00321Dao" ref="T00321DaoBean" />
+	</bean>
+	
+	<bean id="T00322ServiceBean" class="com.sunway.service.impl.Pgt00322Service" scope="request">
+		<property name="t00322Dao" ref="T00322DaoBean" />
+	</bean>
+	
+	<bean id="T00323ServiceBean" class="com.sunway.service.impl.Pgt00323Service" scope="request">
+		<property name="t00323Dao" ref="T00323DaoBean" />
+	</bean>
+
+	<bean id="T00356ServiceBean" class="com.sunway.service.impl.Pgt00356Service" scope="request">
+		<property name="t00356Dao" ref="T00356DaoBean" />
+	</bean>
+
+	<bean id="T00359ServiceBean" class="com.sunway.service.impl.Pgt00359Service" scope="request">
+		<property name="t00359Dao" ref="T00359DaoBean" />
+	</bean>
+	
+	<bean id="T12002eServiceBean" class="com.sunway.service.impl.Pgt12002eService" scope="request">
+		<property name="t12002eDao" ref="T12002eDaoBean" />
+	</bean>
+
+	<bean id="T12004ServiceBean" class="com.sunway.service.impl.Pgt12004Service" scope="request">
+		<property name="t12004Dao" ref="T12004DaoBean" />
+	</bean>
+
+	<bean id="T12004bServiceBean" class="com.sunway.service.impl.Pgt12004bService" scope="request">
+		<property name="t12004bDao" ref="T12004bDaoBean" />
+	</bean>
+
+	<bean id="T12004cServiceBean" class="com.sunway.service.impl.Pgt12004cService" scope="request">
+		<property name="t12004cDao" ref="T12004cDaoBean" />
+	</bean>
+
+	<bean id="T12004dServiceBean" class="com.sunway.service.impl.Pgt12004dService" scope="request">
+		<property name="t12004dDao" ref="T12004dDaoBean" />
+	</bean>
+
+	<bean id="T12004eServiceBean" class="com.sunway.service.impl.Pgt12004eService" scope="request">
+		<property name="t12004eDao" ref="T12004eDaoBean" />
+	</bean>
+
+	<bean id="T12004fServiceBean" class="com.sunway.service.impl.Pgt12004fService" scope="request">
+		<property name="t12004fDao" ref="T12004fDaoBean" />
+	</bean>
+
+	<bean id="T00303ServiceBean" class="com.sunway.service.impl.Pgt00303Service" scope="request">
+		<property name="t00303Dao" ref="T00303DaoBean" />
+	</bean>
+
+	<bean id="Sh10001ServiceBean" class="com.sunway.service.impl.Sh10001Service" scope="request">
+		<property name="sh10001Dao" ref="Sh10001DaoBean" />
+	</bean>
+
+	<bean id="T12005yServiceBean" class="com.sunway.service.impl.Pgt12005yService" scope="request">
+		<property name="t12005yDao" ref="T12005yDaoBean" />
+	</bean>
+
+	<bean id="T12005wServiceBean" class="com.sunway.service.impl.Pgt12005wService" scope="request">
+		<property name="t12005wDao" ref="T12005wDaoBean" />
+	</bean>
+
+	<bean id="T00305wServiceBean" class="com.sunway.service.impl.Pgt00305wService" scope="request">
+		<property name="t00305wDao" ref="T00305wDaoBean" />
+	</bean>
+
+	<bean id="T00305yServiceBean" class="com.sunway.service.impl.Pgt00305yService" scope="request">
+		<property name="t00305yDao" ref="T00305yDaoBean" />
+	</bean>
+	
+	<bean id="T00306ServiceBean" class="com.sunway.service.impl.Pgt00306Service" scope="request">
+		<property name="t00306Dao" ref="T00306DaoBean" />
+	</bean>
+	
+	<bean id="T00306fServiceBean" class="com.sunway.service.impl.Pgt00306fService" scope="request">
+		<property name="t00306fDao" ref="T00306fDaoBean" />
+	</bean>
+
+	<bean id="T12051ServiceBean" class="com.sunway.service.impl.Pgt12051Service" scope="request">
+		<property name="t12051Dao" ref="T12051DaoBean" />
+	</bean>
+
+	<bean id="T12052ServiceBean" class="com.sunway.service.impl.Pgt12052Service" scope="request">
+		<property name="t12052Dao" ref="T12052DaoBean" />
+	</bean>
+
+	<bean id="Sh10002ServiceBean" class="com.sunway.service.impl.Sh10002Service" scope="request">
+		<property name="sh10002Dao" ref="Sh10002DaoBean" />
+	</bean>
+
+	<bean id="T12084ServiceBean" class="com.sunway.service.impl.Pgt12084Service" scope="request">
+		<property name="t12084Dao" ref="T12084DaoBean" />
+	</bean>
+
+	<bean id="Sh20001ServiceBean" class="com.sunway.service.impl.Sh20001Service" scope="request">
+		<property name="sh20001Dao" ref="Sh20001DaoBean" />
+	</bean>
+
+	<bean id="Sh20002ServiceBean" class="com.sunway.service.impl.Sh20002Service" scope="request">
+		<property name="sh20002Dao" ref="Sh20002DaoBean" />
+	</bean>
+
+	<bean id="T12053ServiceBean" class="com.sunway.service.impl.Pgt12053Service" scope="request">
+		<property name="t12053Dao" ref="T12053DaoBean" />
+	</bean>
+
+	<bean id="T12054ServiceBean" class="com.sunway.service.impl.Pgt12054Service" scope="request">
+		<property name="t12054Dao" ref="T12054DaoBean" />
+	</bean>
+
+	<bean id="T12055ServiceBean" class="com.sunway.service.impl.Pgt12055Service" scope="request">
+		<property name="t12055Dao" ref="T12055DaoBean" />
+	</bean>
+
+	<bean id="T00302ServiceBean" class="com.sunway.service.impl.Pgt00302Service" scope="request">
+		<property name="t00302Dao" ref="T00302DaoBean" />
+	</bean>
+	
+	<bean id="T00320ServiceBean" class="com.sunway.service.impl.Pgt00320Service" scope="request">
+		<property name="t00320Dao" ref="T00320DaoBean" />
+	</bean>
+	
+	<bean id="T00302eServiceBean" class="com.sunway.service.impl.Pgt00302eService" scope="request">
+		<property name="t00302eDao" ref="T00302eDaoBean" />
+	</bean>
+
+	<bean id="T00304ServiceBean" class="com.sunway.service.impl.Pgt00304Service" scope="request">
+		<property name="t00304Dao" ref="T00304DaoBean" />
+	</bean>
+
+	<bean id="Sh30001ServiceBean" class="com.sunway.service.impl.Sh30001Service" scope="request">
+		<property name="sh30001Dao" ref="Sh30001DaoBean" />
+	</bean>
+
+	<bean id="Sh30002ServiceBean" class="com.sunway.service.impl.Sh30002Service" scope="request">
+		<property name="sh30002Dao" ref="Sh30002DaoBean" />
+	</bean>
+
+	<bean id="T00384ServiceBean" class="com.sunway.service.impl.Pgt00384Service" scope="request">
+		<property name="t00384Dao" ref="T00384DaoBean" />
+	</bean>
+
+	<bean id="Pg10001ServiceBean" class="com.sunway.service.impl.Pg10001Service" scope="request">
+		<property name="pg10001Dao" ref="Pg10001DaoBean" />
+	</bean>
+
+	<bean id="Pg10002ServiceBean" class="com.sunway.service.impl.Pg10002Service" scope="request">
+		<property name="pg10002Dao" ref="Pg10002DaoBean" />
+	</bean>
+
+	<bean id="Pg20001ServiceBean" class="com.sunway.service.impl.Pg20001Service" scope="request">
+		<property name="pg20001Dao" ref="Pg20001DaoBean" />
+	</bean>
+
+	<bean id="Pg20002ServiceBean" class="com.sunway.service.impl.Pg20002Service" scope="request">
+		<property name="pg20002Dao" ref="Pg20002DaoBean" />
+	</bean>
+
+	<bean id="Pg30001ServiceBean" class="com.sunway.service.impl.Pg30001Service" scope="request">
+		<property name="pg30001Dao" ref="Pg30001DaoBean" />
+	</bean>
+
+	<bean id="Pg30002ServiceBean" class="com.sunway.service.impl.Pg30002Service" scope="request">
+		<property name="pg30002Dao" ref="Pg30002DaoBean" />
+	</bean>
+
+	<bean id="T00351ServiceBean" class="com.sunway.service.impl.Pgt00351Service" scope="request">
+		<property name="t00351Dao" ref="T00351DaoBean" />
+	</bean>
+
+	<bean id="T00351aServiceBean" class="com.sunway.service.impl.Pgt00351aService" scope="request">
+		<property name="t00351aDao" ref="T00351aDaoBean" />
+	</bean>
+
+	<bean id="T00351eServiceBean" class="com.sunway.service.impl.Pgt00351eService" scope="request">
+		<property name="t00351eDao" ref="T00351eDaoBean" />
+	</bean>
+
+	<bean id="Pg10001gServiceBean" class="com.sunway.service.impl.Pg10001gService" scope="request">
+		<property name="g10001Dao" ref="Pg10001gDaoBean" />
+	</bean>
+
+	<bean id="T10031ServiceBean" class="com.sunway.service.impl.Pgt10031Service" scope="request">
+		<property name="t10031Dao" ref="T10031DaoBean" />
+	</bean>
+
+	<bean id="VCZ00002ServiceBean" class="com.sunway.service.impl.PgvCz00002Service" scope="request">
+		<property name="v00002Dao" ref="VCZ00002DaoBean" />
+	</bean>
+
+	<bean id="T00357ServiceBean" class="com.sunway.service.impl.Pgt00357Service" scope="request">
+		<property name="t00357Dao" ref="T00357DaoBean" />
+	</bean>
+
+	<bean id="T00357eServiceBean" class="com.sunway.service.impl.Pgt00357eService" scope="request">
+		<property name="t00357eDao" ref="T00357eDaoBean" />
+	</bean>
+
+	<bean id="T10031aServiceBean" class="com.sunway.service.impl.Pgt10031aService" scope="request">
+		<property name="t10031aDao" ref="T10031aDaoBean" />
+	</bean>
+
+	<bean id="T10033ServiceBean" class="com.sunway.service.impl.Pgt10033Service" scope="request">
+		<property name="t10033Dao" ref="T10033DaoBean" />
+	</bean>
+
+	<bean id="T10032ServiceBean" class="com.sunway.service.impl.Pgt10032Service" scope="request">
+		<property name="t10032Dao" ref="T10032DaoBean" />
+	</bean>
+
+	<bean id="Cz00042ServiceBean" class="com.sunway.service.impl.Cz00042Service" scope="request">
+		<property name="cz00042Dao" ref="Cz00042DaoBean" />
+	</bean>
+
+	<bean id="Pg20001gServiceBean" class="com.sunway.service.impl.Pg20001gService" scope="request">
+		<property name="g20001gDao" ref="Pg20001gDaoBean" />
+	</bean>
+
+	<bean id="T02031aServiceBean" class="com.sunway.service.impl.Pgt02031aService" scope="request">
+		<property name="t02031aDao" ref="T02031aDaoBean" />
+	</bean>
+
+	<bean id="T02033ServiceBean" class="com.sunway.service.impl.Pgt02033Service" scope="request">
+		<property name="t02033Dao" ref="T02033DaoBean" />
+	</bean>
+
+	<bean id="T02031ServiceBean" class="com.sunway.service.impl.Pgt02031Service" scope="request">
+		<property name="t02031Dao" ref="T02031DaoBean" />
+	</bean>
+
+	<bean id="T02032ServiceBean" class="com.sunway.service.impl.Pgt02032Service" scope="request">
+		<property name="t02032Dao" ref="T02032DaoBean" />
+	</bean>
+
+	<bean id="Pg30001gServiceBean" class="com.sunway.service.impl.Pg30001gService" scope="request">
+		<property name="g30001gDao" ref="Pg30001gDaoBean" />
+	</bean>
+
+	<bean id="T00331ServiceBean" class="com.sunway.service.impl.Pgt00331Service" scope="request">
+		<property name="t00331Dao" ref="T00331DaoBean" />
+	</bean>
+
+	<bean id="T00332ServiceBean" class="com.sunway.service.impl.Pgt00332Service" scope="request">
+		<property name="t00332Dao" ref="T00332DaoBean" />
+	</bean>
+
+	<bean id="T00333ServiceBean" class="com.sunway.service.impl.Pgt00333Service" scope="request">
+		<property name="t00333Dao" ref="T00333DaoBean" />
+	</bean>
+
+	<bean id="T00334ServiceBean" class="com.sunway.service.impl.Pgt00334Service" scope="request">
+		<property name="t00334Dao" ref="T00334DaoBean" />
+	</bean>
+
+	<bean id="T00334aServiceBean" class="com.sunway.service.impl.Pgt00334aService" scope="request">
+		<property name="t00334aDao" ref="T00334aDaoBean" />
+	</bean>
+
+	<bean id="T00358ServiceBean" class="com.sunway.service.impl.Pgt00358Service" scope="request">
+		<property name="t00358Dao" ref="T00358DaoBean" />
+	</bean>
+
+	<bean id="T00041ServiceBean" class="com.sunway.service.impl.Pgt00041Service" scope="request">
+		<property name="t00041Dao" ref="T00041DaoBean" />
+	</bean>
+
+	<bean id="Ss10000ServiceBean" class="com.sunway.service.impl.Ss10000Service" scope="request">
+		<property name="ss10000Dao" ref="Ss10000DaoBean" />
+	</bean>
+
+	<bean id="Ss20000ServiceBean" class="com.sunway.service.impl.Ss20000Service" scope="request">
+		<property name="ss20000Dao" ref="Ss20000DaoBean" />
+	</bean>
+
+	<bean id="Ss30000ServiceBean" class="com.sunway.service.impl.Ss30000Service" scope="request">
+		<property name="ss30000Dao" ref="Ss30000DaoBean" />
+	</bean>
+
+	<bean id="Cz00006ServiceBean" class="com.sunway.service.impl.PgvCz00006Service" scope="request">
+		<property name="cz00006Dao" ref="Cz00006DaoBean" />
+	</bean>
+
+	<bean id="Db000011ServiceBean" class="com.sunway.service.impl.PgvDb000011Service" scope="request">
+		<property name="db000011DAO" ref="Db000011DaoBean" />
+	</bean>
+
+	<bean id="Db000012ServiceBean" class="com.sunway.service.impl.PgvDb000012Service" scope="request">
+		<property name="db000012DAO" ref="Db000012DaoBean" />
+	</bean>
+
+	<bean id="Db000013ServiceBean" class="com.sunway.service.impl.PgvDb000013Service" scope="request">
+		<property name="db000013DAO" ref="Db000013DaoBean" />
+	</bean>
+
+	<bean id="Db000014ServiceBean" class="com.sunway.service.impl.PgvDb000014Service" scope="request">
+		<property name="db000014DAO" ref="Db000014DaoBean" />
+	</bean>
+
+	<bean id="Db000015ServiceBean" class="com.sunway.service.impl.PgvDb000015Service" scope="request">
+		<property name="db000015DAO" ref="Db000015DaoBean" />
+	</bean>
+
+	<bean id="Db000016ServiceBean" class="com.sunway.service.impl.PgvDb000016Service" scope="request">
+		<property name="db000016DAO" ref="Db000016DaoBean" />
+	</bean>
+
+	<bean id="Bb00001ServiceBean" class="com.sunway.service.impl.PgvBb00001Service" scope="request">
+		<property name="bb00001DAO" ref="Bb00001DaoBean" />
+	</bean>
+
+	<bean id="Bb00002ServiceBean" class="com.sunway.service.impl.PgvBb00002Service" scope="request">
+		<property name="bb00002DAO" ref="Bb00002DaoBean" />
+	</bean>
+
+	<bean id="Bb00003ServiceBean" class="com.sunway.service.impl.PgvBb00003Service" scope="request">
+		<property name="bb00003DAO" ref="Bb00003DaoBean" />
+	</bean>
+
+	<bean id="Bb00004ServiceBean" class="com.sunway.service.impl.PgvBb00004Service" scope="request">
+		<property name="bb00004DAO" ref="Bb00004DaoBean" />
+	</bean>
+
+	<bean id="Bb00005ServiceBean" class="com.sunway.service.impl.PgvBb00005Service" scope="request">
+		<property name="bb00005DAO" ref="Bb00005DaoBean" />
+	</bean>
+
+	<bean id="Bb00006ServiceBean" class="com.sunway.service.impl.PgvBb00006Service" scope="request">
+		<property name="bb00006DAO" ref="Bb00006DaoBean" />
+	</bean>
+
+	<bean id="Bb00007ServiceBean" class="com.sunway.service.impl.PgvBb00007Service" scope="request">
+		<property name="bb00007DAO" ref="Bb00007DaoBean" />
+	</bean>
+
+	<bean id="Bb00008ServiceBean" class="com.sunway.service.impl.PgvBb00008Service" scope="request">
+		<property name="bb00008DAO" ref="Bb00008DaoBean" />
+	</bean>
+
+	<bean id="Bb00009ServiceBean" class="com.sunway.service.impl.PgvBb00009Service" scope="request">
+		<property name="bb00009DAO" ref="Bb00009DaoBean" />
+	</bean>
+
+	<bean id="Bb00010ServiceBean" class="com.sunway.service.impl.PgvBb00010Service" scope="request">
+		<property name="bb00010DAO" ref="Bb00010DaoBean" />
+	</bean>
+
+	<bean id="Cz00001ServiceBean" class="com.sunway.service.impl.Cz00001Service" scope="request">
+		<property name="cz00001Dao" ref="Cz00001DaoBean" />
+	</bean>
+
+	<bean id="V12001AServiceBean" class="com.sunway.service.impl.Pgv12001AService" scope="request">
+		<property name="v12001ADAO" ref="V12001ADaoBean" />
+	</bean>
+
+	<bean id="V12002AServiceBean" class="com.sunway.service.impl.Pgv12002AService" scope="request">
+		<property name="v12002ADAO" ref="V12002ADaoBean" />
+	</bean>
+
+	<bean id="V12003AServiceBean" class="com.sunway.service.impl.Pgv12003AService" scope="request">
+		<property name="v12003ADAO" ref="V12003ADaoBean" />
+	</bean>
+
+	<bean id="V12004AServiceBean" class="com.sunway.service.impl.Pgv12004AService" scope="request">
+		<property name="v12004ADAO" ref="V12004ADaoBean" />
+	</bean>
+
+	<bean id="V00301AServiceBean" class="com.sunway.service.impl.Pgv00301AService" scope="request">
+		<property name="v00301ADAO" ref="V00301ADaoBean" />
+	</bean>
+
+	<bean id="V00302AServiceBean" class="com.sunway.service.impl.Pgv00302AService" scope="request">
+		<property name="v00302ADAO" ref="V00302ADaoBean" />
+	</bean>
+
+	<bean id="PsjgjyCBServiceBean" class="com.sunway.service.impl.PsjgjyCBService" scope="request">
+		<property name="psjgjyCBDao" ref="PsjgjyCBDaoBean" />
+	</bean>
+
+	<bean id="PsjgjySYServiceBean" class="com.sunway.service.impl.PsjgjySYService" scope="request">
+		<property name="psjgjySYDao" ref="PsjgjySYDaoBean" />
+	</bean>
+
+	<bean id="PsjgjySCServiceBean" class="com.sunway.service.impl.PsjgjySCService" scope="request">
+		<property name="psjgjySCDao" ref="PsjgjySCDaoBean" />
+	</bean>
+
+	<bean id="ChartBzslkServiceBean" class="com.sunway.service.impl.ChartBzslkService" scope="request">
+		<property name="chartBzslkDao" ref="ChartBzslkDaoBean" />
+	</bean>
+
+	<bean id="CzArcgisServiceBean" class="com.sunway.service.impl.CzArcgisService" scope="request">
+		<property name="arcgisDao" ref="CzArcgisDaoBean" />
+	</bean>
+
+	<bean id="Pssd9ServiceBean" class="com.sunway.service.impl.Pssd9Service" scope="request">
+		<property name="pssd9Dao" ref="Pssd9DaoBean" />
+	</bean>
+
+	<bean id="V00301_bServiceBean" class="com.sunway.service.impl.Pgv00301_bService" scope="request">
+		<property name="v00301_bDAO" ref="V00301_bDaoBean" />
+	</bean>
+
+	<bean id="V00302_bServiceBean" class="com.sunway.service.impl.Pgv00302_bService" scope="request">
+		<property name="v00302_bDAO" ref="V00302_bDaoBean" />
+	</bean>
+
+	<bean id="V12001_bServiceBean" class="com.sunway.service.impl.Pgv12001_bService" scope="request">
+		<property name="v12001_bDAO" ref="V12001_bDaoBean" />
+	</bean>
+
+	<bean id="V12002_bServiceBean" class="com.sunway.service.impl.Pgv12002_bService" scope="request">
+		<property name="v12002_bDAO" ref="V12002_bDaoBean" />
+	</bean>
+
+	<bean id="V12003_bServiceBean" class="com.sunway.service.impl.Pgv12003_bService" scope="request">
+		<property name="v12003_bDAO" ref="V12003_bDaoBean" />
+	</bean>
+
+	<bean id="V12004_bServiceBean" class="com.sunway.service.impl.Pgv12004_bService" scope="request">
+		<property name="v12004_bDAO" ref="V12004_bDaoBean" />
+	</bean>
+
+	<bean id="Bb00001_bServiceBean" class="com.sunway.service.impl.PgvBb00001_bService" scope="request">
+		<property name="bb00001_bDAO" ref="Bb00001_bDaoBean" />
+	</bean>
+
+	<bean id="Bb00002_bServiceBean" class="com.sunway.service.impl.PgvBb00002_bService" scope="request">
+		<property name="bb00002_bDAO" ref="Bb00002_bDaoBean" />
+	</bean>
+
+	<bean id="Bb00003_bServiceBean" class="com.sunway.service.impl.PgvBb00003_bService" scope="request">
+		<property name="bb00003_bDAO" ref="Bb00003_bDaoBean" />
+	</bean>
+
+	<bean id="Bb00004_bServiceBean" class="com.sunway.service.impl.PgvBb00004_bService" scope="request">
+		<property name="bb00004_bDAO" ref="Bb00004_bDaoBean" />
+	</bean>
+
+	<bean id="Bb00005_bServiceBean" class="com.sunway.service.impl.PgvBb00005_bService" scope="request">
+		<property name="bb00005_bDAO" ref="Bb00005_bDaoBean" />
+	</bean>
+
+	<bean id="Bb00006_bServiceBean" class="com.sunway.service.impl.PgvBb00006_bService" scope="request">
+		<property name="bb00006_bDAO" ref="Bb00006_bDaoBean" />
+	</bean>
+
+	<bean id="Bb00007_bServiceBean" class="com.sunway.service.impl.PgvBb00007_bService" scope="request">
+		<property name="bb00007_bDAO" ref="Bb00007_bDaoBean" />
+	</bean>
+
+	<bean id="Bb00008_bServiceBean" class="com.sunway.service.impl.PgvBb00008_bService" scope="request">
+		<property name="bb00008_bDAO" ref="Bb00008_bDaoBean" />
+	</bean>
+
+	<bean id="Bb00009_bServiceBean" class="com.sunway.service.impl.PgvBb00009_bService" scope="request">
+		<property name="bb00009_bDAO" ref="Bb00009_bDaoBean" />
+	</bean>
+
+	<bean id="Bb00010_bServiceBean" class="com.sunway.service.impl.PgvBb00010_bService" scope="request">
+		<property name="bb00010_bDAO" ref="Bb00010_bDaoBean" />
+	</bean>
+
+	<bean id="V10033aServiceBean" class="com.sunway.service.impl.Pgv10033aService" scope="request">
+		<property name="v10033aDao" ref="V10033aDAOBean" />
+	</bean>
+
+	<bean id="V02033aServiceBean" class="com.sunway.service.impl.Pgv02033aService" scope="request">
+		<property name="v02033aDao" ref="V02033aDAOBean" />
+	</bean>
+
+	<bean id="V00333aServiceBean" class="com.sunway.service.impl.Pgv00333aService" scope="request">
+		<property name="v00333aDao" ref="V00333aDAOBean" />
+	</bean>
+
+	<bean id="T00335ServiceBean" class="com.sunway.service.impl.Pgt00335Service" scope="request">
+		<property name="t00335Dao" ref="T00335DAOBean" />
+	</bean>
+
+	<bean id="T00335aServiceBean" class="com.sunway.service.impl.Pgt00335aService" scope="request">
+		<property name="t00335aDao" ref="T00335aDaoBean" />
+	</bean>
+
+	<bean id="T00334cServiceBean" class="com.sunway.service.impl.Pgt00334cService" scope="request">
+		<property name="t00334cDao" ref="T00334cDaoBean" />
+	</bean>
+
+	<bean id="T00331cServiceBean" class="com.sunway.service.impl.Pgt00331cService" scope="request">
+		<property name="t00331cDao" ref="T00331cDaoBean" />
+	</bean>
+
+	<bean id="T00332cServiceBean" class="com.sunway.service.impl.Pgt00332cService" scope="request">
+		<property name="t00332cDao" ref="T00332cDaoBean" />
+	</bean>
+	
+	<bean id="T00331aServiceBean" class="com.sunway.service.impl.Pgt00331aService" scope="request">
+		<property name="t00331aDao" ref="T00331aDaoBean" />
+	</bean>
+
+	<bean id="T00335cServiceBean" class="com.sunway.service.impl.Pgt00335cService" scope="request">
+		<property name="t00335cDao" ref="T00335cDaoBean" />
+	</bean>
+
+	<bean id="CL00390ServiceBean" class="com.sunway.service.impl.CL00390Service" scope="request">
+		<property name="cl00390Dao" ref="CL00390DaoBean" />
+	</bean>
+
+	<bean id="BB00001ServiceBean" class="com.sunway.service.impl.BB00001Service" scope="request">
+		<property name="bb00001Dao" ref="BB00001DaoBean" />
+	</bean>
+	
+	<bean id="BB00002ServiceBean" class="com.sunway.service.impl.BB00002Service" scope="request">
+		<property name="bb00002Dao" ref="BB00002DaoBean" />
+	</bean>
+
+	<bean id="BB00003ServiceBean" class="com.sunway.service.impl.BB00003Service" scope="request">
+		<property name="bb00003Dao" ref="BB00003DaoBean" />
+	</bean>
+
+	<bean id="BB00004ServiceBean" class="com.sunway.service.impl.BB00004Service" scope="request">
+		<property name="bb00004Dao" ref="BB00004DaoBean" />
+	</bean>
+
+	<bean id="BB00005ServiceBean" class="com.sunway.service.impl.BB00005Service" scope="request">
+		<property name="bb00005Dao" ref="BB00005DaoBean" />
+	</bean>
+	
+	<bean id="BB00006ServiceBean" class="com.sunway.service.impl.BB00006Service" scope="request">
+		<property name="bb00006Dao" ref="BB00006DaoBean" />
+	</bean>
+	
+	<bean id="BB00007ServiceBean" class="com.sunway.service.impl.BB00007Service" scope="request">
+		<property name="bb00007Dao" ref="BB00007DaoBean" />
+	</bean>
+	
+	<bean id="BB00008ServiceBean" class="com.sunway.service.impl.BB00008Service" scope="request">
+		<property name="bb00008Dao" ref="BB00008DaoBean" />
+	</bean>
+	
+	<bean id="T00360ServiceBean" class="com.sunway.service.impl.Pgt00360Service" scope="request">
+		<property name="t00360Dao" ref="T00360DaoBean" />
+	</bean>	
+	
+	<bean id="T00361ServiceBean" class="com.sunway.service.impl.Pgt00361Service" scope="request">
+		<property name="t00361Dao" ref="T00361DaoBean" />
+	</bean>	
+	
+	<bean id="T00362ServiceBean" class="com.sunway.service.impl.Pgt00362Service" scope="request">
+		<property name="t00362Dao" ref="T00362DaoBean" />
+	</bean>	
+	
+	<bean id="T00364ServiceBean" class="com.sunway.service.impl.Pgt00364Service" scope="request">
+		<property name="t00364Dao" ref="T00364DaoBean" />
+	</bean>	
+	
+	<bean id="T00365ServiceBean" class="com.sunway.service.impl.Pgt00365Service" scope="request">
+		<property name="t00365Dao" ref="T00365DaoBean" />
+	</bean>	
+	<bean id="T00370ServiceBean" class="com.sunway.service.impl.Pgt00370Service" scope="request">
+		<property name="t00370Dao" ref="T00370DaoBean" />
+	</bean>
+	
+	<bean id="Tree00000ServiceBean" class="com.sunway.service.impl.Tree00000Service" scope="request">
+		<property name="tree00000Dao" ref="Tree00000DaoBean" />
+	</bean>	
+	
+	<bean id="TJ00001ServiceBean" class="com.sunway.service.impl.Tj00001Service" scope="request">
+		<property name="tj00001Dao" ref="TJ00001DaoBean" />
+	</bean>	
+	
+	<bean id="Fc003ServiceBean" class="com.sunway.service.impl.Fc003Service" scope="request">
+		<property name="fc003Dao" ref="Fc003DaoBean" />
+	</bean>		
+	
+	
+</beans>

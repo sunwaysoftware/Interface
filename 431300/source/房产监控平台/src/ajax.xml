@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- AJAX请求（通用） -->
+	<package name="AJAX" extends="AppDefault">
+
+		<action name="READSZQYID" class="T12002ActionBean" method="readSzqyByDcid">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">szqyId</param>
+			</result>
+		</action>
+
+		<!-- 讀取审核未通过的原因[成本、收益] -->
+		<action name="VIEWT12084" class="T12084ActionBean">
+			<result name="success" type="json" />
+		</action>
+
+		<!-- 讀取审核未通过的原因[市場] -->
+		<action name="VIEWT00384" class="T00384ActionBean">
+			<result name="success" type="json" />
+		</action>
+		<!-- 估价待办 -->
+		<action name="VIEWT003840" class="T00384ActionBean" method="loadYY">
+			<result name="success" type="json" />
+		</action>
+		<action name="VIEWT003842" class="T00384ActionBean" method="executeT00320">
+			<result name="success" type="json" />
+		</action>
+		<!-- 登记人或承租人信息表(可以给登记提供自动提示功能) -->
+		<action name="READT12006" class="T12006ActionBean" method="view">
+			<result name="success" type="json">
+				<param name="t12006Bean" />
+			</result>
+		</action>
+
+		<!-- 读取导航条数据用 -->
+		<action name="TREET00001" class="T00001ActionBean" method="loadNavigator">
+			<result name="success">/T00001/INFOTREEDIV.jsp</result>
+		</action>
+		<action name="TREET00001HW" class="T00001ActionBean" method="loadNavigator">
+			<result name="success">/T00001/INFOTREEDIVWH.jsp</result>
+		</action>
+
+		<action name="TREETZHXZ" class="T00001ActionBean" method="loadCGZKNavigator">
+			<result name="success">/T00001/ZHXZTREE.jsp</result>
+		</action>
+
+		<action name="TREEHY" class="T00001ActionBean" method="loadHYNavigator">
+			<result name="success">/T00001/COMMONTREE.jsp</result>
+		</action>
+		<action name="TREEJJLX" class="T00001ActionBean" method="loadJJLXNavigator">
+			<result name="success">/T00001/COMMONTREE.jsp</result>
+		</action>
+		<action name="TREESSGX" class="T00001ActionBean" method="loadSSGXNavigator">
+			<result name="success">/T00001/COMMONTREE.jsp</result>
+		</action>
+		<action name="TREESSGXCOND" class="T00001ActionBean" method="loadSSGXNavigator">
+			<result name="success">/T00001/SSGXTREE.jsp</result>
+		</action>
+		<action name="TREEQDFS" class="T00001ActionBean" method="loadQDFSNavigator">
+			<result name="success">/T00001/COMMONTREE.jsp</result>
+		</action>
+		<action name="TREEMSSZ" class="T00001ActionBean" method="loadMSSZNavigator">
+			<result name="success">/T00001/COMMONTREE.jsp</result>
+		</action>
+		<action name="TREEXJBZ" class="T00001ActionBean" method="loadXJBZNavigator">
+			<result name="success">/T00001/COMMONTREE.jsp</result>
+		</action>
+		<action name="TREESYQLX" class="T00001ActionBean" method="loadSYQLXNavigator">
+			<result name="success">/T00001/COMMONTREE.jsp</result>
+		</action>
+		<action name="TREETDSYQLX" class="T00001ActionBean" method="loadTDSYQLXNavigator">
+			<result name="success">/T00001/COMMONTREE.jsp</result>
+		</action>
+		<action name="TREEJZJG" class="T00001ActionBean" method="loadJZJGNavigator">
+			<result name="success">/T00001/COMMONTREE.jsp</result>
+		</action>
+		<action name="TREETDYT" class="T00001ActionBean" method="loadTDYTNavigator">
+			<result name="success">/T00001/COMMONTREE.jsp</result>
+		</action>
+		<action name="TREETDDJ" class="T00001ActionBean" method="loadTDDJNavigator">
+			<result name="success">/T00001/COMMONTREE.jsp</result>
+		</action>
+		<action name="TREEFWCX" class="T00001ActionBean" method="loadFWCXNavigator">
+			<result name="success">/T00001/COMMONTREE.jsp</result>
+		</action>
+		<action name="TREEFWSS" class="T00001ActionBean" method="loadFWSSNavigator">
+			<result name="success">/T00001/COMMONTREE.jsp</result>
+		</action>
+		<action name="TREESZQY" class="T00001ActionBean" method="loadSZQYNavigator">
+			<result name="success">/T00001/COMMONTREE.jsp</result>
+		</action>
+		<action name="TREEXZ" class="T00001ActionBean" method="loadXZNavigator">
+			<result name="success">/T00001/COMMONTREE.jsp</result>
+		</action>
+		<action name="TREEFWYT" class="T00001ActionBean" method="loadFWYTNavigator">
+			<result name="success">/T00001/COMMONTREE.jsp</result>
+		</action>
+		<action name="TREEFWLX" class="T00001ActionBean" method="loadFWLXNavigator">
+			<result name="success">/T00001/COMMONTREE.jsp</result>
+		</action>
+		<action name="TREEBGLLX" class="T00001ActionBean" method="loadBGLLXNavigator">
+			<result name="success">/T00001/COMMONTREE.jsp</result>
+		</action>
+		<action name="TREECGZK" class="T00001ActionBean" method="loadCGZKNavigator">
+			<result name="success">/T00001/ZHXZTREE.jsp</result>
+		</action>
+		<action name="TREELC" class="T00001ActionBean" method="loadLCNavigator">
+			<result name="success">/T00001/COMMONTREE.jsp</result>
+		</action>
+		<action name="TREEJYLX" class="T00001ActionBean" method="loadJYLXNavigator">
+			<result name="success">/T00001/COMMONTREE.jsp</result>
+		</action>
+		<action name="TREEZJLX" class="T00001ActionBean" method="loadZJLXNavigator">
+			<result name="success">/T00001/COMMONTREE.jsp</result>
+		</action>
+		<action name="TREEJTZK" class="T00001ActionBean" method="loadJTZKNavigator">
+			<result name="success">/T00001/COMMONTREE.jsp</result>
+		</action>
+		<action name="TREEWYZK" class="T00001ActionBean" method="loadWYZKNavigator">
+			<result name="success">/T00001/COMMONTREE.jsp</result>
+		</action>
+		<action name="TREEZXZK" class="T00001ActionBean" method="loadZXZKNavigator">
+			<result name="success">/T00001/COMMONTREE.jsp</result>
+		</action>
+		<action name="TREEGWHJ" class="T00001ActionBean" method="loadGWHJNavigator">
+			<result name="success">/T00001/COMMONTREE.jsp</result>
+		</action>
+		<action name="GETMAXINFOID" class="T00001ActionBean" method="getInfoID">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">maxInfoId</param>
+			</result>
+		</action>
+		<action name="TREELX" class="T00001ActionBean" method="loadLXNavigator">
+			<result name="success">/T00001/COMMONTREE.jsp</result>
+		</action>
+		<!-- 取得对象名称 -->
+		<action name="GETLCNAV" class="T00001ActionBean" method="LoadLCNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">infoNav</param>
+			</result>
+		</action>
+		<action name="GETGWHJNAV" class="T00001ActionBean" method="LoadGWHJNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">infoNav</param>
+			</result>
+		</action>
+		<action name="GETLXNAV" class="T00001ActionBean" method="LoadLXNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">infoNav</param>
+			</result>
+		</action>
+		<action name="GETHYNAV" class="T00001ActionBean" method="LoadHYNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">infoNav</param>
+			</result>
+		</action>
+		<action name="GETJJLXNAV" class="T00001ActionBean" method="LoadJJLXNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">infoNav</param>
+			</result>
+		</action>
+		<action name="GETSSGXNAV" class="T00001ActionBean" method="LoadSSGXNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">infoNav</param>
+			</result>
+		</action>
+		<action name="GETQDFSNAV" class="T00001ActionBean" method="LoadQDFSNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">infoNav</param>
+			</result>
+		</action>
+		<action name="GETMSSZNAV" class="T00001ActionBean" method="LoadMSSZNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">infoNav</param>
+			</result>
+		</action>
+		<action name="GETXJBZNAV" class="T00001ActionBean" method="LoadXJBZNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">infoNav</param>
+			</result>
+		</action>
+		<action name="GETSYQLXNAV" class="T00001ActionBean" method="LoadSYQLXNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">infoNav</param>
+			</result>
+		</action>
+		<action name="GETTDSYQLXNAV" class="T00001ActionBean" method="LoadTDSYQLXNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">infoNav</param>
+			</result>
+		</action>
+		<action name="GETJZJGNAV" class="T00001ActionBean" method="LoadJZJGNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">infoNav</param>
+			</result>
+		</action>
+		<action name="GETTDYTNAV" class="T00001ActionBean" method="LoadTDYTNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">infoNav</param>
+			</result>
+		</action>
+		<!-- <action name="GETTDDJNAV" class="T00001ActionBean" method="LoadTDDJNav"> 
+			<result name="success" type="stream"> <param name="contentType">text/html</param> 
+			<param name="inputName">infoNav</param> </result> </action> -->
+		<action name="GETFWCXNAV" class="T00001ActionBean" method="LoadFWCXNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">infoNav</param>
+			</result>
+		</action>
+		<action name="GETFWSSNAV" class="T00001ActionBean" method="LoadFWSSNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">infoNav</param>
+			</result>
+		</action>
+		<action name="GETSZQYNAV" class="T00001ActionBean" method="LoadSZQYNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">infoNav</param>
+			</result>
+		</action>
+		<action name="GETXZNAV" class="T00001ActionBean" method="LoadXZNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">infoNav</param>
+			</result>
+		</action>
+		<action name="GETFWYTNAV" class="T00001ActionBean" method="LoadFWYTNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">infoNav</param>
+			</result>
+		</action>
+		<action name="GETFWLXNAV" class="T00001ActionBean" method="LoadFWLXNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">infoNav</param>
+			</result>
+		</action>
+		<action name="GETBGLLXNAV" class="T00001ActionBean" method="LoadBGLLXNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">infoNav</param>
+			</result>
+		</action>
+		<action name="GETCGZKNAV" class="T00001ActionBean" method="LoadCGZKNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">infoNav</param>
+			</result>
+		</action>
+		<action name="GETJYLXNAV" class="T00001ActionBean" method="LoadJYLXNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">infoNav</param>
+			</result>
+		</action>
+		<action name="GETZJLXNAV" class="T00001ActionBean" method="LoadZJLXNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">infoNav</param>
+			</result>
+		</action>
+		<action name="GETJTZKNAV" class="T00001ActionBean" method="LoadJTZKNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">infoNav</param>
+			</result>
+		</action>
+		<action name="GETWYZKNAV" class="T00001ActionBean" method="LoadWYZKNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">infoNav</param>
+			</result>
+		</action>
+		<action name="GETZXZKNAV" class="T00001ActionBean" method="LoadZXZKNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">infoNav</param>
+			</result>
+		</action>
+
+		<!-- 维护页面中使用 -->
+
+		<action name="FINDT12081AJAX" class="T12081ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT12082AJAX" class="T12082ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT12083AJAX" class="T12083ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT12085AJAX" class="T12085ActionBean" method="createByAjax">
+			<result name="success">/T12085/EDITT12085.jsp</result>
+		</action>
+		<action name="FINDT02062AJAX" class="T02062ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT12006AJAX" class="T12006ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT00051AJAX" class="T00051ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT00356AJAX" class="T00356ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="FINDT00356AJAXA" class="T00356ActionBean" method="createByAjaxA">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT02058AJAX" class="T02058ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="FINDT02058AJAXA" class="T02058ActionBean" method="createByAjaxA">
+			<result name="success" type="json" />
+		</action>
+		
+
+		<action name="FINDT10051AJAX" class="T10051ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT10052AJAX" class="T10052ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT10053AJAX" class="T10053ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT10054AJAX" class="T10054ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT10055AJAX" class="T10055ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT10056AJAX" class="T10056ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT10057AJAX" class="T10057ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+        <action name="FINDT10058AJAX" class="T10058ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+		  <action name="FINDT10059AJAX" class="T10059ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT02051AJAX" class="T02051ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT02052AJAX" class="T02052ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT02052AJAXA" class="T02052ActionBean" method="createByAjaxA">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT02053AJAX" class="T02053ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT10063AJAX" class="T10063ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT02053AJAXA" class="T02053ActionBean" method="createByAjaxA">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT02054AJAX" class="T02054ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT02054AJAXA" class="T02054ActionBean" method="createByAjaxA">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT02055AJAX" class="T02055ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT02055AJAXA" class="T02055ActionBean" method="createByAjaxA">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT02056AJAX" class="T02056ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT02057AJAX" class="T02057ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT02057AJAXA" class="T02057ActionBean" method="createByAjaxA">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT02058AJAX" class="T02058ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT02059AJAX" class="T02059ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="FINDT12051AJAX" class="T12051ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="FINDT12052AJAX" class="T12052ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="FINDT00353AJAX" class="T00353ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="FINDT00353AJAXA" class="T00353ActionBean" method="createByAjaxA">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="FINDT00354AJAX" class="T00354ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="FINDT00355AJAX" class="T00355ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="FINDT00355AJAXA" class="T00355ActionBean" method="createByAjaxA">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="FINDT00360AJAX" class="T00360ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="FINDT00360AJAXA" class="T00360ActionBean" method="createByAjaxA">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="FINDT00361AJAX" class="T00361ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="FINDT00361AJAXA" class="T00361ActionBean" method="createByAjaxA">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="FINDT00362AJAX" class="T00362ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="FINDT00362AJAXA" class="T00362ActionBean" method="createByAjaxA">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="FINDT00363AJAX" class="T00363ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="FINDT00363AJAXA" class="T00363ActionBean" method="createByAjaxA">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="FINDT00364AJAX" class="T00364ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="FINDT00364AJAXA" class="T00364ActionBean" method="createByAjaxA">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="FINDT00365AJAX" class="T00365ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="FINDT00365AJAXA" class="T00365ActionBean" method="createByAjaxA">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="FINDT02061AJAX" class="T02061ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="FINDT12055AJAX" class="T12055ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="TREET00053DIV" class="T00053ActionBean" method="loadNavigator">
+			<result name="success">/T00053/T00053TREEDIV.jsp</result>
+		</action>
+		<action name="TREET00053" class="T00053ActionBean" method="loadNavigator">
+			<result name="success">/T00053/T00053TREE.jsp</result>
+		</action>
+		<action name="TREET00053EDIT" class="T00053ActionBean" method="loadNavigator">
+			<result name="success">/T00053/T00053TREEEDIT.jsp</result>
+		</action>
+
+		<action name="TREET00352DIV" class="T00352ActionBean" method="loadNavigator">
+			<result name="success">/T00352/T00352TREEDIV.jsp</result>
+		</action>
+		<action name="TREET00352" class="T00352ActionBean" method="loadNavigator">
+			<result name="success">/T00352/T00352TREE.jsp</result>
+		</action>
+		<action name="TREET00352EDIT" class="T00352ActionBean" method="loadNavigator">
+			<result name="success">/T00352/T00352TREEEDIT.jsp</result>
+		</action>
+		<action name="GETXQNAV" class="T00352ActionBean" method="LoadXQNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">xqNav</param>
+			</result>
+		</action>
+		<action name="FWTDZLFIND" class="T00303ActionBean" method="queryFwtdzldat">
+			<result name="success">/autocomplete.jsp</result>
+		</action>
+		<action name="ZZFIND" class="T00301ActionBean" method="queryZzdat">
+			<result name="success">/autocomplete.jsp</result>
+		</action>
+		<action name="TREET12053DIV" class="T12053ActionBean" method="loadNavigator">
+			<result name="success">/T12053/T12053TREEDIV.jsp</result>
+		</action>
+		<action name="TREET12053" class="T12053ActionBean" method="loadNavigator">
+			<result name="success">/T12053/T12053TREE.jsp</result>
+		</action>
+		<action name="TREET12053EDIT" class="T12053ActionBean" method="loadNavigator">
+			<result name="success">/T12053/T12053TREEEDIT.jsp</result>
+		</action>
+		<action name="GETDDNAV" class="T12053ActionBean" method="LoadDDNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">ddNav</param>
+			</result>
+		</action>
+		<action name="TREET12054DIV" class="T12054ActionBean" method="loadNavigator">
+			<result name="success">/T12054/T12054TREEDIV.jsp</result>
+		</action>
+		<action name="TREET12054" class="T12054ActionBean" method="loadNavigator">
+			<result name="success">/T12054/T12054TREE.jsp</result>
+		</action>
+		<action name="TREET12054EDIT" class="T12054ActionBean" method="loadNavigator">
+			<result name="success">/T12054/T12054TREEEDIT.jsp</result>
+		</action>
+
+		<action name="GETTDDJNAV" class="T12054ActionBean" method="LoadTDDJNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">tddjNav</param>
+			</result>
+		</action>
+
+		<action name="FINDT00303AJAX" class="T00303ActionBean" method="CreateByAjax">
+			<result name="success">/T00303/T00303DIV.jsp</result>
+		</action>
+		<action name="isExistLfinfo" class="T00303ActionBean" method="beforeCreateByAjax">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="FINDLFXX" class="T00303ActionBean" method="findLfxx">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="InitPWD" class="T00002ActionBean" method="InitPWD">
+			<result name="success">/T00002/USER.jsp</result>
+		</action>
+
+		<action name="IsExists" class="T00002ActionBean" method="isUserExists">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="DelSSGX" class="T00009ActionBean" method="deleteByAjax">
+			<result name="success">/T00009/VIEWT00009.jsp</result>
+		</action>
+
+		<action name="DelGBRJL" class="T12082ActionBean" method="deleteByAjax">
+			<result name="success">/T12082/VIEWT12082.jsp</result>
+		</action>
+
+		<action name="DelRJL" class="T10054ActionBean" method="deleteByAjax">
+			<result name="success">/T10054/VIEWT10054.jsp</result>
+		</action>
+
+		<!-- 成本法、收益法土地地址库自动提示功能 -->
+		<action name="FINDTDZL" class="T12002ActionBean" method="queryTDZL">
+			<result name="success">/autocomplete.jsp</result>
+		</action>
+
+		<!-- 成本法、收益法土地地址库自动提示功能 -->
+		<action name="FINDFWZLDZ" class="T12003ActionBean" method="queryFWZLDZ">
+			<result name="success">/autocomplete.jsp</result>
+		</action>
+
+		<!-- 根据土地座落地址得到土地等级 -->
+		<action name="FINDTDDJ" class="T12002ActionBean" method="queryTDDJ">
+			<result name="success" type="json" />
+		</action>
+
+		<!-- 根据房屋座落地址得到地段等级 -->
+		<action name="FINDDDBM" class="T12004ActionBean" method="queryDD">
+			<result name="success" type="json" />
+		</action>
+
+		<!-- 根据企业ID得到该企业一共有多少个土地。多少个房子。多少个明细。 -->
+		<action name="FINDCJCOUNT" class="T12001ActionBean" method="queryCount">
+			<result name="success" type="json" />
+		</action>
+
+		<!-- 根据企业ID得到该企业一共有多少个房子。 -->
+		<action name="FINDSCCOUNT" class="T00301ActionBean" method="queryCount">
+			<result name="success" type="json" />
+		</action>
+
+		<!-- 判断土地使用权证书号是否已经存在 -->
+		<action name="FINDTDSYQBM" class="T12002ActionBean" method="queryTDSYQBM">
+			<result name="success" type="json" />
+		</action>
+
+		<!-- 判断房產证书号是否已经存在 -->
+		<action name="FINDFCZH" class="T12003ActionBean" method="queryFCZH">
+			<result name="success" type="json" />
+		</action>
+
+		<!-- 判断房地产档案图是否已经存在 -->
+		<action name="FINDFDCDAT" class="T00302ActionBean" method="queryFDCDAT">
+			<result name="success" type="json" />
+		</action>
+
+		<!-- 读取“变更类型” -->
+		<action name="FINDUPDATEBG" class="Cz00006ActionBean" method="queryByUpdate">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDDELETEBG" class="Cz00006ActionBean" method="queryByDelete">
+			<result name="success" type="json" />
+		</action>
+		<!-- 根据所在区域读取评税时点 -->
+		<action name="ViewPSSDDDL" class="Pssd9ActionBean" method="getPssdByAjax">
+			<result name="success">/COPYPARAM/PSSDDDL.jsp</result>
+		</action>
+
+		<action name="ViewPSSDDDLNOSZQY" class="Pssd9ActionBean"
+			method="getPssdByAjaxNoSzqy">
+			<result name="success">/COPYPARAM/PSSDDDL.jsp</result>
+		</action>
+		<!-- 根据税收管辖刷新用户组 -->
+		<action name="FlushRolesByUser" class="T00003ActionBean"
+			method="flushRolesByUser">
+			<result name="success">/T00003/ROLE.jsp</result>
+		</action>
+		<!-- 根据税收管辖刷新权限 -->
+		<action name="FlashRightsByUser" class="T00004ActionBean"
+			method="flashRightsByUser">
+			<result name="success">/T00004/RIGHT.jsp</result>
+		</action>
+
+		<!-- 根据所在区域读取检验标准 -->
+		<action name="ViewJYBZDDL" class="PsjgjyCBActionBean" method="getJybzDdl">
+			<result name="success">/CBPSJGJY/JYBZDDL.jsp</result>
+		</action>
+
+		<action name="FINDT00009AJAX" class="T00009ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+
+		<!--成本收益 删除评税结果检验 -->
+		<action name="DELPSJGJYCBSY" class="PsjgjyCBActionBean" method="deleteByAjax">
+			<result name="success" type="json" />
+		</action>
+
+		<!--市场 删除评税结果检验 -->
+		<action name="DELPSJGJYSC" class="PsjgjySCActionBean" method="deleteByAjax">
+			<result name="success" type="json" />
+		</action>
+
+		<!--清空评税结果检验 -->
+		<action name="CLEARPSJGJYCB" class="PsjgjyCBActionBean" method="clearByAjax">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="CLEARPSJGJYSY" class="PsjgjySYActionBean" method="clearByAjax">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="CLEARPSJGJYSC" class="PsjgjySCActionBean" method="clearByAjax">
+			<result name="success" type="json" />
+		</action>
+
+		<!-- 得到用户组下有哪些权限 -->
+		<action name="GETRIGHT" class="T00005ActionBean" method="getRight">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT12053BYDD" class="T12053ActionBean" method="t12053Bydd">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT12054BYTDDJ" class="T12054ActionBean"
+			method="t12054Bytddj">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT00352BYXQ" class="T00352ActionBean" method="t00352Byxq">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT00053BYQTXZ" class="T00053ActionBean"
+			method="t00053Byqtxz">
+			<result name="success" type="json" />
+		</action>
+		<action name="CBPRINTCZ" class="Ss10002ActionBean" method="printcz">
+			<result name="success" type="json" />
+		</action>
+		<action name="SYPRINTCZ" class="Ss20002ActionBean" method="printcz">
+			<result name="success" type="json" />
+		</action>
+		<action name="SCPRINTCZ" class="Ss30002ActionBean" method="printcz">
+			<result name="success" type="json" />
+		</action>
+
+		<!-- 登记信息表 -->
+		<action name="READT00301" class="T00301ActionBean" method="t00301BySwid">
+			<result name="success" type="json">
+				<param name="t00301Bean" />
+			</result>
+		</action>
+
+		<!-- 根据地址别名查询地址 -->
+		<action name="READFWDZ" class="T00303ActionBean" method="findFwdz">
+			<result name="success" type="json">
+				<param name="root">v00303Bean</param>
+			</result>
+		</action>
+		<action name="CREATEBZF" class="T00351ActionBean" method="createBzf">
+			<result name="success" type="json" />
+		</action>
+		<action name="IMPORTBZF" class="T00351ActionBean" method="importBzf">
+			<result name="success" type="json" />
+		</action>
+
+		<!-- 根据 所在区域 和 估价时点 获得 无价格小区和有价格小区 -->
+		<action name="TREET00351CSWDIV" class="T00351CsDiffActionBean"
+			method="loadNavigatorW">
+			<result name="success">/T00351CS/T00351CSTREEDIV.jsp</result>
+		</action>
+		<action name="TREET00351CSWDIV1" class="T00351CsDiffActionBean"
+			method="loadNavigatorW">
+			<result name="success">/T00351CS/T00351CSTREEDIV1.jsp</result>
+		</action>
+		<action name="TREET00351CSW" class="T00351CsDiffActionBean"
+			method="loadNavigatorW">
+			<result name="success">/T00351CS/T00351CSTREE.jsp</result>
+		</action>
+		<action name="GETXQCSWNAV" class="T00351CsDiffActionBean"
+			method="LoadXQNavW">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">xqNav</param>
+			</result>
+		</action>
+
+		<action name="TREET00351CSYDIV" class="T00351CsDiffActionBean"
+			method="loadNavigatorY">
+			<result name="success">/T00351CS/T00351CSTREEDIV.jsp</result>
+		</action>
+		<action name="TREET00351CSY" class="T00351CsDiffActionBean"
+			method="loadNavigatorY">
+			<result name="success">/T00351CS/T00351CSTREE.jsp</result>
+		</action>
+		<action name="GETXQCSYNAV" class="T00351CsDiffActionBean"
+			method="LoadXQNavY">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">xqNav</param>
+			</result>
+		</action>
+
+		<!-- 证件有效位数验证 -->
+		<action name="ISYXWS" class="T00055ActionBean" method="isYxws">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT00055AJAX" class="T00055ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+
+		<!-- 读取大区代码 -->
+		<action name="LOADPARENTDM" class="T00352ActionBean" method="LoadZTByXqdm">
+			<result name="success" type="json" />
+		</action>
+		<!-- 小区自动完成 -->
+		<action name="XQNMFIND" class="T00352ActionBean" method="queryXQNM">
+			<result name="success">/autocomplete.jsp</result>
+		</action>
+		<!-- 根据小区名称查询小区信息 -->
+		<action name="LOADXQIFBYXQNM" class="T00352ActionBean" method="LoadXQByXqnm">
+			<result name="success" type="json" />
+		</action>
+		<!-- 感觉所在区域读取父类型 -->
+		<action name="LOADPARENTBYSZQY" class="T00359ActionBean" method="LoadParentIds">
+			<result name="success" type="json" />
+		</action>
+
+		<!-- 判断房产证号是否存在 -->
+		<action name="ISEXISTFCZH" class="T00302ActionBean" method="isExistFczh">
+			<result name="success" type="json" />
+		</action>
+		<!-- 根据丘地号取得小区 -->
+		<action name="FINDXQBYQDH" class="T00352aActionBean" method="findXQbyQDH">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT00367AJAX" class="T00367ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT02063AJAX" class="T02063ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDT02064AJAX" class="T02064ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+
+		<!-- 读取树节点【税收管辖】 -->
+		<action name="TREEssgx" class="TREE00000ActionBean" method="readSsgxNode">
+			<result name="success" type="json">
+				<param name="root">treeNodes</param>
+			</result>
+		</action>
+
+		<!-- 读取树节点【所在区域】 -->
+		<action name="TREEszqy" class="TREE00000ActionBean" method="readSzqyNode">
+			<result name="success" type="json">
+				<param name="root">treeNodes</param>
+			</result>
+		</action>
+		<action name="TREEszqySy" class="TREE00000ActionBean" method="readSzqyNodeSy">
+			<result name="success" type="json">
+				<param name="root">treeNodes</param>
+			</result>
+		</action>
+		<action name="FINDT02060AJAX" class="T02060ActionBean" method="createByAjax">
+			<result name="success" type="json" />
+		</action>
+
+		<!-- 日期时间限制标准房生成按钮是否可用 -->
+		<action name="ISBTN" class="T00351ActionBean" method="isBtnEnable">
+			<result name="success" type="json">
+				<param name="root">btnFlag</param>
+			</result>
+		</action>
+		
+		<action name="TREET02050DIV" class="T02050ActionBean" method="loadNavigator">
+			<result name="success">/T02050/T02050TREEDIV.jsp</result>
+		</action>
+		<action name="TREET02050" class="T02050ActionBean" method="loadNavigator">
+			<result name="success">/T02050/T02050TREE.jsp</result>
+		</action>
+
+		<!-- 商业:判断房产证号是否存在 -->
+		<action name="ISEXISTFCZHSY" class="T02002ActionBean" method="isExistFczh">
+			<result name="success" type="json" />
+		</action>
+		<!-- 商业:根据丘地号取得小区 -->
+		<action name="FINDXQBYQDHSY" class="T02050aActionBean" method="findXQbyQDH">
+			<result name="success" type="json" />
+		</action>
+		<!-- 商业：所在区域读取父类型 -->
+		<action name="LOADPARENTBYSZQYSY" class="T02053ActionBean" method="LoadParentIds">
+			<result name="success" type="json" />
+		</action>
+		<action name="GETXQNAVSY" class="T02050ActionBean" method="LoadXQNav">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">xqNav</param>
+			</result>
+		</action>		
+		<!-- 商业：读取大区代码 -->
+		<action name="LOADPARENTDMSY" class="T02050ActionBean" method="LoadZTByXqdm">
+			<result name="success" type="json" />
+		</action>		
+		<!-- 商业：小区自动完成 -->
+		<action name="XQNMFINDSY" class="T02050ActionBean" method="queryXQNM">
+			<result name="success">/autocomplete.jsp</result>
+		</action>		
+		<!-- 商业：根据小区名称查询小区信息 -->
+		<action name="LOADXQIFBYXQNMSY" class="T02050ActionBean" method="LoadXQByXqnm">
+			<result name="success" type="json" />
+		</action>		
+		
+		<!-- 商业：讀取审核未通过的原因 -->
+		<action name="VIEWT02084" class="T02084ActionBean">
+			<result name="success" type="json" />
+		</action>		
+			
+		<!-- 工业：讀取审核未通过的原因 -->
+		<action name="VIEWT10084" class="T10084ActionBean">
+			<result name="success" type="json" />
+		</action>	
+	</package>
+
+</struts>

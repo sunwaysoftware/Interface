@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.custom.i18n.resources" value="messageResource" />
+	<constant name="struts.action.extension" value="action,do" />
+	<constant name="struts.multipart.maxSize" value="1048576000" />
+	<constant name="struts.multipart.saveDir" value="/tmp" />
+	
+	<package name="AppDefault" extends="struts-default">
+
+		<result-types>
+			<result-type name="jasper" class="org.apache.struts2.views.jasperreports.JasperReportsResult" />
+			<result-type name="chart" class="org.apache.struts2.dispatcher.ChartResult"></result-type>
+			<result-type name="json" class="org.apache.struts2.json.JSONResult"/>
+		</result-types>
+		
+		<!-- 定义拦截器 -->
+		<interceptors>
+			<interceptor name="loginInterceptor" class="com.sunway.interceptor.LoginInterceptor" />
+			<interceptor-stack name="myInterceptor">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="timer" />
+				<interceptor-ref name="loginInterceptor" />
+			</interceptor-stack>
+		</interceptors>
+		
+		<!-- Action的拦截器 -->
+		<default-interceptor-ref name="myInterceptor" />
+		
+		<!-- 全局Result -->
+		<global-results>
+			<result name="login" type="redirect">/timeout.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="timeout">/timeout.jsp</result>
+			<result name="none" type="redirectAction">/RESETSSGX</result>
+		</global-results>
+
+	</package>
+
+	<package name="AppLogin" extends="struts-default">
+		<!-- 用户登陆 -->		
+		<action name="LOGIN" class="LogManageActionBean" method="login">
+			<result name="input">/default.jsp</result>
+			<result name="success" type="redirectAction">TOPSSGXLIST</result>
+		</action>
+
+		<!-- 
+		<action name="SETSESSION" class="LogManageActionBean" method="setSession">
+			<result name="input">/ssgx.jsp</result>
+			<result name="success" type="redirect">/MainFrame.jsp</result>
+		</action>
+		 -->
+		<action name="FLASHSESSION" class="LogManageActionBean" method="flash">
+			<result name="input">/default.jsp</result>
+			<result name="success">/MainFrame.jsp</result>
+		</action>
+		<action name="RESETSSGX" class="LogManageActionBean" method="reSetSSGX">
+			<result name="input">/ssgx.jsp</result>
+			<result name="success">/ssgx.jsp</result>
+		</action>
+		<action name="TOPSSGXLIST" class="LogManageActionBean" method="getTopSSGXList">
+			<result name="input">/default.jsp</result>
+			<result name="success">/MainFrame.jsp</result>
+		</action>	
+		<action name="LOGOUT" class="LogManageActionBean" method="logout">
+			<result name="input">/default.jsp</result>
+			<result name="success" type="redirect">/default.jsp</result>
+		</action>	
+		
+		<action name="RANDOM" class="RandomActionBean">
+			<result name="success" type="stream">
+				<param name="contentType">image/png</param>
+	            <param name="inputName">inputStream</param>
+			</result>
+		</action>			
+				
+	</package>
+
+	<include file="tree.xml"></include>
+	<include file="ajax.xml"></include>
+	<!-- 維護 -->
+	<include file="xtwh.xml"></include>
+	<!-- 採集 -->
+	<include file="sjcj.xml"></include>
+	<!-- 審核 -->
+	<include file="sjsh.xml"></include>
+	<!-- 評估 -->
+	<include file="pg.xml"></include>
+	<!-- 評稅結果處理 -->
+	<include file="psjgcl.xml"></include>
+	<!-- Main -->
+	<include file="main.xml"></include>
+	<!-- 报表 -->
+	<include file="report.xml"></include>
+	<!-- 对比分析 -->
+	<include file="sjdbfx.xml"></include>
+	<!-- 数据查询 -->
+	<include file="sjcx.xml"></include>
+	<!-- 评税结果检验 -->
+	<include file="psjgjy.xml"></include>
+	<!-- 备份数据 -->
+	<include file="bfsj.xml"></include>
+</struts>

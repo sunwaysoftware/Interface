@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- MAIN -->
+	<package name="MAIN" extends="AppDefault" namespace="/main">
+	
+		<!-- ************************* 首页面URL跳转配置 ***************************** -->
+		<action name="HOMEFrame" class="MainFrameActionBean" method="home">
+			<result name="success">/main/MainHOMEFrame.jsp</result>
+		</action>
+
+		<action name="FDCPGFrame" class="MainFrameActionBean" method="fdcpg">
+			<result name="success">/main/MainFDCPGFrame.jsp</result>
+		</action>
+		
+		<action name="PSJGCLFrame" class="MainFrameActionBean" method="psjgcl">
+			<result name="success">/main/MainPSJGCLFrame.jsp</result>
+		</action>
+		
+		<action name="PSJGJYFrame" class="MainFrameActionBean" method="psjgjy">
+			<result name="success">/main/MainPSJGJYFrame.jsp</result>
+		</action>
+		
+		<action name="SJCXFrame" class="MainFrameActionBean" method="sjcx">
+			<result name="success">/main/MainSJCXFrame.jsp</result>
+		</action>
+		
+		<action name="SJDBFXFrame" class="MainFrameActionBean" method="sjdbfx">
+			<result name="success">/main/MainSJDBFXFrame.jsp</result>
+		</action>
+		
+		<action name="SJGLFrame" class="MainFrameActionBean" method="sjgl">
+			<result name="success">/main/MainSJGLFrame.jsp</result>
+		</action>
+
+		<action name="TJBBFrame" class="MainFrameActionBean" method="tjbb">
+			<result name="success">/main/MainTJBBFrame.jsp</result>
+		</action>
+		
+		<action name="XTWHFrame" class="MainFrameActionBean" method="xtwh">
+			<result name="success">/main/MainXTWHFrame.jsp</result>
+		</action>
+		
+		<action name="DTDHFrame" class="MainFrameActionBean" method="dtdh">
+			<result name="success">/main/MainDTDHFrame.jsp</result>
+		</action>
+
+		<action name="ZHTJFrame" class="MainFrameActionBean" method="zhtj">
+			<result name="success">/main/MainZHTJFrame.jsp</result>
+		</action>
+		<!-- ***************************** left menu ******************************* -->
+
+		<action name="FDCPGLeft" class="MainFrameActionBean" method="fdcpgLeft">
+			<result name="success">/main/MainFDCPG_left.jsp</result>
+		</action>
+		
+		<action name="PSJGCLLeft" class="MainFrameActionBean" method="psjgclLeft">
+			<result name="success">/main/MainPSJGCL_left.jsp</result>
+		</action>
+		
+		<action name="PSJGJYLeft" class="MainFrameActionBean" method="psjgjyLeft">
+			<result name="success">/main/MainPSJGJY_left.jsp</result>
+		</action>
+		
+		<action name="SJCXLeft" class="MainFrameActionBean" method="sjcxLeft">
+			<result name="success">/main/MainSJCX_left.jsp</result>
+		</action>
+		
+		<action name="SJDBFXLeft" class="MainFrameActionBean" method="sjdbfxLeft">
+			<result name="success">/main/MainSJDBFX_left.jsp</result>
+		</action>
+		
+		<action name="SJGLLeft" class="MainFrameActionBean" method="sjglLeft">
+			<result name="success">/main/MainSJGL_left.jsp</result>
+		</action>
+
+		<action name="TJBBLeft" class="MainFrameActionBean" method="tjbbLeft">
+			<result name="success">/main/MainTJBB_left.jsp</result>
+		</action>
+		
+		<action name="XTWHLeft" class="MainFrameActionBean" method="xtwhLeft">
+			<result name="success">/main/MainXTWH_left.jsp</result>
+		</action>
+		
+		<action name="ZHTJLeft" class="MainFrameActionBean" method="zhtjLeft">
+			<result name="success">/main/MainZHTJ_left.jsp</result>
+		</action>
+		
+		<!-- ***************************** Main menu ******************************* -->
+		<action name="HOMEMAIN" class="MainFrameActionBean" method="homeMain">
+			<result name="success">/main/MainHOME_Main.jsp</result>
+		</action>
+
+		<action name="FDCPGMAIN" class="MainFrameActionBean" method="fdcpgMain">
+			<result name="success">/main/MainFDCPG_Main.jsp</result>
+		</action>
+		
+		<action name="PSJGCLMAIN" class="MainFrameActionBean" method="psjgclMain">
+			<result name="success">/main/MainPSJGCL_Main.jsp</result>
+		</action>
+		
+		<action name="PSJGJYMAIN" class="MainFrameActionBean" method="psjgjyMain">
+			<result name="success">/main/MainPSJGJY_Main.jsp</result>
+		</action>
+		
+		<action name="SJCXMAIN" class="MainFrameActionBean" method="sjcxMain">
+			<result name="success">/main/MainSJCX_Main.jsp</result>
+		</action>
+		
+		<action name="SJDBFXMAIN" class="MainFrameActionBean" method="sjdbfxMain">
+			<result name="success">/main/MainSJDBFX_Main.jsp</result>
+		</action>
+		
+		<action name="SJGLMAIN" class="MainFrameActionBean" method="sjglMain">
+			<result name="success">/main/MainSJGL_Main.jsp</result>
+		</action>
+
+		<action name="TJBBMAIN" class="MainFrameActionBean" method="tjbbMain">
+			<result name="success">/main/MainTJBB_Main.jsp</result>
+		</action>
+		
+		<action name="XTWHMAIN" class="MainFrameActionBean" method="xtwhMain">
+			<result name="success">/main/MainXTWH_Main.jsp</result>
+		</action>	
+		
+		<action name="ZHTJMAIN" class="MainFrameActionBean" method="zhtjMain">
+			<result name="success">/main/MainZHTJ_Main.jsp</result>
+		</action>		
+	</package>
+
+</struts>

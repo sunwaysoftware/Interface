@@ -1,0 +1,849 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- ****************** DAO ****************** -->
+
+	<bean id="LogManageActionBean" class="com.sunway.action.LogManageAction" scope="request">
+		<property name="t00002Service" ref="T00002ServiceBean"/>
+		<property name="t00001Service" ref="T00001ServiceBean"/>
+	</bean>
+
+	<bean id="T00001ActionBean" class="com.sunway.action.Pgt00001Action" scope="request">
+		<property name="t00001Service" ref="T00001ServiceBean"/>
+	</bean>
+    <bean id="TFC001ActionBean" class="com.sunway.action.PgtFc001Action" scope="request">
+		<property name="tFc001Service" ref="TFC001ServiceBean"/>
+		<property name="t00004Service" ref="T00004ServiceBean"/>
+	</bean>
+	<bean id="MainFrameActionBean" class="com.sunway.action.MainFrameAction" scope="request">
+	</bean>
+
+	<bean id="T00002ActionBean" class="com.sunway.action.Pgt00002Action" scope="request">
+		<property name="t00002Service" ref="T00002ServiceBean"/>
+	</bean>
+
+	<bean id="T00003ActionBean" class="com.sunway.action.Pgt00003Action" scope="request">
+		<property name="t00003Service" ref="T00003ServiceBean"/>
+	</bean>
+
+	<bean id="T00004ActionBean" class="com.sunway.action.Pgt00004Action" scope="request">
+		<property name="t00004Service" ref="T00004ServiceBean"/>
+	</bean>
+
+	<bean id="T00005ActionBean" class="com.sunway.action.Pgt00005Action" scope="request">
+		<property name="t00005Service" ref="T00005ServiceBean"/>
+	</bean>
+
+	<bean id="T00009ActionBean" class="com.sunway.action.Pgt00009Action" scope="request">
+		<property name="t00009Service" ref="T00009ServiceBean"/>
+		<property name="t00002Service" ref="T00002ServiceBean"/>
+	</bean>
+
+	<bean id="T00012ActionBean" class="com.sunway.action.Pgt00012Action" scope="request">
+		<property name="t00012Service" ref="T00012ServiceBean"/>
+	</bean>
+
+	<bean id="T00013ActionBean" class="com.sunway.action.Pgt00013Action" scope="request">
+		<property name="t00013Service" ref="T00013ServiceBean"/>
+		<property name="cz00001Service" ref="Cz00001ServiceBean"/>
+	</bean>
+
+	<bean id="T12081ActionBean" class="com.sunway.action.Pgt12081Action" scope="request">
+		<property name="t12081Service" ref="T12081ServiceBean"/>
+	</bean>
+
+	<bean id="T12082ActionBean" class="com.sunway.action.Pgt12082Action" scope="request">
+		<property name="t12082Service" ref="T12082ServiceBean"/>
+	</bean>
+
+	<bean id="T12083ActionBean" class="com.sunway.action.Pgt12083Action" scope="request">
+		<property name="t12083Service" ref="T12083ServiceBean"/>
+	</bean>
+
+	<bean id="T12085ActionBean" class="com.sunway.action.Pgt12085Action" scope="request">
+		<property name="t12085Service" ref="T12085ServiceBean"/>
+	</bean>
+
+	<bean id="T00301ActionBean" class="com.sunway.action.Pgt00301Action" scope="request">
+		<property name="t00301Service" ref="T00301ServiceBean"/>
+	</bean>
+
+	<bean id="T12001ActionBean" class="com.sunway.action.Pgt12001Action" scope="request">
+		<property name="t12001Service" ref="T12001ServiceBean"/>
+	</bean>
+
+	<bean id="T12006ActionBean" class="com.sunway.action.Pgt12006Action" scope="request">
+		<property name="t12006Service" ref="T12006ServiceBean"/>
+	</bean>
+
+	<bean id="T10051ActionBean" class="com.sunway.action.Pgt10051Action" scope="request">
+		<property name="t10051Service" ref="T10051ServiceBean"/>
+	</bean>
+
+	<bean id="T10052ActionBean" class="com.sunway.action.Pgt10052Action" scope="request">
+		<property name="t10052Service" ref="T10052ServiceBean"/>
+	</bean>
+
+	<bean id="Pssd9ActionBean" class="com.sunway.action.Pssd9Action" scope="request">
+		<property name="pssd9Service" ref="Pssd9ServiceBean"/>
+	</bean>
+
+	<bean id="T10053ActionBean" class="com.sunway.action.Pgt10053Action" scope="request">
+		<property name="t10053Service" ref="T10053ServiceBean"/>
+	</bean>
+
+	<bean id="T10054ActionBean" class="com.sunway.action.Pgt10054Action" scope="request">
+		<property name="t10054Service" ref="T10054ServiceBean"/>
+	</bean>
+
+	<bean id="T10055ActionBean" class="com.sunway.action.Pgt10055Action" scope="request">
+		<property name="t10055Service" ref="T10055ServiceBean"/>
+	</bean>
+
+	<bean id="T10056ActionBean" class="com.sunway.action.Pgt10056Action" scope="request">
+		<property name="t10056Service" ref="T10056ServiceBean"/>
+	</bean>
+
+	<bean id="T10057ActionBean" class="com.sunway.action.Pgt10057Action" scope="request">
+		<property name="t10057Service" ref="T10057ServiceBean"/>
+	</bean>
+
+	<bean id="T02051ActionBean" class="com.sunway.action.Pgt02051Action" scope="request">
+		<property name="t02051Service" ref="T02051ServiceBean"/>
+	</bean>
+
+	<bean id="T02052ActionBean" class="com.sunway.action.Pgt02052Action" scope="request">
+		<property name="t02052Service" ref="T02052ServiceBean"/>
+	</bean>
+
+	<bean id="T02053ActionBean" class="com.sunway.action.Pgt02053Action" scope="request">
+		<property name="t02053Service" ref="T02053ServiceBean"/>
+	</bean>
+
+	<bean id="T02054ActionBean" class="com.sunway.action.Pgt02054Action" scope="request">
+		<property name="t02054Service" ref="T02054ServiceBean"/>
+	</bean>
+
+	<bean id="T02055ActionBean" class="com.sunway.action.Pgt02055Action" scope="request">
+		<property name="t02055Service" ref="T02055ServiceBean"/>
+	</bean>
+
+	<bean id="T02056ActionBean" class="com.sunway.action.Pgt02056Action" scope="request">
+		<property name="t02056Service" ref="T02056ServiceBean"/>
+	</bean>
+
+	<bean id="T02057ActionBean" class="com.sunway.action.Pgt02057Action" scope="request">
+		<property name="t02057Service" ref="T02057ServiceBean"/>
+	</bean>
+
+	<bean id="T02058ActionBean" class="com.sunway.action.Pgt02058Action" scope="request">
+		<property name="t02058Service" ref="T02058ServiceBean"/>
+	</bean>
+
+	<bean id="T02059ActionBean" class="com.sunway.action.Pgt02059Action" scope="request">
+		<property name="t02059Service" ref="T02059ServiceBean"/>
+	</bean>
+
+	<bean id="T12002ActionBean" class="com.sunway.action.Pgt12002Action" scope="request">
+		<property name="t12001Service" ref="T12001ServiceBean" />
+		<property name="t12002Service" ref="T12002ServiceBean"/>
+		<property name="t12002eService" ref="T12002eServiceBean"/>
+		<property name="t12002bService" ref="T12002bServiceBean"/>
+	</bean>
+
+	<bean id="T00051ActionBean" class="com.sunway.action.Pgt00051Action" scope="request">
+		<property name="t00051Service" ref="T00051ServiceBean"/>
+	</bean>
+
+	<bean id="T00052ActionBean" class="com.sunway.action.Pgt00052Action" scope="request">
+		<property name="t00052Service" ref="T00052ServiceBean"/>
+	</bean>
+
+	<bean id="T12002FActionBean" class="com.sunway.action.Pgt12002fAction" scope="request">
+		<property name="t12002fService" ref="T12002fServiceBean"/>
+	</bean>
+
+	<bean id="T00053ActionBean" class="com.sunway.action.Pgt00053Action" scope="request">
+		<property name="t00053Service" ref="T00053ServiceBean"/>
+	</bean>
+
+	<bean id="T00054ActionBean" class="com.sunway.action.Pgt00054Action" scope="request">
+		<property name="t00054Service" ref="T00054ServiceBean"/>
+	</bean>
+
+	<bean id="T00055ActionBean" class="com.sunway.action.Pgt00055Action" scope="request">
+		<property name="t00055Service" ref="T00055ServiceBean"/>
+	</bean>
+	
+	<bean id="T12002BActionBean" class="com.sunway.action.Pgt12002bAction" scope="request">
+		<property name="t12002bService" ref="T12002bServiceBean"/>
+	</bean>
+
+	<bean id="T12002CActionBean" class="com.sunway.action.Pgt12002cAction" scope="request">
+		<property name="t12002cService" ref="T12002cServiceBean"/>
+	</bean>
+
+	<bean id="T12003ActionBean" class="com.sunway.action.Pgt12003Action" scope="request">
+		<property name="t12002Service" ref="T12002ServiceBean"/>
+		<property name="t12003Service" ref="T12003ServiceBean"/>
+		<property name="t12003bService" ref="T12003bServiceBean"/>
+	</bean>
+
+	<bean id="T12003BActionBean" class="com.sunway.action.Pgt12003bAction" scope="request">
+		<property name="t12003bService" ref="T12003bServiceBean"/>
+	</bean>
+
+	<bean id="T12003CActionBean" class="com.sunway.action.Pgt12003cAction" scope="request">
+		<property name="t12003cService" ref="T12003cServiceBean"/>
+	</bean>
+
+	<bean id="T12003FActionBean" class="com.sunway.action.Pgt12003fAction" scope="request">
+		<property name="t12003fService" ref="T12003fServiceBean"/>
+	</bean>
+
+	<bean id="T00352ActionBean" class="com.sunway.action.Pgt00352Action" scope="request">
+		<property name="t00352Service" ref="T00352ServiceBean"/>
+	</bean>
+	
+	<bean id="T00353ActionBean" class="com.sunway.action.Pgt00353Action" scope="request">
+		<property name="t00001Service" ref="T00001ServiceBean"/>
+		<property name="t00353Service" ref="T00353ServiceBean"/>
+	</bean>
+
+	<bean id="T00354ActionBean" class="com.sunway.action.Pgt00354Action" scope="request">
+		<property name="t00354Service" ref="T00354ServiceBean"/>
+	</bean>
+
+	<bean id="T00355ActionBean" class="com.sunway.action.Pgt00355Action" scope="request">
+		<property name="t00355Service" ref="T00355ServiceBean"/>
+	</bean>
+	
+	<bean id="T00321ActionBean" class="com.sunway.action.Pgt00321Action" scope="request">
+		<property name="t00321Service" ref="T00321ServiceBean"/>
+	</bean>
+	
+	<bean id="T00322ActionBean" class="com.sunway.action.Pgt00322Action" scope="request">
+		<property name="t00322Service" ref="T00322ServiceBean"/>
+	</bean>
+	
+	<bean id="T00323ActionBean" class="com.sunway.action.Pgt00323Action" scope="request">
+		<property name="t00323Service" ref="T00323ServiceBean"/>
+	</bean>
+
+	<bean id="T00356ActionBean" class="com.sunway.action.Pgt00356Action" scope="request">
+		<property name="t00356Service" ref="T00356ServiceBean"/>
+	</bean>
+
+	<bean id="T00359ActionBean" class="com.sunway.action.Pgt00359Action" scope="request">
+		<property name="t00359Service" ref="T00359ServiceBean"/>
+		<property name="t00001Service" ref="T00001ServiceBean"/>
+	</bean>
+	
+	<bean id="T12004ActionBean" class="com.sunway.action.Pgt12004Action" scope="request">
+		<property name="t12003Service" ref="T12003ServiceBean"/>
+		<property name="t12004Service" ref="T12004ServiceBean"/>
+		<property name="t12004dService" ref="T12004dServiceBean"/>
+		<property name="t12004eService" ref="T12004eServiceBean"/>
+		<property name="t12004bService" ref="T12004bServiceBean"/>
+	</bean>
+	
+	<bean id="T00364ActionBean" class="com.sunway.action.Pgt00364Action" scope="request">
+		<property name="t00364Service" ref="T00364ServiceBean"/>
+	</bean>
+	
+	<bean id="T00365ActionBean" class="com.sunway.action.Pgt00365Action" scope="request">
+		<property name="t00365Service" ref="T00365ServiceBean"/>
+	</bean>
+		
+	<bean id="T12004BActionBean" class="com.sunway.action.Pgt12004bAction" scope="request">
+		<property name="t12004bService" ref="T12004bServiceBean"/>
+	</bean>
+
+	<bean id="T12004CActionBean" class="com.sunway.action.Pgt12004cAction" scope="request">
+		<property name="t12004cService" ref="T12004cServiceBean"/>
+	</bean>
+
+	<bean id="T12004FActionBean" class="com.sunway.action.Pgt12004fAction" scope="request">
+		<property name="t12004fService" ref="T12004fServiceBean"/>
+	</bean>
+
+	<bean id="T00303ActionBean" class="com.sunway.action.Pgt00303Action" scope="request">
+		<property name="t00303Service" ref="T00303ServiceBean"/>
+	</bean>
+
+	<bean id="Sh10001ActionBean" class="com.sunway.action.Sh10001Action" scope="request">
+		<property name="sh10001Service" ref="Sh10001ServiceBean"/>
+	</bean>
+
+	<bean id="T12005yActionBean" class="com.sunway.action.Pgt12005yAction" scope="request">
+		<property name="t12005yService" ref="T12005yServiceBean"/>
+	</bean>
+	<bean id="T12005wActionBean" class="com.sunway.action.Pgt12005wAction" scope="request">
+		<property name="t12005wService" ref="T12005wServiceBean"/>
+	</bean>
+
+	<bean id="T00305wActionBean" class="com.sunway.action.Pgt00305wAction" scope="request">
+		<property name="t00305wService" ref="T00305wServiceBean"/>
+	</bean>
+
+	<bean id="T00305yActionBean" class="com.sunway.action.Pgt00305yAction" scope="request">
+		<property name="t00305yService" ref="T00305yServiceBean"/>
+	</bean>
+	
+	<bean id="T00306ActionBean" class="com.sunway.action.Pgt00306Action" scope="request">
+		<property name="t00306Service" ref="T00306ServiceBean"/>
+		<property name="t00320Service" ref="T00320ServiceBean"/>
+	</bean>
+
+	<bean id="T12051ActionBean" class="com.sunway.action.Pgt12051Action" scope="request">
+		<property name="t12051Service" ref="T12051ServiceBean"/>
+	</bean>
+
+	<bean id="T12052ActionBean" class="com.sunway.action.Pgt12052Action" scope="request">
+		<property name="t12052Service" ref="T12052ServiceBean"/>
+	</bean>
+
+	<bean id="Sh10002ActionBean" class="com.sunway.action.Sh10002Action" scope="request">
+		<property name="sh10002Service" ref="Sh10002ServiceBean"/>
+	</bean>
+
+	<bean id="T12084ActionBean" class="com.sunway.action.Pgt12084Action" scope="request">
+		<property name="t12084Service" ref="T12084ServiceBean"/>
+	</bean>
+
+	<bean id="Sh20001ActionBean" class="com.sunway.action.Sh20001Action" scope="request">
+		<property name="sh20001Service" ref="Sh20001ServiceBean"/>
+	</bean>
+
+	<bean id="Sh20002ActionBean" class="com.sunway.action.Sh20002Action" scope="request">
+		<property name="sh20002Service" ref="Sh20002ServiceBean"/>
+	</bean>
+
+	<bean id="T12053ActionBean" class="com.sunway.action.Pgt12053Action" scope="request">
+		<property name="t12053Service" ref="T12053ServiceBean"/>
+	</bean>
+
+	<bean id="T12054ActionBean" class="com.sunway.action.Pgt12054Action" scope="request">
+		<property name="t12054Service" ref="T12054ServiceBean"/>
+	</bean>
+
+	<bean id="T12055ActionBean" class="com.sunway.action.Pgt12055Action" scope="request">
+		<property name="t12055Service" ref="T12055ServiceBean"/>
+	</bean>
+
+	<bean id="T00302ActionBean" class="com.sunway.action.Pgt00302Action" scope="request">
+		<property name="t00302Service" ref="T00302ServiceBean"/>
+		<property name="t00303Service" ref="T00303ServiceBean"/>
+		<property name="t00302eService" ref="T00302eServiceBean"/>
+		<property name="t00301Service" ref="T00301ServiceBean"/>
+	</bean>
+	
+	<bean id="T00320ActionBean" class="com.sunway.action.Pgt00320Action" scope="request">
+		<property name="t00320Service" ref="T00320ServiceBean" />
+	</bean>
+	
+	<bean id="T00304ActionBean" class="com.sunway.action.Pgt00304Action" scope="request">
+		<property name="t00304Service" ref="T00304ServiceBean"/>
+	</bean>
+
+	<bean id="Sh30001ActionBean" class="com.sunway.action.Sh30001Action" scope="request">
+		<property name="sh30001Service" ref="Sh30001ServiceBean"/>
+	</bean>
+
+	<bean id="Sh30002ActionBean" class="com.sunway.action.Sh30002Action" scope="request">
+		<property name="sh30002Service" ref="Sh30002ServiceBean"/>
+	</bean>
+
+	<bean id="T00384ActionBean" class="com.sunway.action.Pgt00384Action" scope="request">
+		<property name="t00384Service" ref="T00384ServiceBean"/>
+	</bean>
+
+	<bean id="Pg10001ActionBean" class="com.sunway.action.Pg10001Action" scope="request">
+		<property name="pg10001Service" ref="Pg10001ServiceBean"/>
+	</bean>
+
+	<bean id="Pg10002ActionBean" class="com.sunway.action.Pg10002Action" scope="request">
+		<property name="pg10002Service" ref="Pg10002ServiceBean"/>
+	</bean>
+
+	<bean id="Pg20001ActionBean" class="com.sunway.action.Pg20001Action" scope="request">
+		<property name="pg20001Service" ref="Pg20001ServiceBean"/>
+	</bean>
+
+	<bean id="Pg20002ActionBean" class="com.sunway.action.Pg20002Action" scope="request">
+		<property name="pg20002Service" ref="Pg20002ServiceBean"/>
+	</bean>
+
+	<bean id="Pg30001ActionBean" class="com.sunway.action.Pg30001Action" scope="request">
+		<property name="pg30001Service" ref="Pg30001ServiceBean"/>
+	</bean>
+
+	<bean id="Pg30002ActionBean" class="com.sunway.action.Pg30002Action" scope="request">
+		<property name="pg30002Service" ref="Pg30002ServiceBean"/>
+	</bean>
+
+	<bean id="T00351ActionBean" class="com.sunway.action.Pgt00351Action" scope="request">
+		<property name="t00351Service" ref="T00351ServiceBean"/>
+		<property name="t00303Service" ref="T00303ServiceBean"/>
+		<property name="t00351eService" ref="T00351eServiceBean"/>
+		<property name="t00351aService" ref="T00351aServiceBean"/>
+	</bean>
+
+	<bean id="T00351aActionBean" class="com.sunway.action.Pgt00351aAction" scope="request">
+		<property name="t00351aService" ref="T00351aServiceBean"/>
+	</bean>
+
+	<bean id="Pg10001gActionBean" class="com.sunway.action.Pg10001gAction" scope="request">
+		<property name="g10001Service" ref="Pg10001gServiceBean"/>
+	</bean>
+
+	<bean id="T10031ActionBean" class="com.sunway.action.Pgt10031Action" scope="request">
+		<property name="t10031Service" ref="T10031ServiceBean"/>
+		<property name="t10031aService" ref="T10031aServiceBean"/>
+	</bean>
+
+	<bean id="T00357ActionBean" class="com.sunway.action.Pgt00357Action" scope="request">
+		<property name="t00357Service" ref="T00357ServiceBean"/>
+		<property name="t00303Service" ref="T00303ServiceBean"/>
+		<property name="t00357eService" ref="T00357eServiceBean"/>
+	</bean>
+
+	<bean id="T10033ActionBean" class="com.sunway.action.Pgt10033Action" scope="request">
+		<property name="t10033Service" ref="T10033ServiceBean"/>
+		<property name="t10032Service" ref="T10032ServiceBean"/>
+		<property name="v10033aService" ref="V10033aServiceBean"/>
+	</bean>
+
+	<bean id="Cz00042ActionBean" class="com.sunway.action.Cz00042Action" scope="request">
+		<property name="cz00042Service" ref="Cz00042ServiceBean"/>
+	</bean>
+
+	<bean id="Pg20001gActionBean" class="com.sunway.action.Pg20001gAction" scope="request">
+		<property name="g20001Service" ref="Pg20001gServiceBean"/>
+	</bean>
+
+	<bean id="T02031ActionBean" class="com.sunway.action.Pgt02031Action" scope="request">
+		<property name="t02031Service" ref="T02031ServiceBean"/>
+		<property name="t02031aService" ref="T02031aServiceBean"/>
+	</bean>
+
+	<bean id="T02033ActionBean" class="com.sunway.action.Pgt02033Action" scope="request">
+		<property name="t02033Service" ref="T02033ServiceBean"/>
+		<property name="t02032Service" ref="T02032ServiceBean"/>
+		<property name="v02033aService" ref="V02033aServiceBean"/>
+	</bean>
+
+	<bean id="Pg30001gActionBean" class="com.sunway.action.Pg30001gAction" scope="request">
+		<property name="g30001Service" ref="Pg30001gServiceBean"/>
+		<property name="t00332Service" ref="T00332ServiceBean"/>
+		<property name="t00384Service" ref="T00384ServiceBean"/>
+		<property name="t00331Service" ref="T00331ServiceBean"/>
+	</bean>
+
+	<bean id="T00331ActionBean" class="com.sunway.action.Pgt00331Action" scope="request">
+		<property name="t00331Service" ref="T00331ServiceBean"/>
+		<property name="t00334Service" ref="T00334ServiceBean"/>
+	</bean>
+
+	<bean id="T00333ActionBean" class="com.sunway.action.Pgt00333Action" scope="request">
+		<property name="t00333Service" ref="T00333ServiceBean"/>
+		<property name="t00332Service" ref="T00332ServiceBean"/>
+		<property name="v00333aService" ref="V00333aServiceBean"/>
+		<property name="t00331Service" ref="T00331ServiceBean" />
+	</bean>
+
+	<bean id="T00334ActionBean" class="com.sunway.action.Pgt00334Action" scope="request">
+		<property name="t00334Service" ref="T00334ServiceBean"/>
+		<property name="t00331Service" ref="T00331ServiceBean"/>
+		<property name="t00331aService" ref="T00331aServiceBean"/>
+		<property name="t00331cService" ref="T00331cServiceBean"/>
+		<property name="t00334aService" ref="T00334aServiceBean"/>
+		<property name="t00334cService" ref="T00334cServiceBean"/>
+	</bean>
+
+	<bean id="T00334aActionBean" class="com.sunway.action.Pgt00334aAction" scope="request">
+		<property name="t00334aService" ref="T00334aServiceBean"/>
+	</bean>
+
+	<bean id="T00358ActionBean" class="com.sunway.action.Pgt00358Action" scope="request">
+		<property name="t00358Service" ref="T00358ServiceBean"/>
+		<property name="t00332Service" ref="T00332ServiceBean"/>
+		<property name="t00333Service" ref="T00333ServiceBean"/>
+		<property name="t00335Service" ref="T00335ServiceBean"/>
+		<property name="t00334Service" ref="T00334ServiceBean"/>
+	</bean>
+
+	<bean id="Ss10001ActionBean" class="com.sunway.action.Ss10001Action" scope="request">
+		<property name="ss10000Service" ref="Ss10000ServiceBean"/>
+	</bean>
+
+	<bean id="T00041ActionBean" class="com.sunway.action.Pgt00041Action" scope="request">
+		<property name="t00041Service" ref="T00041ServiceBean"/>
+	</bean>
+
+	<bean id="Ss10002ActionBean" class="com.sunway.action.Ss10002Action" scope="request">
+		<property name="ss10000Service" ref="Ss10000ServiceBean"/>
+	</bean>
+
+	<bean id="Ss20001ActionBean" class="com.sunway.action.Ss20001Action" scope="request">
+		<property name="ss20000Service" ref="Ss20000ServiceBean"/>
+	</bean>
+
+	<bean id="Ss20002ActionBean" class="com.sunway.action.Ss20002Action" scope="request">
+		<property name="ss20000Service" ref="Ss20000ServiceBean"/>
+	</bean>
+
+	<bean id="Ss30001ActionBean" class="com.sunway.action.Ss30001Action" scope="request">
+		<property name="ss30000Service" ref="Ss30000ServiceBean"/>
+	</bean>
+
+	<bean id="Ss30002ActionBean" class="com.sunway.action.Ss30002Action" scope="request">
+		<property name="ss30000Service" ref="Ss30000ServiceBean"/>
+	</bean>
+
+	<bean id="ReportActionBean" class="com.sunway.action.ReportAction" scope="request">
+	</bean>
+
+	<bean id="Cz00006ActionBean" class="com.sunway.action.PgvCz00006Action" scope="request">
+		<property name="cz00006Service" ref="Cz00006ServiceBean"/>
+	</bean>
+
+	<bean id="Db000011ActionBean" class="com.sunway.action.PgvDb000011Action" scope="request">
+		<property name="db000011Service" ref="Db000011ServiceBean"/>
+	</bean>
+
+	<bean id="Db000012ActionBean" class="com.sunway.action.PgvDb000012Action" scope="request">
+		<property name="db000012Service" ref="Db000012ServiceBean"/>
+	</bean>
+
+	<bean id="Db000013ActionBean" class="com.sunway.action.PgvDb000013Action" scope="request">
+		<property name="db000013Service" ref="Db000013ServiceBean"/>
+	</bean>
+
+	<bean id="Db000014ActionBean" class="com.sunway.action.PgvDb000014Action" scope="request">
+		<property name="db000014Service" ref="Db000014ServiceBean"/>
+	</bean>
+
+	<bean id="Db000015ActionBean" class="com.sunway.action.PgvDb000015Action" scope="request">
+		<property name="db000015Service" ref="Db000015ServiceBean"/>
+	</bean>
+
+	<bean id="Db000016ActionBean" class="com.sunway.action.PgvDb000016Action" scope="request">
+		<property name="db000016Service" ref="Db000016ServiceBean"/>
+	</bean>
+
+	<bean id="Bb00001ActionBean" class="com.sunway.action.PgvBb00001Action" scope="request">
+		<property name="bb00001Service" ref="Bb00001ServiceBean"/>
+	</bean>
+
+	<bean id="Bb00002ActionBean" class="com.sunway.action.PgvBb00002Action" scope="request">
+		<property name="bb00002Service" ref="Bb00002ServiceBean"/>
+	</bean>
+
+	<bean id="Bb00003ActionBean" class="com.sunway.action.PgvBb00003Action" scope="request">
+		<property name="bb00003Service" ref="Bb00003ServiceBean"/>
+	</bean>
+
+	<bean id="Bb00004ActionBean" class="com.sunway.action.PgvBb00004Action" scope="request">
+		<property name="bb00004Service" ref="Bb00004ServiceBean"/>
+	</bean>
+
+	<bean id="Bb00005ActionBean" class="com.sunway.action.PgvBb00005Action" scope="request">
+		<property name="bb00005Service" ref="Bb00005ServiceBean"/>
+	</bean>
+
+	<bean id="Bb00006ActionBean" class="com.sunway.action.PgvBb00006Action" scope="request">
+		<property name="bb00006Service" ref="Bb00006ServiceBean"/>
+	</bean>
+
+	<bean id="Bb00007ActionBean" class="com.sunway.action.PgvBb00007Action" scope="request">
+		<property name="bb00007Service" ref="Bb00007ServiceBean"/>
+	</bean>
+
+	<bean id="Bb00008ActionBean" class="com.sunway.action.PgvBb00008Action" scope="request">
+		<property name="bb00008Service" ref="Bb00008ServiceBean"/>
+	</bean>
+
+	<bean id="Bb00009ActionBean" class="com.sunway.action.PgvBb00009Action" scope="request">
+		<property name="bb00009Service" ref="Bb00009ServiceBean"/>
+	</bean>
+
+	<bean id="Bb00010ActionBean" class="com.sunway.action.PgvBb00010Action" scope="request">
+		<property name="bb00010Service" ref="Bb00010ServiceBean"/>
+	</bean>
+
+	<bean id="Cz00001ActionBean" class="com.sunway.action.Cz00001Action" scope="request">
+		<property name="cz00001Service" ref="Cz00001ServiceBean"/>
+	</bean>
+
+	<bean id="V120015ActionBean" class="com.sunway.action.Pgv120015Action" scope="request">
+		<property name="t12001Service" ref="T12001ServiceBean"/>
+	</bean>
+
+	<bean id="V120025ActionBean" class="com.sunway.action.Pgv120025Action" scope="request">
+		<property name="t12002Service" ref="T12002ServiceBean"/>
+	</bean>
+
+	<bean id="V120035ActionBean" class="com.sunway.action.Pgv120035Action" scope="request">
+		<property name="t12003Service" ref="T12003ServiceBean"/>
+	</bean>
+
+	<bean id="V120045ActionBean" class="com.sunway.action.Pgv120045Action" scope="request">
+		<property name="t12004Service" ref="T12004ServiceBean"/>
+	</bean>
+
+	<bean id="V003015ActionBean" class="com.sunway.action.Pgv003015Action" scope="request">
+		<property name="t00301Service" ref="T00301ServiceBean"/>
+	</bean>
+
+	<bean id="V003025ActionBean" class="com.sunway.action.Pgv003025Action" scope="request">
+		<property name="t00302Service" ref="T00302ServiceBean"/>
+	</bean>
+
+	<bean id="V12001AActionBean" class="com.sunway.action.Pgv12001AAction" scope="request">
+		<property name="v12001AService" ref="V12001AServiceBean"/>
+	</bean>
+
+	<bean id="V12002AActionBean" class="com.sunway.action.Pgv12002AAction" scope="request">
+		<property name="v12002AService" ref="V12002AServiceBean"/>
+	</bean>
+
+	<bean id="V12003AActionBean" class="com.sunway.action.Pgv12003AAction" scope="request">
+		<property name="v12003AService" ref="V12003AServiceBean"/>
+	</bean>
+
+	<bean id="V12004AActionBean" class="com.sunway.action.Pgv12004AAction" scope="request">
+		<property name="v12004AService" ref="V12004AServiceBean"/>
+	</bean>
+
+	<bean id="V00301AActionBean" class="com.sunway.action.Pgv00301AAction" scope="request">
+		<property name="v00301AService" ref="V00301AServiceBean"/>
+	</bean>
+
+	<bean id="V00302AActionBean" class="com.sunway.action.Pgv00302AAction" scope="request">
+		<property name="v00302AService" ref="V00302AServiceBean"/>
+	</bean>
+
+	<bean id="PsjgjyCBActionBean" class="com.sunway.action.PsjgjyCBAction" scope="request">
+		<property name="pgjgjyCBService" ref="PsjgjyCBServiceBean"/>
+		<property name="t00054Service" ref="T00054ServiceBean"/>
+	</bean>
+
+	<bean id="PsjgjySYActionBean" class="com.sunway.action.PsjgjySYAction" scope="request">
+		<property name="pgjgjySYService" ref="PsjgjySYServiceBean"/>
+		<property name="t00054Service" ref="T00054ServiceBean"/>
+	</bean>
+
+	<bean id="PsjgjySCActionBean" class="com.sunway.action.PsjgjySCAction" scope="request">
+		<property name="pgjgjySCService" ref="PsjgjySCServiceBean"/>
+		<property name="t00054Service" ref="T00054ServiceBean"/>
+	</bean>
+	<bean id="PsjgcxjySCActionBean" class="com.sunway.action.PsjgcxjySCAction" scope="request">
+		<property name="pgjgjySCService" ref="PsjgjySCServiceBean"/>
+	</bean>
+
+	<bean id="ChartBzslkActionBean" class="com.sunway.action.ChartBzslkAction" scope="request">
+		<property name="chartBzslkService" ref="ChartBzslkServiceBean"/>
+	</bean>
+
+	<bean id="CzArcgisActionBean" class="com.sunway.action.CzArcgisAction" scope="request">
+		<property name="arcgisService" ref="CzArcgisServiceBean"/>
+	</bean>
+
+	<bean id="V00301_bActionBean" class="com.sunway.action.Pgv00301_bAction" scope="request">
+		<property name="v00301_bService" ref="V00301_bServiceBean"/>
+	</bean>
+
+	<bean id="V00302_bActionBean" class="com.sunway.action.Pgv00302_bAction" scope="request">
+		<property name="v00302_bService" ref="V00302_bServiceBean"/>
+		<property name="v00301_bService" ref="V00301_bServiceBean"/>
+	</bean>
+
+	<bean id="V12001_bActionBean" class="com.sunway.action.Pgv12001_bAction" scope="request">
+		<property name="v12001_bService" ref="V12001_bServiceBean"/>
+	</bean>
+
+	<bean id="V12002_bActionBean" class="com.sunway.action.Pgv12002_bAction" scope="request">
+		<property name="v12002_bService" ref="V12002_bServiceBean"/>
+		<property name="v12001_bService" ref="V12001_bServiceBean"/>
+	</bean>
+
+	<bean id="V12003_bActionBean" class="com.sunway.action.Pgv12003_bAction" scope="request">
+		<property name="v12003_bService" ref="V12003_bServiceBean"/>
+		<property name="v12001_bService" ref="V12001_bServiceBean"/>
+	</bean>
+
+	<bean id="V12004_bActionBean" class="com.sunway.action.Pgv12004_bAction" scope="request">
+		<property name="v12004_bService" ref="V12004_bServiceBean"/>
+		<property name="v12001_bService" ref="V12001_bServiceBean"/>
+	</bean>
+
+	<bean id="Bb00001_bActionBean" class="com.sunway.action.PgvBb00001_bAction" scope="request">
+		<property name="bb00001_bService" ref="Bb00001_bServiceBean"/>
+		<property name="v12001_bService" ref="V12001_bServiceBean"/>
+	</bean>
+
+	<bean id="Bb00002_bActionBean" class="com.sunway.action.PgvBb00002_bAction" scope="request">
+		<property name="bb00002_bService" ref="Bb00002_bServiceBean"/>
+		<property name="v12001_bService" ref="V12001_bServiceBean"/>
+	</bean>
+
+	<bean id="Bb00003_bActionBean" class="com.sunway.action.PgvBb00003_bAction" scope="request">
+		<property name="bb00003_bService" ref="Bb00003_bServiceBean"/>
+		<property name="v12001_bService" ref="V12001_bServiceBean"/>
+	</bean>
+
+	<bean id="Bb00004_bActionBean" class="com.sunway.action.PgvBb00004_bAction" scope="request">
+		<property name="bb00004_bService" ref="Bb00004_bServiceBean"/>
+		<property name="v12001_bService" ref="V12001_bServiceBean"/>
+	</bean>
+
+	<bean id="Bb00005_bActionBean" class="com.sunway.action.PgvBb00005_bAction" scope="request">
+		<property name="bb00005_bService" ref="Bb00005_bServiceBean"/>
+		<property name="v12001_bService" ref="V12001_bServiceBean"/>
+	</bean>
+
+	<bean id="Bb00006_bActionBean" class="com.sunway.action.PgvBb00006_bAction" scope="request">
+		<property name="bb00006_bService" ref="Bb00006_bServiceBean"/>
+		<property name="v12001_bService" ref="V12001_bServiceBean"/>
+	</bean>
+
+	<bean id="Bb00007_bActionBean" class="com.sunway.action.PgvBb00007_bAction" scope="request">
+		<property name="bb00007_bService" ref="Bb00007_bServiceBean"/>
+		<property name="v12001_bService" ref="V12001_bServiceBean"/>
+	</bean>
+
+	<bean id="Bb00008_bActionBean" class="com.sunway.action.PgvBb00008_bAction" scope="request">
+		<property name="bb00008_bService" ref="Bb00008_bServiceBean"/>
+		<property name="v12001_bService" ref="V12001_bServiceBean"/>
+	</bean>
+
+	<bean id="Bb00009_bActionBean" class="com.sunway.action.PgvBb00009_bAction" scope="request">
+		<property name="bb00009_bService" ref="Bb00009_bServiceBean"/>
+		<property name="v00301_bService" ref="V00301_bServiceBean"/>
+	</bean>
+
+	<bean id="Bb00010_bActionBean" class="com.sunway.action.PgvBb00010_bAction" scope="request">
+		<property name="bb00010_bService" ref="Bb00010_bServiceBean"/>
+		<property name="v12001_bService" ref="V12001_bServiceBean"/>
+	</bean>
+
+	<bean id="V10033aActionBean" class="com.sunway.action.Pgv10033aAction" scope="request">
+		<property name="v10033aService" ref="V10033aServiceBean"/>
+	</bean>
+
+	<bean id="V02033aActionBean" class="com.sunway.action.Pgv02033aAction" scope="request">
+		<property name="v02033aService" ref="V02033aServiceBean"/>
+	</bean>
+
+	<bean id="V00333aActionBean" class="com.sunway.action.Pgv00333aAction" scope="request">
+		<property name="v00333aService" ref="V00333aServiceBean"/>
+	</bean>
+
+	<bean id="T00335ActionBean" class="com.sunway.action.Pgt00335Action" scope="request">
+		<property name="t00335Service" ref="T00335ServiceBean"/>
+		<property name="t00331Service" ref="T00331ServiceBean"/>
+		<property name="t00333Service" ref="T00333ServiceBean"/>
+		<property name="t00331aService" ref="T00331aServiceBean"/>
+		<property name="t00332cService" ref="T00332cServiceBean"/>
+		<property name="t00335aService" ref="T00335aServiceBean"/>
+		<property name="t00335cService" ref="T00335cServiceBean"/>
+	</bean>
+
+	<bean id="T00335aActionBean" class="com.sunway.action.Pgt00335aAction" scope="request">
+		<property name="t00335aService" ref="T00335aServiceBean"/>
+	</bean>
+
+	<bean id="T00334cActionBean" class="com.sunway.action.Pgt00334cAction" scope="request">
+		<property name="t00334cService" ref="T00334cServiceBean"/>
+	</bean>
+
+	<bean id="FileUploadActionBean" class="com.sunway.action.FileUploadAction" scope="request">
+	</bean>
+
+	<bean id="T00351CsSameActionBean" class="com.sunway.action.Pgt00351CsSameAction" scope="request">
+		<property name="t00351Service" ref="T00351ServiceBean"/>
+	</bean>
+
+	<bean id="T00351CsDiffActionBean" class="com.sunway.action.Pgt00351CsDiffAction" scope="request">
+		<property name="t00351Service" ref="T00351ServiceBean"/>
+		<property name="t00352Service" ref="T00352ServiceBean"/>
+	</bean>
+
+	<bean id="T00390ActionBean" class="com.sunway.action.CL00390Action" scope="request">
+		<property name="cl00390Service" ref="CL00390ServiceBean"/>
+	</bean>
+	
+	<bean id="BB00001ActionBean" class="com.sunway.action.Bb00001Action" scope="request">
+		<property name="bb00001Service" ref="BB00001ServiceBean"/>
+		<property name="t00001Service" ref="T00001ServiceBean"/>
+	</bean>
+
+	<bean id="BB00002ActionBean" class="com.sunway.action.Bb00002Action" scope="request">
+		<property name="bb00002Service" ref="BB00002ServiceBean"/>
+		<property name="t00001Service" ref="T00001ServiceBean"/>
+	</bean>
+
+	<bean id="BB00003ActionBean" class="com.sunway.action.Bb00003Action" scope="request">
+		<property name="bb00003Service" ref="BB00003ServiceBean"/>
+	</bean>
+	
+	<bean id="BB00004ActionBean" class="com.sunway.action.Bb00004Action" scope="request">
+		<property name="bb00004Service" ref="BB00004ServiceBean"/>
+	</bean>
+	
+	<bean id="BB00005ActionBean" class="com.sunway.action.Bb00005Action" scope="request">
+		<property name="bb00005Service" ref="BB00005ServiceBean"/>
+	</bean>
+	
+	<bean id="BB00006ActionBean" class="com.sunway.action.Bb00006Action" scope="request">
+		<property name="bb00006Service" ref="BB00006ServiceBean"/>
+	</bean>
+	
+	<bean id="BB00007ActionBean" class="com.sunway.action.Bb00007Action" scope="request">
+		<property name="bb00007Service" ref="BB00007ServiceBean"/>
+	</bean>
+	
+	<bean id="BB00008ActionBean" class="com.sunway.action.Bb00008Action" scope="request">
+		<property name="bb00008Service" ref="BB00008ServiceBean"/>
+	</bean>
+	
+	<bean id="T00360ActionBean" class="com.sunway.action.Pgt00360Action" scope="request">
+		<property name="t00360Service" ref="T00360ServiceBean"/>
+	</bean>	
+	
+	<bean id="T00361ActionBean" class="com.sunway.action.Pgt00361Action" scope="request">
+		<property name="t00361Service" ref="T00361ServiceBean"/>
+	</bean>	
+	
+	<bean id="T00362ActionBean" class="com.sunway.action.Pgt00362Action" scope="request">
+		<property name="t00362Service" ref="T00362ServiceBean"/>
+	</bean>	
+	
+	<bean id="T00010ActionBean" class="com.sunway.action.Pgt00010Action" scope="request">
+		<property name="t00010Service" ref="T00010ServiceBean"/>
+		<property name="t00003Service" ref="T00003ServiceBean"/>
+	</bean>
+	
+	<bean id="TREE00000ActionBean" class="com.sunway.action.Tree00000Action" scope="request">
+		<property name="tree00000Service" ref="Tree00000ServiceBean"/>
+	</bean>
+	
+	<bean id="ChartExportActionBean" class="com.sunway.action.ChartExportAction" scope="request" />
+	
+	<bean id="RandomActionBean" class="com.sunway.action.RandomAction" scope="request" />
+	
+	<bean id="TJ00001ActionBean" class="com.sunway.action.Tj00001Action" scope="request">
+		<property name="tj00001Service" ref="TJ00001ServiceBean"/>
+	</bean>	
+
+	<bean id="MAP00352Bean" class="com.sunway.map.MapT00352" scope="request"></bean>	
+	
+	
+	<bean id="FC003ActionBean" class="com.sunway.action.Fc003Action" scope="request">
+		<property name="fc003Service" ref="Fc003ServiceBean"/>
+	</bean>	
+	
+</beans>
