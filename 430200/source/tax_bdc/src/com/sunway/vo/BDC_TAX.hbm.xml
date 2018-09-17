@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.sunway.vo">
+    <class name="FC001" table="BDC_TAX">
+	    <composite-id name="fc001ID" class="FC001_PK">
+	    	<key-property name="slid" type="java.lang.String">
+	    		<column name="SLID" />
+	    	</key-property>
+	      	<key-property name="ssqy" type="java.lang.String">
+	        	<column name="SSQY" />
+	        </key-property>
+	        <generator class="assigned"/>
+	    </composite-id>
+        <property name="fczh" type="java.lang.String">
+            <column name="FCZH" />
+        </property>
+        <property name="zrfName" type="java.lang.String">
+            <column name="ZRF_NAME" />
+        </property>
+        <property name="zrfId" type="java.lang.String">
+            <column name="ZRF_ID" />
+        </property>
+        <property name="zrfZjlx" type="java.lang.String">
+            <column name="ZRF_ZJLX" />
+        </property>
+        <property name="zrfTel" type="java.lang.String">
+            <column name="ZRF_TEL" />
+        </property>
+        <property name="csfName" type="java.lang.String">
+            <column name="CSF_NAME" />
+        </property>
+        <property name="csfId" type="java.lang.String">
+            <column name="CSF_ID" />
+        </property>
+        <property name="csfZjlx" type="java.lang.String">
+            <column name="CSF_ZJLX" />
+        </property>
+        <property name="csfTel" type="java.lang.String">
+            <column name="CSF_TEL" />
+        </property>
+        <property name="clh" type="java.lang.String">
+            <column name="CLH" />
+        </property>
+        <property name="ghyt" type="java.lang.String">
+            <column name="GHYT" />
+        </property>
+        <property name="lfdz" type="java.lang.String">
+            <column name="LFDZ" />
+        </property>
+        <property name="dyfh" type="java.lang.String">
+            <column name="DYFH" />
+        </property>
+        <property name="zlc" type="java.lang.Integer">
+            <column name="ZLC" />
+        </property>
+        <property name="szlc" type="java.lang.Integer">
+            <column name="SZLC" />
+        </property>
+        <property name="jzjg" type="java.lang.String">
+            <column name="JZJG" />
+        </property>
+        <property name="fwlx" type="java.lang.String">
+            <column name="FWLX" />
+        </property>
+        <property name="jylx" type="java.lang.String">
+            <column name="JYLX" />
+        </property>
+        <property name="jzmj" type="java.lang.Double">
+            <column name="JZMJ" />
+        </property>
+        <property name="htzj" type="java.lang.Double">
+            <column name="HTZJ" />
+        </property>
+        <property name="fzrq" type="java.util.Date">
+            <column name="FZRQ" />
+        </property>
+        <property name="jcnf" type="java.lang.String">
+            <column name="JCNF" />
+        </property>
+        <property name="jysj" type="java.util.Date">
+            <column name="JYSJ" />
+        </property>
+        <property name="sfsyfc" type="java.lang.String">
+            <column name="SFSYFC" />
+        </property>
+        <property name="cx" type="java.lang.String">
+            <column name="CX" />
+        </property>
+        <property name="df" type="java.lang.String">
+            <column name="DF" />
+        </property>
+        <property name="updatetime" type="java.util.Date">
+            <column name="UPDATETIME" />
+        </property>
+        <property name="jg" type="java.lang.String">
+            <column name="JG" />
+        </property>
+        <property name="zx" type="java.lang.String">
+            <column name="ZX" />
+        </property>
+        <property name="cg" type="java.lang.String">
+            <column name="CG" />
+        </property>
+        <property name="xqdm" type="java.lang.String">
+            <column name="XQDM" />
+        </property>
+        <property name="qswsrq" type="java.util.Date">
+            <column name="QSWSRQ" />
+        </property>
+        <property name="qswsjs" type="java.lang.Double">
+            <column name="QSWSJS" />
+        </property>
+    </class>
+</hibernate-mapping>

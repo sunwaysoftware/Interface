@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-7-19 15:28:46 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.sunway.vo">
+	<class name="FC002" table="FC002">
+
+		<composite-id name="id" class="FC001_PK">
+			<key-property name="slid" type="java.lang.String">
+				<column name="SLID" />
+			</key-property>
+			<key-property name="ssqy" type="java.lang.String">
+				<column name="SSQY" />
+			</key-property>
+			<generator class="assigned" />
+		</composite-id>
+		<property name="seQs" type="java.lang.Double">
+			<column name="DJZ_QS" />
+		</property>
+		<property name="seYys" type="java.lang.Double">
+			<column name="DJZ_YYS" />
+		</property>
+		<property name="seCjs" type="java.lang.Double">
+			<column name="DJZ_CJS" />
+		</property>
+		<property name="seDfjys" type="java.lang.Double">
+			<column name="DJZ_DFJYS" />
+		</property>
+		<property name="seGrsds" type="java.lang.Double">
+			<column name="DJZ_GRSDS" />
+		</property>
+		<property name="seYhs" type="java.lang.Double">
+			<column name="DJZ_YHS" />
+		</property>
+		<property name="seTdzzs" type="java.lang.Double">
+			<column name="DJZ_TDZZS" />
+		</property>
+		<property name="fphm" type="java.lang.String">
+			<column name="FPHM" />
+		</property>
+		<property name="qssphm" type="java.lang.String">
+			<column name="QSSPHM" />
+		</property>
+		<property name="dfgssphm" type="java.lang.String">
+			<column name="DFGSSPHM" />
+		</property>
+		<property name="updatetime" type="java.util.Date">
+			<column name="UPDATETIME" />
+		</property>
+		<property name="pgid" type="java.lang.String">
+			<column name="PGID" />
+		</property>
+		<property name="pgjg" type="java.lang.Double">
+			<column name="PGJG" />
+		</property>
+		<property name="note" type="java.lang.String">
+			<column name="NOTE" />
+		</property>
+	</class>
+</hibernate-mapping>
