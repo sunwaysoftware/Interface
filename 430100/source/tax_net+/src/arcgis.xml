@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!-- 地图基础数据采集 -->
+	<package name="ARCGIS" extends="AppDefault" namespace="/arcgis">
+		
+	<!-- Pgt00352M -->
+		<action name="FINDT00352M" class="T00352MActionBean" method="query">
+			<result name="success" type="json">
+				<param name="includeProperties">rows.*,pageIndex,pageSize,total</param>
+			</result>
+			<result name="input">/T00352M/ADDT00352M.jsp</result>
+		</action>
+		<action name="FINDT00352M0" class="T00352MActionBean" method="query0">
+			<result name="success" type="json">
+				<param name="includeProperties">rows.*,pageIndex,pageSize,total</param>
+			</result>
+			<result name="input">OK.jsp</result>
+		</action>
+		<action name="ADDT00352M" class="T00352MActionBean" method="create">
+			<result name="input">/T00352M/ADDT00352M.jsp</result>
+			<result name="success">/T00352M/ADDT00352M.jsp</result>
+		</action>
+		<action name="EDITT00352M" class="T00352MActionBean" method="update">
+			<result name="input">/OK.html</result>
+			<result name="success">/OK.html</result>
+		</action>
+		
+		<action name="DELALLT00352M" class="T00352MActionBean" method="delAll">
+			<result name="success" type="json" />
+		</action>
+		<!-- Pgt00352M1 -->
+		<action name="FINDT00352M1" class="T00352MActionBean" method="query1">
+			<result name="success" type="json">
+				<param name="includeProperties">rows.*,pageIndex,pageSize,total</param>
+			</result>
+			<result name="input">/OK.html</result>
+		</action>
+		<action name="ADDT00352M1" class="T00352MActionBean" method="create1">
+			<result name="input">/OK.html</result>
+			<result name="success">/OK.html</result>
+		</action>
+		<action name="EDITT00352M1" class="T00352MActionBean" method="update1">
+			<result name="input">/OK.html</result>
+			<result name="success">/OK.html</result>
+		</action>
+		
+		<action name="DELALLT00352M1" class="T00352MActionBean" method="delAll1">
+			<result name="success" type="json" />
+		</action>
+		
+		<action name="ARCGISMAP" class="T00352MActionBean">
+			<result name="success">/ArcgisMap/arcgis.jsp</result>
+		</action>
+
+	</package>
+
+</struts>

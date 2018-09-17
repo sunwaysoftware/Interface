@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 读取树节点（通用） -->
+	<package name="TREE" extends="AppDefault">		
+		
+		<!-- 【所在区域】 -->
+		<action name="NODESZQY" class="TREE00000ActionBean" method="readSzqyNode">
+			<result name="success" type="json">
+				<param name="root">treeNodes</param>
+			</result>
+		</action>			
+		<!-- 【证件类型】 -->
+		<action name="NODEZJLX" class="TREE00000ActionBean" method="readZjlxNode">
+			<result name="success" type="json">
+				<param name="root">treeNodes</param>
+			</result>
+		</action>	
+		<!-- 【建筑结构】 -->
+		<action name="NODEJZJG" class="TREE00000ActionBean" method="readJzjgNode">
+			<result name="success" type="json">
+				<param name="root">treeNodes</param>
+			</result>
+		</action>	
+		<!-- 【房屋类型】 -->
+		<action name="NODEFWLX" class="TREE00000ActionBean" method="readFwlxNode">
+			<result name="success" type="json">
+				<param name="root">treeNodes</param>
+			</result>
+		</action>	
+		<!-- 【规划用途】 -->
+		<action name="NODEGHYT" class="TREE00000ActionBean" method="readGhytNode">
+			<result name="success" type="json">
+				<param name="root">treeNodes</param>
+			</result>
+		</action>	
+		<!-- 【交易类型】 -->
+		<action name="NODEJYLX" class="TREE00000ActionBean" method="readJylxNode">
+			<result name="success" type="json">
+				<param name="root">treeNodes</param>
+			</result>
+		</action>	
+		<!-- 【交易类型】 -->
+		<action name="NODEPGFQ" class="TREE00000ActionBean" method="readPgfqNode">
+			<result name="success" type="json">
+				<param name="root">treeNodes</param>
+			</result>
+		</action>	
+		<action name="NODEPGFQREMOTE" class="TREE00000ActionBean" method="readPgfqNodeRemote">
+			<result name="success" type="json">
+				<param name="root">treeNodes</param>
+			</result>
+		</action>	
+
+	</package>
+</struts>

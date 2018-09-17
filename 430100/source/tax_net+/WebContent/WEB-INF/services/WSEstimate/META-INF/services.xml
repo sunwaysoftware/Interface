@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<service name="WSEstimate" >
+	<Description>
+		长沙地税互联网+存量房在线缴税评估接口
+	</Description>
+	<messageReceivers>
+		<messageReceiver mep="http://www.w3.org/ns/wsdl/in-only" class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver" />
+		<messageReceiver mep="http://www.w3.org/ns/wsdl/in-out"  class="org.apache.axis2.rpc.receivers.RPCMessageReceiver"/>
+	</messageReceivers>
+	<parameter name="ServiceClass">com.sunway.webservice.WSEstimate</parameter>
+</service>

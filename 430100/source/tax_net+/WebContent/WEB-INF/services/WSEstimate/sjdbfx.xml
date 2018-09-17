@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 数据对比分析 -->
+	<package name="SJDBFX" extends="AppDefault" namespace="/sjdbfx">
+
+		<!-- 行业对比分析-->
+		<action name="VIEWDB000011" class="Db000011ActionBean">
+			<result name="success">/DB000011/VIEWDB000011.jsp</result>
+		</action>
+		<!-- 经济类型对比分析-->
+		<action name="VIEWDB000012" class="Db000012ActionBean">
+			<result name="success">/DB000012/VIEWDB000012.jsp</result>
+		</action>
+		<!-- 免税设置对比分析-->
+		<action name="VIEWDB000013" class="Db000013ActionBean">
+			<result name="success">/DB000013/VIEWDB000013.jsp</result>
+		</action>
+		<!-- 现行税率行业对比分析-->
+		<action name="VIEWDB000014" class="Db000014ActionBean">
+			<result name="success">/DB000014/VIEWDB000014.jsp</result>
+		</action>
+		<action name="FINDDB000014" class="Db000014ActionBean" method="query">
+			<result name="success">/DB000014/VIEWDB000014.jsp</result>
+		</action>
+		<!-- 现行税率经济类型对比分析-->
+		<action name="VIEWDB000015" class="Db000015ActionBean">
+			<result name="success">/DB000015/VIEWDB000015.jsp</result>
+		</action>
+		<action name="FINDDB000015" class="Db000015ActionBean" method="query">
+			<result name="success">/DB000015/VIEWDB000015.jsp</result>
+		</action>
+		<!-- 现行税率免税设置对比分析-->
+		<action name="VIEWDB000016" class="Db000016ActionBean">
+			<result name="success">/DB000016/VIEWDB000016.jsp</result>
+		</action>
+		<action name="FINDDB000016" class="Db000016ActionBean" method="query">
+			<result name="success">/DB000016/VIEWDB000016.jsp</result>
+		</action>
+
+	</package>
+</struts>

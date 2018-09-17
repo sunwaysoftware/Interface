@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 基础数据采集 -->
+	<package name="SJCJ" extends="AppDefault" namespace="/sjcj">
+		<!-- 市场法登记信息 -->		
+		<action name="ADDT00371A" class="T00371aActionBean" method="create">
+			<result name="input">/T00371A/VIEWT00371A.jsp</result>
+			<result name="success">/T00371A/VIEWT00371A.jsp</result>
+		</action>
+		<action name="EDITT00371A" class="T00371aActionBean" method="update">
+			<result name="success" type="json"/>
+		</action>
+		<action name="FINDT00371A" class="T00371aActionBean" method="query">
+			<result name="success" type="json"/>
+			<result name="input">/T00371A/VIEWT00371A.jsp</result>
+		</action>
+		<action name="FINDT00302D" class="T00371aActionBean" method="query00302">
+			<result name="success" type="json"/>
+			<result name="input">/T00371A/VIEWT00371A.jsp</result>
+		</action>
+		<action name="FINDT00302D_B" class="T00371aActionBean" method="query00302_B">
+			<result name="success" type="json"/>
+			<result name="input">/T00371A/VIEWT00371A.jsp</result>
+		</action>
+		<action name="FINDT02002D" class="T00371aActionBean" method="query02002">
+			<result name="success" type="json"/>
+			<result name="input">/T00371A/VIEWT00371A.jsp</result>
+		</action>
+		<action name="FINDT02002D_B" class="T00371aActionBean" method="query02002_B">
+			<result name="success" type="json"/>
+			<result name="input">/T00371A/VIEWT00371A.jsp</result>
+		</action>
+		<!-- 市场法登记信息 -->
+		<action name="VIEWT00301" class="T00301ActionBean">
+			<result name="input">/T00301/VIEWT00301.jsp</result>
+			<result name="success">/T00301/VIEWT00301.jsp</result>
+		</action>
+		<action name="ADDT00301" class="T00301ActionBean" method="create">
+			<result name="input">/T00301/VIEWT00301.jsp</result>
+			<result name="success">/T00301/EDITT00301.jsp</result>
+		</action>
+		<action name="EDITT00301" class="T00301ActionBean" method="update">
+			<result name="input">/T00301/EDITT00301.jsp</result>
+			<result name="success">/T00301/EDITT00301.jsp</result>
+			<result name="successDEL">/T00301/VIEWT00301.jsp</result>
+		</action>
+		<action name="FINDT00301" class="T00301ActionBean" method="query">
+			<result name="success" type="json"/>
+			<result name="input">/T00301/VIEWT00301.jsp</result>
+		</action>
+		<action name="DETAILT00301" class="T00301ActionBean" method="detail">
+			<result name="success">/T00301/DETAILT00301.jsp</result>
+		</action>
+		
+		<action name="DETAILT00301B" class="T00301ActionBean" method="detailB">
+			<result name="success">/T00301/DETAILT00301.jsp</result>
+		</action>
+
+		<!-- 市场法房产信息-->
+		<action name="VIEWT00302" class="T00302ActionBean">
+			<result name="input">/T00302/VIEWT00302.jsp</result>
+			<result name="success">/T00302/VIEWT00302.jsp</result>
+		</action>
+		<action name="VIEWT003200" class="T00320ActionBean">
+			<result name="success">/T00320/VIEWT003200.jsp</result>
+		</action>
+		<action name="FINDT00302" class="T00302ActionBean" method="query">
+			<result name="input">/T00302/VIEWT00302.jsp</result>
+			<result name="success" type="json" >
+				<param name="includeProperties">rows.*,pageIndex,pageSize,total</param>
+			</result>
+		</action>
+		<action name="ZHXZT00302" class="T00302ActionBean" method="queryZhxz">
+			<result name="input">/T00302/VIEWT00302.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+		<action name="ZHXZT00302QM" class="T00302ActionBean" method="queryZhxzQmpg">
+			<result name="input">/T00302/VIEWT00302.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+		<action name="ADDT00302" class="T00302ActionBean" method="create">
+			<param name="XZLX">4</param>
+			<result name="success">/T00302/EDITT00302.jsp</result>
+			<result name="successADD">/T00302/ADDT00302.jsp</result>
+		</action>
+		<action name="EDITT00302" class="T00302ActionBean" method="update">
+			<param name="XZLX">4</param>
+			<result name="input">/T00302/EDITT00302.jsp</result>
+			<result name="success">/T00302/EDITT00302.jsp</result>
+			<result name="successADD">/T00302/ADDT00302.jsp</result>
+			<result name="successDEL">/PG30000/PG30001W.jsp</result>
+			<result name="failADD">/T00302/ADDT00302.jsp</result>
+		</action>
+		<action name="DETAILT00302" class="T00302ActionBean" method="detail">
+			<result name="success">/T00302/DETAILT00302.jsp</result>
+		</action>
+		<action name="DETAILT00302B" class="T00302ActionBean" method="detailB">
+			<result name="success">/T00302/DETAILT00302B.jsp</result>
+		</action>
+		<action name="DETAILT00302FRAME" class="T00302ActionBean" method="detailFrame">
+			<result name="success">/T00302/DETAILT00302FRAME.jsp</result>
+		</action>
+		<action name="VIEWT003022" class="T00302ActionBean" method="executeImport">
+			<result name="success">/T00302/VIEWT003022.jsp</result>
+		</action>
+		<action name="SJCJUPLOAD" class="T00302ActionBean" method="upload">		
+			<param name="savePath">/upload</param>
+			<result name="success">/T00302/ExcelImport.jsp</result>
+			<result name="input">/T00302/VIEWT003022.jsp</result>
+		</action>
+		
+		<action name="SJCJIMPORT" class="T00302ActionBean" method="importFile">	
+			<result name="success">/T00302/ExcelImport.jsp</result>
+			<result name="input">/T00302/ExcelImport.jsp</result>
+			<result name="failexport" type="stream">
+	            <param name="contentType">application/vnd.ms-excel</param>
+	            <param name="inputName">excelStream</param>
+	            <param name="contentDisposition">attachment;filename="${fileName}"</param>
+	            <param name="bufferSize">2048</param>
+			</result>
+		</action>
+		
+		<action name="VIEWT00302E" class="T00302ActionBean">
+			<result name="success">/T00302E/VIEWT00302E.jsp</result>
+		</action>
+		<action name="FINDT00302E" class="T00302ActionBean" method="queryE">
+			<result name="success" type="json">
+				<param name="includeProperties">rows.*,pageIndex,pageSize,total</param>
+			</result>
+		</action>
+		
+		<action name="VIEWT00302EB" class="T00302ActionBean">
+			<result name="success">/T00302E/VIEWT00302EB.jsp</result>
+		</action>
+		<action name="FINDT00302EB" class="T00302ActionBean" method="queryE_B">
+			<result name="success" type="json">
+				<param name="includeProperties">rows.*,pageIndex,pageSize,total</param>
+			</result>
+		</action>
+
+		<!-- 挂牌数据外部数据导入 -->
+		<action name="UPLOAD" class="T00304ActionBean" method="upload">		
+			<param name="savePath">/upload</param>
+			<result name="success">/T00304/ExcelImport.jsp</result>
+			<result name="input">/T00304/VIEWT00304.jsp</result>
+		</action>
+		
+		<action name="IMPORT" class="T00304ActionBean" method="importFile">	
+			<result name="success">/T00304/ExcelImport.jsp</result>
+			<result name="input">/T00304/ExcelImport.jsp</result>
+			<result name="failexport" type="stream">
+	            <param name="contentType">application/vnd.ms-excel</param>
+	            <param name="inputName">excelStream</param>
+	            <param name="contentDisposition">attachment;filename="${fileName}"</param>
+	            <param name="bufferSize">2048</param>
+			</result>
+		</action>
+
+		<!-- 楼房普查外部数据导入 -->
+		<action name="VIEWT00303" class="T00303ActionBean">
+			<result name="input">/T00303/VIEWT00303.jsp</result>
+			<result name="success">/T00303/VIEWT00303.jsp</result>
+		</action>
+		<action name="LFPCUPLOAD" class="T00303ActionBean" method="upload">		
+			<param name="savePath">/upload</param>
+			<result name="success">/T00303/ExcelImport.jsp</result>
+			<result name="input">/T00303/VIEWT00303.jsp</result>
+		</action>
+		
+		<action name="LFPCIMPORT" class="T00303ActionBean" method="importFile">	
+			<result name="success" type="chain">VIEWT00303</result>
+			<result name="input" type="chain">VIEWT00303</result>
+			<result name="failexport" type="stream">
+	            <param name="contentType">application/vnd.ms-excel</param>
+	            <param name="inputName">excelStream</param>
+	            <param name="contentDisposition">attachment;filename="${fileName}"</param>
+	            <param name="bufferSize">2048</param>
+			</result>
+		</action>
+		
+		<!-- WebService -->
+		<action name="VIEWWS00001" class="T00302XMLActionBean" method="executeWS">
+			<result name="success">/WS00001/VIEWWS00001.jsp</result>
+		</action>
+		<action name="VIEWWS000011" class="T00302XMLActionBean" method="executeWS1">
+			<result name="success">/WS00001/VIEWWS000011.jsp</result>
+		</action>
+		<action name="FINDTWS00001" class="T00302XMLActionBean" method="queryxml">
+			<result name="input">/WS00001/VIEWWS00001.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+		<action name="GETWS00001" class="T00302XMLActionBean" method="queryByPrimary">
+			<result name="input">/WS00001/VIEWWS00001.jsp</result>
+			<result name="success" type="json">
+				<param name="includeProperties">t00352Bean.*</param>
+			</result>
+		</action>
+		<action name="FINDTWS000011" class="T00302XMLActionBean" method="query003711">
+			<result name="input">/WS00001/VIEWWS000011.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+		<action name="ADDT00302XML" class="T00302XMLActionBean" method="createxml">
+			<param name="XZLX">4</param>
+			<result name="success">/T00302/ADDT00302.jsp</result>
+			<result name="successEDIT">/WS00001/EDITTWS000011.jsp</result>
+		</action>
+		<action name="ADDT00301XML" class="T00302XMLActionBean" method="createxml">
+			<result name="input">/WS00001/VIEWT00301XML.jsp</result>
+			<result name="success">/WS00001/EDITT00301XML.jsp</result>
+		</action>
+		<action name="EDITT00302XML" class="T00302XMLActionBean" method="updateXML">
+			<result name="input">/WS00001/EDITT00301XML.jsp</result>
+			<result name="success" type="chain">ADDT00302XML</result>
+		</action>
+		<action name="EDITT003711" class="T00302XMLActionBean" method="update003711">
+			<result name="success" type="json" />
+		</action>
+		<action name="DELT003711" class="T00302XMLActionBean" method="del3711">
+			<result name="input">/WS00001/VIEWWS000011.jsp</result>
+			<result name="success">/WS00001/VIEWWS000011.jsp</result>
+		</action>
+		<action name="FINDVxml" class="T00302XMLActionBean" method="xml">
+			<result name="success" type="json" />
+		</action>
+		<action name="PSXML" class="T00302XMLActionBean" method="executePS">
+			<result name="input">/WS00001/RESULT.jsp</result>
+			<result name="success">/WS00001/RESULT.jsp</result>
+		</action>
+		<action name="FINDRESULT" class="T00302XMLActionBean" method="loadResult">
+			<result name="success" type="json" />
+		</action>
+		
+		<action name="EDITSL" class="T00302XMLActionBean" method="executeEDIT">
+			<result name="input">/WS00001/EDITT00301XML.jsp</result>
+			<result name="success" type="json" />
+		</action>	
+		<action name="DJZPGJGXML" class="T00302XMLActionBean" method="DJZPgjgXML">
+		    <result name="success" type="json" />
+		</action>
+		<action name="VIEWT00372" class="T00302XMLActionBean" method="execute00372">
+			<result name="success">/T00372/VIEWT00372.jsp</result>
+		</action>
+		<action name="TEST00372" class="T00302XMLActionBean" method="test00372">
+			<result name="success" type="json" />
+		</action>
+		
+		
+		
+		<!-- 全面评估市场法房产信息 -->
+		<action name="VIEWT00320" class="T00320ActionBean">
+			<result name="success">/T00320/VIEWT00320.jsp</result>
+		</action>
+		<action name="FINDT00320" class="T00320ActionBean" method="query">
+			<result name="success" type="json">
+				<param name="includeProperties">rows.*,pageIndex,pageSize,total</param>
+			</result>
+		</action>
+		<action name="ADDT00320" class="T00320ActionBean" method="create">
+			<result name="success">/T00320/EDITT00320.jsp</result>
+			<result name="error">/T00320/EDITT00320.jsp</result>
+		</action>
+		<action name="EDITT00320" class="T00320ActionBean" method="update">
+			<result name="successDEL320" type="chain">VIEWT00320</result>
+			<result name="successDEL3201" type="chain">VIEWT00320DZ</result>
+			<result name="success">/T00320/EDITT00320.jsp</result>
+			<result name="error">/T00320/EDITT00320.jsp</result>
+			<result name="input">/T00320/EDITT00320.jsp</result>
+		</action>
+		<action name="QMPGLRUPLOAD" class="T00320ActionBean" method="upload">		
+			<param name="savePath">/upload</param>
+			<result name="success">/T00320/ExcelImport.jsp</result>
+			<result name="input">/T00320/VIEWT00320.jsp</result>
+		</action>
+		<action name="QMPGLRIMPORT" class="T00320ActionBean" method="importFile">	
+			<result name="success" type="chain">VIEWT00320</result>
+			<result name="input">/T00320/VIEWT00320.jsp</result>
+			<result name="failexport" type="stream">
+	            <param name="contentType">application/vnd.ms-excel</param>
+	            <param name="inputName">excelStream</param>
+	            <param name="contentDisposition">attachment;filename="${fileName}"</param>
+	            <param name="bufferSize">2048</param>
+			</result>
+		</action>
+		<action name="EXECPG00320" class="T00320ActionBean" method="executePG">
+<!-- 			<interceptor-ref name="defaultStack" />
+			<interceptor-ref name="execAndWait" />
+			<result name="wait">/wait.jsp</result> -->
+			<result name="input">/T00320/VIEWT00320.jsp</result>
+			<result name="success" type="chain">VIEWT00320</result>
+		</action>
+		<action name="DETAILT00320" class="T00320ActionBean" method="detail">
+			<result name="success">/T00320/DETAILT00320.jsp</result>
+		</action>
+		<action name="DETAILT00320FC" class="T00320ActionBean" method="detailFC">
+			<result name="success">/T00320/DETAILT00320FC.jsp</result>
+		</action>
+		<action name="EXECUTETZD" class="T00320ActionBean" method="executeTZD">
+			<result name="success" type="json" />
+		</action>
+		<action name="LOADPGCWXX" class="T00320ActionBean" method="loadPgCWXX">
+			<result name="success">/T00384/VIEWT003842.jsp</result>
+		</action>
+		<action name="ZHXZT00320" class="T00320ActionBean" method="queryZhxz">
+			<result name="input">/T00320/VIEWT00320.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+		<action name="DELSELT00320" class="T00320ActionBean" method="delSel">
+			<result name="success" type="json" />
+		</action>
+		<!-- 全面评估重复数据 -->
+		<action name="VIEWT00320DZ" class="T00320ActionBean" method="executeDZ">
+			<result name="success">/T00320/VIEWT003201.jsp</result>
+		</action>
+		<action name="FINDT00320DZ" class="T00320ActionBean" method="queryDZ">
+			<result name="success" type="json" />
+			<result name="input">/T00320/VIEWT003201.jsp</result>
+		</action>
+		<!-- 图片添加 -->
+		<action name="VIEWT00352F" class="T00352FActionBean">
+			<result name="input">/T00352F/ADDT00352F.jsp</result>
+			<result name="success">/T00352F/ADDT00352F.jsp</result>
+		</action>
+		<action name="FINDT00352F" class="T00352FActionBean" method="query">
+			<result name="success" type="json"/>
+			<result name="input">/T00352F/ADDT00352F.jsp</result>
+		</action>
+		<action name="ADDT00352F" class="T00352FActionBean" method="create">
+			<param name="savePath">/upload/xqPic</param>
+			<result name="input">/T00352F/ADDT00352F.jsp</result>
+			<result name="success">/T00352F/ADDT00352F.jsp</result>
+		</action>	
+		<action name="EDITT00352F" class="T00352FActionBean" method="update">	
+			<result name="input">/T00352F/ADDT00352F.jsp</result>
+			<result name="success">/T00352F/ADDT00352F.jsp</result>
+		</action>	
+		<action name="DETAILT00352F" class="T00352FActionBean" method="query">	
+			<result name="input">/T00352F/DETAILT00352.jsp</result>
+			<result name="success">/T00352F/DETAILT00352.jsp</result>
+		</action>	
+		<action name="DETAILT00352FC" class="T00352FActionBean" method="queryFC">	
+			<result name="input">/T00352/DETAILT00352.jsp</result>
+			<result name="success">/T00352/DETAILT00352.jsp</result>
+		</action>
+		<action name="DELPHOTOBYXQ" class="T00352FActionBean" method="delPhotoByXQ">
+			<result name="input">/T00352F/ADDT00352F.jsp</result>
+			<result name="success" type="chain">VIEWT00352F</result>
+		</action>
+		<action name="UPLOADPHOTOBYRAR" class="T00352FActionBean" method="updPhotoByRar">
+			<result name="input">/T00352F/ADDT00352F.jsp</result>
+			<result name="success">/T00352F/ADDT00352F.jsp</result>
+		</action>
+		<action name="FINDT00352fmin" class="T00352FActionBean" method="queryById">		
+			<result name="success" type="stream">
+	         <param name="contentType">image/JPEG</param>
+	            <param name="inputName">butt</param>
+	       <!--  <param name="contentDisposition">attachment:filename="test.jpeg"</param>
+	            <param name="bufferSize">10000</param>   -->
+			</result>
+			<result name="input">/images/noPic.gif</result>
+			<result name="inputMin">/images/MinnoPic.gif</result>
+		</action>
+		<action name="FINDT00352fminFC" class="T00352FActionBean" method="queryByIdFC">		
+			<result name="success" type="stream">
+	         <param name="contentType">image/JPEG</param>
+	            <param name="inputName">butt</param>
+	       <!--  <param name="contentDisposition">attachment:filename="test.jpeg"</param>
+	            <param name="bufferSize">10000</param>   -->
+			</result>
+			<result name="input">/images/noPic.gif</result>
+			<result name="inputMin">/images/MinnoPic.gif</result>
+		</action>
+		
+		<action name="ADDT02002" class="T02002ActionBean" method="create">
+			<param name="XZLX">4</param>
+			<result name="success">/T02002/EDITT02002.jsp</result>
+			<result name="successADD">/T02002/ADDT02002.jsp</result>
+		</action>
+		
+		<action name="VIEWWS02001" class="T02002XMLActionBean" method="executeWS">
+			<result name="success">/WS02001/VIEWWS02001.jsp</result>
+		</action>		
+		<action name="FINDSYxml" class="T02002XMLActionBean" method="xml">
+			<result name="success" type="json" />
+		</action>		
+		<action name="FINDTWS02001" class="T02002XMLActionBean" method="queryxml">
+			<result name="input">/WS02001/VIEWWS02001.jsp</result>
+			<result name="success" type="json"/>
+		</action>		
+		<action name="ADDT02002XML" class="T02002XMLActionBean" method="createxml">
+			<param name="XZLX">4</param>
+			<result name="success">/T02002/ADDT02002.jsp</result>
+			<result name="successEDIT">/WS02001/EDITTWS020011.jsp</result>
+		</action>		
+		<action name="VIEWT02050F" class="T00352FActionBean">
+			<result name="input">/T02050F/ADDT02050F.jsp</result>
+			<result name="success">/T02050F/ADDT02050F.jsp</result>
+		</action>
+
+		<action name="EDITT02002" class="T02002ActionBean" method="update">
+			<param name="XZLX">4</param>
+			<result name="input">/T02002/EDITT02002.jsp</result>
+			<result name="success">/T02002/EDITT02002.jsp</result>
+			<result name="successADD">/T02002/ADDT02002.jsp</result>
+			<result name="successDEL">/PG20000/PG20001W.jsp</result>
+			<result name="failADD">/T02002/ADDT02002.jsp</result>
+		</action>	
+		
+		<action name="ZHXZT02002" class="T02002ActionBean" method="queryZhxz">
+			<result name="input">/T02002/VIEWT02002.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+		
+		<action name="DETAILT02002" class="T02002ActionBean" method="detail">
+			<result name="success">/T02002/DETAILT02002.jsp</result>
+		</action>
+		
+		<action name="DETAILT02002B" class="T02002ActionBean" method="detailB">
+			<result name="success">/T02002/DETAILT02002.jsp</result>
+		</action>
+		
+		<action name="VIEWT02002E" class="T02002ActionBean">
+			<result name="success">/T02002E/VIEWT02002E.jsp</result>
+		</action>
+		<action name="FINDT02002E" class="T02002ActionBean" method="queryE">
+			<result name="success" type="json">
+				<param name="includeProperties">rows.*,pageIndex,pageSize,total</param>
+			</result>
+		</action>
+		
+		<action name="VIEWT02002EB" class="T02002ActionBean">
+			<result name="success">/T02002E/VIEWT02002EB.jsp</result>
+		</action>
+		<action name="FINDT02002EB" class="T02002ActionBean" method="queryE_B">
+			<result name="success" type="json">
+				<param name="includeProperties">rows.*,pageIndex,pageSize,total</param>
+			</result>
+		</action>
+		
+		<!-- 全面评估市场法房产信息 -->
+		<action name="VIEWT02020" class="T02020ActionBean">
+			<result name="success">/T02020/VIEWT02020.jsp</result>
+		</action>
+		<action name="FINDT02020" class="T02020ActionBean" method="query">
+			<result name="success" type="json">
+				<param name="includeProperties">rows.*,pageIndex,pageSize,total</param>
+			</result>
+		</action>
+		<action name="FINDT020201" class="T02020ActionBean" method="query1">
+			<result name="success" type="json">
+				<param name="includeProperties">rows.*,pageIndex,pageSize,total</param>
+			</result>
+		</action>
+		<action name="EXPT02020" class="T02020ActionBean" method="export">
+			<result name="success" type="stream">
+				<param name="contentType">application/vnd.ms-excel</param>
+				<param name="inputName">excelStream</param>
+				<param name="contentDisposition">filename="fwxx.xls"</param>
+				<param name="bufferSize">2048</param>
+			</result>
+			<result name="input">/T02020/VIEWT02020.jsp</result>
+		</action>
+		<action name="QMPGLRUPLOADSY" class="T02020ActionBean" method="upload">		
+			<param name="savePath">/upload</param>
+			<result name="success">/T02020/ExcelImport.jsp</result>
+			<result name="input">/T02020/VIEWT02020.jsp</result>
+		</action>
+		<action name="QMPGLRIMPORTSY" class="T02020ActionBean" method="importFile">	
+			<result name="success" type="chain">VIEWT02020</result>
+			<result name="input">/T02020/VIEWT02020.jsp</result>
+			<result name="failexport" type="stream">
+	            <param name="contentType">application/vnd.ms-excel</param>
+	            <param name="inputName">excelStream</param>
+	            <param name="contentDisposition">attachment;filename="${fileName}"</param>
+	            <param name="bufferSize">2048</param>
+			</result>
+		</action>		
+		<action name="DETAILT02020" class="T02020ActionBean" method="detail">
+			<result name="success">/T02020/DETAILT02020.jsp</result>
+		</action>
+		<action name="DELSELT02020" class="T02020ActionBean" method="delSel">
+			<result name="success" type="json" />
+		</action>
+		
+		<action name="ZHXZT02020" class="T02002ActionBean" method="queryZhxzQmpg">
+			<result name="success" type="json"/>
+		</action>
+		
+		<!-- 全面评估市场法房产信息 -->
+		<action name="VIEWT02060" class="T02060ActionBean">
+			<result name="success">/T02060/VIEWT02060.jsp</result>
+		</action>
+		<action name="FINDT02060" class="T02060ActionBean" method="query">
+			<result name="success" type="json">
+				<param name="includeProperties">rows.*,pageIndex,pageSize,total</param>
+			</result>
+		</action>
+		<action name="KBSLKUPLOADSY" class="T02060ActionBean" method="upload">		
+			<param name="savePath">/upload</param>
+			<result name="success">/T02060/ExcelImport.jsp</result>
+			<result name="input">/T02060/VIEWT02060.jsp</result>
+		</action>
+		<action name="KBSLKIMPORTSY" class="T02060ActionBean" method="importFile">	
+			<result name="success" type="chain">VIEWT02060</result>
+			<result name="input">/T02060/VIEWT02060.jsp</result>
+			<result name="failexport" type="stream">
+	            <param name="contentType">application/vnd.ms-excel</param>
+	            <param name="inputName">excelStream</param>
+	            <param name="contentDisposition">attachment;filename="${fileName}"</param>
+	            <param name="bufferSize">2048</param>
+			</result>
+		</action>		
+		<action name="DETAILT02060" class="T02060ActionBean" method="detail">
+			<result name="success">/T02060/DETAILT02060.jsp</result>
+		</action>
+		<action name="DELSELT02060" class="T02060ActionBean" method="delSel">
+			<result name="success" type="json" />
+		</action>
+	</package>
+
+</struts>

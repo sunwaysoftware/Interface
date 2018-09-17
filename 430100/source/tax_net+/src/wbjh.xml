@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="WBJH" extends="AppDefault" namespace="/wbjh">
+
+		<action name="queryGsQyxx" class="Wbjh00000ActionBean" method="queryGsQyxx">
+			<result name="success" type="json"/>
+		</action>
+		
+		<action name="queryGsZrr" class="Wbjh00000ActionBean" method="queryGsZrr">
+			<result name="success" type="json"/>
+		</action>		
+		
+		<action name="SENDXMLI" class="Wbjh00000ActionBean" method="sendXMLI">
+			<result name="success" type="json" />
+		</action>	
+		
+		<action name="SENDXMLISY" class="Wbjh00000ActionBean" method="sendXMLISY">
+			<result name="success" type="json" />
+		</action>
+		
+		<action name="SENDXMLSE" class="Wbjh00000ActionBean" method="SendSeXML">
+		    <result name="success" type="json" />
+		</action>		
+		
+	</package>
+</struts>

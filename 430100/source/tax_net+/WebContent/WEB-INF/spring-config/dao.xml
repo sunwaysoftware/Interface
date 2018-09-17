@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="BaseDAOBean" class="com.sunway.dao.impl.BaseDAO" abstract="true">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- ****************** DAO ****************** -->
+	<bean id="T00001DaoBean" class="com.sunway.dao.impl.Pgt00001DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00002DaoBean" class="com.sunway.dao.impl.Pgt00002DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00003DaoBean" class="com.sunway.dao.impl.Pgt00003DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00004DaoBean" class="com.sunway.dao.impl.Pgt00004DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00005DaoBean" class="com.sunway.dao.impl.Pgt00005DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00006DaoBean" class="com.sunway.dao.impl.Pgt00006DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00009DaoBean" class="com.sunway.dao.impl.Pgt00009DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00010DaoBean" class="com.sunway.dao.impl.Pgt00010DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00012DaoBean" class="com.sunway.dao.impl.Pgt00012DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00013DaoBean" class="com.sunway.dao.impl.Pgt00013DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00301DaoBean" class="com.sunway.dao.impl.Pgt00301DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00051DaoBean" class="com.sunway.dao.impl.Pgt00051DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00052DaoBean" class="com.sunway.dao.impl.Pgt00052DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00053DaoBean" class="com.sunway.dao.impl.Pgt00053DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00054DaoBean" class="com.sunway.dao.impl.Pgt00054DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00055DaoBean" class="com.sunway.dao.impl.Pgt00055DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00352DaoBean" class="com.sunway.dao.impl.Pgt00352DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T00352fDaoBean" class="com.sunway.dao.impl.Pgt00352fDAO" parent="BaseDAOBean" scope="request" />
+
+	<bean id="T00353DaoBean" class="com.sunway.dao.impl.Pgt00353DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00354DaoBean" class="com.sunway.dao.impl.Pgt00354DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00355DaoBean" class="com.sunway.dao.impl.Pgt00355DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T00321DaoBean" class="com.sunway.dao.impl.Pgt00321DAO" parent="BaseDAOBean" scope="request"/>
+
+    <bean id="T00322DaoBean" class="com.sunway.dao.impl.Pgt00322DAO" parent="BaseDAOBean" scope="request"/>
+    
+    <bean id="T00323DaoBean" class="com.sunway.dao.impl.Pgt00323DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00356DaoBean" class="com.sunway.dao.impl.Pgt00356DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00359DaoBean" class="com.sunway.dao.impl.Pgt00359DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T00371aDaoBean" class="com.sunway.dao.impl.Pgt00371aDAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00303DaoBean" class="com.sunway.dao.impl.Pgt00303DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00305wDaoBean" class="com.sunway.dao.impl.Pgt00305wDAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T00305yDaoBean" class="com.sunway.dao.impl.Pgt00305yDAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00306DaoBean" class="com.sunway.dao.impl.Pgt00306DAO" parent="BaseDAOBean" scope="request" />
+	
+	<bean id="T00306fDaoBean" class="com.sunway.dao.impl.Pgt00306fDAO" parent="BaseDAOBean" scope="request" />
+
+	<bean id="T00302DaoBean" class="com.sunway.dao.impl.Pgt00302DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T00320DaoBean" class="com.sunway.dao.impl.Pgt00320DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00304DaoBean" class="com.sunway.dao.impl.Pgt00304DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00302eDaoBean" class="com.sunway.dao.impl.Pgt00302eDAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00384DaoBean" class="com.sunway.dao.impl.Pgt00384DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Pg30001DaoBean" class="com.sunway.dao.impl.Pg30001DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Pg30002DaoBean" class="com.sunway.dao.impl.Pg30002DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00351DaoBean" class="com.sunway.dao.impl.Pgt00351DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00351aDaoBean" class="com.sunway.dao.impl.Pgt00351aDAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00351eDaoBean" class="com.sunway.dao.impl.Pgt00351eDAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="VCZ00002DaoBean" class="com.sunway.dao.impl.PgvCz00002DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00357DaoBean" class="com.sunway.dao.impl.Pgt00357DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00357eDaoBean" class="com.sunway.dao.impl.Pgt00357eDAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Cz00042DaoBean" class="com.sunway.dao.impl.Cz00042DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Pg30001gDaoBean" class="com.sunway.dao.impl.Pg30001gDAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00331DaoBean" class="com.sunway.dao.impl.Pgt00331DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00332DaoBean" class="com.sunway.dao.impl.Pgt00332DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00333DaoBean" class="com.sunway.dao.impl.Pgt00333DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00334DaoBean" class="com.sunway.dao.impl.Pgt00334DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00334aDaoBean" class="com.sunway.dao.impl.Pgt00334aDAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00358DaoBean" class="com.sunway.dao.impl.Pgt00358DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00041DaoBean" class="com.sunway.dao.impl.Pgt00041DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Cz00006DaoBean" class="com.sunway.dao.impl.PgvCz00006DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Db000011DaoBean" class="com.sunway.dao.impl.PgvDb000011DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Db000012DaoBean" class="com.sunway.dao.impl.PgvDb000012DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Db000013DaoBean" class="com.sunway.dao.impl.PgvDb000013DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Db000014DaoBean" class="com.sunway.dao.impl.PgvDb000014DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Db000015DaoBean" class="com.sunway.dao.impl.PgvDb000015DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Db000016DaoBean" class="com.sunway.dao.impl.PgvDb000016DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Bb00001DaoBean" class="com.sunway.dao.impl.PgvBb00001DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Bb00002DaoBean" class="com.sunway.dao.impl.PgvBb00002DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Bb00003DaoBean" class="com.sunway.dao.impl.PgvBb00003DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Bb00004DaoBean" class="com.sunway.dao.impl.PgvBb00004DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Bb00005DaoBean" class="com.sunway.dao.impl.PgvBb00005DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Bb00006DaoBean" class="com.sunway.dao.impl.PgvBb00006DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Bb00007DaoBean" class="com.sunway.dao.impl.PgvBb00007DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Bb00008DaoBean" class="com.sunway.dao.impl.PgvBb00008DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Bb00009DaoBean" class="com.sunway.dao.impl.PgvBb00009DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Bb00010DaoBean" class="com.sunway.dao.impl.PgvBb00010DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Cz00001DaoBean" class="com.sunway.dao.impl.Cz00001DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="V00301ADaoBean" class="com.sunway.dao.impl.Pgv00301ADAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="V00302ADaoBean" class="com.sunway.dao.impl.Pgv00302ADAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="ChartBzslkDaoBean" class="com.sunway.dao.impl.ChartBzslkDAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="CzArcgisDaoBean" class="com.sunway.dao.impl.CzArcgisDAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Pssd9DaoBean" class="com.sunway.dao.impl.Pssd9DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="V00301_bDaoBean" class="com.sunway.dao.impl.Pgv00301_bDAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="V00302_bDaoBean" class="com.sunway.dao.impl.Pgv00302_bDAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Bb00001_bDaoBean" class="com.sunway.dao.impl.PgvBb00001_bDAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Bb00002_bDaoBean" class="com.sunway.dao.impl.PgvBb00002_bDAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Bb00003_bDaoBean" class="com.sunway.dao.impl.PgvBb00003_bDAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Bb00004_bDaoBean" class="com.sunway.dao.impl.PgvBb00004_bDAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Bb00005_bDaoBean" class="com.sunway.dao.impl.PgvBb00005_bDAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Bb00006_bDaoBean" class="com.sunway.dao.impl.PgvBb00006_bDAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Bb00007_bDaoBean" class="com.sunway.dao.impl.PgvBb00007_bDAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Bb00008_bDaoBean" class="com.sunway.dao.impl.PgvBb00008_bDAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Bb00009_bDaoBean" class="com.sunway.dao.impl.PgvBb00009_bDAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="Bb00010_bDaoBean" class="com.sunway.dao.impl.PgvBb00010_bDAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="V00333aDAOBean" class="com.sunway.dao.impl.Pgv00333aDAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00335DAOBean" class="com.sunway.dao.impl.Pgt00335DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00335aDaoBean" class="com.sunway.dao.impl.Pgt00335aDAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00334cDaoBean" class="com.sunway.dao.impl.Pgt00334cDAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00331cDaoBean" class="com.sunway.dao.impl.Pgt00331cDAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00332cDaoBean" class="com.sunway.dao.impl.Pgt00332cDAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00331aDaoBean" class="com.sunway.dao.impl.Pgt00331aDAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T00335cDaoBean" class="com.sunway.dao.impl.Pgt00335cDAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="CL00390DaoBean" class="com.sunway.dao.impl.CL00390DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="BB00001DaoBean" class="com.sunway.dao.impl.BB00001DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="BB00002DaoBean" class="com.sunway.dao.impl.BB00002DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="BB00003DaoBean" class="com.sunway.dao.impl.BB00003DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="BB00004DaoBean" class="com.sunway.dao.impl.BB00004DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="BB00005DaoBean" class="com.sunway.dao.impl.BB00005DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="BB00006DaoBean" class="com.sunway.dao.impl.BB00006DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="BB00007DaoBean" class="com.sunway.dao.impl.BB00007DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="BB00008DaoBean" class="com.sunway.dao.impl.BB00008DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T00360DaoBean" class="com.sunway.dao.impl.Pgt00360DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T00361DaoBean" class="com.sunway.dao.impl.Pgt00361DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T00362DaoBean" class="com.sunway.dao.impl.Pgt00362DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T00364DaoBean" class="com.sunway.dao.impl.Pgt00364DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T00365DaoBean" class="com.sunway.dao.impl.Pgt00365DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T00370DaoBean" class="com.sunway.dao.impl.Pgt00370DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T00352mDaoBean" class="com.sunway.dao.impl.Pgt00352mDAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T00352m1DaoBean" class="com.sunway.dao.impl.Pgt00352m1DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="TJ00001DaoBean" class="com.sunway.dao.impl.Tj00001DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="Tree00000DaoBean" class="com.sunway.dao.impl.Tree00000DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="WBJH00DaoBean" class="com.sunway.dao.impl.WBJH00DAO" parent="BaseDAOBean" scope="request"/>
+	
+    <bean id="TJ00002DaoBean" class="com.sunway.dao.impl.Tj00002DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T02002cDaoBean" class="com.sunway.dao.impl.Pgt02002cDAO" parent="BaseDAOBean" scope="request"/>	
+	
+	<bean id="T02002DaoBean" class="com.sunway.dao.impl.Pgt02002DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T02020DaoBean" class="com.sunway.dao.impl.Pgt02020DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T02050DaoBean" class="com.sunway.dao.impl.Pgt02050DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T02052DaoBean" class="com.sunway.dao.impl.Pgt02052DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T02053DaoBean" class="com.sunway.dao.impl.Pgt02053DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T02056DaoBean" class="com.sunway.dao.impl.Pgt02056DAO" parent="BaseDAOBean" scope="request"/>		
+	
+	<bean id="T02060DaoBean" class="com.sunway.dao.impl.Pgt02060DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T02061aDaoBean" class="com.sunway.dao.impl.Pgt02061aDAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T02061DaoBean" class="com.sunway.dao.impl.Pgt02061DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T02064DaoBean" class="com.sunway.dao.impl.Pgt02064DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T02063DaoBean" class="com.sunway.dao.impl.Pgt02063DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T02057DaoBean" class="com.sunway.dao.impl.Pgt02057DAO" parent="BaseDAOBean" scope="request"/>	
+	
+	<bean id="T02055DaoBean" class="com.sunway.dao.impl.Pgt02055DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T02054DaoBean" class="com.sunway.dao.impl.Pgt02054DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T02058DaoBean" class="com.sunway.dao.impl.Pgt02058DAO" parent="BaseDAOBean" scope="request"/>	
+	
+	<bean id="T00310DaoBean" class="com.sunway.dao.impl.Pgt00310DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T00310fDaoBean" class="com.sunway.dao.impl.Pgt00310fDAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T00050DaoBean" class="com.sunway.dao.impl.Pgt00050DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="Pg20001DaoBean" class="com.sunway.dao.impl.Pg20001DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="CL02090DaoBean" class="com.sunway.dao.impl.CL02090DAO" parent="BaseDAOBean" scope="request"/>
+
+	<bean id="T02070DaoBean" class="com.sunway.dao.impl.Pgt02070DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T02005DaoBean" class="com.sunway.dao.impl.Pgt02005DAO" parent="BaseDAOBean" scope="request" />
+	
+	<bean id="Pg20002DaoBean" class="com.sunway.dao.impl.Pg20002DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T02034DaoBean" class="com.sunway.dao.impl.Pgt02034DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T02031DaoBean" class="com.sunway.dao.impl.Pgt02031DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T02031cDaoBean" class="com.sunway.dao.impl.Pgt02031cDAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T02034cDaoBean" class="com.sunway.dao.impl.Pgt02034cDAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T02084DaoBean" class="com.sunway.dao.impl.Pgt02084DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T02010DaoBean" class="com.sunway.dao.impl.Pgt02010DAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T02010fDaoBean" class="com.sunway.dao.impl.Pgt02010fDAO" parent="BaseDAOBean" scope="request"/>
+	
+	<bean id="T00060DaoBean" class="com.sunway.dao.impl.Pgt00060DAO" parent="BaseDAOBean" scope="request">
+		<property name="ip" value="${ip}" />
+	</bean>
+
+</beans>

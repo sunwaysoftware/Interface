@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 数据查询 -->
+	<package name="BFSJ" extends="AppDefault" namespace="/bfsj">
+
+		<!-- 住宅登记信息备份数据查询 -->
+		<action name="VIEWV00301_B" class="V00301_bActionBean">
+			<result name="success">/V00301_B/VIEWV00301_B.jsp</result>
+		</action>
+		<action name="FINDV00301_B" class="V00301_bActionBean" method="query">
+			<result name="success" type="json"/>
+		</action>
+		<action name="DETAILV00301_B" class="V00301_bActionBean" method="detail">
+			<result name="success">/V00301_B/DETAILV00301_B.jsp</result>
+		</action>
+		<!-- 住宅房产信息备份数据查询 -->
+		<action name="VIEWV00302_B" class="V00302_bActionBean">
+			<result name="success">/V00302_B/VIEWV00302_B.jsp</result>
+		</action>
+		<action name="FINDV00302_B" class="V00302_bActionBean" method="query">
+			<result name="success" type="json"/>
+		</action>
+		<action name="DETAILV00302_B" class="V00302_bActionBean" method="detail">
+			<result name="success">/V00302_B/DETAILV00302_B.jsp</result>
+		</action>
+		<!-- 报表9-->
+		<action name="VIEWBB00009_B" class="Bb00009_bActionBean">
+			<result name="success">/BB00009_B/VIEWBB00009_B.jsp</result>
+		</action>
+		<action name="FINDBB00009_B" class="Bb00009_bActionBean" method="query">
+			<result name="success" type="json"/>
+		</action>
+		<action name="VIEWBB00009_BPDF" class="Bb00009_bActionBean" method="query">
+			<result name="success" type="jasper">
+                <param name="location">/reports/Report09.jasper</param>
+                <param name="dataSource">operList</param>
+                <param name="format">PDF</param>
+                <param name="documentName">Report9</param>
+			</result>
+		</action>	
+		<action name="VIEWBB00009_BXLS" class="Bb00009_bActionBean" method="query">
+			<result name="success" type="jasper">
+                <param name="location">/reports/Report09.jasper</param>
+                <param name="dataSource">operList</param>
+                <param name="format">XLS</param>
+                <param name="documentName">Report9</param>
+			</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 数据查询 -->
+	<package name="SJCX" extends="AppDefault" namespace="/sjcx">
+
+		<!-- 住宅登记信息查询-->
+		<action name="VIEWV003015" class="V003015ActionBean">
+			<result name="success">/V003015/VIEWV003015.jsp</result>
+		</action>
+		<action name="FINDV003015" class="V003015ActionBean" method="query">
+			<result name="success" type="json"/>
+		</action>
+		<!-- 住宅房产信息查询-->
+		<action name="VIEWV003025" class="V003025ActionBean">
+			<result name="success">/V003025/VIEWV003025.jsp</result>
+		</action>
+		<action name="FINDV003025" class="V003025ActionBean" method="query">
+			<result name="success" type="json" >
+				<param name="includeProperties">rows.*,pageIndex,pageSize,total</param>
+			</result>
+		</action>
+		<action name="EXPV003025" class="V003025ActionBean" method="export">
+			<result name="success" type="stream">
+	            <param name="contentType">application/vnd.ms-excel</param>
+	            <param name="inputName">excelStream</param>
+	            <param name="contentDisposition">filename="CZ_sjcx.xls"</param>
+	            <param name="bufferSize">2048</param>
+			</result>
+			<result name="input">/V003025/VIEWV003025.jsp</result>
+		</action>
+		<action name="VIEWV003025B" class="V003025ActionBean" method="execute_B">
+			<result name="success">/V003025/VIEWV003025B.jsp</result>
+		</action>
+		<action name="FINDV003025B" class="V003025ActionBean" method="query_B">
+			<result name="success" type="json" >
+				<param name="includeProperties">rows.*,pageIndex,pageSize,total</param>
+			</result>
+		</action>
+		
+		<action name="VIEWV003025B1" class="V003025ActionBean" method="execute_B">
+			<result name="success">/V003025/VIEWV003025B1.jsp</result>
+		</action>
+		<action name="FINDV003025B1" class="V003025ActionBean" method="query_B1">
+			<result name="success" type="json" >
+				<param name="includeProperties">rows.*,pageIndex,pageSize,total</param>
+			</result>
+		</action>
+		<action name="EXPV003025B" class="V003025ActionBean" method="export_B">
+			<result name="success" type="stream">
+	            <param name="contentType">application/vnd.ms-excel</param>
+	            <param name="inputName">excelStream</param>
+	            <param name="contentDisposition">filename="CZ_sjcxB.xls"</param>
+	            <param name="bufferSize">2048</param>
+			</result>
+			<result name="input">/V003025/VIEWV003025B.jsp</result>
+		</action>
+		
+		<!-- 股价分区导出 -->
+		<action name="EXPV00352" class="T00352ActionBean" method="export">
+			<result name="success" type="stream">
+	            <param name="contentType">application/vnd.ms-excel</param>
+	            <param name="inputName">excelStream</param>
+	            <param name="contentDisposition">filename="gjfq.xls"</param>
+	            <param name="bufferSize">2048</param>
+			</result>
+			<result name="input">/T00352/VIEWT00352.jsp</result>
+		</action>
+		
+		<!-- 交易价格指数数据导出 -->
+		<action name="EXPV00356" class="T00356ActionBean" method="export">
+		     <result name="success" type="stream">
+		        <param name="contentType">application/vnd.ms-excel</param>
+		        <param name="inputName">excelStream</param>
+		        <param name="contentDisposition">filename="jyjgzs.xls"</param>
+		        <param name="bufferSize">2048</param>
+		     </result>
+		     <result name="input">/T00356/VIEWT00356.jsp</result>
+		</action>
+		<!-- 可比实例库数据导出 -->
+		    <action name="EXPV00357" class="T00357ActionBean" method="export">
+		      <result name="success" type="stream">
+		        <param name="contentType">application/vnd.ms-excel</param>
+		        <param name="inputName">excelStream</param>
+		        <param name="contentDisposition">filename="kbsl.xls"</param>
+		        <param name="bufferSize">2048</param>
+		     </result>
+		     <result name="input">/T00357/VIEWT00357.jsp</result>
+		    </action>
+		    
+		  <!--标准房维护数据导出  -->
+		   <action name="EXPV00351" class="T00351ActionBean" method="export">
+		      <result name="success" type="stream">
+		        <param name="contentType">application/vnd.ms-excel</param>
+		        <param name="inputName">excelStream</param>
+		        <param name="contentDisposition">filename="bzf.xls"</param>
+		        <param name="bufferSize">2048</param>
+		     </result>
+		     <result name="input">/T00351/VIEWT00351.jsp</result>
+		    </action>
+		<!-- 楼房普查数据导出 -->
+		<action name="EXPV00303" class="T00303ActionBean" method="export">
+		      <result name="success" type="stream">
+		          <param name="contentType">application/vnd.ms-excel</param>
+		          <param name="inputName">excelStream</param>
+		          <param name="contentDisposition">filename="lfpc.xls"</param>
+		          <param name="bufferSize">2048</param>
+		      </result>
+		      <result name="input">/T00303/VIEWT00303.jsp</result>
+		</action>
+		
+		<!-- 股价分区导出 -->
+		<action name="EXPV00355" class="T00355ActionBean" method="export">
+			<result name="success" type="stream">
+	            <param name="contentType">application/vnd.ms-excel</param>
+	            <param name="inputName">excelStream</param>
+	            <param name="contentDisposition">filename="lcxz.xls"</param>
+	            <param name="bufferSize">2048</param>
+			</result>
+			<result name="input">/T00355/VIEWT00355.jsp</result>
+		</action>
+		<!-- 住宅登记信息变更查询 -->
+		<action name="VIEWV00301A" class="V00301AActionBean">
+			<result name="success">/V00301A/VIEWV00301A.jsp</result>
+		</action>
+		<action name="FINDV00301A" class="V00301AActionBean" method="query">
+			<result name="success" type="json"/>
+		</action>
+		<action name="VIEWV00301AFRAME" class="V00301AActionBean" method="frame">
+			<result name="success">/V00301A/VIEWV00301AFRAME.jsp</result>
+		</action>
+		<action name="LISTV00301AINIT" class="V00301AActionBean" method="listInit">
+			<result name="success">/V00301A/LISTV00301A.jsp</result>
+		</action>
+		<action name="LISTV00301A" class="V00301AActionBean" method="list">
+			<result name="success" type="json"/>
+		</action>
+		<action name="DETAILV00301A" class="V00301AActionBean" method="detail">
+			<result name="success">/V00301A/DETAILV00301A.jsp</result>
+		</action>
+		<!-- 住宅房产信息变更查询 -->
+		<action name="VIEWV00302A" class="V00302AActionBean">
+			<result name="success">/V00302A/VIEWV00302A.jsp</result>
+		</action>
+		<action name="VIEWV00302AFRAME" class="V00302AActionBean" method="frame">
+			<result name="success">/V00302A/VIEWV00302AFRAME.jsp</result>
+		</action>
+		<action name="FINDV00302A" class="V00302AActionBean" method="query">
+			<result name="success" type="json"/>
+		</action>
+		<action name="LISTV00302AINIT" class="V00302AActionBean" method="listInit">
+			<result name="success">/V00302A/LISTV00302A.jsp</result>
+		</action>
+		
+		<action name="LISTV00302A" class="V00302AActionBean" method="list">
+			<result name="success" type="json"/>
+		</action>
+		<action name="DETAILV00302A" class="V00302AActionBean" method="detail">
+			<result name="success">/V00302A/DETAILV00302A.jsp</result>
+		</action>
+		
+		<!-- 商业数据查询 -->
+		<action name="VIEWV020025" class="V020025ActionBean">
+			<result name="success">/V020025/VIEWV020025.jsp</result>
+		</action>
+		<action name="FINDV020025" class="V020025ActionBean" method="query">
+			<result name="success" type="json">
+				<param name="includeProperties">rows.*,pageIndex,pageSize,total</param>
+			</result>
+		</action>
+		<action name="EXPV020025" class="V020025ActionBean" method="export">
+			<result name="success" type="stream">
+	            <param name="contentType">application/vnd.ms-excel</param>
+	            <param name="inputName">excelStream</param>
+	            <param name="contentDisposition">filename="wrdsy.xls"</param>
+	            <param name="bufferSize">2048</param>
+			</result>		
+			<result name="input">/V020025/VIEWV020025.jsp</result>
+		</action>
+		
+		<action name="VIEWV020025B" class="V020025ActionBean" method="execute_B">
+			<result name="success">/V020025/VIEWV020025B.jsp</result>
+		</action>
+		<action name="FINDV020025B" class="V020025ActionBean" method="query_B">
+			<result name="success" type="json" >
+				<param name="includeProperties">rows.*,pageIndex,pageSize,total</param>
+			</result>
+		</action>
+		<action name="VIEWV020025B1" class="V020025ActionBean" method="execute_B">
+			<result name="success">/V020025/VIEWV020025B1.jsp</result>
+		</action>
+		<action name="FINDV020025B1" class="V020025ActionBean" method="query_B1">
+			<result name="success" type="json" >
+				<param name="includeProperties">rows.*,pageIndex,pageSize,total</param>
+			</result>
+		</action>
+		<action name="EXPV020025B" class="V020025ActionBean" method="export_B">
+			<result name="success" type="stream">
+	            <param name="contentType">application/vnd.ms-excel</param>
+	            <param name="inputName">excelStream</param>
+	            <param name="contentDisposition">filename="yrdsy.xls"</param>
+	            <param name="bufferSize">2048</param>
+			</result>		
+			<result name="input">/V020025/VIEWV020025B.jsp</result>
+		</action>	
+		
+		<action name="VIEWV00310" class="T00310ActionBean">
+			<result name="input">/V00310/VIEWV00310.jsp</result>
+			<result name="success">/V00310/VIEWV00310.jsp</result>
+		</action>
+		<action name="FINDV00310" class="T00310ActionBean" method="queryV">
+			<result name="input">/V00310/VIEWV00310.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+		<action name="VIEWV00310B" class="T00310ActionBean">
+			<result name="input">/V00310/VIEWV00310B.jsp</result>
+			<result name="success">/V00310/VIEWV00310B.jsp</result>
+		</action>
+		<action name="FINDV00310B" class="T00310ActionBean" method="queryB">
+			<result name="input">/V00310/VIEWV00310B.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+		
+		<action name="VIEWV02010" class="T02010ActionBean">
+			<result name="input">/V02010/VIEWV02010.jsp</result>
+			<result name="success">/V02010/VIEWV02010.jsp</result>
+		</action>
+		<action name="FINDV02010" class="T02010ActionBean" method="queryV">
+			<result name="input">/V02010/VIEWV02010.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+		<action name="VIEWV02010B" class="T02010ActionBean">
+			<result name="input">/V02010/VIEWV02010B.jsp</result>
+			<result name="success">/V02010/VIEWV02010B.jsp</result>
+		</action>
+		<action name="FINDV02010B" class="T02010ActionBean" method="queryB">
+			<result name="input">/V02010/VIEWV02010B.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+	</package>
+</struts>
