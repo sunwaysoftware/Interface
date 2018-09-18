@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<service name="Process">
+<service name="Process" >
 	<Description>
-		评估系统提取不动产数据
+		Please Type your service description here
 	</Description>
 	<messageReceivers>
 		<messageReceiver mep="http://www.w3.org/ns/wsdl/in-only" class="org.apache.axis2.rpc.receivers.RPCInOnlyMessageReceiver" />
