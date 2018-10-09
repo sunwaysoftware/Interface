@@ -66,7 +66,7 @@ public class GetFCXX extends BaseFunction implements IBaseObject {
 	private static final String QSWSJS = "qswsjs";      //契税完税基数	
 	private static final String ZRFTEL = "zrftel";		//转让方电话
 	private static final String CSFTEL = "csftel";		//转让方电话
-	
+	private static final String TDCRJ = "TDCRJ";
 	
 	private PgtFCXX fcxx;
 	private boolean errorSign = false;
@@ -145,7 +145,7 @@ public class GetFCXX extends BaseFunction implements IBaseObject {
 				Iterator<Element> desc = rootElement.element("FDCQINFO").elementIterator();
 				while (desc.hasNext()) {
 					Element rowElement = desc.next();
-					sql = String.format("call PG_INS_FC001('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', %f, %f, '%s', '%s', '%s', %f, %f, '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', %f, '%s', '%s', %f)", 
+					sql = String.format("call PG_INS_FC001('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', %f, %f, '%s', '%s', '%s', %f, %f, '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', %f, '%s', '%s', %f, %f)", 
 							//isNotEmpty(rowElement.getFirstChildWithName(new QName("FCSLH")))?rowElement.getFirstChildWithName(new QName("FCSLH")).getText():null,
 							isNotEmpty(rowElement)?rowElement.elementTextTrim("JID"):null,		
 							isNotEmpty(rowElement)?rowElement.elementTextTrim("FBDCDYH"):null,
@@ -187,7 +187,8 @@ public class GetFCXX extends BaseFunction implements IBaseObject {
 							null, //isNotEmpty(rowElement.getFirstChildWithName(new QName("CG")))?Double.valueOf(rowElement.getFirstChildWithName(new QName("CG")).getText()):null,
 							null, //isNotEmpty(rowElement.getFirstChildWithName(new QName("XQDM")))?rowElement.getFirstChildWithName(new QName("XQDM")).getText():null,
 							null, //isNotEmpty(rowElement.getFirstChildWithName(new QName("QSWSRQ")))?rowElement.getFirstChildWithName(new QName("QSWSRQ")).getText():null,
-							null); //isNotEmpty(rowElement.getFirstChildWithName(new QName("QSWSJS")))?Double.valueOf(rowElement.getFirstChildWithName(new QName("QSWSJS")).getText()):null);
+							null, //isNotEmpty(rowElement.getFirstChildWithName(new QName("QSWSJS")))?Double.valueOf(rowElement.getFirstChildWithName(new QName("QSWSJS")).getText()):null);
+							isNotEmpty(rowElement)?Double.valueOf(rowElement.elementTextTrim("TDCRJ")):null);
 					executeFunction(sql, conn);
 				}
 				logger.info("3、国土信息存储完毕...");
@@ -256,6 +257,7 @@ public class GetFCXX extends BaseFunction implements IBaseObject {
 		e.setQswsjs(ocrs.getString(QSWSJS));
 		e.setZrfTel(ocrs.getString(ZRFTEL));
 		e.setCsfTel(ocrs.getString(CSFTEL));
+		e.setTdcrj(ocrs.getString(TDCRJ));
 		return e;
 	}
 
@@ -270,7 +272,7 @@ public class GetFCXX extends BaseFunction implements IBaseObject {
 			for (int i = 0; i < list.size(); i++) {
 				fcxxBean = (PgtFCXX) list.get(i);
 				str = String
-						.format("<ROW FCSLH='%s' YFCZH='%s' ZRFSFLX='%s' ZRFSFID='%s' ZRFMC='%s' CSFSFLX='%s' CSFSFID='%s' CSFMC='%s' CLH='%s' SJYT='%s' LFDZ='%s' DYFH='%s' SZLC='%s' ZLC='%s' JZJG='%s' FWLX='%s' JYLX='%s' JZMJ='%s' HTZJ='%s' JYSJ='%s' FZRQ='%s' DF='%s' CX='%s' CG='%s' OINSID='%s' YJG='%s' PGJG='%s' ROOMID='%s' OWNROOMID='%s' SFSYFC='%s' XQDM='%s' JCNF='%s' WSRQ='%s' WSJS='%s' ZRFTEL='%s' CSFTEL='%s' ERRORSIGN='0' ERRORMESSAGE='%s'/>",
+						.format("<ROW FCSLH='%s' YFCZH='%s' ZRFSFLX='%s' ZRFSFID='%s' ZRFMC='%s' CSFSFLX='%s' CSFSFID='%s' CSFMC='%s' CLH='%s' SJYT='%s' LFDZ='%s' DYFH='%s' SZLC='%s' ZLC='%s' JZJG='%s' FWLX='%s' JYLX='%s' JZMJ='%s' HTZJ='%s' JYSJ='%s' FZRQ='%s' DF='%s' CX='%s' CG='%s' OINSID='%s' YJG='%s' PGJG='%s' ROOMID='%s' OWNROOMID='%s' SFSYFC='%s' XQDM='%s' JCNF='%s' WSRQ='%s' WSJS='%s' ZRFTEL='%s' CSFTEL='%s' TDCRJ='%s' ERRORSIGN='0' ERRORMESSAGE='%s'/>",
 								fcxxBean.getFcslh(), fcxxBean.getYfczh(),
 								fcxxBean.getZrfsflx(), fcxxBean.getZrfsfid(),
 								fcxxBean.getZrfmc(), fcxxBean.getCsfsflx(),
@@ -289,14 +291,14 @@ public class GetFCXX extends BaseFunction implements IBaseObject {
 								fcxxBean.getXqdm(), fcxxBean.getJcnf(), 
 								fcxxBean.getQswsrq(), fcxxBean.getQswsjs(),
 								fcxxBean.getZrfTel(), fcxxBean.getCsfTel(),
-								"获取成功");
+								fcxxBean.getTdcrj(), "交易数据获取成功");
 				strBuffer.append(str);
 			}
 		} else {
 			for (int i = 0; i < list.size(); i++) {
 				fcxxBean = (PgtFCXX) list.get(i);
 				str = String
-						.format("<ROW FCSLH='' YFCZH='' ZRFSFLX='' ZRFSFID='' ZRFMC='' CSFSFLX='' CSFSFID='' CSFMC='' CLH='' SJYT='' LFDZ='' DYFH='' SZLC='' ZLC='' JZJG='' FWLX='' JYLX='' JZMJ='' HTZJ='' JYSJ='' FZRQ='' DF='' CX='' CG='' OINSID='' YJG='' PGJG='' ROOMID='' OWNROOMID='' SFSYFC='' XQDM='' JCNF='' WSRQ='' WSJS='' ZRFTEL='' CSFTEL='' ERRORSIGN='1' ERRORMESSAGE='%s'/>",
+						.format("<ROW FCSLH='' YFCZH='' ZRFSFLX='' ZRFSFID='' ZRFMC='' CSFSFLX='' CSFSFID='' CSFMC='' CLH='' SJYT='' LFDZ='' DYFH='' SZLC='' ZLC='' JZJG='' FWLX='' JYLX='' JZMJ='' HTZJ='' JYSJ='' FZRQ='' DF='' CX='' CG='' OINSID='' YJG='' PGJG='' ROOMID='' OWNROOMID='' SFSYFC='' XQDM='' JCNF='' WSRQ='' WSJS='' ZRFTEL='' CSFTEL='' TDCRJ='' ERRORSIGN='1' ERRORMESSAGE='%s'/>",
 								errorMessage);
 				strBuffer.append(str);
 			}

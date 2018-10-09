@@ -48,6 +48,7 @@ public class PgtFCXX {
 	private String xqdm;
 	private String zrfTel;
 	private String csfTel;
+	private String tdcrj;
 	
 	public String getFcslh() {
 		return fcslh;
@@ -354,5 +355,17 @@ public class PgtFCXX {
 	 */
 	public void setCsfTel(String csfTel) {
 		this.csfTel = csfTel;
+	}
+	/**
+	 * @return the tdcrj
+	 */
+	public String getTdcrj() {
+		return tdcrj;
+	}
+	/**
+	 * @param tdcrj the tdcrj to set
+	 */
+	public void setTdcrj(String tdcrj) {
+		this.tdcrj = tdcrj;
 	}
 }
