@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.sunway.vo.FC002" table="FC002">
+        <id name="lsh" type="java.lang.String">
+            <column name="LSH" />
+            <generator class="assigned" />
+        </id>
+        <property name="seQs" type="java.lang.Double">
+            <column name="DJZ_QS" />
+        </property>
+        <property name="seYys" type="java.lang.Double">
+            <column name="DJZ_YYS" />
+        </property>
+        <property name="seCjs" type="java.lang.Double">
+            <column name="DJZ_CJS" />
+        </property>
+        <property name="seDfjys" type="java.lang.Double">
+            <column name="DJZ_DFJYS" />
+        </property>
+        <property name="seGrsds" type="java.lang.Double">
+            <column name="DJZ_GRSDS" />
+        </property>
+        <property name="seYhs" type="java.lang.Double">
+            <column name="DJZ_YHS" />
+        </property>
+        <property name="seTdzzs" type="java.lang.Double">
+            <column name="DJZ_TDZZS" />
+        </property>
+        <property name="fphm" type="java.lang.String">
+            <column name="FPHM" />
+        </property>
+        <property name="qssphm" type="java.lang.String">
+            <column name="QSSPHM" />
+        </property>
+        <property name="dfgssphm" type="java.lang.String">
+            <column name="DFGSSPHM" />
+        </property>
+        <property name="updatetime" type="java.util.Date">
+            <column name="UPDATETIME" />
+        </property>
+        <property name="pgid" type="java.lang.String">
+            <column name="PGID" />
+        </property>        
+        <property name="pgjg" type="java.lang.Double">
+            <column name="PGJG" />
+        </property>
+        <property name="msSign" type="java.lang.Integer">
+            <column name="MSSIGN" />
+        </property>
+        <property name="msZcyj" type="java.lang.String">
+            <column name="MSZCYJ" />
+        </property>
+        <property name="kzzd" type="java.lang.String">
+            <column name="KZZD" />
+        </property>
+        <property name="zlbm" type="java.lang.String">
+            <column name="ZLBM" />
+        </property>
+        <property name="ywh" type="java.lang.String">
+            <column name="YWH" />
+        </property>
+        <property name="fcjlsh" type="java.lang.String">
+            <column name="FCJLSH" />
+        </property>
+        <property name="bdcdyh" type="java.lang.String">
+            <column name="BDCDYH" />
+        </property>
+        <property name="ybdcqzh" type="java.lang.String">
+            <column name="YBDCQZH" />
+        </property>
+        <property name="wqhth" type="java.lang.String">
+            <column name="WQHTH" />
+        </property>
+        <property name="dznspzh" type="java.lang.String">
+            <column name="DZNSPZH" />
+        </property>
+        <property name="wspzh" type="java.lang.String">
+            <column name="WSPZH" />
+        </property>
+        <property name="wszh" type="java.lang.String">
+            <column name="WSZH" />
+        </property>
+        <property name="jsje" type="java.lang.Double">
+            <column name="JSJE" />
+        </property>
+        <property name="wsje" type="java.lang.Double">
+            <column name="WSJE" />
+        </property>
+        <property name="wssj" type="java.util.Date">
+            <column name="WSSJ" />
+        </property>
+    </class>
+</hibernate-mapping>

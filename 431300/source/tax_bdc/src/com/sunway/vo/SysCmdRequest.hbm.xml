@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.sunway.vo.SysCmdRequest" table="SYS_CMD_REQUEST">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="cmd_code" type="java.lang.String">
+            <column name="CMD_CODE" />
+        </property>
+        <property name="create_time" type="java.util.Date">
+            <column name="CREATE_TIME" />
+        </property>
+        <property name="resolve_state" type="java.lang.Integer">
+            <column name="RESOLVE_STATE" />
+        </property>
+        <property name="resolve_time" type="java.util.Date">
+            <column name="RESOLVE_TIME" />
+        </property>
+        <property name="third_resolve_time" type="java.util.Date">
+            <column name="THIRD_RESOLVE_TIME" />
+        </property>
+        <property name="data_id" type="java.lang.String">
+            <column name="DATA_ID" />
+        </property>
+        <property name="fail_msg" type="java.lang.String">
+            <column name="FAIL_MSG" />
+        </property>
+    </class>
+</hibernate-mapping>

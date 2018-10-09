@@ -12,12 +12,6 @@ import com.sunway.vo.Functions;
 public interface IBaseFunction {
 
 	/**
-	 * 获取连接
-	 * @return Connection
-	 */
-	public Connection getConnection() throws Exception;
-	
-	/**
 	 * 解析客户端传来的XML
 	 * @param XML
 	 * @return
@@ -31,13 +25,6 @@ public interface IBaseFunction {
 	 * @return 
 	 */
 	public String parseFunction(Functions funs);
-	
-	/**
-	 * 执行查询方法
-	 * @param sql
-	 * @return
-	 */
-	public CachedRowSet queryFunction(String sql,Connection conn);
 	
 	/**
 	 * 执行插入方法

@@ -3,14 +3,10 @@ package com.sunway.function.impl;
 import java.io.ByteArrayInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.Iterator;
 import java.util.List;
 
 import javax.sql.rowset.CachedRowSet;
-
-import oracle.jdbc.rowset.OracleCachedRowSet;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -19,15 +15,9 @@ import org.dom4j.io.SAXReader;
 
 import com.sunway.function.IBaseFunction;
 import com.sunway.function.IBaseObject;
-import com.sunway.jdbc.ConnectionFactory;
 import com.sunway.vo.Functions;
 
 public class BaseFunction implements IBaseFunction {
-
-	@Override
-	public Connection getConnection() throws Exception {
-		return ConnectionFactory.getConnection();
-	}
 
 	@Override
 	public Functions parseXML(String XML) {
@@ -52,55 +42,18 @@ public class BaseFunction implements IBaseFunction {
 	public String parseFunction(Functions funs) {
 		StringBuffer strBuffer = new StringBuffer();
 		Element element = null;
-		Connection conn = null;
 		try {
-			conn = getConnection();
-			conn.setAutoCommit(false);
 			for (int i = 0; i < funs.getFunctions().size(); i++) {
 				element = funs.getFunctions().get(i);
 				Class<?> obj = Class.forName("com.sunway.function.impl." + element.attributeValue("Name"));
-				strBuffer.append(((IBaseObject) obj.newInstance()).executeFunction(element, conn));
+				strBuffer.append(((IBaseObject) obj.newInstance()).executeFunction(element));
 			}
-			conn.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
-			try {
-				conn.rollback();
-			} catch (SQLException e1) {
-				e1.printStackTrace();
-			}
 		} finally {
-			try {
-				if (null != conn)
-					conn.close();
-			} catch (Exception e) {
-				
-			}
 
 		}
 		return strBuffer.toString();
-	}
-
-	@Override
-	public CachedRowSet queryFunction(String sql, Connection conn) {
-		PreparedStatement state = null;
-		ResultSet rs = null;
-		OracleCachedRowSet ocrs = null;
-		try {
-			state = conn.prepareStatement(sql);
-			rs = state.executeQuery();
-			ocrs = new OracleCachedRowSet();
-			ocrs.populate(rs);
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				if (null != state)
-					state.close();
-			} catch (SQLException e) {
-			}
-		}
-		return ocrs;
 	}
 
 	@Override
