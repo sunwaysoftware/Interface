@@ -195,8 +195,7 @@
     <!-- ================================================= -->
     <!-- Transport Ins -->
     <!-- ================================================= -->
-    <transportReceiver name="http"
-                       class="org.apache.axis2.transport.http.SimpleHTTPServer">
+    <transportReceiver name="http" class="org.apache.axis2.transport.http.AxisServletListener">
         <parameter name="port">8080</parameter>
         <!-- Here is the complete list of supported parameters (see example settings further below):
             port: the port to listen on (default 6060)
@@ -526,5 +525,6 @@
         <phase name="MessageOut"/>
         <phase name="Security"/>
     </phaseOrder>
+    
 </axisconfig>
 

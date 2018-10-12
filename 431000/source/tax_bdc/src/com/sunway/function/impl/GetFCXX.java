@@ -66,7 +66,6 @@ public class GetFCXX extends BaseFunction implements IBaseObject {
 	private static final String QSWSJS = "qswsjs";      //契税完税基数	
 	private static final String ZRFTEL = "zrftel";		//转让方电话
 	private static final String CSFTEL = "csftel";		//转让方电话
-	private static final String TDCRJ = "TDCRJ";
 	
 	private PgtFCXX fcxx;
 	private boolean errorSign = false;
@@ -145,7 +144,7 @@ public class GetFCXX extends BaseFunction implements IBaseObject {
 				Iterator<Element> desc = rootElement.element("FDCQINFO").elementIterator();
 				while (desc.hasNext()) {
 					Element rowElement = desc.next();
-					sql = String.format("call PG_INS_FC001('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', %f, %f, '%s', '%s', '%s', %f, %f, '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', %f, '%s', '%s', %f, %f)", 
+					sql = String.format("call PG_INS_FC001('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', %f, %f, '%s', '%s', '%s', %f, %f, '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', %f, '%s', '%s', %f)", 
 							//isNotEmpty(rowElement.getFirstChildWithName(new QName("FCSLH")))?rowElement.getFirstChildWithName(new QName("FCSLH")).getText():null,
 							isNotEmpty(rowElement)?rowElement.elementTextTrim("JID"):null,		
 							isNotEmpty(rowElement)?rowElement.elementTextTrim("FBDCDYH"):null,
@@ -166,15 +165,15 @@ public class GetFCXX extends BaseFunction implements IBaseObject {
 							//isNotEmpty(rowElement.getFirstChildWithName(new QName("DYFH")))?rowElement.getFirstChildWithName(new QName("DYFH")).getText():null,
 							isNotEmpty(rowElement)?rowElement.elementTextTrim("FHH"):null,
 							//isNotEmpty(rowElement.getFirstChildWithName(new QName("ZLC")))?Double.valueOf(rowElement.getFirstChildWithName(new QName("ZLC")).getText()):null,
-							isNotEmpty(rowElement)?Double.valueOf(rowElement.elementTextTrim("FZCS")):null,
+							isNotEmpty(rowElement)?Double.valueOf(null!=rowElement.elementTextTrim("FZCS")?rowElement.elementTextTrim("FZCS"):"0"):null,
 							//isNotEmpty(rowElement.getFirstChildWithName(new QName("SZLC")))?Double.valueOf(rowElement.getFirstChildWithName(new QName("SZLC")).getText()):null,
-							isNotEmpty(rowElement)?Double.valueOf(rowElement.elementTextTrim("FSZC")):null,
+							isNotEmpty(rowElement)?Double.valueOf(null!=rowElement.elementTextTrim("FSZC")?rowElement.elementTextTrim("FSZC"):"0"):null,
 							//isNotEmpty(rowElement.getFirstChildWithName(new QName("JZJG")))?rowElement.getFirstChildWithName(new QName("JZJG")).getText():null,
 							isNotEmpty(rowElement)?rowElement.elementTextTrim("FFWJG"):null,
 							null, //isNotEmpty(rowElement.getFirstChildWithName(new QName("FWLX")))?rowElement.getFirstChildWithName(new QName("FWLX")).getText():null,
 							null, //isNotEmpty(rowElement.getFirstChildWithName(new QName("JYLX")))?rowElement.getFirstChildWithName(new QName("JYLX")).getText():null,
 							//isNotEmpty(rowElement.getFirstChildWithName(new QName("JZMJ")))?Double.valueOf(rowElement.getFirstChildWithName(new QName("JZMJ")).getText()):null,
-							isNotEmpty(rowElement)?Double.valueOf(rowElement.elementTextTrim("FJZMJ")):null,
+							isNotEmpty(rowElement)?Double.valueOf(null!=rowElement.elementTextTrim("FJZMJ")?rowElement.elementTextTrim("FJZMJ"):"0"):null,
 							null, //isNotEmpty(rowElement.getFirstChildWithName(new QName("HTZJ")))?Double.valueOf(rowElement.getFirstChildWithName(new QName("HTZJ")).getText()):null,
 							null, //isNotEmpty(rowElement.getFirstChildWithName(new QName("FZRQ")))?rowElement.getFirstChildWithName(new QName("FZRQ")).getText():null,
 							null, //isNotEmpty(rowElement.getFirstChildWithName(new QName("JCNF")))?rowElement.getFirstChildWithName(new QName("JCNF")).getText():null,
@@ -187,8 +186,8 @@ public class GetFCXX extends BaseFunction implements IBaseObject {
 							null, //isNotEmpty(rowElement.getFirstChildWithName(new QName("CG")))?Double.valueOf(rowElement.getFirstChildWithName(new QName("CG")).getText()):null,
 							null, //isNotEmpty(rowElement.getFirstChildWithName(new QName("XQDM")))?rowElement.getFirstChildWithName(new QName("XQDM")).getText():null,
 							null, //isNotEmpty(rowElement.getFirstChildWithName(new QName("QSWSRQ")))?rowElement.getFirstChildWithName(new QName("QSWSRQ")).getText():null,
-							null, //isNotEmpty(rowElement.getFirstChildWithName(new QName("QSWSJS")))?Double.valueOf(rowElement.getFirstChildWithName(new QName("QSWSJS")).getText()):null);
-							isNotEmpty(rowElement)?Double.valueOf(rowElement.elementTextTrim("TDCRJ")):null);
+							//isNotEmpty(rowElement.getFirstChildWithName(new QName("QSWSJS")))?Double.valueOf(rowElement.getFirstChildWithName(new QName("QSWSJS")).getText()):null);
+							isNotEmpty(rowElement)?Double.valueOf(null!=rowElement.elementTextTrim("TDCRJ")?rowElement.elementTextTrim("TDCRJ"):"0"):null); 
 					executeFunction(sql, conn);
 				}
 				logger.info("3、国土信息存储完毕...");
@@ -202,7 +201,7 @@ public class GetFCXX extends BaseFunction implements IBaseObject {
 				logger.info("4、整合国土报文，返回给评估系统...");
 			}
 		} catch (Exception e) {
-			logger.error(e);
+			e.printStackTrace();
 			errorSign = true;
 			errorMessage = errorMessage +  e.getMessage();
 			result = combineFunctionXML(fcxxList);
@@ -257,7 +256,7 @@ public class GetFCXX extends BaseFunction implements IBaseObject {
 		e.setQswsjs(ocrs.getString(QSWSJS));
 		e.setZrfTel(ocrs.getString(ZRFTEL));
 		e.setCsfTel(ocrs.getString(CSFTEL));
-		e.setTdcrj(ocrs.getString(TDCRJ));
+		e.setTdcrj(ocrs.getString(QSWSJS)); // Save TDCRJ
 		return e;
 	}
 
@@ -289,7 +288,7 @@ public class GetFCXX extends BaseFunction implements IBaseObject {
 								fcxxBean.getPgjg(), fcxxBean.getRoomid(),
 								fcxxBean.getOwnRoomid(), fcxxBean.getSfsyfc(),
 								fcxxBean.getXqdm(), fcxxBean.getJcnf(), 
-								fcxxBean.getQswsrq(), fcxxBean.getQswsjs(),
+								fcxxBean.getQswsrq(), "", //fcxxBean.getQswsjs(),
 								fcxxBean.getZrfTel(), fcxxBean.getCsfTel(),
 								fcxxBean.getTdcrj(), "交易数据获取成功");
 				strBuffer.append(str);
