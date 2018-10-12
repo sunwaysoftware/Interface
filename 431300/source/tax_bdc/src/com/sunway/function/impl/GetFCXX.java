@@ -35,23 +35,31 @@ public class GetFCXX extends BaseFunction implements IBaseObject{
 //		fcxx.setParamVal2(element.elements().get(1).attributeValue(element.elements().get(1).attributes().get(0).getName()));
 //		sql = String.format("SELECT * FROM PG_VFC001 WHERE SLID = '%s' AND SSQY = '%s'", fcxx.getParamVal(), fcxx.getParamVal2());
 		try {
+			logger.info("【房产协税信息表】Querying FC001 table data...");
 	        session = HibernateUtils.getSession();
-	        session.beginTransaction();
 	        Query<?> query1 = session.createQuery("from FC001 where SLID = ?1"); 
 	        query1.setParameter(1, fcxx.getSlid());
 	        fcxxList = (List<FC001>) query1.list();
 			result = combineFunctionXML(fcxxList);
-			//------------ insert cmd table------------------------
-	        Query<?> query2 = session.createQuery("update sys_cmd_request set resolve_state=2, resolve_time=current_timestamp() where cmd_code=?1"); 
-	        query2.setParameter(1, fcxxList.get(0).getZlbh());
-			query2.executeUpdate();
-	        session.getTransaction().commit();
+			if(fcxxList.size()>0) {
+				logger.info("【房产协税信息表】Some data was successfully read from FC001 table.");
+				//------------ insert cmd table------------------------
+				logger.info("【指令流水表】Executing update data status...");
+				session.beginTransaction();
+		        Query<?> query2 = session.createQuery("update sys_cmd_request set resolve_state=2, resolve_time=current_timestamp() where cmd_code=?1"); 
+		        query2.setParameter(1, fcxxList.get(0).getZlbh());
+				query2.executeUpdate();
+		        session.getTransaction().commit();
+		        logger.info("【指令流水表】SYS_CMD_REQUEST table has been successfully updated.");				
+			} else {
+				logger.info("【房产协税信息表】There are no data was read from FC001 table.");
+			}
 		} catch(Exception e) {
 			session.getTransaction().rollback();
 			errorSign = true;
 			errorMessage = e.getMessage();
-			logger.error(errorMessage);
 			result = combineFunctionXML(fcxxList);
+			logger.error("【房产协税信息表】Error during query execution...", e);
 		} finally {
 			session.close();
 		}

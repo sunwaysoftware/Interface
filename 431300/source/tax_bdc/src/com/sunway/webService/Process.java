@@ -18,11 +18,11 @@ public class Process {
 	 */
 	public String PgProcess(String info){
 		BaseFunction bf = new BaseFunction();	
-		logger.info("Request content: "+info);
+		logger.info("Request XML content: " + info);
 		try {
 			DocumentHelper.parseText(info);
 		} catch (DocumentException e) {
-			logger.error("XML format error: "+ e.getMessage());
+			logger.error("Request XML format error： ", e);
 		}
 		return bf.combineXML(bf.parseFunction(bf.parseXML(info)));
 	}

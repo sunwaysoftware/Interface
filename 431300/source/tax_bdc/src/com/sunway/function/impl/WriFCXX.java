@@ -53,16 +53,17 @@ public class WriFCXX extends BaseFunction implements IBaseObject{
 //				fcxx_w.getDjz_dfjys(),fcxx_w.getDjz_grsds(),fcxx_w.getDjz_yhs(),fcxx_w.getDjz_tdzzs(),
 //				fcxx_w.getFpid(), fcxx_w.getSpid(),fcxx_w.getDfspid(),fcxx_w.getPgid(),fcxx_w.getPgjg());
 		try{
+			logger.info("【完税信息表】Saving Tax information data...");
 	        session = HibernateUtils.getSession();
 	        session.beginTransaction(); 
 	        session.save(fcxx_w);
 	        session.getTransaction().commit();			
 			strResult = "OK";
-			logger.info("Tax information saved successfully.");
+			logger.info("【完税信息表】Tax information saved successfully.");
 		}catch(Exception e){
 			session.getTransaction().rollback();
-			logger.error(e);
 			errorMessage = e.getMessage();
+			logger.error("【完税信息表】Tax information saved failed.", e);
 		} finally {
 			session.close();
 			strResult = String.format("<Request Name='WriFCXX'>" +
