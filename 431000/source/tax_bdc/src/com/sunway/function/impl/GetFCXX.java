@@ -70,6 +70,7 @@ public class GetFCXX extends BaseFunction implements IBaseObject {
 	private PgtFCXX fcxx;
 	private boolean errorSign = false;
 	private String errorMessage;
+	private static final String sign = "、"; 
 
 	@Override
 	public String executeFunction(Element element, Connection conn) {
@@ -108,35 +109,28 @@ public class GetFCXX extends BaseFunction implements IBaseObject {
 				throw new Exception(hasMsg);
 			} else {		
 				// 读取XML中SQRINFO节点信息
-				String strZRFMC = null;
-				String strZRFSFLX = null;
-				String strZRFSFID = null;
-				String strZRFTEL = null;
-				String strCSFMC = null;
-				String strCSFSFID = null;
-				String strCSFSFLX = null;
-				String strCSFTEL = null;
+				String strZRFMC = "";
+				String strZRFSFLX = "";
+				String strZRFSFID = "";
+				String strZRFTEL = "";
+				String strCSFMC = "";
+				String strCSFSFID = "";
+				String strCSFSFLX = "";
+				String strCSFTEL = "";
 				Iterator<Element> sqr = rootElement.element("SQRINFO").elementIterator();
-				Boolean bSign_zrf = false;
-				Boolean bSign_csf = false;
 				while (sqr.hasNext()){
 					Element rowElement = sqr.next();
-					if(bSign_zrf==false && "权利转让人".equals(rowElement.elementTextTrim("FSQRLX"))){
-						strZRFMC = isNotEmpty(rowElement)?rowElement.elementTextTrim("FSQRMC"):null;
-						strZRFSFID = isNotEmpty(rowElement)?rowElement.elementTextTrim("FZJHM"):null;
-						strZRFSFLX = isNotEmpty(rowElement)?rowElement.elementTextTrim("FZJZL"):null;
-						strZRFTEL = isNotEmpty(rowElement)?rowElement.elementTextTrim("FLXDH"):null;			
-						bSign_zrf = true;
+					if("权利转让人".equals(rowElement.elementTextTrim("FSQRLX"))){
+						strZRFMC = strZRFMC + rowElement.elementTextTrim("FSQRMC")+sign;
+						strZRFSFID = strZRFSFID + rowElement.elementTextTrim("FZJHM")+sign;
+						strZRFSFLX = strZRFSFLX + rowElement.elementTextTrim("FZJZL")+sign;
+						strZRFTEL = strZRFTEL + rowElement.elementTextTrim("FLXDH")+sign;			
 					}
-					if(bSign_csf==false && "房地产权利人".equals(rowElement.elementTextTrim("FSQRLX"))){
-						strCSFMC = isNotEmpty(rowElement)?rowElement.elementTextTrim("FSQRMC"):null;
-						strCSFSFID = isNotEmpty(rowElement)?rowElement.elementTextTrim("FZJHM"):null;
-						strCSFSFLX = isNotEmpty(rowElement)?rowElement.elementTextTrim("FZJZL"):null;
-						strCSFTEL = isNotEmpty(rowElement)?rowElement.elementTextTrim("FLXDH"):null;		
-						bSign_csf = true;
-					}
-					if(bSign_csf==true && bSign_zrf==true){
-						break;
+					if("房地产权利人".equals(rowElement.elementTextTrim("FSQRLX"))){
+						strCSFMC = strCSFMC + rowElement.elementTextTrim("FSQRMC")+sign;
+						strCSFSFID = strCSFSFID + rowElement.elementTextTrim("FZJHM")+sign;
+						strCSFSFLX = strCSFSFLX + rowElement.elementTextTrim("FZJZL")+sign;
+						strCSFTEL = strCSFTEL + rowElement.elementTextTrim("FLXDH")+sign;		
 					}
 				}
 				
@@ -165,15 +159,15 @@ public class GetFCXX extends BaseFunction implements IBaseObject {
 							//isNotEmpty(rowElement.getFirstChildWithName(new QName("DYFH")))?rowElement.getFirstChildWithName(new QName("DYFH")).getText():null,
 							isNotEmpty(rowElement)?rowElement.elementTextTrim("FHH"):null,
 							//isNotEmpty(rowElement.getFirstChildWithName(new QName("ZLC")))?Double.valueOf(rowElement.getFirstChildWithName(new QName("ZLC")).getText()):null,
-							isNotEmpty(rowElement)?Double.valueOf(null!=rowElement.elementTextTrim("FZCS")?rowElement.elementTextTrim("FZCS"):"0"):null,
+							isNotEmpty(rowElement)?strToDbl(null!=rowElement.elementTextTrim("FZCS")?rowElement.elementTextTrim("FZCS"):"0"):null,
 							//isNotEmpty(rowElement.getFirstChildWithName(new QName("SZLC")))?Double.valueOf(rowElement.getFirstChildWithName(new QName("SZLC")).getText()):null,
-							isNotEmpty(rowElement)?Double.valueOf(null!=rowElement.elementTextTrim("FSZC")?rowElement.elementTextTrim("FSZC"):"0"):null,
+							isNotEmpty(rowElement)?strToDbl(null!=rowElement.elementTextTrim("FSZC")?rowElement.elementTextTrim("FSZC"):"0"):null,
 							//isNotEmpty(rowElement.getFirstChildWithName(new QName("JZJG")))?rowElement.getFirstChildWithName(new QName("JZJG")).getText():null,
 							isNotEmpty(rowElement)?rowElement.elementTextTrim("FFWJG"):null,
 							null, //isNotEmpty(rowElement.getFirstChildWithName(new QName("FWLX")))?rowElement.getFirstChildWithName(new QName("FWLX")).getText():null,
 							null, //isNotEmpty(rowElement.getFirstChildWithName(new QName("JYLX")))?rowElement.getFirstChildWithName(new QName("JYLX")).getText():null,
 							//isNotEmpty(rowElement.getFirstChildWithName(new QName("JZMJ")))?Double.valueOf(rowElement.getFirstChildWithName(new QName("JZMJ")).getText()):null,
-							isNotEmpty(rowElement)?Double.valueOf(null!=rowElement.elementTextTrim("FJZMJ")?rowElement.elementTextTrim("FJZMJ"):"0"):null,
+							isNotEmpty(rowElement)?strToDbl(null!=rowElement.elementTextTrim("FJZMJ")?rowElement.elementTextTrim("FJZMJ"):"0"):null,
 							null, //isNotEmpty(rowElement.getFirstChildWithName(new QName("HTZJ")))?Double.valueOf(rowElement.getFirstChildWithName(new QName("HTZJ")).getText()):null,
 							null, //isNotEmpty(rowElement.getFirstChildWithName(new QName("FZRQ")))?rowElement.getFirstChildWithName(new QName("FZRQ")).getText():null,
 							null, //isNotEmpty(rowElement.getFirstChildWithName(new QName("JCNF")))?rowElement.getFirstChildWithName(new QName("JCNF")).getText():null,
@@ -187,7 +181,7 @@ public class GetFCXX extends BaseFunction implements IBaseObject {
 							null, //isNotEmpty(rowElement.getFirstChildWithName(new QName("XQDM")))?rowElement.getFirstChildWithName(new QName("XQDM")).getText():null,
 							null, //isNotEmpty(rowElement.getFirstChildWithName(new QName("QSWSRQ")))?rowElement.getFirstChildWithName(new QName("QSWSRQ")).getText():null,
 							//isNotEmpty(rowElement.getFirstChildWithName(new QName("QSWSJS")))?Double.valueOf(rowElement.getFirstChildWithName(new QName("QSWSJS")).getText()):null);
-							isNotEmpty(rowElement)?Double.valueOf(null!=rowElement.elementTextTrim("TDCRJ")?rowElement.elementTextTrim("TDCRJ"):"0"):null); 
+							isNotEmpty(rowElement)?strToDbl(null!=rowElement.elementTextTrim("TDCRJ")?rowElement.elementTextTrim("TDCRJ"):"0"):null); 
 					executeFunction(sql, conn);
 				}
 				logger.info("3、国土信息存储完毕...");
@@ -325,6 +319,20 @@ public class GetFCXX extends BaseFunction implements IBaseObject {
 		return bResult;
 		
 	}
+	
+	
+	private Double strToDbl(String str) {
+		
+		Double dReturn = 0.0;
+		
+		try {
+			dReturn = Double.valueOf(str);
+		} catch (Exception e) {
+			logger.error("转换失败：", e);
+		}
+		return dReturn;
+	}
+	
 	
 
 }
