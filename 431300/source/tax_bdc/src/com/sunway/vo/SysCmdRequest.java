@@ -18,15 +18,31 @@ public class SysCmdRequest implements java.io.Serializable {
 	private Date create_time;
 	private Integer resolve_state;
 	private Date resolve_time;
-	private Date third_resolve_time;
+	private Date send_resolve_time;
 	private String data_id;
 	private String fail_msg;
-	
+	private Integer type;
 	
 	//---------------------------------- constructor --------------------------------------
-	public SysCmdRequest() {
-		// TODO Auto-generated constructor stub
+	public SysCmdRequest() {}
+	
+	/**
+	 * Read Cmd
+	 */
+	public SysCmdRequest(Date resolve_time, String data_id) {
+		this.resolve_state = 1;
+		this.resolve_time = resolve_time;
+		this.data_id = data_id;
 	}
+	/**
+	 * Write Cmd
+	 */
+	public SysCmdRequest(String data_id) {
+		this.cmd_code = "300101";
+		this.create_time = new Date();
+		this.resolve_state = 10;
+		this.data_id = data_id;
+	}	
 	
 	//-------------------------- setter and getter ----------------------------------------
 	/**
@@ -90,18 +106,6 @@ public class SysCmdRequest implements java.io.Serializable {
 		this.resolve_time = resolve_time;
 	}
 	/**
-	 * @return the third_resolve_time
-	 */
-	public Date getThird_resolve_time() {
-		return third_resolve_time;
-	}
-	/**
-	 * @param third_resolve_time the third_resolve_time to set
-	 */
-	public void setThird_resolve_time(Date third_resolve_time) {
-		this.third_resolve_time = third_resolve_time;
-	}
-	/**
 	 * @return the data_id
 	 */
 	public String getData_id() {
@@ -124,5 +128,29 @@ public class SysCmdRequest implements java.io.Serializable {
 	 */
 	public void setFail_msg(String fail_msg) {
 		this.fail_msg = fail_msg;
+	}
+	/**
+	 * @return the type
+	 */
+	public Integer getType() {
+		return type;
+	}
+	/**
+	 * @param type the type to set
+	 */
+	public void setType(Integer type) {
+		this.type = type;
+	}
+	/**
+	 * @return the send_resolve_time
+	 */
+	public Date getSend_resolve_time() {
+		return send_resolve_time;
+	}
+	/**
+	 * @param send_resolve_time the send_resolve_time to set
+	 */
+	public void setSend_resolve_time(Date send_resolve_time) {
+		this.send_resolve_time = send_resolve_time;
 	}
 }

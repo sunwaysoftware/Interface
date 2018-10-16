@@ -20,7 +20,7 @@
 		
 		<!-- Database connection settings -->
 		<property name="hibernate.connection.driver_class">org.mariadb.jdbc.Driver</property>
-		<property name="hibernate.connection.url">jdbc:mariadb://localhost:3306/bdc_front</property>
+		<property name="hibernate.connection.url">jdbc:mariadb://localhost:3306/bdc_front_swj</property>
 		<property name="hibernate.connection.username">root</property>
 		<property name="hibernate.connection.password">root</property>
 		
@@ -34,10 +34,11 @@
         <!-- Drop and re-create the database schema on startup -->
         <property name="hibernate.hbm2ddl.auto">validate</property>
 
-		<mapping resource="com/sunway/vo/FC001.hbm.xml" />
+		<mapping resource="com/sunway/vo/SysCmdRequest.hbm.xml"/>
+		<mapping resource="com/sunway/vo/SysCmdResponse.hbm.xml"/>
 		<mapping resource="com/sunway/vo/FC002.hbm.xml" />
 <!-- 
-
+		<mapping resource="com/sunway/vo/FC001.hbm.xml" />
 		<mapping resource="com/sunway/vo/CD001.hbm.xml" />
 		<mapping resource="com/sunway/vo/CD002.hbm.xml" />
 		<mapping resource="com/sunway/vo/CD003.hbm.xml" />

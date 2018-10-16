@@ -3,6 +3,8 @@ package com.sunway.function.impl;
 import java.io.ByteArrayInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -19,6 +21,16 @@ import com.sunway.vo.Functions;
 
 public class BaseFunction implements IBaseFunction {
 
+	/**
+	 * 请求流水号生成
+	 * 
+	 * @return S + YYYYMMDD + HIMISS + XXXXX
+	 */
+	protected String generateID() {
+		SimpleDateFormat fmtDate = new SimpleDateFormat("yyyyMMddHHmmss");
+		return "S" + fmtDate.format(new Date()) + (int)((Math.random()*9+1)*10000);
+	}
+	
 	@Override
 	public Functions parseXML(String XML) {
 		Functions funs = new Functions();

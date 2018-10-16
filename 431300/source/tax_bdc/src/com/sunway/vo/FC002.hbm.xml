@@ -7,25 +7,25 @@
             <column name="LSH" />
             <generator class="assigned" />
         </id>
-        <property name="seQs" type="java.lang.Double">
+        <property name="djz_qs" type="java.math.BigDecimal">
             <column name="DJZ_QS" />
         </property>
-        <property name="seYys" type="java.lang.Double">
+        <property name="djz_yys" type="java.math.BigDecimal">
             <column name="DJZ_YYS" />
         </property>
-        <property name="seCjs" type="java.lang.Double">
+        <property name="djz_cjs" type="java.math.BigDecimal">
             <column name="DJZ_CJS" />
         </property>
-        <property name="seDfjys" type="java.lang.Double">
+        <property name="djz_dfjys" type="java.math.BigDecimal">
             <column name="DJZ_DFJYS" />
         </property>
-        <property name="seGrsds" type="java.lang.Double">
+        <property name="djz_grsds" type="java.math.BigDecimal">
             <column name="DJZ_GRSDS" />
         </property>
-        <property name="seYhs" type="java.lang.Double">
+        <property name="djz_yhs" type="java.math.BigDecimal">
             <column name="DJZ_YHS" />
         </property>
-        <property name="seTdzzs" type="java.lang.Double">
+        <property name="djz_tdzzs" type="java.math.BigDecimal">
             <column name="DJZ_TDZZS" />
         </property>
         <property name="fphm" type="java.lang.String">
@@ -43,21 +43,15 @@
         <property name="pgid" type="java.lang.String">
             <column name="PGID" />
         </property>        
-        <property name="pgjg" type="java.lang.Double">
+        <property name="pgjg" type="java.math.BigDecimal">
             <column name="PGJG" />
         </property>
-        <property name="msSign" type="java.lang.Integer">
-            <column name="MSSIGN" />
-        </property>
-        <property name="msZcyj" type="java.lang.String">
-            <column name="MSZCYJ" />
-        </property>
-        <property name="kzzd" type="java.lang.String">
-            <column name="KZZD" />
-        </property>
-        <property name="zlbm" type="java.lang.String">
-            <column name="ZLBM" />
-        </property>
+        <property name="ms_sign" type="java.lang.Integer">
+            <column name="MS_SIGN" />
+        </property>        
+        <property name="ms_zcyj" type="java.lang.String">
+            <column name="MS_ZCYJ" />
+        </property>          
         <property name="ywh" type="java.lang.String">
             <column name="YWH" />
         </property>
@@ -82,14 +76,17 @@
         <property name="wszh" type="java.lang.String">
             <column name="WSZH" />
         </property>
-        <property name="jsje" type="java.lang.Double">
+        <property name="jsje" type="java.math.BigDecimal">
             <column name="JSJE" />
         </property>
-        <property name="wsje" type="java.lang.Double">
+        <property name="wsje" type="java.math.BigDecimal">
             <column name="WSJE" />
         </property>
         <property name="wssj" type="java.util.Date">
             <column name="WSSJ" />
+        </property>
+        <property name="qqlsh" type="java.lang.String">
+            <column name="QQLSH" />
         </property>
     </class>
 </hibernate-mapping>

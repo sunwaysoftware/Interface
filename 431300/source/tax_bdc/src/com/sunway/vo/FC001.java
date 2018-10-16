@@ -3,8 +3,6 @@
  */
 package com.sunway.vo;
 
-import java.util.Date;
-
 /**
  * @author amani
  *
@@ -12,64 +10,79 @@ import java.util.Date;
 public class FC001 implements java.io.Serializable {
 	private static final long serialVersionUID = -6271815625439690791L;
 	
+	private String zlbh;
+	private String ywh;
 	private String sn;
+	private String bdcdyh;
+	private String bdcqzh;
 	private String slid;
 	private String ssqy;
 	private String fczh;
-	private String zrf_name;
-	private String zrf_id;
-	private String zrf_zjlx;
-	private String zrf_tel;
-	private String csf_name;
-	private String csf_id;
-	private String csf_zjlx;
-	private String csf_tel;
+	private String zrfName;
+	private String zrfId;
+	private String zrfZjlx;
+	private String zrfTel;
+	private String csfName;
+	private String csfId;
+	private String csfZjlx;
+	private String csfTel;
 	private String clh;
 	private String ghyt;
 	private String lfdz;
 	private String dyfh;
-	private Integer zlc;
-	private Integer szlc;
+	private String zlc;
+	private String szlc;
 	private String jzjg;
 	private String fwlx;
 	private String jylx;
-	private Double jzmj;
-	private Double htzj;
-	private Date fzrq;
+	private String jzmj;
+	private String htzj;
+	private String fzrq;
 	private String jcnf;
-	private Date jysj;
+	private String jysj;
 	private String sfsyfc;
 	private String cx;
 	private String df;
-	private Date updatetime;
+	private String updateTime;
 	private String jg;
 	private String zx;
 	private String cg;
-	private Date qswsrq;
-	private Double qswsjs;
-	private Integer del_sign;
-	private Date del_time;
-	private String del_czr;
-	private Integer status;
+	private String qswsrq;
+	private String qswsjs;
+	private String delSign;
+	private String delTime;
+	private String delCzr;
+	private String status;
 	private String remarks;
-	private Integer status_se;
-	private Integer status_zz;
-	private String kzzd;
+	private String statusSe;
+	private String statusZz;
 	private String qdfs;
-	private Integer csf_fcts;
-	private Integer zrf_fcts;
-	private String zlbh;
-	private String ywh;
-	private String bdcdyh;
-	private String bdcqzh;
-	private Integer sync_state;
-	private String sync_result;
-	
-	//------------------------ constructor --------------------------------
-	public FC001() {}	
-	
-	//----------------------- setter and getter ------------------------------
-
+	private String csfFcts;
+	private String zrfFcts;
+	/**
+	 * @return the zlbh
+	 */
+	public String getZlbh() {
+		return zlbh;
+	}
+	/**
+	 * @param zlbh the zlbh to set
+	 */
+	public void setZlbh(String zlbh) {
+		this.zlbh = zlbh;
+	}
+	/**
+	 * @return the ywh
+	 */
+	public String getYwh() {
+		return ywh;
+	}
+	/**
+	 * @param ywh the ywh to set
+	 */
+	public void setYwh(String ywh) {
+		this.ywh = ywh;
+	}
 	/**
 	 * @return the sn
 	 */
@@ -81,6 +94,30 @@ public class FC001 implements java.io.Serializable {
 	 */
 	public void setSn(String sn) {
 		this.sn = sn;
+	}
+	/**
+	 * @return the bdcdyh
+	 */
+	public String getBdcdyh() {
+		return bdcdyh;
+	}
+	/**
+	 * @param bdcdyh the bdcdyh to set
+	 */
+	public void setBdcdyh(String bdcdyh) {
+		this.bdcdyh = bdcdyh;
+	}
+	/**
+	 * @return the bdcqzh
+	 */
+	public String getBdcqzh() {
+		return bdcqzh;
+	}
+	/**
+	 * @param bdcqzh the bdcqzh to set
+	 */
+	public void setBdcqzh(String bdcqzh) {
+		this.bdcqzh = bdcqzh;
 	}
 	/**
 	 * @return the slid
@@ -119,100 +156,100 @@ public class FC001 implements java.io.Serializable {
 		this.fczh = fczh;
 	}
 	/**
-	 * @return the zrf_name
+	 * @return the zrfName
 	 */
-	public String getZrf_name() {
-		return zrf_name;
+	public String getZrfName() {
+		return zrfName;
 	}
 	/**
-	 * @param zrf_name the zrf_name to set
+	 * @param zrfName the zrfName to set
 	 */
-	public void setZrf_name(String zrf_name) {
-		this.zrf_name = zrf_name;
+	public void setZrfName(String zrfName) {
+		this.zrfName = zrfName;
 	}
 	/**
-	 * @return the zrf_id
+	 * @return the zrfId
 	 */
-	public String getZrf_id() {
-		return zrf_id;
+	public String getZrfId() {
+		return zrfId;
 	}
 	/**
-	 * @param zrf_id the zrf_id to set
+	 * @param zrfId the zrfId to set
 	 */
-	public void setZrf_id(String zrf_id) {
-		this.zrf_id = zrf_id;
+	public void setZrfId(String zrfId) {
+		this.zrfId = zrfId;
 	}
 	/**
-	 * @return the zrf_zjlx
+	 * @return the zrfZjlx
 	 */
-	public String getZrf_zjlx() {
-		return zrf_zjlx;
+	public String getZrfZjlx() {
+		return zrfZjlx;
 	}
 	/**
-	 * @param zrf_zjlx the zrf_zjlx to set
+	 * @param zrfZjlx the zrfZjlx to set
 	 */
-	public void setZrf_zjlx(String zrf_zjlx) {
-		this.zrf_zjlx = zrf_zjlx;
+	public void setZrfZjlx(String zrfZjlx) {
+		this.zrfZjlx = zrfZjlx;
 	}
 	/**
-	 * @return the zrf_tel
+	 * @return the zrfTel
 	 */
-	public String getZrf_tel() {
-		return zrf_tel;
+	public String getZrfTel() {
+		return zrfTel;
 	}
 	/**
-	 * @param zrf_tel the zrf_tel to set
+	 * @param zrfTel the zrfTel to set
 	 */
-	public void setZrf_tel(String zrf_tel) {
-		this.zrf_tel = zrf_tel;
+	public void setZrfTel(String zrfTel) {
+		this.zrfTel = zrfTel;
 	}
 	/**
-	 * @return the csf_name
+	 * @return the csfName
 	 */
-	public String getCsf_name() {
-		return csf_name;
+	public String getCsfName() {
+		return csfName;
 	}
 	/**
-	 * @param csf_name the csf_name to set
+	 * @param csfName the csfName to set
 	 */
-	public void setCsf_name(String csf_name) {
-		this.csf_name = csf_name;
+	public void setCsfName(String csfName) {
+		this.csfName = csfName;
 	}
 	/**
-	 * @return the csf_id
+	 * @return the csfId
 	 */
-	public String getCsf_id() {
-		return csf_id;
+	public String getCsfId() {
+		return csfId;
 	}
 	/**
-	 * @param csf_id the csf_id to set
+	 * @param csfId the csfId to set
 	 */
-	public void setCsf_id(String csf_id) {
-		this.csf_id = csf_id;
+	public void setCsfId(String csfId) {
+		this.csfId = csfId;
 	}
 	/**
-	 * @return the csf_zjlx
+	 * @return the csfZjlx
 	 */
-	public String getCsf_zjlx() {
-		return csf_zjlx;
+	public String getCsfZjlx() {
+		return csfZjlx;
 	}
 	/**
-	 * @param csf_zjlx the csf_zjlx to set
+	 * @param csfZjlx the csfZjlx to set
 	 */
-	public void setCsf_zjlx(String csf_zjlx) {
-		this.csf_zjlx = csf_zjlx;
+	public void setCsfZjlx(String csfZjlx) {
+		this.csfZjlx = csfZjlx;
 	}
 	/**
-	 * @return the csf_tel
+	 * @return the csfTel
 	 */
-	public String getCsf_tel() {
-		return csf_tel;
+	public String getCsfTel() {
+		return csfTel;
 	}
 	/**
-	 * @param csf_tel the csf_tel to set
+	 * @param csfTel the csfTel to set
 	 */
-	public void setCsf_tel(String csf_tel) {
-		this.csf_tel = csf_tel;
+	public void setCsfTel(String csfTel) {
+		this.csfTel = csfTel;
 	}
 	/**
 	 * @return the clh
@@ -265,25 +302,25 @@ public class FC001 implements java.io.Serializable {
 	/**
 	 * @return the zlc
 	 */
-	public Integer getZlc() {
+	public String getZlc() {
 		return zlc;
 	}
 	/**
 	 * @param zlc the zlc to set
 	 */
-	public void setZlc(Integer zlc) {
+	public void setZlc(String zlc) {
 		this.zlc = zlc;
 	}
 	/**
 	 * @return the szlc
 	 */
-	public Integer getSzlc() {
+	public String getSzlc() {
 		return szlc;
 	}
 	/**
 	 * @param szlc the szlc to set
 	 */
-	public void setSzlc(Integer szlc) {
+	public void setSzlc(String szlc) {
 		this.szlc = szlc;
 	}
 	/**
@@ -325,37 +362,37 @@ public class FC001 implements java.io.Serializable {
 	/**
 	 * @return the jzmj
 	 */
-	public Double getJzmj() {
+	public String getJzmj() {
 		return jzmj;
 	}
 	/**
 	 * @param jzmj the jzmj to set
 	 */
-	public void setJzmj(Double jzmj) {
+	public void setJzmj(String jzmj) {
 		this.jzmj = jzmj;
 	}
 	/**
 	 * @return the htzj
 	 */
-	public Double getHtzj() {
+	public String getHtzj() {
 		return htzj;
 	}
 	/**
 	 * @param htzj the htzj to set
 	 */
-	public void setHtzj(Double htzj) {
+	public void setHtzj(String htzj) {
 		this.htzj = htzj;
 	}
 	/**
 	 * @return the fzrq
 	 */
-	public Date getFzrq() {
+	public String getFzrq() {
 		return fzrq;
 	}
 	/**
 	 * @param fzrq the fzrq to set
 	 */
-	public void setFzrq(Date fzrq) {
+	public void setFzrq(String fzrq) {
 		this.fzrq = fzrq;
 	}
 	/**
@@ -373,13 +410,13 @@ public class FC001 implements java.io.Serializable {
 	/**
 	 * @return the jysj
 	 */
-	public Date getJysj() {
+	public String getJysj() {
 		return jysj;
 	}
 	/**
 	 * @param jysj the jysj to set
 	 */
-	public void setJysj(Date jysj) {
+	public void setJysj(String jysj) {
 		this.jysj = jysj;
 	}
 	/**
@@ -419,16 +456,16 @@ public class FC001 implements java.io.Serializable {
 		this.df = df;
 	}
 	/**
-	 * @return the updatetime
+	 * @return the updateTime
 	 */
-	public Date getUpdatetime() {
-		return updatetime;
+	public String getUpdateTime() {
+		return updateTime;
 	}
 	/**
-	 * @param updatetime the updatetime to set
+	 * @param updateTime the updateTime to set
 	 */
-	public void setUpdatetime(Date updatetime) {
-		this.updatetime = updatetime;
+	public void setUpdateTime(String updateTime) {
+		this.updateTime = updateTime;
 	}
 	/**
 	 * @return the jg
@@ -469,73 +506,73 @@ public class FC001 implements java.io.Serializable {
 	/**
 	 * @return the qswsrq
 	 */
-	public Date getQswsrq() {
+	public String getQswsrq() {
 		return qswsrq;
 	}
 	/**
 	 * @param qswsrq the qswsrq to set
 	 */
-	public void setQswsrq(Date qswsrq) {
+	public void setQswsrq(String qswsrq) {
 		this.qswsrq = qswsrq;
 	}
 	/**
 	 * @return the qswsjs
 	 */
-	public Double getQswsjs() {
+	public String getQswsjs() {
 		return qswsjs;
 	}
 	/**
 	 * @param qswsjs the qswsjs to set
 	 */
-	public void setQswsjs(Double qswsjs) {
+	public void setQswsjs(String qswsjs) {
 		this.qswsjs = qswsjs;
 	}
 	/**
-	 * @return the del_sign
+	 * @return the delSign
 	 */
-	public Integer getDel_sign() {
-		return del_sign;
+	public String getDelSign() {
+		return delSign;
 	}
 	/**
-	 * @param del_sign the del_sign to set
+	 * @param delSign the delSign to set
 	 */
-	public void setDel_sign(Integer del_sign) {
-		this.del_sign = del_sign;
+	public void setDelSign(String delSign) {
+		this.delSign = delSign;
 	}
 	/**
-	 * @return the del_time
+	 * @return the delTime
 	 */
-	public Date getDel_time() {
-		return del_time;
+	public String getDelTime() {
+		return delTime;
 	}
 	/**
-	 * @param del_time the del_time to set
+	 * @param delTime the delTime to set
 	 */
-	public void setDel_time(Date del_time) {
-		this.del_time = del_time;
+	public void setDelTime(String delTime) {
+		this.delTime = delTime;
 	}
 	/**
-	 * @return the del_czr
+	 * @return the delCzr
 	 */
-	public String getDel_czr() {
-		return del_czr;
+	public String getDelCzr() {
+		return delCzr;
 	}
 	/**
-	 * @param del_czr the del_czr to set
+	 * @param delCzr the delCzr to set
 	 */
-	public void setDel_czr(String del_czr) {
-		this.del_czr = del_czr;
+	public void setDelCzr(String delCzr) {
+		this.delCzr = delCzr;
 	}
 	/**
 	 * @return the status
 	 */
-	public Integer getStatus() {
+	public String getStatus() {
 		return status;
 	}
 	/**
 	 * @param status the status to set
 	 */
-	public void setStatus(Integer status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 	/**
@@ -551,40 +588,28 @@ public class FC001 implements java.io.Serializable {
 		this.remarks = remarks;
 	}
 	/**
-	 * @return the status_se
+	 * @return the statusSe
 	 */
-	public Integer getStatus_se() {
-		return status_se;
+	public String getStatusSe() {
+		return statusSe;
 	}
 	/**
-	 * @param status_se the status_se to set
+	 * @param statusSe the statusSe to set
 	 */
-	public void setStatus_se(Integer status_se) {
-		this.status_se = status_se;
+	public void setStatusSe(String statusSe) {
+		this.statusSe = statusSe;
 	}
 	/**
-	 * @return the status_zz
+	 * @return the statusZz
 	 */
-	public Integer getStatus_zz() {
-		return status_zz;
+	public String getStatusZz() {
+		return statusZz;
 	}
 	/**
-	 * @param status_zz the status_zz to set
+	 * @param statusZz the statusZz to set
 	 */
-	public void setStatus_zz(Integer status_zz) {
-		this.status_zz = status_zz;
-	}
-	/**
-	 * @return the kzzd
-	 */
-	public String getKzzd() {
-		return kzzd;
-	}
-	/**
-	 * @param kzzd the kzzd to set
-	 */
-	public void setKzzd(String kzzd) {
-		this.kzzd = kzzd;
+	public void setStatusZz(String statusZz) {
+		this.statusZz = statusZz;
 	}
 	/**
 	 * @return the qdfs
@@ -599,100 +624,27 @@ public class FC001 implements java.io.Serializable {
 		this.qdfs = qdfs;
 	}
 	/**
-	 * @return the csf_fcts
+	 * @return the csfFcts
 	 */
-	public Integer getCsf_fcts() {
-		return csf_fcts;
+	public String getCsfFcts() {
+		return csfFcts;
 	}
 	/**
-	 * @param csf_fcts the csf_fcts to set
+	 * @param csfFcts the csfFcts to set
 	 */
-	public void setCsf_fcts(Integer csf_fcts) {
-		this.csf_fcts = csf_fcts;
+	public void setCsfFcts(String csfFcts) {
+		this.csfFcts = csfFcts;
 	}
 	/**
-	 * @return the zrf_fcts
+	 * @return the zrfFcts
 	 */
-	public Integer getZrf_fcts() {
-		return zrf_fcts;
+	public String getZrfFcts() {
+		return zrfFcts;
 	}
 	/**
-	 * @param zrf_fcts the zrf_fcts to set
+	 * @param zrfFcts the zrfFcts to set
 	 */
-	public void setZrf_fcts(Integer zrf_fcts) {
-		this.zrf_fcts = zrf_fcts;
+	public void setZrfFcts(String zrfFcts) {
+		this.zrfFcts = zrfFcts;
 	}
-	/**
-	 * @return the zlbh
-	 */
-	public String getZlbh() {
-		return zlbh;
-	}
-	/**
-	 * @param zlbh the zlbh to set
-	 */
-	public void setZlbh(String zlbh) {
-		this.zlbh = zlbh;
-	}
-	/**
-	 * @return the ywh
-	 */
-	public String getYwh() {
-		return ywh;
-	}
-	/**
-	 * @param ywh the ywh to set
-	 */
-	public void setYwh(String ywh) {
-		this.ywh = ywh;
-	}
-	/**
-	 * @return the bdcdyh
-	 */
-	public String getBdcdyh() {
-		return bdcdyh;
-	}
-	/**
-	 * @param bdcdyh the bdcdyh to set
-	 */
-	public void setBdcdyh(String bdcdyh) {
-		this.bdcdyh = bdcdyh;
-	}
-	/**
-	 * @return the bdcqzh
-	 */
-	public String getBdcqzh() {
-		return bdcqzh;
-	}
-	/**
-	 * @param bdcqzh the bdcqzh to set
-	 */
-	public void setBdcqzh(String bdcqzh) {
-		this.bdcqzh = bdcqzh;
-	}
-	/**
-	 * @return the sync_state
-	 */
-	public Integer getSync_state() {
-		return sync_state;
-	}
-	/**
-	 * @param sync_state the sync_state to set
-	 */
-	public void setSync_state(Integer sync_state) {
-		this.sync_state = sync_state;
-	}
-	/**
-	 * @return the sync_result
-	 */
-	public String getSync_result() {
-		return sync_result;
-	}
-	/**
-	 * @param sync_result the sync_result to set
-	 */
-	public void setSync_result(String sync_result) {
-		this.sync_result = sync_result;
-	}
-
 }
