@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.text.StringEscapeUtils;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.dom4j.Element;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -21,7 +22,7 @@ import com.sunway.vo.SysCmdResponse;
  *
  */
 public class GetFCXX extends BaseFunction implements IBaseObject{
-	static Logger logger = Logger.getLogger(GetFCXX.class);
+	static Logger logger = LogManager.getLogger(GetFCXX.class);
 	private boolean errorSign = false;
 	private String errorMessage;
 	
@@ -37,12 +38,12 @@ public class GetFCXX extends BaseFunction implements IBaseObject{
 //		fcxx.setParamVal2(element.elements().get(1).attributeValue(element.elements().get(1).attributes().get(0).getName()));
 //		sql = String.format("SELECT * FROM PG_VFC001 WHERE SLID = '%s' AND SSQY = '%s'", fcxx.getParamVal(), fcxx.getParamVal2());
 		try {
-			logger.info("【请求响应表表】Querying Sys_Cmd_Response table data...");
+			logger.info("【请求响应表】Querying Sys_Cmd_Response table data...");
 	        session = HibernateUtils.getSession();
 	        Query<?> query1 = session.createQuery("from SysCmdResponse where biz_code = ?1"); 
 	        query1.setParameter(1, fcxx.getSlid());
 	        List<SysCmdResponse> fcList = (List<SysCmdResponse>) query1.list();
-	        logger.info("【房产协税信息表】Number of query results：" + fcList.size());
+	        logger.info("【协税信息】Number of query results：" + fcList.size());
 	        for (SysCmdResponse sys : fcList) {
 	        	// JSON to javabean
 	    		Gson gson = new Gson();
@@ -53,7 +54,7 @@ public class GetFCXX extends BaseFunction implements IBaseObject{
 			}
 			result = combineFunctionXML(fcxxList);
 			if(fcxxList.size()>0) {
-				logger.info("【房产协税信息表】Some data was successfully read from Sys_Cmd_Response table.");
+				logger.info("【请求响应表】Some data was successfully read from Sys_Cmd_Response table.");
 				//------------ insert cmd table------------------------
 				logger.info("【指令流水表】Executing update data status...");
 				session.beginTransaction();
@@ -63,14 +64,14 @@ public class GetFCXX extends BaseFunction implements IBaseObject{
 		        session.getTransaction().commit();
 		        logger.info("【指令流水表】SYS_CMD_REQUEST table has been successfully updated.");				
 			} else {
-				logger.info("【房产协税信息表】There are no data was read from FC001 table.");
+				logger.info("【协税信息】There are no data was read.");
 			}
 		} catch(Exception e) {
 			session.getTransaction().rollback();
 			errorSign = true;
 			errorMessage = e.getMessage();
 			result = combineFunctionXML(fcxxList);
-			logger.error("【房产协税信息表】Error during query execution...", e);
+			logger.error("【协税信息】Error during query execution...", e);
 		} finally {
 			session.close();
 		}

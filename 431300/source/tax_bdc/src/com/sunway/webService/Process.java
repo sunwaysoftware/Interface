@@ -1,6 +1,7 @@
 package com.sunway.webService;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
 
@@ -9,7 +10,7 @@ import com.sunway.function.impl.BaseFunction;
 
 public class Process {
 
-	static Logger logger = Logger.getLogger(Process.class);
+	static Logger logger = LogManager.getLogger(Process.class);
 	
 	/**
 	 * 执行PgProcess方法

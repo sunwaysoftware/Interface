@@ -18,14 +18,22 @@
         <!--每3000秒检查所有连接池中的空闲连接 以秒为单位-->
         <property name="c3p0.idle_test_period">3600</property>		
 		
-		<!-- Database connection settings -->
+		<!-- Database connection settings MariaDB-->
+<!-- 		
 		<property name="hibernate.connection.driver_class">org.mariadb.jdbc.Driver</property>
 		<property name="hibernate.connection.url">jdbc:mariadb://localhost:3306/bdc_front_swj</property>
 		<property name="hibernate.connection.username">root</property>
 		<property name="hibernate.connection.password">root</property>
+ -->		
+		<!-- Database connection settings MySQL-->
+		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://192.168.1.108:3306/bdc_front_swj?useSSL=false</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">NF5270M4++mdb</property>		
+		
 		
 		<!-- SQL dialect -->
-		<property name="hibernate.dialect">org.hibernate.dialect.MariaDBDialect</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         
         <!-- Echo all executed SQL to stdout -->
         <property name="hibernate.show_sql">true</property>
@@ -37,16 +45,6 @@
 		<mapping resource="com/sunway/vo/SysCmdRequest.hbm.xml"/>
 		<mapping resource="com/sunway/vo/SysCmdResponse.hbm.xml"/>
 		<mapping resource="com/sunway/vo/FC002.hbm.xml" />
-<!-- 
-		<mapping resource="com/sunway/vo/FC001.hbm.xml" />
-		<mapping resource="com/sunway/vo/CD001.hbm.xml" />
-		<mapping resource="com/sunway/vo/CD002.hbm.xml" />
-		<mapping resource="com/sunway/vo/CD003.hbm.xml" />
-		<mapping resource="com/sunway/vo/CD004.hbm.xml" />
-		<mapping resource="com/sunway/vo/CD005.hbm.xml" />
-		<mapping resource="com/sunway/vo/CD006.hbm.xml" />
-
- -->
 
 	</session-factory>
 </hibernate-configuration>

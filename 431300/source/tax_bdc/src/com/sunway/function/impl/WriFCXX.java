@@ -4,7 +4,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.dom4j.Element;
 import org.hibernate.Session;
 
@@ -19,7 +20,7 @@ import com.sunway.vo.SysCmdRequest;
  *
  */
 public class WriFCXX extends BaseFunction implements IBaseObject{
-	static Logger logger = Logger.getLogger(WriFCXX.class);
+	static Logger logger = LogManager.getLogger(WriFCXX.class);
 	private FC002 fcxx_w;
 	private String errorMessage;
 	

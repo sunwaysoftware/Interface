@@ -129,7 +129,7 @@ public class WriFCXX extends BaseFunction implements IBaseObject{
 		//---------------------
 		strXml.append("  <UPDATETIME>"+ sdf.format(new Date()) +"</UPDATETIME>");
 		strXml.append("  <PGID>"+ b.getPgid() +"</PGID>");
-		//strXml.append("  <PGJG>"+ b.getPgjg() +"</PGJG>");
+		strXml.append("  <PGJG>"+ b.getPgjg() +"</PGJG>");
 		//strXml.append("  <BZ>"+ b.getBz() +"</BZ>");			
 		strXml.append(" </CONTENT>");
 		strXml.append("</INFO>");

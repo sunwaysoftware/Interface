@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.sunway.vo.SysCmdResponse" table="sys_cmd_response">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="qqlsh" type="java.lang.String">
+            <column name="QQLSH" />
+        </property>
+        <property name="content" type="java.lang.String">
+            <column name="CONTENT"  sql-type="mediumtext"  />
+        </property>
+        <property name="biz_code" type="java.lang.String">
+            <column name="BIZ_CODE" />
+        </property>        
+    </class>
+</hibernate-mapping>
