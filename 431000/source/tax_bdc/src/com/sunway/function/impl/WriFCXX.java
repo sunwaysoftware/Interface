@@ -113,7 +113,7 @@ public class WriFCXX extends BaseFunction implements IBaseObject{
 		strXml.append(" <CONTENT>");
 		strXml.append("  <JID>"+ b.getFcslh() +"</JID>");
 		strXml.append("  <FBDCDYH>"+ b.getOwnroomid() +"</FBDCDYH>");
-		strXml.append("<SSQY></SSQY><DSRMC></DSRMC><JSMJ></JSMJ><JSJG></JSJG><ZRF_ID></ZRF_ID>");
+		strXml.append("<SSQY></SSQY><DSRMC></DSRMC><JSMJ></JSMJ><ZRF_ID></ZRF_ID>");
 		//strXml.append("  <FCID>"+ b.getROOMID() +"</FCID>");
 		strXml.append("  <DJZ_QS>"+ b.getDjz_qs() +"</DJZ_QS>");
 		strXml.append("  <DJZ_YYS>"+ b.getDjz_yys() +"</DJZ_YYS>");
