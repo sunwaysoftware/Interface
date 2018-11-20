@@ -24,7 +24,7 @@ public class ConnectionFactory {
 		Connection conn = null;
 		try {
 			context = new InitialContext();
-			ds = (DataSource) context.lookup("DB0735");
+			ds = (DataSource) context.lookup("DB0735");//Tomcat: java:comp/env/JNDI名称 
 			conn = ds.getConnection();
 			logger.info("Database connectioned sucessed");
 		} catch (NamingException e) {
