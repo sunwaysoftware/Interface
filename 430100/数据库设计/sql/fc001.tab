@@ -1,0 +1,142 @@
+-- Create table
+create table FC001
+(
+  slid       VARCHAR2(50) not null,
+  ssqy       VARCHAR2(50) not null,
+  fczh       NVARCHAR2(100),
+  zrf_name   NVARCHAR2(250),
+  zrf_id     VARCHAR2(50),
+  zrf_zjlx   VARCHAR2(50),
+  zrf_tel    VARCHAR2(20),
+  csf_name   NVARCHAR2(250),
+  csf_id     VARCHAR2(50),
+  csf_zjlx   VARCHAR2(50),
+  csf_tel    VARCHAR2(20),
+  clh        VARCHAR2(50),
+  ghyt       VARCHAR2(50),
+  lfdz       NVARCHAR2(200),
+  dyfh       NVARCHAR2(50),
+  zlc        NUMBER,
+  szlc       NUMBER,
+  jzjg       VARCHAR2(50),
+  fwlx       VARCHAR2(50),
+  jylx       VARCHAR2(50),
+  jzmj       NUMBER,
+  htzj       NUMBER,
+  fzrq       DATE,
+  jcnf       CHAR(4),
+  jysj       DATE,
+  sfsyfc     VARCHAR2(50),
+  cx         VARCHAR2(50),
+  df         VARCHAR2(50),
+  updatetime DATE default SYSDATE,
+  jg         VARCHAR2(50),
+  zx         VARCHAR2(50),
+  cg         NUMBER,
+  qswsrq     DATE,
+  qswsjs     NUMBER,
+  bdcdjh     VARCHAR2(50)
+)
+tablespace SYSTEM
+  pctfree 10
+  pctused 40
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table FC001
+  is '房产信息（房产原始资料）';
+-- Add comments to the columns 
+comment on column FC001.slid
+  is '房产受理号';
+comment on column FC001.ssqy
+  is '所属区域';
+comment on column FC001.fczh
+  is '房产证号';
+comment on column FC001.zrf_name
+  is '转让方名称';
+comment on column FC001.zrf_id
+  is '转让方证件号';
+comment on column FC001.zrf_zjlx
+  is '转让方证件类型';
+comment on column FC001.zrf_tel
+  is '转让方联系电话';
+comment on column FC001.csf_name
+  is '承受方姓名';
+comment on column FC001.csf_id
+  is '承受方证件号';
+comment on column FC001.csf_zjlx
+  is '承受方证件类型';
+comment on column FC001.csf_tel
+  is '承受方联系电话';
+comment on column FC001.clh
+  is '测量号';
+comment on column FC001.ghyt
+  is '规划用途';
+comment on column FC001.lfdz
+  is '楼房地址';
+comment on column FC001.dyfh
+  is '单元房号';
+comment on column FC001.zlc
+  is '总楼层';
+comment on column FC001.szlc
+  is '所在楼层';
+comment on column FC001.jzjg
+  is '建筑结构';
+comment on column FC001.fwlx
+  is '房屋类型';
+comment on column FC001.jylx
+  is '交易类型';
+comment on column FC001.jzmj
+  is '建筑面积';
+comment on column FC001.htzj
+  is '合同总价';
+comment on column FC001.fzrq
+  is '发证日期';
+comment on column FC001.jcnf
+  is '建成年份';
+comment on column FC001.jysj
+  is '交易时间';
+comment on column FC001.sfsyfc
+  is '是否私有房产 ';
+comment on column FC001.cx
+  is '朝向';
+comment on column FC001.df
+  is '端房';
+comment on column FC001.updatetime
+  is '更新时间';
+comment on column FC001.jg
+  is '景观(保留)';
+comment on column FC001.zx
+  is '装修(保留)';
+comment on column FC001.cg
+  is '层高';
+comment on column FC001.qswsrq
+  is '契税完税日期';
+comment on column FC001.qswsjs
+  is '契税完税基数';
+comment on column FC001.bdcdjh
+  is '不产登记号';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table FC001
+  add constraint FC001_PK primary key (SLID, SSQY)
+  using index 
+  tablespace SYSTEM
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+-- Grant/Revoke object privileges 
+grant select, insert, update on FC001 to GTBDCDJ;

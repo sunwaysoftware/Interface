@@ -1,0 +1,40 @@
+create table CD004
+(
+  fc_id VARCHAR2(50) not null,
+  fc_nm NVARCHAR2(200),
+  pg_id VARCHAR2(50) not null,
+  pg_nm NVARCHAR2(200)
+)
+tablespace SYSTEM
+  pctfree 10
+  pctused 40
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+comment on table CD004
+  is '建筑结构';
+comment on column CD004.fc_id
+  is '房产建筑结构ID';
+comment on column CD004.pg_id
+  is '评估建筑结构ID';
+create unique index IN_CD004_PGID on CD004 (FC_ID)
+  tablespace SYSTEM
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table CD004
+  add constraint PK_CD004 primary key (FC_ID);
+

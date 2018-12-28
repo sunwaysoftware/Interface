@@ -1,0 +1,40 @@
+create table CD006
+(
+  fc_id VARCHAR2(50) not null,
+  fc_nm NVARCHAR2(200),
+  pg_id VARCHAR2(50) not null,
+  pg_nm NVARCHAR2(200)
+)
+tablespace SYSTEM
+  pctfree 10
+  pctused 40
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+comment on table CD006
+  is '交易类型';
+comment on column CD006.fc_id
+  is '房产交易类型ID';
+comment on column CD006.pg_id
+  is '评估交易类型ID';
+create unique index IN_CD006_PGID on CD006 (FC_ID)
+  tablespace SYSTEM
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table CD006
+  add constraint PK_CD006 primary key (FC_ID);
+

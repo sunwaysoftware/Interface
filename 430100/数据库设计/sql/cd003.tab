@@ -1,0 +1,40 @@
+create table CD003
+(
+  fc_id VARCHAR2(50) not null,
+  fc_nm NVARCHAR2(200),
+  pg_id VARCHAR2(50) not null,
+  pg_nm NVARCHAR2(200)
+)
+tablespace SYSTEM
+  pctfree 10
+  pctused 40
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+comment on table CD003
+  is '规划用途';
+comment on column CD003.fc_id
+  is '房产规划用途ID';
+comment on column CD003.pg_id
+  is '评估规划用途ID';
+create unique index IN_CD003_PGID on CD003 (FC_ID)
+  tablespace SYSTEM
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    next 1M
+    minextents 1
+    maxextents unlimited
+  );
+alter table CD003
+  add constraint PK_CD003 primary key (FC_ID);
+
