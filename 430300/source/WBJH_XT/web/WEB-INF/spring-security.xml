@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:sec="http://www.springframework.org/schema/security"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/security
+        http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+
+    <sec:global-method-security secured-annotations="enabled"/>
+
+    <!-- 不拦截的页面，我下面这行在我这个案例中没意义，可以设置一些静态资源 或 下面配置拦截所有请求的时候，选择不拦截登录页面 -->
+    <sec:http pattern="/static/**" security="none"/>
+    <sec:http pattern="/services/**" security="none"/>
+    <sec:http pattern="/signin.jsp" security="none"/>
+    <sec:http pattern="/uploadFiles/**" security="none"/>
+
+    <!-- 开启默认的拦截器 -->
+    <sec:http auto-config="false">
+        <sec:intercept-url pattern="/favicon.ico" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+        <!-- 对/admin** 的url进行拦截，只有拥有ROLE_USER权限的用户才能进入 -->
+        <sec:intercept-url pattern="/sys/**" access="ROLE_ADMIN"/>
+        <sec:intercept-url pattern="/**/**/crud**/**" access="ROLE_USER"/>
+        <sec:intercept-url pattern="/**/**/view**" access="ROLE_GUEST"/>
+        <sec:intercept-url pattern="/**" access="IS_AUTHENTICATED_FULLY"/>
+
+        <!--
+            login-page="/login.jsp" 拦截以后重定向到自定义的登录页面
+            authentication-failure-url="/login.jsp"登录的用户没有 ROLE_USER权限跳转的页面
+            default-target-url="/admin"  登录的用户有  ROLE_USER权限跳转的页面
+        -->
+        <sec:form-login login-page="/signin.jsp"
+                        authentication-failure-url="/signin.jsp?error=true"
+                        default-target-url="/main/view"/>
+        <sec:logout logout-url="/logout"
+                    logout-success-url="/signin.jsp"
+                    invalidate-session="true"/>
+        <!--没有权限错误页面-->
+        <sec:access-denied-handler error-page="/main/nopermit"/>
+    </sec:http>
+
+    <!-- 权限管理者 -->
+    <sec:authentication-manager alias="authenticationManager">
+        <sec:authentication-provider>
+            <sec:jdbc-user-service data-source-ref="dataSource"
+                                   users-by-username-query="select username,password,enabled from APP_USER where username = ?"
+                                   authorities-by-username-query="select username,authority from APP_AUTHORITY where username = ?"/>
+        </sec:authentication-provider>
+    </sec:authentication-manager>
+
+    <!-- 角色继承 -->
+    <bean id="roleHierarchy" class="org.springframework.security.access.hierarchicalroles.RoleHierarchyImpl">
+        <property name="hierarchy">
+            <value>
+                ROLE_ADMIN > ROLE_USER
+                ROLE_USER > ROLE_GUEST
+            </value>
+        </property>
+    </bean>
+
+    <bean id="webexpressionHandler" class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler">
+        <property name="roleHierarchy" ref="roleHierarchy"/>
+    </bean>
+
+    <bean id="roleVoter" class="org.springframework.security.access.vote.RoleHierarchyVoter">
+        <constructor-arg ref="roleHierarchy"/>
+    </bean>
+
+</beans>
