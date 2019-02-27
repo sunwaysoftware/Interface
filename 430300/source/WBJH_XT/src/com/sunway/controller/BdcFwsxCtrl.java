@@ -35,8 +35,6 @@ public class BdcFwsxCtrl {
     @ResponseBody
     @RequestMapping(method = RequestMethod.POST, value = "/viewlist", produces = "text/html;charset=UTF-8")
     public String loadView(HttpServletRequest request, BdcFwsx pageBean){
-        if(null==pageBean.getCssj())
-            pageBean.setCssj(DateUtil.getNowDate());
         List<BdcFwsx> fwsxList = bdcFwsxService.getAllData(pageBean,1, 500);
         Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
         return gson.toJson(fwsxList);

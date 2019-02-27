@@ -3,7 +3,9 @@ package com.sunway.controller;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.sunway.entity.BdcCq;
+import com.sunway.entity.BdcQlr;
 import com.sunway.service.BdcCqService;
+import com.sunway.service.BdcQlrService;
 import com.sunway.util.DateUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -24,6 +26,8 @@ public class BdcCqCtrl {
     private static Logger log = LogManager.getLogger(AppUserCtrl.class);
     @Autowired
     private BdcCqService bdcCqService;
+    @Autowired
+    private BdcQlrService bdcQlrService;
 
     @RequestMapping(method = RequestMethod.GET, value = "/view")
     public ModelAndView gotoViewPage(HttpServletRequest request){
@@ -34,8 +38,8 @@ public class BdcCqCtrl {
     @ResponseBody
     @RequestMapping(method = RequestMethod.POST, value = "/viewlist", produces = "text/html;charset=UTF-8")
     public String loadView(HttpServletRequest request, BdcCq pageBean){
-        if(null==pageBean.getJysj())
-            pageBean.setJysj(DateUtil.getNowDate());
+//        if(null==pageBean.getJysj())
+//            pageBean.setJysj(DateUtil.getNowDate());
         List<BdcCq> cqList = bdcCqService.getAllData(pageBean,1, 500);
         Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
         return gson.toJson(cqList);
@@ -44,8 +48,12 @@ public class BdcCqCtrl {
     @RequestMapping(method = RequestMethod.GET, value = "/crud/{id}")
     public ModelAndView gotoEditPage(@PathVariable("id") String id){
         ModelAndView modelAndView = new ModelAndView("BdcCqEdit");
-        BdcCq bean = bdcCqService.getDataById(new BdcCq(id));
-        modelAndView.addObject("vo", bean);
+        BdcCq cq = bdcCqService.getDataById(new BdcCq(id));
+        BdcQlr qlr = new BdcQlr();
+        qlr.setYwh(cq.getYwh());
+        List<BdcQlr> qlrs = bdcQlrService.getDataByYwh(qlr);
+        modelAndView.addObject("vo", cq);
+        modelAndView.addObject("voQlr", qlrs);
         return modelAndView;
     }    
     

@@ -12,14 +12,21 @@
     <div class="am-form-group">
         <div class="am-u-sm-4 am-u-md-2 am-text-right">产生时间</div>
         <div class="am-u-sm-4 am-u-md-3">
-            <div class="am-form-icon">
-                <i class="am-icon-calendar"></i>
-                <input type="text" id="txtCssj" name="cssj" class="am-form-field" required data-am-datepicker readonly>
+            <div class="am-input-group am-datepicker-date" data-am-datepicker="{format: 'yyyy-mm-dd'}">
+                <input id="txtCssj" type="text" class="am-form-field" readonly>
+                <span class="am-input-group-btn am-datepicker-add-on">
+                    <button id="btnDate" class="am-btn am-btn-default" type="button"><span class="am-icon-calendar"></span> </button>
+                </span>
             </div>
         </div>
-        <div class="am-u-sm-4 am-u-md-7">
+        <div class="am-u-sm-4 am-u-md-1 am-text-right">权利人</div>
+        <div class="am-u-sm-4 am-u-md-3">
+            <input type="text" id="txtQlr" name="qlr" class="am-form-field">
+        </div>
+        <div class="am-u-sm-4 am-u-md-3">
             <div>
                 <button id="btnSearch" class="am-btn am-btn-default" type="button"><span class="am-icon-search"></span> 查询</button>
+                <button id="btnClear" class="am-btn am-btn-default" type="reset"><span class="am-icon-eraser"></span> 清空</button>
             </div>
         </div>
     </div>
@@ -35,6 +42,9 @@
     $(document).ready(function () {
         // 表格加载数据
         ShowDataTable();
+        $('#btnDate').datepicker().on('changeDate.datepicker.amui', function (event) {
+            $('#txtCssj').val($('#btnDate').data('date'));
+        });
         // 查询
         $("#btnSearch").click(function () {
             var form = $("#findForm");
@@ -43,10 +53,12 @@
                 return false;
             }
             //重新请求数据结果装入表格对象
-            var dt_data = {cssj : $('#txtCssj').val()};
+            var dt_data = {
+                cssj: $('#txtCssj').val(),
+                qlr: $('#txtQlr').val()
+            };
             ShowDataTable(dt_data);
         });
-        $('#txtCssj').datepicker({format: 'yyyy-mm-dd'});
     });
 
     function ShowDataTable(dtData) {

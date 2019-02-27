@@ -40,6 +40,11 @@ public class BdcCq implements Serializable {
     @JoinColumn(name = "ywzt")
     private BdcYwztDict dictYwzt;
 
+    //---------------- 查询使用，不映射 ----------------------------------------
+    @Transient
+    private String qlr;
+
+    //-------------------------------------------------------------------------
     public BdcCq() {}
     public BdcCq(String id) {this.id = id;}
     public BdcCq(String id, String ywh, String bdcdyh, String bdcqzh, Double jyjg, Date fzrq) {
@@ -146,5 +151,13 @@ public class BdcCq implements Serializable {
 
     public void setDictYwzt(BdcYwztDict dictYwzt) {
         this.dictYwzt = dictYwzt;
+    }
+
+    public String getQlr() {
+        return qlr;
+    }
+
+    public void setQlr(String qlr) {
+        this.qlr = qlr;
     }
 }

@@ -65,6 +65,11 @@ public class BdcFwsx implements Serializable {
     @OneToMany(targetEntity = BdcQlr.class, mappedBy = "fwsx", fetch = FetchType.EAGER)    //一对多，让一方维护外键
     private Set<BdcQlr> qlrList = new HashSet<BdcQlr>();
 
+    //---------------- 查询使用，不映射 ----------------------------------------
+    @Transient
+    private String qlr;
+
+    //---------------------------------------------------------------------------------
     public BdcFwsx() {
     }
 
@@ -162,11 +167,11 @@ public class BdcFwsx implements Serializable {
         this.fnshdate = fnshdate;
     }
 
-    public String getBzcdyh() {
+    public String getBdcdyh() {
         return bdcdyh;
     }
 
-    public void setBzcdyh(String bdcdyh) {
+    public void setBdcdyh(String bdcdyh) {
         this.bdcdyh = bdcdyh;
     }
 
@@ -258,11 +263,11 @@ public class BdcFwsx implements Serializable {
         this.jysj = jysj;
     }
 
-    public String getBdczh() {
+    public String getBdcqzh() {
         return bdcqzh;
     }
 
-    public void setBdczh(String bdcqzh) {
+    public void setBdcqzh(String bdcqzh) {
         this.bdcqzh = bdcqzh;
     }
 
@@ -312,5 +317,13 @@ public class BdcFwsx implements Serializable {
 
     public void setDictJylx(BdcJylxDict dictJylx) {
         this.dictJylx = dictJylx;
+    }
+
+    public String getQlr() {
+        return qlr;
+    }
+
+    public void setQlr(String qlr) {
+        this.qlr = qlr;
     }
 }

@@ -98,7 +98,7 @@
                         不动产单元号
                     </div>
                     <div class="am-u-sm-8 am-u-md-4">
-                        <input type="text" class="am-input-sm" value="${vo.bzcdyh}">
+                        <input type="text" class="am-input-sm" value="${vo.bdcdyh}">
                     </div>
                     <div class="am-u-sm-4 am-u-md-2 am-text-right">
                         产生时间

@@ -38,7 +38,7 @@
 </div>
 
 <div class="am-g">
-    <div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
+    <div class="am-u-lg-4 am-u-md-6 am-u-sm-centered">
         <% if (err != null) { %>
         <div class="am-alert am-alert-warning" data-am-alert>
             登录失败，请重新确认账号和密码后重试！

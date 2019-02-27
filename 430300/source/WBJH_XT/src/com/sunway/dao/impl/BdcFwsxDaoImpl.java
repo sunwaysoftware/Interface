@@ -2,6 +2,7 @@ package com.sunway.dao.impl;
 
 import com.sunway.dao.BdcFwsxDao;
 import com.sunway.entity.BdcFwsx;
+import com.sunway.util.FormatUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -60,12 +61,19 @@ public class BdcFwsxDaoImpl implements BdcFwsxDao {
         List<BdcFwsx> resultList = null;
         Session session = null;
         CriteriaQuery<BdcFwsx> createQuery = null;
+        String HQL = "select distinct new BdcFwsx(a.id, a.ywh, a.bsit, a.barea, a.bdcdyh, a.bdcqzh) from BdcFwsx a left join BdcQlr b on a.ywh=b.ywh where 1=1";
+        if(null!=bean.getCssj())
+            HQL = HQL + " and to_char(a.cssj, 'yyyy-MM-dd') = to_char(:pCssj, 'yyyy-MM-dd')";
+        if(null!=bean.getQlr() && !"".equals(bean.getQlr()))
+            HQL = HQL + " and b.sname like :pQlr";
         try {
             // 创建session对象
             session = sessionFactory.openSession();
-            String hql = "select new BdcFwsx(id, ywh, bsit, barea, bdcdyh, bdcqzh) from BdcFwsx where to_char(cssj, 'yyyy-MM-dd') = to_char(:pCssj, 'yyyy-MM-dd')";
-            Query query = session.createQuery(hql);
-            query.setParameter("pCssj", bean.getCssj());
+            Query query = session.createQuery(HQL);
+            if(null!=bean.getQlr() && !"".equals(bean.getQlr()))
+                query.setParameter("pQlr", FormatUtil.toSearchLike(bean.getQlr()));
+            if(null!=bean.getCssj())
+                query.setParameter("pCssj", bean.getCssj());
             query.setFirstResult((pageIndex - 1) * pageSize);
             query.setMaxResults(pageSize);
             // 返回查询结果集

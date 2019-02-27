@@ -112,8 +112,8 @@ public class GetFCXX extends BaseFunction implements IBaseObject{
 	protected PgtFCXX setFCXXParameters(BdcFwsx ocrs) throws Exception {
 		PgtFCXX e = new PgtFCXX();
 		e.setFcslh(ocrs.getYwh());
-		e.setYfczh(ocrs.getBdczh());
-		e.setClh(ocrs.getBzcdyh());
+		e.setYfczh(ocrs.getBdcqzh());
+		e.setClh(ocrs.getBdcdyh());
 		if(null!=ocrs.getDictGhty())
 			e.setSjyt(ocrs.getDictGhty().getTaxNm());
 		e.setLfdz(ocrs.getBsit());
