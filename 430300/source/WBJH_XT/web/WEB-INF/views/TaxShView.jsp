@@ -20,14 +20,17 @@
     <div class="am-form-group">
         <div class="am-u-sm-4 am-u-md-2 am-text-right">审核时间</div>
         <div class="am-u-sm-4 am-u-md-3">
-            <div class="am-form-icon">
-                <i class="am-icon-calendar"></i>
-                <input type="text" class="am-form-field" id="txtShsj" name="shsj" required data-am-datepicker readonly>
+            <div class="am-input-group am-datepicker-date am-input-group-sm" data-am-datepicker="{format: 'yyyy-mm-dd'}">
+                <input id="txtShsj" type="text" class="am-form-field am-input-sm" readonly>
+                <span class="am-input-group-btn am-datepicker-add-on">
+                    <button id="btnDate" class="am-btn am-btn-sm" type="button"><span class="am-icon-calendar"></span></button>
+                </span>
             </div>
         </div>
         <div class="am-u-sm-4 am-u-md-7">
             <div>
-                <button id="btnSearch" class="am-btn am-btn-default" type="button"><span class="am-icon-search"></span> 查询</button>
+                <button id="btnSearch" class="am-btn am-btn-sm" type="button"><span class="am-icon-search"></span> 查询</button>
+                <button id="btnClear" class="am-btn am-btn-sm" type="reset"><span class="am-icon-eraser"></span> 清空</button>
             </div>
         </div>
     </div>
@@ -79,7 +82,9 @@
             ShowDataTable(dt_data);
         });
 
-        $('#txtShsj').datepicker({format: 'yyyy-mm-dd'});
+        $('#btnDate').datepicker().on('changeDate.datepicker.amui', function (event) {
+            $('#txtShsj').val($('#btnDate').data('date'));
+        });
     });
 
     // Edit data
@@ -101,10 +106,10 @@
                 dataSrc: ''
             },
             columns: [
-                {title: "受理号", data: "ywh"},
-                {title: "审核人", data: "shr"},
-                {title: "审核意见", data: "shyj"},
-                {title: "审核时间", data: "shsj"},
+                {title: "业务编号", data: "ywh", defaultContent: "--"},
+                {title: "审核人", data: "shr", defaultContent: "--"},
+                {title: "审核意见", data: "shyj", defaultContent: "--"},
+                {title: "审核时间", data: "shsj", defaultContent: "--"},
             ],
             // 定义操作列
             columnDefs: [{

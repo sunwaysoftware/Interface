@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name = "BDC_ZDSX")
+@Table(name = "BDC_ZDSX", schema = "wbjh_tax")
 public class BdcZdsx implements Serializable {
     @Id
     @GenericGenerator(name = "appID", strategy = "uuid")
@@ -57,6 +57,10 @@ public class BdcZdsx implements Serializable {
     private Double jzmd;
     private Double tdjg;
 
+    //---------------- 查询使用，不映射 ----------------------------------------
+    @Transient
+    private String qlr;
+
     //-----------------------------------------------------------
     public BdcZdsx(){}
     public BdcZdsx(String id) {
@@ -72,7 +76,6 @@ public class BdcZdsx implements Serializable {
     }
 
     //---------------------- setter and getter -------------------
-
     public String getId() {
         return id;
     }
@@ -319,5 +322,13 @@ public class BdcZdsx implements Serializable {
 
     public void setJzmd(Double jzmd) {
         this.jzmd = jzmd;
+    }
+
+    public String getQlr() {
+        return qlr;
+    }
+
+    public void setQlr(String qlr) {
+        this.qlr = qlr;
     }
 }

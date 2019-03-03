@@ -6,7 +6,7 @@ import javax.persistence.Table;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "BDC_DICT_GYFS")
+@Table(name = "BDC_DICT_GYFS", schema = "wbjh_tax")
 public class BdcGyfsDict implements Serializable {
     @Id
     private String id;

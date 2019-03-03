@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.annotation.PostConstruct;
 
 import com.sunway.dao.BdcFwsxDao;
+import com.sunway.dao.BdcQlrDao;
 import com.sunway.entity.BdcFwsx;
 import com.sunway.entity.BdcQlr;
 
@@ -29,49 +30,16 @@ public class GetFCXX extends BaseFunction implements IBaseObject{
 	private static GetFCXX fcxxUtil;
 	@Autowired
 	private BdcFwsxDao bdcFwsxDao;
+	@Autowired
+	private BdcQlrDao bdcQlrDao;
 
 	@PostConstruct
 	public void init(){
 		fcxxUtil = this;
 		fcxxUtil.bdcFwsxDao = this.bdcFwsxDao;
+		fcxxUtil.bdcQlrDao = this.bdcQlrDao;
 	}
 
-	private static final String FCSLH = "f1";			//房产受理号
-	private static final String YFCZH = "f2";			//原房产证号
-	private static final String ZRFSFLX = "f3";			//转让方身份证照类型
-	private static final String ZRFSFID = "f4";			//转让方身份证照号码/企业管理代码
-	private static final String ZRFMC = "f5";			//转让方名称/企业名称
-	private static final String CSFSFLX = "f6";			//承受方身份证照类型
-	private static final String CSFSFID = "f7";			//承受方身份证照号码/企业管理代码
-	private static final String CSFMC = "f8";			//承受方名称/企业名称
-	private static final String CLH = "f9";				//测量号
-	private static final String SJYT = "f10";			//设计用途
-	private static final String LFDZ = "f11";			//楼房地址
-	private static final String DYFH = "f12";			//单元及房号
-	private static final String SZLC = "f13";			//所在楼层
-	private static final String ZLC = "f14";			//总楼层
-	private static final String JZJG = "f15";			//建筑结构
-	private static final String FWLX = "f16";			//房屋类别
-	private static final String JYLX = "f17";			//交易类型
-	private static final String JZMJ = "f18";			//建筑面积(平方米)
-	private static final String HTZJ = "f19";			//合同总价(元)
-	private static final String JYSJ = "f20";			//交易时间
-	private static final String FZRQ = "f21";			//发证日期
-	private static final String DF = "f22";				//端房
-	private static final String CX = "f23";				//朝向
-	private static final String CG = "f24";				//层高
-	private static final String OINSID = "f25";    		//外键
-	private static final String YJG = "f26";			//原值
-	private static final String PGJG = "f27";			//评估结果
-	private static final String ROOMID = "f28";			//房屋ID
-	private static final String SFSYFC = "f30";			//是否私有房产 
-	private static final String OWNROOMID = "f31";      //房屋ID
-	private static final String JCNF = "JCNF";      	//建成年份
-	private static final String QSWSRQ = "qswsrq";      //契税完税日期
-	private static final String QSWSJS = "qswsjs";      //契税完税基数
-	private static final String ZRFTEL = "zrftel";		//转让方电话
-	private static final String CSFTEL = "csftel";		//转让方电话
-	
 	private PgtFCXX fcxx;
 	private boolean errorSign = false;
 	private String errorMessage;
@@ -150,14 +118,14 @@ public class GetFCXX extends BaseFunction implements IBaseObject{
 		String csfZjlx = "";
 		String csfZjbm = "";
 		String csfNm = "";
-		for (BdcQlr qlr: ocrs.getQlrList()) {
+		for (BdcQlr qlr: fcxxUtil.bdcQlrDao.getDataByYwh(new BdcQlr(ocrs.getYwh()))) {
 			// 0转让方；1承受方
-			if("0".equals(qlr.getJyfbs())){// 0 转让方
+			if("0".equals(qlr.getDictQlrlb().getTaxNm())){// 0 转让方/义务人
 				if(null!=qlr.getDictZjlx())
 					zrfZjlx = zrfZjlx + qlr.getDictZjlx().getTaxNm() + sign;
 				zrfZjbm = zrfZjbm + qlr.getScnum() + sign;
 				zrfNm = zrfNm + qlr.getSname() + sign;
-			}else if ("1".equals(qlr.getJyfbs())){// 1 承受方
+			}else if ("1".equals(qlr.getDictQlrlb().getTaxNm())){// 1 承受方/权利人
 				if(null!=qlr.getDictZjlx())
 					csfZjlx = csfZjlx + qlr.getDictZjlx().getTaxNm() + sign;
 				csfZjbm = csfZjbm + qlr.getScnum() + sign;

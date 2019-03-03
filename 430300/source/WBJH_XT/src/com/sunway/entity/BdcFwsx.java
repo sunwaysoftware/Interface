@@ -10,7 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "BDC_FWSX")
+@Table(name = "BDC_FWSX", schema = "wbjh_tax")
 public class BdcFwsx implements Serializable {
     @Id
     @GenericGenerator(name = "appID", strategy = "uuid")
@@ -61,9 +61,6 @@ public class BdcFwsx implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date qswsrq;
     private Double qswsjs;
-
-    @OneToMany(targetEntity = BdcQlr.class, mappedBy = "fwsx", fetch = FetchType.EAGER)    //一对多，让一方维护外键
-    private Set<BdcQlr> qlrList = new HashSet<BdcQlr>();
 
     //---------------- 查询使用，不映射 ----------------------------------------
     @Transient
@@ -285,14 +282,6 @@ public class BdcFwsx implements Serializable {
 
     public void setQswsjs(Double qswsjs) {
         this.qswsjs = qswsjs;
-    }
-
-    public Set<BdcQlr> getQlrList() {
-        return qlrList;
-    }
-
-    public void setQlrList(Set<BdcQlr> qlrList) {
-        this.qlrList = qlrList;
     }
 
     public BdcGhytDict getDictGhty() {

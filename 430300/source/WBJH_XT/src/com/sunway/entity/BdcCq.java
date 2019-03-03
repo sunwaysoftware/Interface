@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name = "BDC_CQ")
+@Table(name = "BDC_CQ", schema = "wbjh_tax")
 public class BdcCq implements Serializable {
     @Id
     @GenericGenerator(name = "appID", strategy = "uuid")

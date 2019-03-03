@@ -3,7 +3,9 @@ package com.sunway.controller;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.sunway.entity.BdcFwsx;
+import com.sunway.entity.BdcQlr;
 import com.sunway.service.BdcFwsxService;
+import com.sunway.service.BdcQlrService;
 import com.sunway.util.DateUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -25,6 +27,8 @@ public class BdcFwsxCtrl {
     private static Logger log = LogManager.getLogger(AppUserCtrl.class);
     @Autowired
     private BdcFwsxService bdcFwsxService;
+    @Autowired
+    private BdcQlrService bdcQlrService;
 
     @RequestMapping(method = RequestMethod.GET, value = "/view")
     public ModelAndView gotoViewPage(HttpServletRequest request){
@@ -43,8 +47,10 @@ public class BdcFwsxCtrl {
     @RequestMapping(method = RequestMethod.GET, value = "/crud/{id}")
     public ModelAndView gotoEditPage(@PathVariable("id") String id){
         ModelAndView modelAndView = new ModelAndView("BdcFwsxEdit");
-        BdcFwsx tmp = bdcFwsxService.getDataById(new BdcFwsx(id));
-        modelAndView.addObject("vo", tmp);
+        BdcFwsx fwsx = bdcFwsxService.getDataById(new BdcFwsx(id));
+        List<BdcQlr> qlrs = bdcQlrService.getDataByYwh(new BdcQlr(fwsx.getYwh()));
+        modelAndView.addObject("vo", fwsx);
+        modelAndView.addObject("voQlr", qlrs);
         return modelAndView;
     }
 }

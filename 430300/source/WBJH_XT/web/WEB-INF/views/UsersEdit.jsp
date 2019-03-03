@@ -69,8 +69,8 @@
     </div>
 </form>
 <div class="am-margin">
-    <a id="btnSub" class="am-btn am-btn-primary am-btn-xs"><spring:message code="app.page.btn.save"/></a>
-    <a id="btnBack" class="am-btn am-btn-warning am-btn-xs"><spring:message code="app.page.btn.back"/></a>
+    <a id="btnSub" class="am-btn am-btn-primary am-btn-xs"><span class="am-icon-save"></span> <spring:message code="app.page.btn.save"/></a>
+    <a id="btnBack" class="am-btn am-btn-warning am-btn-xs"><span class="am-icon-reply"></span> <spring:message code="app.page.btn.back"/></a>
 </div>
 <!-- content end -->
 <script>

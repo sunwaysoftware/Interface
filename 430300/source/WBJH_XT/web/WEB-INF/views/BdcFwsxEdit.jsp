@@ -225,27 +225,20 @@
                         <th>证件号</th>
                         <th>权利人类型</th>
                         <th>共有方式</th>
+                        <th>类别</th>
                         <th>占有份额</th>
-                        <th>交易方标识</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${vo.qlrList}" var="r" varStatus="i">
+                    <c:forEach items="${voQlr}" var="r" varStatus="i">
                         <tr>
                             <td>${r.sname}</td>
                             <td>${r.dictZjlx.bdcNm}</td>
                             <td>${r.scnum}</td>
                             <td>${r.dictQlrxz.bdcNm}</td>
                             <td>${r.dictGyfs.bdcNm}</td>
+                            <td>${r.dictQlrlb.bdcNm}</td>
                             <td>${r.zyfe}</td>
-                            <c:choose>
-                                <c:when test="${r.jyfbs==0}">
-                                    <td>转让方</td>
-                                </c:when>
-                                <c:otherwise>
-                                    <td>承受方</td>
-                                </c:otherwise>
-                            </c:choose>
                             <td></td>
                         </tr>
                     </c:forEach>
@@ -256,7 +249,7 @@
     </div>
 </form>
 <div class="am-margin">
-    <a id="btnBack" class="am-btn am-btn-warning am-btn-xs"><spring:message code="app.page.btn.back"/></a>
+    <a id="btnBack" class="am-btn am-btn-warning am-btn-xs"><span class="am-icon-reply"></span> <spring:message code="app.page.btn.back"/></a>
 </div>
 <!-- content end -->
 <script>

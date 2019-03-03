@@ -8,7 +8,7 @@
     </div>
 </div>
 <hr>
-<form id="editForm" class="am-form am-form-inline" enctype="multipart/form-data">
+<form id="editForm" class="am-form" enctype="multipart/form-data">
     ${method}
     <input type="hidden" name="id" value="${vo.id}">
     <input type="hidden" name="ljdz" value="${vo.ljdz}">
@@ -35,10 +35,11 @@
             税票日期
         </div>
         <div class="am-u-sm-8 am-u-md-4">
-            <div class="am-form-icon">
-                <i class="am-icon-calendar"></i>
-                <input type="text" class="am-form-field am-input-sm" id="txtSprq" name="sprq" value="${vo.sprq}"
-                       required>
+            <div class="am-input-group am-input-group-sm am-datepicker-date" data-am-datepicker="{format: 'yyyy-mm-dd'}">
+                <input id="txtSprq" name="sprq" type="text" class="am-form-field am-input-sm" value="${vo.sprq}" readonly required>
+                <span class="am-input-group-btn am-datepicker-add-on">
+                    <button id="btnDate" class="am-btn am-btn-sm" type="button"><span class="am-icon-calendar"></span></button>
+                </span>
             </div>
         </div>
         <div class="am-hide-sm-only am-u-md-6 am-text-danger">*必填</div>
@@ -62,8 +63,8 @@
     </div>
 </form>
 <div class="am-margin">
-    <a id="btnSub" class="am-btn am-btn-primary am-btn-xs"><spring:message code="app.page.btn.save"/></a>
-    <a id="btnBack" class="am-btn am-btn-warning am-btn-xs"><spring:message code="app.page.btn.back"/></a>
+    <a id="btnSub" class="am-btn am-btn-primary am-btn-xs"><span class="am-icon-save"></span> <spring:message code="app.page.btn.save"/></a>
+    <a id="btnBack" class="am-btn am-btn-warning am-btn-xs"><span class="am-icon-reply"></span> <spring:message code="app.page.btn.back"/></a>
 </div>
 <!-- content end -->
 <script>
@@ -113,6 +114,8 @@
             showPage('/tax/fj/view');
         });
 
-        $('#txtSprq').datepicker({format: 'yyyy-mm-dd'});
+        $('#btnDate').datepicker().on('changeDate.datepicker.amui', function (event) {
+            $('#txtSprq').val($('#btnDate').data('date'));
+        });
     });
 </script>

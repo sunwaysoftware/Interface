@@ -11,21 +11,40 @@
 <form id="findForm" class="am-form am-form-horizontal">
     <div class="am-form-group">
         <div class="am-u-sm-4 am-u-md-2 am-text-right">使用权期限</div>
-        <div class="am-u-sm-4 am-u-md-2">
-            <div class="am-form-icon">
-                <i class="am-icon-calendar"></i>
-                <input type="text" id="txtQssj" class="am-form-field" required data-am-datepicker readonly placeholder="开始时间">
+        <div class="am-u-sm-4 am-u-md-3">
+            <div class="am-input-group am-datepicker-date am-input-group-sm" data-am-datepicker="{format: 'yyyy-mm-dd'}">
+                <input id="txtQssj" type="text" class="am-form-field am-input-sm" readonly placeholder="开始时间">
+                <span class="am-input-group-btn am-datepicker-add-on">
+                    <button id="btnDateQssj" class="am-btn am-btn-sm" type="button"><span class="am-icon-calendar"></span> </button>
+                </span>
             </div>
         </div>
-        <div class="am-u-sm-4 am-u-md-2">
-            <div class="am-form-icon">
-                <i class="am-icon-calendar"></i>
-                <input type="text" id="txtJssj" class="am-form-field" required data-am-datepicker readonly placeholder="结束时间">
+        <div class="am-u-sm-4 am-u-md-3">
+            <div class="am-input-group am-datepicker-date am-input-group-sm" data-am-datepicker="{format: 'yyyy-mm-dd'}">
+                <input id="txtJssj" type="text" class="am-form-field am-input-sm" readonly placeholder="结束时间">
+                <span class="am-input-group-btn am-datepicker-add-on">
+                    <button id="btnDateJssj" class="am-btn am-btn-sm" type="button"><span class="am-icon-calendar"></span> </button>
+                </span>
             </div>
         </div>
-        <div class="am-u-sm-4 am-u-md-6">
+        <div class="am-u-sm-4 am-u-md-4">
+            <button id="btnSearch" class="am-btn am-btn-sm" type="button"><span class="am-icon-search"></span>
+                查询
+            </button>
+        </div>
+    </div>
+    <div class="am-form-group">
+        <div class="am-u-sm-4 am-u-md-2 am-text-right">权利人</div>
+        <div class="am-u-sm-4 am-u-md-3">
+            <input type="text" id="txtQlr" name="qlr" class="am-form-field am-input-sm">
+        </div>
+        <div class="am-u-sm-4 am-u-md-3">
+        </div>
+        <div class="am-u-sm-4 am-u-md-4">
             <div>
-                <button id="btnSearch" class="am-btn am-btn-default" type="button"><span class="am-icon-search"></span> 查询</button>
+                <button id="btnClear" class="am-btn am-btn-sm" type="reset"><span class="am-icon-eraser"></span>
+                    清空
+                </button>
             </div>
         </div>
     </div>
@@ -49,11 +68,19 @@
                 return false;
             }
             //重新请求数据结果装入表格对象
-            var dt_data = {syqqssj: $('#txtQssj').val(), syqjssj: $('#txtJssj').val()};
+            var dt_data = {
+                syqqssj: $('#txtQssj').val(),
+                syqjssj: $('#txtJssj').val(),
+                qlr: $('#txtQlr').val()
+            };
             ShowDataTable(dt_data);
         });
-        $('#txtQssj').datepicker({format:'yyyy-mm-dd'});
-        $('#txtJssj').datepicker({format:'yyyy-mm-dd'});
+        $('#btnDateQssj').datepicker().on('changeDate.datepicker.amui', function (event) {
+            $('#txtQssj').val($('#btnDateQssj').data('date'));
+        });
+        $('#btnDateJssj').datepicker().on('changeDate.datepicker.amui', function (event) {
+            $('#txtJssj').val($('#btnDateJssj').data('date'));
+        });
     });
 
     function ShowDataTable(dtData) {
@@ -63,7 +90,6 @@
             "iDisplayLength": 20, //默认显示的记录数
             "bLengthChange": false, //显示数据数量
             "destroy": true,
-            rowId: 'id',
             ajax: {
                 type: 'POST',
                 url: '/bdc/zd/viewlist',
@@ -71,7 +97,7 @@
                 dataSrc: ''
             },
             columns: [
-                {title: "受理号", data: "ywh"},
+                {title: "业务编号", data: "ywh", defaultContent: "--"},
                 {title: "宗地代码", data: "zddm", defaultContent: "--"},
                 {title: "宗地号", data: "zdh", defaultContent: "--"},
                 {title: "地籍号", data: "djh", defaultContent: "--"},
@@ -79,9 +105,11 @@
             ],
             // 定义操作列
             columnDefs: [{
-                targets: 0,
+                targets: 5,
                 render: function (data, type, full) {
-                    return "<a href=\"javascript:showPage('/bdc/zd/crud/"+full.id+"');\">"+full.ywh+"</a>";
+                    return "<div class=\"am-btn-toolbar\"><div class=\"am-btn-group am-btn-group-xs\">" +
+                        "<button onclick=\"showPage('/bdc/zd/crud/" + full.id + "')\" class=\"am-btn am-btn-default am-btn-xs am-text-secondary\">" +
+                        "<span class=\"am-icon-newspaper-o\"></span> 查看</button></div></div>";
                 }
             }]
         });

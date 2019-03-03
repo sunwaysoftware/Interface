@@ -28,15 +28,14 @@
             "processing": true,
             "iDisplayLength": 20, //默认显示的记录数
             "bLengthChange": false, //显示数据数量
-            rowId: 'username',
             ajax: {
                 url: '/sys/users/viewlist',
                 dataSrc: ''
             },
             columns: [
-                {title: "账号", data: "username"},
-                {title: "密码", data: "password"},
-                {title: "拥有权限", data: "roles[].authority"}
+                {title: "账号", data: "username", defaultContent: "--"},
+                {title: "密码", data: "password", defaultContent: "--"},
+                {title: "拥有权限", data: "roles[].authority", defaultContent: "--"}
             ],
             // 定义操作列
             columnDefs: [{

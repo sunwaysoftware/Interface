@@ -14,6 +14,7 @@
         <ul class="am-tabs-nav am-nav am-nav-tabs">
             <li class="am-active"><a href="#tab1">基本属性</a></li>
             <li><a href="#tab2">附加信息</a></li>
+            <li><a href="#tab3">权利人</a></li>
         </ul>
         <div class="am-tabs-bd">
             <div class="am-tab-panel am-fade am-in am-active" id="tab1">
@@ -245,11 +246,41 @@
                 </div>
 
             </div>
+
+            <div class="am-tab-panel am-fade" id="tab3">
+                <table id="myTable" class="am-table am-table-striped am-table-hover table-main">
+                    <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>证件类型</th>
+                        <th>证件号</th>
+                        <th>权利人类型</th>
+                        <th>共有方式</th>
+                        <th>类别</th>
+                        <th>占有份额</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${voQlr}" var="r" varStatus="i">
+                        <tr>
+                            <td>${r.sname}</td>
+                            <td>${r.dictZjlx.bdcNm}</td>
+                            <td>${r.scnum}</td>
+                            <td>${r.dictQlrxz.bdcNm}</td>
+                            <td>${r.dictGyfs.bdcNm}</td>
+                            <td>${r.dictQlrlb.bdcNm}</td>
+                            <td>${r.zyfe}</td>
+                            <td></td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </form>
 <div class="am-margin">
-    <a id="btnBack" class="am-btn am-btn-warning am-btn-xs"><spring:message code="app.page.btn.back"/></a>
+    <a id="btnBack" class="am-btn am-btn-warning am-btn-xs"><span class="am-icon-reply"></span> <spring:message code="app.page.btn.back"/></a>
 </div>
 <!-- content end -->
 <script>

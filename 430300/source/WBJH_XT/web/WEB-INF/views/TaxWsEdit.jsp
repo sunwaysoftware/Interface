@@ -29,7 +29,12 @@
                         税款所属期
                     </div>
                     <div class="am-u-sm-8 am-u-md-4">
-                        <input id="txtSksssq" name="sksssq" type="text" class="am-input-sm" value="${vo.sksssq}" data-am-datepicker>
+                        <div class="am-input-group am-datepicker-date am-input-group-sm" data-am-datepicker="{format: 'yyyy-mm-dd'}">
+                            <input id="txtSksssq" name="sksssq" type="text" class="am-form-field am-input-sm" value="${vo.sksssq}" readonly required>
+                            <span class="am-input-group-btn am-datepicker-add-on">
+                                <button id="btnDateSk" class="am-btn am-btn-sm" type="button"><span class="am-icon-calendar"></span></button>
+                            </span>
+                        </div>
                     </div>
                 </div>
 
@@ -53,7 +58,12 @@
                         完税日期
                     </div>
                     <div class="am-u-sm-8 am-u-md-4">
-                        <input type="text" class="am-input-sm" value="${vo.wsrq}" id="txtWsrq" name="wsrq" data-am-datepicker required>
+                        <div class="am-input-group am-datepicker-date am-input-group-sm" data-am-datepicker="{format: 'yyyy-mm-dd'}">
+                            <input id="txtWsrq" name="wsrq" type="text" class="am-form-field am-input-sm" value="${vo.wsrq}" readonly required>
+                            <span class="am-input-group-btn am-datepicker-add-on">
+                                <button id="btnDate" class="am-btn am-btn-sm" type="button"><span class="am-icon-calendar"></span></button>
+                            </span>
+                        </div>
                     </div>
                     <div class="am-u-sm-4 am-u-md-2 am-text-right">
                         发票号码
@@ -94,10 +104,10 @@
                 </div>
 
                 <div class="am-g am-margin-top-sm">
-                    <div class="am-u-sm-12 am-u-md-2 am-text-right">
+                    <div class="am-u-sm-4 am-u-md-2 am-text-right">
                         税收减免
                     </div>
-                    <div class="am-u-sm-12 am-u-md-10">
+                    <div class="am-u-sm-8 am-u-md-10">
                         <textarea rows="5" placeholder="税收减免情况说明" name="ssjm">${vo.ssjm}</textarea>
                     </div>
                 </div>
@@ -112,7 +122,6 @@
                         <input type="number" class="am-input-sm" value="${vo.seZzs}" name="seZzs">
                     </div>
                 </div>
-
                 <div class="am-g am-margin-top-sm">
                     <div class="am-u-sm-4 am-u-md-2 am-text-right">
                         城建税
@@ -121,7 +130,6 @@
                         <input type="number" class="am-input-sm" value="${vo.seCjs}" name="seCjs">
                     </div>
                 </div>
-
                 <div class="am-g am-margin-top-sm">
                     <div class="am-u-sm-4 am-u-md-2 am-text-right">
                         教育费及附加
@@ -130,7 +138,6 @@
                         <input type="number" class="am-input-sm" value="${vo.seDfjys}" name="seDfjys">
                     </div>
                 </div>
-
                 <div class="am-g am-margin-top-sm">
                     <div class="am-u-sm-4 am-u-md-2 am-text-right">
                         土地增值税
@@ -139,7 +146,6 @@
                         <input type="number" class="am-input-sm" value="${vo.seTdzzs}" name="seTdzzs">
                     </div>
                 </div>
-
                 <div class="am-g am-margin-top-sm">
                     <div class="am-u-sm-4 am-u-md-2 am-text-right">
                         个人所得税
@@ -148,7 +154,6 @@
                         <input type="number" class="am-input-sm" value="${vo.seGrsds}" name="seGrsds">
                     </div>
                 </div>
-
                 <div class="am-g am-margin-top-sm">
                     <div class="am-u-sm-4 am-u-md-2 am-text-right">
                         契税
@@ -157,7 +162,6 @@
                         <input type="number" class="am-input-sm" value="${vo.seQs}" name="seQs">
                     </div>
                 </div>
-
                 <div class="am-g am-margin-top-sm">
                     <div class="am-u-sm-4 am-u-md-2 am-text-right">
                         印花税
@@ -171,8 +175,8 @@
     </div>
 </form>
 <div class="am-margin">
-    <a id="btnSub" class="am-btn am-btn-primary am-btn-xs"><spring:message code="app.page.btn.save"/></a>
-    <a id="btnBack" class="am-btn am-btn-warning am-btn-xs"><spring:message code="app.page.btn.back"/></a>
+    <a id="btnSub" class="am-btn am-btn-primary am-btn-xs"><span class="am-icon-save"></span> <spring:message code="app.page.btn.save"/></a>
+    <a id="btnBack" class="am-btn am-btn-warning am-btn-xs"><span class="am-icon-reply"></span> <spring:message code="app.page.btn.back"/></a>
 </div>
 <!-- content end -->
 <script>
@@ -220,7 +224,11 @@
             showPage('/tax/ws/view');
         });
 
-        $('#txtWsrq').datepicker({format: 'yyyy-mm-dd'});
-        $('#txtSksssq').datepicker({format: 'yyyy-mm-dd'});
+        $('#btnDate').datepicker().on('changeDate.datepicker.amui', function (event) {
+            $('#txtWsrq').val($('#btnDate').data('date'));
+        });
+        $('#btnDateSk').datepicker().on('changeDate.datepicker.amui', function (event) {
+            $('#txtSksssq').val($('#btnDateSk').data('date'));
+        });
     });
 </script>

@@ -11,7 +11,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name="BDC_QLR")
+@Table(name="BDC_QLR", schema = "wbjh_tax")
 public class BdcQlr implements Serializable {
     @Id
     @GenericGenerator(name = "appID", strategy = "uuid")
@@ -39,12 +39,9 @@ public class BdcQlr implements Serializable {
     private String ywh;
     private String jyfbs;       // 交易方标识(0 转让方,1 承受方)
 
-    @ManyToOne(targetEntity = BdcFwsx.class, cascade = CascadeType.ALL)
-    @JoinColumn(name="fwsx_id")
-    private BdcFwsx fwsx;
-
+    //----------------------------------------------------------------------------------
     public BdcQlr(){}
-
+    public BdcQlr(String ywh){ this.ywh = ywh; }
     //------------------------- setter and getter ------------------------------------
     public String getId() {
         return id;
@@ -108,14 +105,6 @@ public class BdcQlr implements Serializable {
 
     public void setJyfbs(String jyfbs) {
         this.jyfbs = jyfbs;
-    }
-
-    public BdcFwsx getFwsx() {
-        return fwsx;
-    }
-
-    public void setFwsx(BdcFwsx fwsx) {
-        this.fwsx = fwsx;
     }
 
     public BdcZjlxDict getDictZjlx() {

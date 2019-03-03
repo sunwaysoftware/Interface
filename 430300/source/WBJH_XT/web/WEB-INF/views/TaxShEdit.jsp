@@ -9,7 +9,7 @@
     </div>
 </div>
 <hr>
-<form id="editForm" class="am-form am-form-inline">
+<form id="editForm" class="am-form">
     ${method}
     <input type="hidden" name="id" id="txtId" value="${vo.id}">
     <div class="am-g am-margin-top">
@@ -68,9 +68,11 @@
             完税时间
         </div>
         <div class="am-u-sm-8 am-u-md-4">
-            <div class="am-form-icon">
-                <i class="am-icon-calendar"></i>
-                <input type="date" class="am-form-field am-input-sm" id="txtWssj" name="wssj" value="${vo.wssj}">
+            <div class="am-input-group am-datepicker-date am-input-group-sm" data-am-datepicker="{format: 'yyyy-mm-dd'}">
+                <input id="txtWssj" name="wssj" type="text" class="am-form-field am-input-sm" value="${vo.wssj}" readonly required>
+                <span class="am-input-group-btn am-datepicker-add-on">
+                    <button id="btnDate" class="am-btn am-btn-sm" type="button"><span class="am-icon-calendar"></span></button>
+                </span>
             </div>
         </div>
     </div>
@@ -85,9 +87,11 @@
             审核时间
         </div>
         <div class="am-u-sm-8 am-u-md-4">
-            <div class="am-form-icon">
-                <i class="am-icon-calendar"></i>
-                <input type="text" class="am-form-field am-input-sm" id="txtShsj" name="shsj" value="${vo.shsj}" required>
+            <div class="am-input-group am-datepicker-date am-input-group-sm" data-am-datepicker="{format: 'yyyy-mm-dd'}">
+                <input id="txtShsj" name="shsj" type="text" class="am-form-field am-input-sm" value="${vo.shsj}" readonly required>
+                <span class="am-input-group-btn am-datepicker-add-on">
+                    <button id="btnDateSh" class="am-btn am-btn-sm" type="button"><span class="am-icon-calendar"></span></button>
+                </span>
             </div>
         </div>
     </div>
@@ -111,8 +115,8 @@
     </div>
 </form>
 <div class="am-margin">
-    <a id="btnSub" class="am-btn am-btn-primary am-btn-xs"><spring:message code="app.page.btn.save"/></a>
-    <a id="btnBack" class="am-btn am-btn-warning am-btn-xs"><spring:message code="app.page.btn.back"/></a>
+    <a id="btnSub" class="am-btn am-btn-primary am-btn-xs"><span class="am-icon-save"></span> <spring:message code="app.page.btn.save"/></a>
+    <a id="btnBack" class="am-btn am-btn-warning am-btn-xs"><span class="am-icon-reply"></span> <spring:message code="app.page.btn.back"/></a>
 </div>
 <!-- content end -->
 <script>
@@ -160,8 +164,13 @@
             showPage('/tax/sh/view');
         });
 
-        $('#txtShsj').datepicker({format: 'yyyy-mm-dd'});
-        $('#txtWssj').datepicker({format: 'yyyy-mm-dd'});
+        $('#btnDateSh').datepicker().on('changeDate.datepicker.amui', function (event) {
+            $('#txtShsj').val($('#btnDateSh').data('date'));
+        });
+        $('#btnDate').datepicker().on('changeDate.datepicker.amui', function (event) {
+            $('#txtWssj').val($('#btnDate').data('date'));
+        });
+        // 下拉框赋值
         $("#txtSfws").val("${vo.sfws}");
         $("#txtShjg").val("${vo.dictShjg.id}");
     });

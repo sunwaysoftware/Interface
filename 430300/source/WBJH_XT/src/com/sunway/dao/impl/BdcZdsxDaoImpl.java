@@ -2,6 +2,7 @@ package com.sunway.dao.impl;
 
 import com.sunway.dao.BdcZdsxDao;
 import com.sunway.entity.BdcZdsx;
+import com.sunway.util.FormatUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -16,7 +17,7 @@ public class BdcZdsxDaoImpl implements BdcZdsxDao {
 
     @Autowired
     private SessionFactory sessionFactory;
-    
+
     @Override
     public BdcZdsx getDataById(BdcZdsx bean) {
         BdcZdsx rtnBean = null;
@@ -38,13 +39,24 @@ public class BdcZdsxDaoImpl implements BdcZdsxDao {
         List<BdcZdsx> resultList = null;
         Session session = null;
         CriteriaQuery<BdcZdsx> createQuery = null;
+        String HQL = " select distinct new BdcZdsx(a.id, a.ywh, a.zddm, a.zdmj, a.zdh, a.djh) from BdcZdsx a left join BdcQlr b on a.ywh=b.ywh where 1=1";
+        if(null!=bean.getSyqqssj())
+            HQL = HQL + " and to_char(a.syqqssj, 'yyyy-MM-dd') >= to_char(:sj1, 'yyyy-MM-dd')";
+        if(null!=bean.getSyqjssj())
+            HQL = HQL + " and to_char(a.syqjssj, 'yyyy-MM-dd') <= to_char(:sj2, 'yyyy-MM-dd')";
+        if(null!=bean.getQlr() && !"".equals(bean.getQlr()))
+            HQL = HQL + " and b.sname like :pQlr";
+
         try {
             // 创建session对象
             session = sessionFactory.openSession();
-            String hql = " select new BdcZdsx(id, ywh, zddm, zdmj, zdh, djh) from BdcZdsx where to_char(syqqssj, 'yyyy-MM-dd') >= to_char(:sj1, 'yyyy-MM-dd') and to_char(syqjssj, 'yyyy-MM-dd') <= to_char(:sj2, 'yyyy-MM-dd')";
-            Query query = session.createQuery(hql);
-            query.setParameter("sj1", bean.getSyqqssj());
-            query.setParameter("sj2", bean.getSyqjssj());
+            Query query = session.createQuery(HQL);
+            if(null!=bean.getQlr() && !"".equals(bean.getQlr()))
+                query.setParameter("pQlr", FormatUtil.toSearchLike(bean.getQlr()));
+            if(null!=bean.getSyqqssj())
+                query.setParameter("sj1", bean.getSyqqssj());
+            if(null!=bean.getSyqjssj())
+                query.setParameter("sj2", bean.getSyqjssj());
             query.setFirstResult((pageIndex - 1) * pageSize);
             query.setMaxResults(pageSize);
             // 返回查询结果集
