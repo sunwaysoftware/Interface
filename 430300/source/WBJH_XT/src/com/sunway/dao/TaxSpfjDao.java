@@ -1,6 +1,6 @@
 package com.sunway.dao;
 
-import com.sunway.entity.TaxSpfj;
+import com.sunway.entity.tax.TaxSpfj;
 
 import java.util.List;
 

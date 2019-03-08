@@ -2,11 +2,10 @@ package com.sunway.controller;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.sunway.entity.BdcFwsx;
-import com.sunway.entity.BdcQlr;
+import com.sunway.entity.tax.BdcFwsx;
+import com.sunway.entity.tax.BdcQlr;
 import com.sunway.service.BdcFwsxService;
 import com.sunway.service.BdcQlrService;
-import com.sunway.util.DateUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +17,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Date;
 import java.util.List;
 
 @Controller

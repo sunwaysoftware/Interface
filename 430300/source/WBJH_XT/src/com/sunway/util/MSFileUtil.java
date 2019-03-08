@@ -1,6 +1,6 @@
 package com.sunway.util;
 
-import com.sunway.entity.TaxWsxx;
+import com.sunway.entity.tax.TaxWsxx;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;

@@ -1,6 +1,6 @@
 package com.sunway.controller;
 
-import com.sunway.entity.AppUser;
+import com.sunway.entity.tax.AppUser;
 import com.sunway.service.AppUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;

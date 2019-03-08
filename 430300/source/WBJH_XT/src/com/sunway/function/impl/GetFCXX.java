@@ -1,15 +1,19 @@
 package com.sunway.function.impl;
 
-import java.sql.Connection;
 import java.util.ArrayList;
 import javax.annotation.PostConstruct;
 
+import com.sunway.dao.BdcCqDao;
 import com.sunway.dao.BdcFwsxDao;
 import com.sunway.dao.BdcQlrDao;
-import com.sunway.entity.BdcFwsx;
-import com.sunway.entity.BdcQlr;
+import com.sunway.entity.tax.BdcCq;
+import com.sunway.entity.tax.BdcFwsx;
+import com.sunway.entity.tax.BdcQlr;
 
+import com.sunway.util.CheckUtil;
+import com.sunway.util.ConvertUtil;
 import com.sunway.util.FormatUtil;
+import com.sunway.util.MakeUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.commons.text.StringEscapeUtils;
@@ -31,12 +35,15 @@ public class GetFCXX extends BaseFunction implements IBaseObject{
 	@Autowired
 	private BdcFwsxDao bdcFwsxDao;
 	@Autowired
+	private BdcCqDao bdcCqDao;
+	@Autowired
 	private BdcQlrDao bdcQlrDao;
 
 	@PostConstruct
 	public void init(){
 		fcxxUtil = this;
 		fcxxUtil.bdcFwsxDao = this.bdcFwsxDao;
+		fcxxUtil.bdcCqDao = this.bdcCqDao;
 		fcxxUtil.bdcQlrDao = this.bdcQlrDao;
 	}
 
@@ -61,7 +68,7 @@ public class GetFCXX extends BaseFunction implements IBaseObject{
 			}
 			result = combineFunctionXML(fcxxList);
 		} catch(Exception e) {
-			log.error(e);
+			e.printStackTrace();
 			errorSign = true;
 			errorMessage = e.getMessage();
 			result = combineFunctionXML(fcxxList);
@@ -79,8 +86,17 @@ public class GetFCXX extends BaseFunction implements IBaseObject{
 	 */
 	protected PgtFCXX setFCXXParameters(BdcFwsx ocrs) throws Exception {
 		PgtFCXX e = new PgtFCXX();
+		//------------- 读取产权 -------------------------------
+		BdcCq cq = new BdcCq();
+		cq.setYwh(ocrs.getYwh());
+		for (BdcCq b: fcxxUtil.bdcCqDao.getDataByYwh(cq)) {
+			e.setYfczh(b.getYbdcqzh());
+			e.setHtzj(String.valueOf(CheckUtil.chkNull(b.getJyjg())*10000));// 国土价格为万元，需转换
+			e.setJysj(FormatUtil.toYYYYMMDD(b.getJysj()));
+			e.setFzrq(FormatUtil.toYYYYMMDD(b.getFzrq()));
+		}
+		//-------------- 读取房屋属性 --------------------------
 		e.setFcslh(ocrs.getYwh());
-		e.setYfczh(ocrs.getBdcqzh());
 		e.setClh(ocrs.getBdcdyh());
 		if(null!=ocrs.getDictGhty())
 			e.setSjyt(ocrs.getDictGhty().getTaxNm());
@@ -95,9 +111,7 @@ public class GetFCXX extends BaseFunction implements IBaseObject{
 		if(null!=ocrs.getDictJylx())
 			e.setJylx(ocrs.getDictJylx().getTaxNm());
 		e.setJzmj(String.valueOf(ocrs.getBarea()));
-		e.setHtzj(String.valueOf(ocrs.getHtzj()));
-		e.setJysj(FormatUtil.toYYYYMMDD(ocrs.getJysj()));
-		e.setFzrq(FormatUtil.toYYYYMMDD(ocrs.getFzrq()));
+
 		e.setDf(ocrs.getDf());
 		e.setCx(ocrs.getCx());
 		e.setCg(ocrs.getCg());

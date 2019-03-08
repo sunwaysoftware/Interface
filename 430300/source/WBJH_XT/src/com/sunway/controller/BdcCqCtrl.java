@@ -2,11 +2,10 @@ package com.sunway.controller;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.sunway.entity.BdcCq;
-import com.sunway.entity.BdcQlr;
+import com.sunway.entity.tax.BdcCq;
+import com.sunway.entity.tax.BdcQlr;
 import com.sunway.service.BdcCqService;
 import com.sunway.service.BdcQlrService;
-import com.sunway.util.DateUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,8 +37,6 @@ public class BdcCqCtrl {
     @ResponseBody
     @RequestMapping(method = RequestMethod.POST, value = "/viewlist", produces = "text/html;charset=UTF-8")
     public String loadView(HttpServletRequest request, BdcCq pageBean){
-//        if(null==pageBean.getJysj())
-//            pageBean.setJysj(DateUtil.getNowDate());
         List<BdcCq> cqList = bdcCqService.getAllData(pageBean,1, 500);
         Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
         return gson.toJson(cqList);

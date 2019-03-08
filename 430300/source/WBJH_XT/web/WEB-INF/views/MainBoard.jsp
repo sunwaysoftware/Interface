@@ -186,7 +186,32 @@
 <script src="/static/assets/js/Chart.min.js"></script>
 <script src="/static/js/mainboard.js"></script>
 <script>
-    showChart(${chartData});
+    $(document).ready(function () {
+        var json = ${chartData};
+        console.log("数据：" + json);
+        var chartjsData = [];
+        for (var i = 0; i < json.length; i++) {
+            chartjsData.push(json[i].data);
+        }
+        var chartjslabel = [];
+        for (var i = 0; i < json.length; i++) {
+            chartjslabel.push(json[i].label);
+        }
+        var ctx = document.getElementById("appChart").getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: chartjslabel,
+                datasets: [{
+                    label: '不动产交易量走势',
+                    data: chartjsData,
+                    backgroundColor: ["rgba(255, 99, 132, 0.2)"],
+                    borderColor: ["rgb(255, 99, 132)"],
+                    borderWidth: 1
+                }]
+            }
+        });
+    });
 </script>
 </body>
 </html>

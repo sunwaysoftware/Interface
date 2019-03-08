@@ -1,7 +1,7 @@
 package com.sunway.dao.impl;
 
 import com.sunway.dao.BdcZdsxDao;
-import com.sunway.entity.BdcZdsx;
+import com.sunway.entity.tax.BdcZdsx;
 import com.sunway.util.FormatUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

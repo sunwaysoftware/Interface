@@ -1,7 +1,10 @@
 package com.sunway.controller;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.sunway.service.BdcFwsxService;
 import com.sunway.util.MakeUtil;
+import com.sunway.vo.ChartJsVo;
 import org.apache.log4j.MDC;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -29,8 +32,9 @@ public class MainCtrl {
         MDC.put("uID", authentication.getName());
         MDC.put("uIP", request.getRemoteAddr());
         // 默认获取当前年份
-        List<Double> dataChart = fwsxService.getCountGroupMonthByYear(Integer.valueOf(MakeUtil.currentYear()));
-        modelAndView.addObject("chartData", dataChart);
+        List<ChartJsVo> dataChart = fwsxService.getCountGroupMonthByYear(Integer.valueOf(MakeUtil.currentYear()));
+        Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
+        modelAndView.addObject("chartData", gson.toJson(dataChart));
         // 读取登录账户
         modelAndView.addObject("loginName", authentication.getName());
         logger.info("登录系统主界面");

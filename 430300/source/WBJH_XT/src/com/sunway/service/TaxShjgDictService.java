@@ -1,6 +1,6 @@
 package com.sunway.service;
 
-import com.sunway.entity.TaxShjgDict;
+import com.sunway.entity.tax.TaxShjgDict;
 
 import java.util.List;
 

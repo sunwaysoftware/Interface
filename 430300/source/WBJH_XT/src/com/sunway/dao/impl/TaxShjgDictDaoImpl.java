@@ -1,7 +1,7 @@
 package com.sunway.dao.impl;
 
 import com.sunway.dao.TaxShjgDictDao;
-import com.sunway.entity.TaxShjgDict;
+import com.sunway.entity.tax.TaxShjgDict;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;

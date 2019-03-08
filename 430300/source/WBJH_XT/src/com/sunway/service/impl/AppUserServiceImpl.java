@@ -2,7 +2,7 @@ package com.sunway.service.impl;
 
 import com.sunway.dao.AppUserDao;
 import com.sunway.dao.BaseDao;
-import com.sunway.entity.AppUser;
+import com.sunway.entity.tax.AppUser;
 import com.sunway.service.AppUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

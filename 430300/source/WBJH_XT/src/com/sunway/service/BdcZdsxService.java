@@ -1,6 +1,6 @@
 package com.sunway.service;
 
-import com.sunway.entity.BdcZdsx;
+import com.sunway.entity.tax.BdcZdsx;
 
 import java.util.List;
 

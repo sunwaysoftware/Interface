@@ -2,11 +2,10 @@ package com.sunway.controller;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.sunway.entity.BdcQlr;
-import com.sunway.entity.BdcZdsx;
+import com.sunway.entity.tax.BdcQlr;
+import com.sunway.entity.tax.BdcZdsx;
 import com.sunway.service.BdcQlrService;
 import com.sunway.service.BdcZdsxService;
-import com.sunway.util.DateUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

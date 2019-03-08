@@ -1,6 +1,6 @@
 package com.sunway.service;
 
-import com.sunway.entity.AppUser;
+import com.sunway.entity.tax.AppUser;
 
 import java.util.List;
 

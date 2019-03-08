@@ -1,8 +1,8 @@
 package com.sunway.controller;
 
 import com.google.gson.Gson;
-import com.sunway.entity.AppAuthority;
-import com.sunway.entity.AppUser;
+import com.sunway.entity.tax.AppAuthority;
+import com.sunway.entity.tax.AppUser;
 import com.sunway.service.AppUserService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

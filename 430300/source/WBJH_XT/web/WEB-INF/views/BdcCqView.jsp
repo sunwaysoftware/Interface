@@ -10,10 +10,10 @@
 <hr>
 <form id="findForm" class="am-form am-form-horizontal">
     <div class="am-form-group">
-        <div class="am-u-sm-4 am-u-md-2 am-text-right">交易时间</div>
+        <div class="am-u-sm-4 am-u-md-2 am-text-right">申请登记时间</div>
         <div class="am-u-sm-4 am-u-md-3">
             <div class="am-input-group am-datepicker-date am-input-group-sm" data-am-datepicker="{format: 'yyyy-mm-dd'}">
-                <input id="txtJysj" type="text" class="am-form-field am-input-sm" readonly>
+                <input id="txtCssj" type="text" class="am-form-field am-input-sm" readonly>
                 <span class="am-input-group-btn am-datepicker-add-on">
                     <button id="btnDate" class="am-btn am-btn-sm" type="button"><span class="am-icon-calendar"></span></button>
                 </span>
@@ -47,7 +47,7 @@
         // 表格加载数据
         ShowDataTable();
         $('#btnDate').datepicker().on('changeDate.datepicker.amui', function (event) {
-            $('#txtJysj').val($('#btnDate').data('date'));
+            $('#txtCssj').val($('#btnDate').data('date'));
         });
         // 查询
         $("#btnSearch").click(function () {
@@ -58,7 +58,7 @@
             }
             //重新请求数据结果装入表格对象
             var dt_data = {
-                jysj: $('#txtJysj').val(),
+                cssj: $('#txtCssj').val(),
                 qlr: $('#txtQlr').val()
             };
             ShowDataTable(dt_data);
@@ -80,10 +80,10 @@
             },
             columns: [
                 {title: "业务编号", data: "ywh"},
-                {title: "不动产证号", data: "bdcqzh", defaultContent: "--"},
-                {title: "不动产单元号", data: "bdcdyh", defaultContent: "--"},
                 {title: "交易价格", data: "jyjg", defaultContent: "--"},
-                {title: "发证日期", data: "fzrq", defaultContent: "--"}
+                {title: "发证日期", data: "fzrq", defaultContent: "--"},
+                {title: "不动产证号", data: "bdcqzh", defaultContent: "--"},
+                {title: "原不动产证号", data: "ybdcqzh", defaultContent: "--"},
             ],
             // 定义操作列
             columnDefs: [{

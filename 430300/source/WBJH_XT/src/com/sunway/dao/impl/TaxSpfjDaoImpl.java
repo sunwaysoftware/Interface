@@ -1,7 +1,7 @@
 package com.sunway.dao.impl;
 
 import com.sunway.dao.TaxSpfjDao;
-import com.sunway.entity.TaxSpfj;
+import com.sunway.entity.tax.TaxSpfj;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;

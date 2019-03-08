@@ -1,6 +1,6 @@
 package com.sunway.service;
 
-import com.sunway.entity.BdcQlr;
+import com.sunway.entity.tax.BdcQlr;
 
 import java.util.List;
 

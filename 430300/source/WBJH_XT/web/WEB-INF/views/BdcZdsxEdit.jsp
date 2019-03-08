@@ -163,21 +163,6 @@
                         <input type="text" class="am-input-sm" value="${vo.qszt}">
                     </div>
                     <div class="am-u-sm-4 am-u-md-2 am-text-right">
-                        不动产权证号
-                    </div>
-                    <div class="am-u-sm-8 am-u-md-4">
-                        <input type="text" class="am-input-sm" value="${vo.bdcqzh}">
-                    </div>
-                </div>
-
-                <div class="am-g am-margin-top">
-                    <div class="am-u-sm-4 am-u-md-2 am-text-right">
-                        原不动产权证号
-                    </div>
-                    <div class="am-u-sm-8 am-u-md-4">
-                        <input type="text" class="am-input-sm" value="${vo.ybdcqzh}">
-                    </div>
-                    <div class="am-u-sm-4 am-u-md-2 am-text-right">
                         图幅号
                     </div>
                     <div class="am-u-sm-8 am-u-md-4">

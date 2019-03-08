@@ -2,7 +2,7 @@ package com.sunway.service.impl;
 
 import com.sunway.dao.BaseDao;
 import com.sunway.dao.TaxShxxDao;
-import com.sunway.entity.TaxShxx;
+import com.sunway.entity.tax.TaxShxx;
 import com.sunway.service.TaxShxxService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

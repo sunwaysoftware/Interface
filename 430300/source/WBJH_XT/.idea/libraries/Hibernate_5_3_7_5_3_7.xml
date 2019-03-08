@@ -25,6 +25,7 @@
       <root url="jar://$PROJECT_DIR$/lib/ojdbc8.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/commons-text-1.6.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/commons-lang3-3.8.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/sqljdbc42.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

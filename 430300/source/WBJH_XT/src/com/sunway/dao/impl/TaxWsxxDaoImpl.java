@@ -1,7 +1,8 @@
 package com.sunway.dao.impl;
 
+import com.sunway.dao.BdcBaseDao;
 import com.sunway.dao.TaxWsxxDao;
-import com.sunway.entity.TaxWsxx;
+import com.sunway.entity.tax.TaxWsxx;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -9,16 +10,13 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository
 public class TaxWsxxDaoImpl implements TaxWsxxDao {
-
+    @Autowired
+    private BdcBaseDao bdcBaseDao;
     @Autowired
     private SessionFactory sessionFactory;
 
@@ -70,10 +68,12 @@ public class TaxWsxxDaoImpl implements TaxWsxxDao {
             // 创建session对象
             session = sessionFactory.openSession();
             tran = session.getTransaction();
+            TaxWsxx wsBean = session.get(TaxWsxx.class, bean.getId());
             tran.begin();
-            session.delete(bean);
+            session.delete(wsBean);
             tran.commit();
             rtnBool = true;
+            bdcBaseDao.execDelete_wsxx(wsBean);
         } catch (Exception e) {
             e.printStackTrace();
             tran.rollback();
@@ -96,6 +96,7 @@ public class TaxWsxxDaoImpl implements TaxWsxxDao {
             session.save(bean);
             tran.commit();
             rtnBool = true;
+            bdcBaseDao.execInsert_wsxx(bean);
         } catch (Exception e) {
             e.printStackTrace();
             tran.rollback();
@@ -118,6 +119,8 @@ public class TaxWsxxDaoImpl implements TaxWsxxDao {
             session.update(bean);
             tran.commit();
             rtnBool = true;
+            bdcBaseDao.execDelete_wsxx(bean);
+            bdcBaseDao.execInsert_wsxx(bean);
         } catch (Exception e) {
             e.printStackTrace();
             tran.rollback();

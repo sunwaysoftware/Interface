@@ -1,8 +1,9 @@
 package com.sunway.service.impl;
 
 import com.sunway.dao.BdcFwsxDao;
-import com.sunway.entity.BdcFwsx;
+import com.sunway.entity.tax.BdcFwsx;
 import com.sunway.service.BdcFwsxService;
+import com.sunway.vo.ChartJsVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +26,7 @@ public class BdcFwsxServiceImpl implements BdcFwsxService {
     }
 
     @Override
-    public List<Double> getCountGroupMonthByYear(Integer year) {
+    public List<ChartJsVo> getCountGroupMonthByYear(Integer year) {
         return bdcFwsxDao.getCountGroupMonthByYear(year);
     }
 }

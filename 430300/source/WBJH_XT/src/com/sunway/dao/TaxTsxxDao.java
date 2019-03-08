@@ -1,6 +1,6 @@
 package com.sunway.dao;
 
-import com.sunway.entity.TaxTsxx;
+import com.sunway.entity.tax.TaxTsxx;
 
 import java.util.List;
 

@@ -1,7 +1,8 @@
 package com.sunway.service.impl;
 
+import com.sunway.dao.BdcBaseDao;
 import com.sunway.dao.TaxWsxxDao;
-import com.sunway.entity.TaxWsxx;
+import com.sunway.entity.tax.TaxWsxx;
 import com.sunway.service.TaxWsxxService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,7 +11,6 @@ import java.util.List;
 
 @Service
 public class TaxWsxxServiceImpl implements TaxWsxxService {
-
     @Autowired
     private TaxWsxxDao taxWsxxDao;
 

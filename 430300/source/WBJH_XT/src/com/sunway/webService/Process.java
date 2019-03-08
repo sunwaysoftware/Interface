@@ -15,7 +15,7 @@ public class Process {
      */
     public String PgProcess(String info) {
         BaseFunction bf = new BaseFunction();
-        logger.info("Request XML content:" + info);
+        logger.info("请求报文：" + info);
         return bf.combineXML(bf.parseFunction(bf.parseXML(info)));
     }
 }

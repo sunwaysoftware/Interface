@@ -1,7 +1,7 @@
 package com.sunway.dao.impl;
 
 import com.sunway.dao.AppUserDao;
-import com.sunway.entity.AppUser;
+import com.sunway.entity.tax.AppUser;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

@@ -108,10 +108,10 @@
             columns: [
                 {title: "业务编号", data: "ywh", defaultContent: "--"},
                 {title: "完税日期", data: "wsrq", defaultContent: "--"},
-                {title: "计税价格", data: "jsjg", defaultContent: "--"},
+                {title: "评估编号", data: "pgid", defaultContent: "--"},
                 {title: "评估价格", data: "pgjg", defaultContent: "--"},
                 {title: "契税", data: "seQs", defaultContent: "--"},
-                {title: "印花税", data: "seYhs", defaultContent: "--"}
+                {title: "个税", data: "seGrsds", defaultContent: "--"}
             ],
             // 定义操作列
             columnDefs: [{

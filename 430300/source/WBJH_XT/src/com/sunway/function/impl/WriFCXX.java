@@ -2,8 +2,10 @@ package com.sunway.function.impl;
 
 import java.util.ArrayList;
 
+import com.sunway.dao.BdcBaseDao;
 import com.sunway.dao.TaxWsxxDao;
-import com.sunway.entity.TaxWsxx;
+import com.sunway.entity.bdc.BdcWsxx;
+import com.sunway.entity.tax.TaxWsxx;
 import com.sunway.util.DateUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -26,12 +28,15 @@ public class WriFCXX extends BaseFunction implements IBaseObject{
 	static Log log = LogFactory.getLog(WriFCXX.class);
 	@Autowired
 	private TaxWsxxDao taxWsxxDao;
+	@Autowired
+	private BdcBaseDao bdcBaseDao;
 	private static WriFCXX wsxxUtil;
 
 	@PostConstruct
 	public void init(){
 		wsxxUtil = this;
 		wsxxUtil.taxWsxxDao = this.taxWsxxDao;
+		wsxxUtil.bdcBaseDao = this.bdcBaseDao;
 	}
 
 	private PgtFCXX_W fcxx_w;
@@ -64,11 +69,6 @@ public class WriFCXX extends BaseFunction implements IBaseObject{
 		fcxx_w.setDjz_yhs(Double.valueOf(element.elements().get(18).attributeValue("YHS")));
 		fcxx_w.setDjz_tdzzs(Double.valueOf(element.elements().get(19).attributeValue("TDZZS")));
 		fcxx_w.setPgid(element.elements().get(20).attributeValue("PGID"));
-		
-//		sql = String.format("call PG_INS_FC002('%s','%s','%f','%f','%f','%f','%f','%f','%f','%s','%s','%s','%s','%f')",
-//				fcxx_w.getFcslh(),fcxx_w.getSsqy(),fcxx_w.getDjz_qs(),fcxx_w.getDjz_yys(),fcxx_w.getDjz_cjs(),
-//				fcxx_w.getDjz_dfjys(),fcxx_w.getDjz_grsds(),fcxx_w.getDjz_yhs(),fcxx_w.getDjz_tdzzs(),
-//				fcxx_w.getFpid(), fcxx_w.getSpid(),fcxx_w.getDfspid(),fcxx_w.getPgid(),fcxx_w.getPgjg());
 
 		TaxWsxx wsxx = new TaxWsxx();
 		try{

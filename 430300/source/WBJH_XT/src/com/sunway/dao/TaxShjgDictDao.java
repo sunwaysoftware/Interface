@@ -1,6 +1,6 @@
 package com.sunway.dao;
 
-import com.sunway.entity.TaxShjgDict;
+import com.sunway.entity.tax.TaxShjgDict;
 
 import java.util.List;
 

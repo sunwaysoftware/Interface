@@ -1,8 +1,7 @@
 package com.sunway.dao.impl;
 
 import com.sunway.dao.BdcQlrDao;
-import com.sunway.entity.BdcQlr;
-import com.sunway.util.FormatUtil;
+import com.sunway.entity.tax.BdcQlr;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;

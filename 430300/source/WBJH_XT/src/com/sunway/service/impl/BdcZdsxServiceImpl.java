@@ -1,7 +1,7 @@
 package com.sunway.service.impl;
 
 import com.sunway.dao.BdcZdsxDao;
-import com.sunway.entity.BdcZdsx;
+import com.sunway.entity.tax.BdcZdsx;
 import com.sunway.service.BdcZdsxService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

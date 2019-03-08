@@ -2,7 +2,7 @@ package com.sunway.controller;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.sunway.entity.TaxTsxx;
+import com.sunway.entity.tax.TaxTsxx;
 import com.sunway.service.TaxTsxxService;
 import com.sunway.util.DateUtil;
 import org.apache.logging.log4j.LogManager;

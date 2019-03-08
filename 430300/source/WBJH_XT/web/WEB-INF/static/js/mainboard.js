@@ -31,20 +31,3 @@ function showPage(url) {
 
     });
 };
-
-function showChart(data) {
-    var ctx = document.getElementById("appChart").getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ["01月", "02月", "03月", "04月", "05月", "06月", "07月", "08月", "09月", "10月", "11月", "12月"],
-            datasets: [{
-                label: '不动产交易量走势',
-                data: data,
-                backgroundColor: ["rgba(255, 99, 132, 0.2)"],
-                borderColor: ["rgb(255, 99, 132)"],
-                borderWidth: 1
-            }]
-        }
-    });
-}

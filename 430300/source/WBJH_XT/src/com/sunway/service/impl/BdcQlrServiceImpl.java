@@ -1,7 +1,7 @@
 package com.sunway.service.impl;
 
 import com.sunway.dao.BdcQlrDao;
-import com.sunway.entity.BdcQlr;
+import com.sunway.entity.tax.BdcQlr;
 import com.sunway.service.BdcQlrService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

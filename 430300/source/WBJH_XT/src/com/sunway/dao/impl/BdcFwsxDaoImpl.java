@@ -1,8 +1,9 @@
 package com.sunway.dao.impl;
 
 import com.sunway.dao.BdcFwsxDao;
-import com.sunway.entity.BdcFwsx;
+import com.sunway.entity.tax.BdcFwsx;
 import com.sunway.util.FormatUtil;
+import com.sunway.vo.ChartJsVo;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -61,7 +62,7 @@ public class BdcFwsxDaoImpl implements BdcFwsxDao {
         List<BdcFwsx> resultList = null;
         Session session = null;
         CriteriaQuery<BdcFwsx> createQuery = null;
-        String HQL = "select distinct new BdcFwsx(a.id, a.ywh, a.bsit, a.barea, a.bdcdyh, a.bdcqzh) from BdcFwsx a left join BdcQlr b on a.ywh=b.ywh where 1=1";
+        String HQL = "select distinct new BdcFwsx(a.id, a.ywh, a.bsit, a.barea, a.bdcdyh) from BdcFwsx a left join BdcQlr b on a.ywh=b.ywh where 1=1";
         if(null!=bean.getCssj())
             HQL = HQL + " and to_char(a.cssj, 'yyyy-MM-dd') = to_char(:pCssj, 'yyyy-MM-dd')";
         if(null!=bean.getQlr() && !"".equals(bean.getQlr()))
@@ -87,14 +88,14 @@ public class BdcFwsxDaoImpl implements BdcFwsxDao {
     }
 
     @Override
-    public List<Double> getCountGroupMonthByYear(Integer year) {
-        List<Double> resultList = null;
+    public List<ChartJsVo> getCountGroupMonthByYear(Integer year) {
+        List<ChartJsVo> resultList = null;
         Session session = null;
         CriteriaQuery<BdcFwsx> createQuery = null;
         try {
             // 创建session对象
             session = sessionFactory.openSession();
-            String hql = "select count(id) from BdcFwsx where year(cssj) = :pYear group by month(cssj) order by month(cssj)";
+            String hql = "select new com.sunway.vo.ChartJsVo(month(cssj), count(id)) from BdcFwsx where year(cssj) = :pYear group by month(cssj) order by month(cssj)";
             Query query = session.createQuery(hql);
             query.setParameter("pYear", year);
             // 返回查询结果集

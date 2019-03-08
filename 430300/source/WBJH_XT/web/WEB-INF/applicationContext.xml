@@ -15,7 +15,7 @@
     <!-- 使Autowired注解生效 -->
     <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
 
-    <!-- 配置dataSource -->
+    <!-- 本地dataSource配置 -->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
         <property name="driverClass" value="${jdbc.driver}"/>
         <property name="jdbcUrl" value="${jdbc.url}"/>
@@ -29,7 +29,7 @@
         <property name="maxIdleTime" value="10000"/>
     </bean>
 
-    <!-- 配置SessionFactory -->
+    <!-- 本地SessionFactory配置 -->
     <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="hibernateProperties">
@@ -41,8 +41,44 @@
             </props>
         </property>
         <!-- 扫描hibernate注解配置的entity -->
-        <property name="packagesToScan" value="com.sunway.entity"/>
+        <property name="packagesToScan" value="com.sunway.entity.tax"/>
+    </bean>
 
+    <!-- 国土dataSource配置 -->
+    <bean id="dataSourceBDC" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+        <property name="driverClass" value="${bdc.jdbc.driver}"/>
+        <property name="jdbcUrl" value="${bdc.jdbc.url}"/>
+        <property name="user" value="${bdc.jdbc.username}"/>
+        <property name="password" value="${bdc.jdbc.password}"/>
+        <!-- 始化时创建的连接数，应在minPoolSize与maxPoolSize之间取值。默认为3； -->
+        <property name="initialPoolSize" value="3"/>
+        <!-- 接池中保留的最大连接数。默认为15 -->
+        <property name="maxPoolSize" value="10"/>
+        <!-- 最大空闲时间，超过空闲时间的连接将被丢弃。为0或负数则永不丢弃。默认为0； -->
+        <property name="maxIdleTime" value="10000"/>
+    </bean>
+
+    <!-- 国土SessionFactory配置 -->
+    <bean id="sessionFactoryBDC" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSourceBDC"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">${bdc.hibernate.dialect}</prop>
+                <prop key="hibernate.show_sql">${bdc.hibernate.show_sql}</prop>
+                <prop key="hibernate.format_sql">${bdc.hibernate.format_sql}</prop>
+                <prop key="hibernate.hbm2ddl.auto">${bdc.hibernate.hbm2ddl.auto}</prop>
+            </props>
+        </property>
+        <!-- 扫描hibernate注解配置的entity -->
+        <property name="annotatedClasses">
+            <list>
+                <value>com.sunway.entity.tax.TaxSpfj</value>
+                <value>com.sunway.entity.tax.TaxTsxx</value>
+                <value>com.sunway.entity.tax.TaxShxx</value>
+                <value>com.sunway.entity.tax.TaxWsxx</value>
+                <value>com.sunway.entity.tax.TaxShjgDict</value>
+            </list>
+        </property>
     </bean>
 
     <!-- SpringMVC上传文件 PUT方法 -->
