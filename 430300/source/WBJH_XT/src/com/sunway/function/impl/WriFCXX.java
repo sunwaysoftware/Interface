@@ -9,6 +9,8 @@ import com.sunway.entity.tax.TaxWsxx;
 import com.sunway.util.DateUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.dom4j.Element;
 
 import com.sunway.function.IBaseObject;
@@ -25,7 +27,7 @@ import javax.annotation.PostConstruct;
  */
 @Component
 public class WriFCXX extends BaseFunction implements IBaseObject{
-	static Log log = LogFactory.getLog(WriFCXX.class);
+	private static Logger logger = LogManager.getLogger(WriFCXX.class);
 	@Autowired
 	private TaxWsxxDao taxWsxxDao;
 	@Autowired
@@ -92,7 +94,7 @@ public class WriFCXX extends BaseFunction implements IBaseObject{
 				fcxx_wList.add("NO");
 			result = combineFunctionXML(fcxx_wList);
 		}catch(Exception e){
-			log.error(e);
+			logger.error("回写完税数据出错！", e);
 			errorMessage = e.getMessage();
 			fcxx_wList.add("NO");
 			result = combineFunctionXML(fcxx_wList);
@@ -112,7 +114,7 @@ public class WriFCXX extends BaseFunction implements IBaseObject{
 						"</Result>" +
 					 "</Results>" +
 				   "</Request>",list.get(0), errorMessage);
-		
+		logger.info("完税反馈报文：", result);
 		return result;
 	}
 

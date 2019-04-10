@@ -23,6 +23,7 @@
       <configuration>
         <datasource-map>
           <unit-entry name="sessionFactory" />
+          <unit-entry name="sessionFactoryBDC" />
         </datasource-map>
         <naming-strategy-map />
       </configuration>

@@ -34,6 +34,7 @@ public class MSFileUtil {
         }else if(excel2007U.equals(fileType)){
             wb = new XSSFWorkbook(inStr);  //2007+
         }else{
+            logger.info("解析的文件格式有误！", fileType);
             throw new Exception("解析的文件格式有误！");
         }
         return wb;
@@ -47,6 +48,7 @@ public class MSFileUtil {
         Sheet sheetAt = null;
         try {
             String fileName = "工作表.xlsx";
+            logger.info("", fileName);
             //1、获取文件输入流
             inputStream = new FileInputStream("e:/工作表.xlsx");
             //2、获取Excel工作簿对象
@@ -76,9 +78,9 @@ public class MSFileUtil {
             workbook.close();
             inputStream.close();
         } catch (IOException e) {
-            logger.error(e);
+            logger.error("导入数据时I/O报错：" , e);
         } catch (Exception e) {
-            logger.error(e);
+            logger.error("导入数据时出错！", e);
         } finally {
             workbook = null;
             inputStream = null;

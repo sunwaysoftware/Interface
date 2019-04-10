@@ -1,11 +1,11 @@
 package com.sunway.webService;
 
-import org.apache.commons.text.StringEscapeUtils;
-import org.apache.log4j.Logger;
 import com.sunway.function.impl.BaseFunction;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Process {
-    static Logger logger = Logger.getLogger(Process.class);
+    private static Logger logger = LogManager.getLogger(Process.class);
 
     /**
      * 执行PgProcess方法
@@ -15,7 +15,7 @@ public class Process {
      */
     public String PgProcess(String info) {
         BaseFunction bf = new BaseFunction();
-        logger.info("请求报文：" + info);
+        logger.info("接口请求报文：" , info);
         return bf.combineXML(bf.parseFunction(bf.parseXML(info)));
     }
 }

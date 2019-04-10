@@ -64,7 +64,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>taxShxxService</find>
       <find>TaxShxx</find>
       <find>TaxSh</find>
       <find>/tax/sh/</find>
@@ -94,6 +93,7 @@
       <find>txtSfws</find>
       <find>Yfczh</find>
       <find>bdcqzh</find>
+      <find>bdcBaseDao</find>
     </findStrings>
     <replaceStrings>
       <replace>Users</replace>
@@ -131,7 +131,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/sunway/entity/AppAuthority.java" />
         <option value="$PROJECT_DIR$/src/com/sunway/entity/BdcCqlyDict.java" />
         <option value="$PROJECT_DIR$/src/com/sunway/entity/BdcFwlxDict.java" />
         <option value="$PROJECT_DIR$/src/com/sunway/entity/BdcFwxzDict.java" />
@@ -155,7 +154,6 @@
         <option value="$PROJECT_DIR$/src/com/sunway/entity/BdcCq.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/BdcZdsxEdit.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/BdcCqView.jsp" />
-        <option value="$PROJECT_DIR$/src/com/sunway/webService/Process.java" />
         <option value="$PROJECT_DIR$/src/com/sunway/dao/impl/BdcCqDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/com/sunway/controller/BdcCqCtrl.java" />
         <option value="$PROJECT_DIR$/src/com/sunway/entity/BdcQlr.java" />
@@ -171,17 +169,19 @@
         <option value="$PROJECT_DIR$/src/com/sunway/controller/TaxWsxxCtrl.java" />
         <option value="$PROJECT_DIR$/src/com/sunway/service/impl/TaxWsxxServiceImpl.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/weblogic.xml" />
-        <option value="$PROJECT_DIR$/src/com/sunway/entity/tax/TaxWsxx.java" />
         <option value="$PROJECT_DIR$/src/com/sunway/dao/BdcBaseDao.java" />
         <option value="$PROJECT_DIR$/src/com/sunway/dao/impl/BdcBaseDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/sunway/function/impl/WriFCXX.java" />
-        <option value="$PROJECT_DIR$/src/com/sunway/dao/impl/TaxWsxxDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/com/sunway/dao/impl/BdcFwsxDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/com/sunway/entity/tax/BdcFwsx.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/BdcFwsxView.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/src/com/sunway/entity/tax/TaxWsxx.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/TaxWsView.jsp" />
+        <option value="$PROJECT_DIR$/src/com/sunway/dao/impl/TaxWsxxDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/com/sunway/function/impl/GetFCXX.java" />
+        <option value="$PROJECT_DIR$/src/com/sunway/webService/Process.java" />
+        <option value="$PROJECT_DIR$/src/com/sunway/function/impl/WriFCXX.java" />
+        <option value="$PROJECT_DIR$/src/com/sunway/util/MSFileUtil.java" />
       </list>
     </option>
   </component>
@@ -218,7 +218,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -226,11 +226,33 @@
               <item name="WBJH_XT" type="b2602c69:ProjectViewProjectNode" />
               <item name="WBJH_XT" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="WBJH_XT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WBJH_XT" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WBJH_XT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WBJH_XT" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="sunway" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WBJH_XT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WBJH_XT" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WBJH_XT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WBJH_XT" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -242,7 +264,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551951177186" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552030479387" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/sqljdbc42.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -283,7 +305,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.MSFileUtil.importXLS">
+    <configuration name="MSFileUtil.importXLS" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WBJH_XT" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sunway.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sunway.util" />
+      <option name="MAIN_CLASS_NAME" value="com.sunway.util.MSFileUtil" />
+      <option name="METHOD_NAME" value="importXLS" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 8.5.33" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.33" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8888/" />
       <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
@@ -358,6 +396,11 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MSFileUtil.importXLS" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -406,6 +449,8 @@
       <workItem from="1551791199960" duration="1053000" />
       <workItem from="1551834210004" duration="27569000" />
       <workItem from="1551920642091" duration="11941000" />
+      <workItem from="1552014738500" duration="8225000" />
+      <workItem from="1554878301791" duration="21000" />
     </task>
     <servers />
   </component>
@@ -428,9 +473,15 @@
     <history-entry file="MSFileUtil_importXLS - 2019.02.26 at 16h 13m 05s.xml">
       <configuration name="MSFileUtil.importXLS" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MSFileUtil_importXLS - 2019.03.08 at 15h 29m 56s.xml">
+      <configuration name="MSFileUtil.importXLS" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MSFileUtil_importXLS - 2019.03.08 at 15h 32m 45s.xml">
+      <configuration name="MSFileUtil.importXLS" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="624286000" />
+    <option name="totallyTimeSpent" value="632532000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -451,7 +502,7 @@
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info id="Web" order="5" sideWeight="0.505618" side_tool="true" weight="0.24047619" />
       <window_info id="Persistence" order="6" sideWeight="0.50121653" side_tool="true" weight="0.26984128" />
-      <window_info active="true" content_ui="combo" id="Project" order="7" sideWeight="0.49438202" visible="true" weight="0.26904762" />
+      <window_info active="true" content_ui="combo" id="Project" order="7" sideWeight="0.49438202" visible="true" weight="0.2777778" />
       <window_info id="Structure" order="8" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Spring" order="0" weight="0.32872504" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32872504" />
@@ -526,53 +577,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/WelcomeView.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-418" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sunway/vo/ChartJsVo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sunway/service/impl/BdcFwsxServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sunway/service/BdcFwsxService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sunway/dao/BdcFwsxDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/BdcCqView.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sunway/controller/MainCtrl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="32" column="48" lean-forward="true" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/sqljdbc42.jar!/com/microsoft/sqlserver/jdbc/SQLServerDriver.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -714,13 +718,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sunway/entity/tax/TaxWsxx.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sunway/dao/impl/BdcCqDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -763,13 +760,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sunway/controller/TaxWsxxCtrl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="64" column="38" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sunway/entity/tax/BdcQlr.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -798,13 +788,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="798">
           <caret line="48" column="24" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sunway/dao/impl/TaxWsxxDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="98" column="45" lean-forward="true" selection-start-line="98" selection-start-column="45" selection-end-line="98" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -843,13 +826,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/sunway/function/impl/WriFCXX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1092">
-          <caret line="89" column="37" lean-forward="true" selection-start-line="89" selection-start-column="37" selection-end-line="89" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/BdcFwsxView.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -874,13 +850,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/TaxWsView.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="113" column="26" selection-start-line="113" selection-start-column="26" selection-end-line="113" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/jdbc.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -895,10 +864,99 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sunway/controller/TaxWsxxCtrl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="64" column="38" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/UsersPwd.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/UsersView.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="43" column="47" lean-forward="true" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/TaxWsView.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="122" column="26" selection-start-line="122" selection-start-column="26" selection-end-line="122" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sunway/entity/tax/TaxWsxx.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-323">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="e#4446#4447#0" expanded="true" />
+            <element signature="e#4476#4477#0" expanded="true" />
+            <element signature="e#4523#4524#0" expanded="true" />
+            <element signature="e#4561#4562#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sunway/dao/impl/TaxWsxxDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="119" column="21" lean-forward="true" selection-start-line="119" selection-start-column="21" selection-end-line="119" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sunway/webService/Process.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="71" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sunway/function/impl/WriFCXX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="116" column="28" selection-start-line="116" selection-start-column="28" selection-end-line="116" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/sunway/function/impl/GetFCXX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="92" column="39" lean-forward="true" selection-start-line="92" selection-start-column="39" selection-end-line="92" selection-end-column="39" />
+        <state relative-caret-position="228">
+          <caret line="39" column="30" lean-forward="true" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sunway/controller/MainCtrl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="23" column="23" lean-forward="true" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/Program Files/Java/jdk1.8.0_191/src.zip!/java/io/IOException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="28" column="22" lean-forward="true" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/log4j-api-2.8.2.jar!/org/apache/logging/log4j/Logger.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="402" column="9" selection-start-line="402" selection-start-column="9" selection-end-line="402" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/sunway/util/MSFileUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="50" column="21" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
         </state>
       </provider>
     </entry>

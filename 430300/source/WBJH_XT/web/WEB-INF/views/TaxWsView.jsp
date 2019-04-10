@@ -20,17 +20,21 @@
     <div class="am-form-group">
         <div class="am-u-sm-4 am-u-md-2 am-text-right">完税时间</div>
         <div class="am-u-sm-4 am-u-md-3">
-            <div class="am-input-group am-datepicker-date am-input-group-sm" data-am-datepicker="{format: 'yyyy-mm-dd'}">
+            <div class="am-input-group am-datepicker-date am-input-group-sm"
+                 data-am-datepicker="{format: 'yyyy-mm-dd'}">
                 <input id="txtWsrq" type="text" class="am-form-field am-input-sm" readonly>
                 <span class="am-input-group-btn am-datepicker-add-on">
-                    <button id="btnDate" class="am-btn am-btn-sm" type="button"><span class="am-icon-calendar"></span></button>
+                    <button id="btnDate" class="am-btn am-btn-sm" type="button"><span
+                            class="am-icon-calendar"></span></button>
                 </span>
             </div>
         </div>
         <div class="am-u-sm-4 am-u-md-7">
             <div>
-                <button id="btnSearch" class="am-btn am-btn-sm" type="button"><span class="am-icon-search"></span> 查询</button>
-                <button id="btnClear" class="am-btn am-btn-sm" type="reset"><span class="am-icon-eraser"></span> 清空</button>
+                <button id="btnSearch" class="am-btn am-btn-sm" type="button"><span class="am-icon-search"></span> 查询
+                </button>
+                <button id="btnClear" class="am-btn am-btn-sm" type="reset"><span class="am-icon-eraser"></span> 清空
+                </button>
             </div>
         </div>
     </div>
@@ -78,7 +82,7 @@
                 return false;
             }
             //使用ajax 重新请求数据结果  装入 表格对象
-            var dt_data = {wsrq : $('#txtWsrq').val()};
+            var dt_data = {wsrq: $('#txtWsrq').val()};
             ShowDataTable(dt_data);
         });
 
@@ -116,6 +120,18 @@
             // 定义操作列
             columnDefs: [{
                 targets: 6,
+                title: "同步",
+                render: function (data, type, full) {
+                    var strRtn;
+                    if (1 == full.flagSyn) {
+                        strRtn = "<span class=\"am-icon-link\" title='已同步'></span>";
+                    } else {
+                        strRtn = "<span class=\"am-icon-unlink\" title='未同步'></span>";
+                    }
+                    return strRtn;
+                }
+            }, {
+                targets: 7,
                 title: "操作",
                 render: function (data, type, full) {
                     return "<div class=\"am-btn-toolbar\"><div class=\"am-btn-group am-btn-group-xs\">" +

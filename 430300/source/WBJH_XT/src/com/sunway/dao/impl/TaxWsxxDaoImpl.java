@@ -89,6 +89,11 @@ public class TaxWsxxDaoImpl implements TaxWsxxDao {
         Session session = null;
         Transaction tran = null;
         try {
+            // 国土同步操作
+            if(!bdcBaseDao.execInsert_wsxx(bean))
+                bean.setFlagSyn(0);
+            else
+                bean.setFlagSyn(1);
             // 创建session对象
             session = sessionFactory.openSession();
             tran = session.getTransaction();
@@ -96,7 +101,7 @@ public class TaxWsxxDaoImpl implements TaxWsxxDao {
             session.save(bean);
             tran.commit();
             rtnBool = true;
-            bdcBaseDao.execInsert_wsxx(bean);
+
         } catch (Exception e) {
             e.printStackTrace();
             tran.rollback();
@@ -112,6 +117,14 @@ public class TaxWsxxDaoImpl implements TaxWsxxDao {
         Session session = null;
         Transaction tran = null;
         try {
+            // 国土同步操作
+            String pk = bean.getId();
+            bdcBaseDao.execDelete_wsxx(bean);
+            if(!bdcBaseDao.execInsert_wsxx(bean))
+                bean.setFlagSyn(0);
+            else
+                bean.setFlagSyn(1);
+            bean.setId(pk);
             // 创建session对象
             session = sessionFactory.openSession();
             tran = session.getTransaction();
@@ -119,8 +132,6 @@ public class TaxWsxxDaoImpl implements TaxWsxxDao {
             session.update(bean);
             tran.commit();
             rtnBool = true;
-            bdcBaseDao.execDelete_wsxx(bean);
-            bdcBaseDao.execInsert_wsxx(bean);
         } catch (Exception e) {
             e.printStackTrace();
             tran.rollback();

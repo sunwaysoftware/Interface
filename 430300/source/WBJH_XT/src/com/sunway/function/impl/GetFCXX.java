@@ -17,6 +17,8 @@ import com.sunway.util.MakeUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.commons.text.StringEscapeUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.dom4j.Element;
 import com.sunway.function.IBaseObject;
 import com.sunway.vo.PgtFCXX;
@@ -30,7 +32,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class GetFCXX extends BaseFunction implements IBaseObject{
-	static Log log = LogFactory.getLog(GetFCXX.class);
+	private static Logger logger = LogManager.getLogger(GetFCXX.class);
 	private static GetFCXX fcxxUtil;
 	@Autowired
 	private BdcFwsxDao bdcFwsxDao;
@@ -68,7 +70,7 @@ public class GetFCXX extends BaseFunction implements IBaseObject{
 			}
 			result = combineFunctionXML(fcxxList);
 		} catch(Exception e) {
-			e.printStackTrace();
+			logger.error("提取不动产交易数据出错！", e);
 			errorSign = true;
 			errorMessage = e.getMessage();
 			result = combineFunctionXML(fcxxList);
@@ -199,7 +201,7 @@ public class GetFCXX extends BaseFunction implements IBaseObject{
 						"</Result>" +
 					"</Results>"+
 			 	 "</Request>";
-		log.info(strBuffer.toString());
+		logger.info("获取交易报文：", result);
 		return result;
 	}
 

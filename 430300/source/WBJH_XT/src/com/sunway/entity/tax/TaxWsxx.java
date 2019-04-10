@@ -44,12 +44,13 @@ public class TaxWsxx implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     @UpdateTimestamp
     private Date updTime;
-
+    private Integer flagSyn;
+    //-------------------------------------------------------
     public TaxWsxx(){}
     public TaxWsxx(String id){
         this.id = id;
     }
-
+    //-------------------------------------------------------
     public String getYwh() {
         return ywh;
     }
@@ -216,5 +217,13 @@ public class TaxWsxx implements Serializable {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public Integer getFlagSyn() {
+        return flagSyn;
+    }
+
+    public void setFlagSyn(Integer flagSyn) {
+        this.flagSyn = flagSyn;
     }
 }
