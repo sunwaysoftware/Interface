@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="21.0">
+    <meta>
+        <filters directoryPatterns="" filePatterns="\Q%E9%83%B4%E5%B7%9E%E4%BA%A4%E6%8D%A2%E5%B9%B3%E5%8F%B0\E" positiveFilePatterns="" showHiddenFiles="false"/>
+        <options>
+            <serialized version="21.0" xml:space="preserve">
+                <serializableOrderedMap>
+                    <entry>
+                        <String>enable.project.master.files.support</String>
+                        <Boolean>true</Boolean>
+                    </entry>
+                </serializableOrderedMap>
+            </serialized>
+        </options>
+    </meta>
+    <projectTree name="%E9%83%B4%E5%B7%9E%E4%BA%A4%E6%8D%A2%E5%B9%B3%E5%8F%B0">
+        <folder path="."/>
+    </projectTree>
+</project>

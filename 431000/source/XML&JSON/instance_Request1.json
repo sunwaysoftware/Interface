@@ -1,0 +1,16 @@
+{
+    "INFO": {
+        "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+        "xsi:noNamespaceSchemaLocation": "file:/D:/GitHub/Interface/431000/source/XML%26JSON/BDC_Request.xsd",
+        "QLR": [
+            {
+                "FSQRMC": "FSQRMC0",
+                "FZJHM": "FZJHM0"
+            },
+            {
+                "FSQRMC": "FSQRMC1",
+                "FZJHM": "FZJHM1"
+            }
+        ]
+    }
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<INFO>
+    <RESULT_FLAG>1</RESULT_FLAG>
+    <RESULT_MESSAGE>查询成功!</RESULT_MESSAGE>
+    <QLR>
+        <FSQRMC>陈湘金</FSQRMC>
+        <FZJHM>43283119590920261X</FZJHM>
+        <FDCQINFO>
+            <FDCQ>
+                <FBDCDYH>431003002070GB00010F00410055</FBDCDYH>
+                <FFDZL>郴州香雪大道中珠·爱莲湖畔3#栋1502房</FFDZL>
+            </FDCQ>
+            <FDCQ>
+                <FBDCDYH>431002001100GB00348F00010001</FBDCDYH>
+                <FFDZL>开发区五岭大道东面怡松园小区A-38、A-42101房（复式）</FFDZL>
+            </FDCQ>
+            <FDCQ>
+                <FBDCDYH>431002001093GB00018F00490005</FBDCDYH>
+                <FFDZL>五岭大道五岭花园7栋104</FFDZL>
+            </FDCQ>
+        </FDCQINFO>       
+    </QLR>
+    <QLR>
+        <FSQRMC>东方皓月</FSQRMC>
+        <FZJHM>212831195909202617</FZJHM>
+        <FDCQINFO>
+            <FDCQ>
+                <FBDCDYH>431003002070GB00010F00410055</FBDCDYH>
+                <FFDZL>郴州香雪大道中珠·爱莲湖畔3#栋812房</FFDZL>
+            </FDCQ>
+            <FDCQ>
+                <FBDCDYH>431002001100GB00348F00010001</FBDCDYH>
+                <FFDZL>开发区五岭大道东面怡松园小区A-301房（复式）</FFDZL>
+            </FDCQ>
+            <FDCQ>
+                <FBDCDYH>431002001093GB00018F00490005</FBDCDYH>
+                <FFDZL>五岭大道五岭花园2栋504</FFDZL>
+            </FDCQ>
+        </FDCQINFO>       
+    </QLR>
+</INFO>

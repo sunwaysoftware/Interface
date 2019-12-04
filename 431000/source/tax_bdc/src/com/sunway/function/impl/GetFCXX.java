@@ -92,7 +92,7 @@ public class GetFCXX extends BaseFunction implements IBaseObject {
 			bdcWsStub = new  FdcqServiceImplServiceStub();
 			GetFdcqByYwhE ywhE = new GetFdcqByYwhE();
 			GetFdcqByYwh ywh = new GetFdcqByYwh();
-			ywh.setArg0(String.format("<?xml version='1.0' encoding='UTF-8'?><INFO><USERNAME>DS1001</USERNAME><PASSWORD>123456</PASSWORD><JID>%s</JID></INFO>", fcxx.getParamVal()));
+			ywh.setArg0(String.format("<?xml version='1.0' encoding='UTF-8'?><INFO><USERNAME>DS1001</USERNAME><PASSWORD>123456</PASSWORD><JID>%s</JID><QXDM>%s</QXDM></INFO>", fcxx.getParamVal(), fcxx.getParamVal2()));
 			ywhE.setGetFdcqByYwh(ywh);
 			// 增加此句，屏蔽SOAP_ACTION
 			bdcWsStub._getServiceClient().getOptions().setProperty(org.apache.axis2.Constants.Configuration.DISABLE_SOAP_ACTION, true);
@@ -178,7 +178,8 @@ public class GetFCXX extends BaseFunction implements IBaseObject {
 							null, //rowElement.getFirstChildWithName(new QName("JG")).getText(),
 							null, //rowElement.getFirstChildWithName(new QName("ZX")).getText(),
 							null, //isNotEmpty(rowElement.getFirstChildWithName(new QName("CG")))?Double.valueOf(rowElement.getFirstChildWithName(new QName("CG")).getText()):null,
-							null, //isNotEmpty(rowElement.getFirstChildWithName(new QName("XQDM")))?rowElement.getFirstChildWithName(new QName("XQDM")).getText():null,
+							//isNotEmpty(rowElement.getFirstChildWithName(new QName("XQDM")))?rowElement.getFirstChildWithName(new QName("XQDM")).getText():null,
+							fcxx.getParamVal2(),
 							null, //isNotEmpty(rowElement.getFirstChildWithName(new QName("QSWSRQ")))?rowElement.getFirstChildWithName(new QName("QSWSRQ")).getText():null,
 							//isNotEmpty(rowElement.getFirstChildWithName(new QName("QSWSJS")))?Double.valueOf(rowElement.getFirstChildWithName(new QName("QSWSJS")).getText()):null);
 							isNotEmpty(rowElement)?strToDbl(null!=rowElement.elementTextTrim("TDCRJ")?rowElement.elementTextTrim("TDCRJ"):"0"):null); 
@@ -186,7 +187,7 @@ public class GetFCXX extends BaseFunction implements IBaseObject {
 				}
 				logger.info("3、国土信息存储完毕...");
 				// 读取国土信息 --------------------------------
-				sql = String.format("SELECT * FROM PG_VFC001 WHERE SLID = '%s'", fcxx.getParamVal());
+				sql = String.format("SELECT * FROM PG_VFC001 WHERE SLID = '%s' AND f0 = '%s'", fcxx.getParamVal(), fcxx.getParamVal2());
 				ocrs = queryFunction(sql, conn);
 				while (null != ocrs && ocrs.next()) {
 					fcxxList.add(setFCXXParameters(ocrs));

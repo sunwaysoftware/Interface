@@ -5,6 +5,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.sql.rowset.CachedRowSet;
+
 import org.apache.log4j.Logger;
 import org.dom4j.Element;
 
@@ -66,6 +68,15 @@ public class WriFCXX extends BaseFunction implements IBaseObject{
 			logger.info("2、存储完税信息...");
 			executeFunction(sql, conn);
 			logger.info("3、将完税信息组成报文传递给国土部门...");
+			// ------------- 读取区县代码 -----------------------
+			CachedRowSet ocrs = null;
+			sql = String.format("SELECT XQDM FROM FC001 WHERE SSQY = '%s'", fcxx_w.getOwnroomid());
+			ocrs = queryFunction(sql, conn);
+			while (null != ocrs && ocrs.next()) {
+				fcxx_w.setBz(ocrs.getString("XQDM"));
+			}
+			getFreeORS(ocrs);
+			//---------------------
 			sendFcXML(fcxx_w);
 			logger.info("4、完税信息回写成功！");
 			fcxx_wList.add("OK");
@@ -130,7 +141,7 @@ public class WriFCXX extends BaseFunction implements IBaseObject{
 		strXml.append("  <UPDATETIME>"+ sdf.format(new Date()) +"</UPDATETIME>");
 		strXml.append("  <PGID>"+ b.getPgid() +"</PGID>");
 		strXml.append("  <JSJG>"+ b.getPgjg() +"</JSJG>");
-		//strXml.append("  <BZ>"+ b.getBz() +"</BZ>");			
+		strXml.append("  <QXDM>"+ b.getBz() +"</QXDM>");			
 		strXml.append(" </CONTENT>");
 		strXml.append("</INFO>");
 		logger.info(strXml);
