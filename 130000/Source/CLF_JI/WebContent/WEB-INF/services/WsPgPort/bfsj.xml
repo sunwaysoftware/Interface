@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 数据查询 -->
+	<package name="BFSJ" extends="AppDefault" namespace="/bfsj">
+
+		<!-- 登记信息备份数据查询 -->
+		<action name="VIEWV12001_B" class="V12001_bActionBean">
+			<result name="success">/V12001_B/VIEWV12001_B.jsp</result>
+		</action>
+		<action name="FINDV12001_B" class="V12001_bActionBean" method="query">
+			<result name="success" type="json"/>
+		</action>
+		<action name="DETAILV12001_B" class="V12001_bActionBean" method="detail">
+			<result name="success">/V12001_B/DETAILV12001_B.jsp</result>
+		</action>
+		<!-- 地产信息备份数据查询 -->
+		<action name="VIEWV12002_B" class="V12002_bActionBean">
+			<result name="success">/V12002_B/VIEWV12002_B.jsp</result>
+		</action>
+		<action name="FINDV12002_B" class="V12002_bActionBean" method="query">
+			<result name="success" type="json"/>
+		</action>
+		<action name="DETAILV12002_B" class="V12002_bActionBean" method="detail">
+			<result name="success">/V12002_B/DETAILV12002_B.jsp</result>
+		</action>
+		<!-- 房产信息备份数据查询 -->
+		<action name="VIEWV12003_B" class="V12003_bActionBean">
+			<result name="success">/V12003_B/VIEWV12003_B.jsp</result>
+		</action>
+		<action name="FINDV12003_B" class="V12003_bActionBean" method="query">
+			<result name="success" type="json"/>
+		</action>
+		<action name="DETAILV12003_B" class="V12003_bActionBean" method="detail">
+			<result name="success">/V12003_B/DETAILV12003_B.jsp</result>
+		</action>
+		<!-- 明细信息备份数据查询 -->
+		<action name="VIEWV12004_B" class="V12004_bActionBean">
+			<result name="success">/V12004_B/VIEWV12004_B.jsp</result>
+		</action>
+		<action name="FINDV12004_B" class="V12004_bActionBean" method="query">
+			<result name="success" type="json"/>
+		</action>
+		<action name="DETAILV12004_B" class="V12004_bActionBean" method="detail">
+			<result name="success">/V12004_B/DETAILV12004_B.jsp</result>
+		</action>
+		<!-- 住宅登记信息备份数据查询 -->
+		<action name="VIEWV00301_B" class="V00301_bActionBean">
+			<result name="success">/V00301_B/VIEWV00301_B.jsp</result>
+		</action>
+		<action name="FINDV00301_B" class="V00301_bActionBean" method="query">
+			<result name="success" type="json"/>
+		</action>
+		<action name="DETAILV00301_B" class="V00301_bActionBean" method="detail">
+			<result name="success">/V00301_B/DETAILV00301_B.jsp</result>
+		</action>
+		<!-- 住宅房产信息备份数据查询 -->
+		<action name="VIEWV00302_B" class="V00302_bActionBean">
+			<result name="success">/V00302_B/VIEWV00302_B.jsp</result>
+		</action>
+		<action name="FINDV00302_B" class="V00302_bActionBean" method="query">
+			<result name="success" type="json"/>
+		</action>
+		<action name="DETAILV00302_B" class="V00302_bActionBean" method="detail">
+			<result name="success">/V00302_B/DETAILV00302_B.jsp</result>
+		</action>
+		<!-- 报表1-->
+		<action name="VIEWBB00001_B" class="Bb00001_bActionBean">
+			<result name="success">/BB00001_B/VIEWBB00001_B.jsp</result>
+		</action>
+		<action name="FINDBB00001_B" class="Bb00001_bActionBean" method="query">
+			<result name="success" type="json"/>
+		</action>
+		<action name="VIEWBB00001_BPDF" class="Bb00001_bActionBean" method="query">
+			<result name="success" type="jasper">
+                <param name="location">/reports/Report01.jasper</param>
+                <param name="dataSource">operList</param>
+                <param name="format">PDF</param>
+                <param name="documentName">Report1</param>
+			</result>
+		</action>	
+		<action name="VIEWBB00001_BXLS" class="Bb00001_bActionBean" method="query">
+			<result name="success" type="jasper">
+                <param name="location">/reports/Report01.jasper</param>
+                <param name="dataSource">operList</param>
+                <param name="format">XLS</param>
+                <param name="documentName">Report1</param>
+			</result>
+		</action>
+		<!-- 报表2-->
+		<action name="VIEWBB00002_B" class="Bb00002_bActionBean">
+			<result name="success">/BB00002_B/VIEWBB00002_B.jsp</result>
+		</action>
+		<action name="FINDBB00002_B" class="Bb00002_bActionBean" method="query">
+			<result name="success" type="json"/>
+		</action>
+		<action name="VIEWBB00002_BPDF" class="Bb00002_bActionBean" method="query">
+			<result name="success" type="jasper">
+                <param name="location">/reports/Report02.jasper</param>
+                <param name="dataSource">operList</param>
+                <param name="format">PDF</param>
+                <param name="documentName">Report2</param>
+			</result>
+		</action>
+		<action name="VIEWBB00002_BXLS" class="Bb00002_bActionBean" method="query">
+			<result name="success" type="jasper">
+                <param name="location">/reports/Report02.jasper</param>
+                <param name="dataSource">operList</param>
+                <param name="format">XLS</param>
+                <param name="documentName">Report2</param>
+			</result>
+		</action>
+		<!-- 报表3-->
+		<action name="VIEWBB00003_B" class="Bb00003_bActionBean">
+			<result name="success">/BB00003_B/VIEWBB00003_B.jsp</result>
+		</action>
+		<action name="FINDBB00003_B" class="Bb00003_bActionBean" method="query">
+			<result name="success" type="json"/>
+		</action>
+		<action name="VIEWBB00003_BPDF" class="Bb00003_bActionBean" method="query">
+			<result name="success" type="jasper">
+                <param name="location">/reports/Report03.jasper</param>
+                <param name="dataSource">operList</param>
+                <param name="format">PDF</param>
+                <param name="documentName">Report3</param>
+			</result>
+		</action>	
+		<action name="VIEWBB00003_BXLS" class="Bb00003_bActionBean" method="query">
+			<result name="success" type="jasper">
+                <param name="location">/reports/Report03.jasper</param>
+                <param name="dataSource">operList</param>
+                <param name="format">XLS</param>
+                <param name="documentName">Report3</param>
+			</result>
+		</action>	
+		<!-- 报表4-->
+		<action name="VIEWBB00004_B" class="Bb00004_bActionBean">
+			<result name="success">/BB00004_B/VIEWBB00004_B.jsp</result>
+		</action>
+		<action name="FINDBB00004_B" class="Bb00004_bActionBean" method="query">
+			<result name="success" type="json"/>
+		</action>
+		<action name="VIEWBB00004_BPDF" class="Bb00004_bActionBean" method="query">
+			<result name="success" type="jasper">
+                <param name="location">/reports/Report04.jasper</param>
+                <param name="dataSource">operList</param>
+                <param name="format">PDF</param>
+                <param name="documentName">Report4</param>
+			</result>
+		</action>
+		<action name="VIEWBB00004_BXLS" class="Bb00004_bActionBean" method="query">
+			<result name="success" type="jasper">
+                <param name="location">/reports/Report04.jasper</param>
+                <param name="dataSource">operList</param>
+                <param name="format">XLS</param>
+                <param name="documentName">Report4</param>
+			</result>
+		</action>
+		<!-- 报表5-->
+		<action name="VIEWBB00005_B" class="Bb00005_bActionBean">
+			<result name="success">/BB00005_B/VIEWBB00005_B.jsp</result>
+		</action>
+		<action name="FINDBB00005_B" class="Bb00005_bActionBean" method="query">
+			<result name="success" type="json"/>
+		</action>
+		<action name="VIEWBB00005_BPDF" class="Bb00005_bActionBean" method="query">
+			<result name="success" type="jasper">
+                <param name="location">/reports/Report05.jasper</param>
+                <param name="dataSource">operList</param>
+                <param name="format">PDF</param>
+                <param name="documentName">Report5</param>
+			</result>
+		</action>	
+		<action name="VIEWBB00005_BXLS" class="Bb00005_bActionBean" method="query">
+			<result name="success" type="jasper">
+                <param name="location">/reports/Report05.jasper</param>
+                <param name="dataSource">operList</param>
+                <param name="format">XLS</param>
+                <param name="documentName">Report5</param>
+			</result>
+		</action>
+		<!-- 报表6-->
+		<action name="VIEWBB00006_B" class="Bb00006_bActionBean">
+			<result name="success">/BB00006_B/VIEWBB00006_B.jsp</result>
+		</action>
+		<action name="FINDBB00006_B" class="Bb00006_bActionBean" method="query">
+			<result name="success" type="json"/>
+		</action>
+		<action name="VIEWBB00006_BPDF" class="Bb00006_bActionBean" method="query">
+			<result name="success" type="jasper">
+                <param name="location">/reports/Report06.jasper</param>
+                <param name="dataSource">operList</param>
+                <param name="format">PDF</param>
+                <param name="documentName">Report6</param>
+			</result>
+		</action>	
+		<action name="VIEWBB00006_BXLS" class="Bb00006_bActionBean" method="query">
+			<result name="success" type="jasper">
+                <param name="location">/reports/Report06.jasper</param>
+                <param name="dataSource">operList</param>
+                <param name="format">XLS</param>
+                <param name="documentName">Report6</param>
+			</result>
+		</action>
+		<!-- 报表7-->
+		<action name="VIEWBB00007_B" class="Bb00007_bActionBean">
+			<result name="success">/BB00007_B/VIEWBB00007_B.jsp</result>
+		</action>
+		<action name="FINDBB00007_B" class="Bb00007_bActionBean" method="query">
+			<result name="success" type="json"/>
+		</action>
+		<action name="VIEWBB00007_BPDF" class="Bb00007_bActionBean" method="query">
+			<result name="success" type="jasper">
+                <param name="location">/reports/Report07.jasper</param>
+                <param name="dataSource">operList</param>
+                <param name="format">PDF</param>
+                <param name="documentName">Report7</param>
+			</result>
+		</action>	
+		<action name="VIEWBB00007_BXLS" class="Bb00007_bActionBean" method="query">
+			<result name="success" type="jasper">
+                <param name="location">/reports/Report07.jasper</param>
+                <param name="dataSource">operList</param>
+                <param name="format">XLS</param>
+                <param name="documentName">Report7</param>
+			</result>
+		</action>
+		<!-- 报表8-->
+		<action name="VIEWBB00008_B" class="Bb00008_bActionBean">
+			<result name="success">/BB00008_B/VIEWBB00008_B.jsp</result>
+		</action>
+		<action name="FINDBB00008_B" class="Bb00008_bActionBean" method="query">
+			<result name="success" type="json"/>
+		</action>
+		<action name="VIEWBB00008_BPDF" class="Bb00008_bActionBean" method="query">
+			<result name="success" type="jasper">
+                <param name="location">/reports/Report08.jasper</param>
+                <param name="dataSource">operList</param>
+                <param name="format">PDF</param>
+                <param name="documentName">Report8</param>
+			</result>
+		</action>	
+		<action name="VIEWBB00008_BXLS" class="Bb00008_bActionBean" method="query">
+			<result name="success" type="jasper">
+                <param name="location">/reports/Report08.jasper</param>
+                <param name="dataSource">operList</param>
+                <param name="format">XLS</param>
+                <param name="documentName">Report8</param>
+			</result>
+		</action>
+		<!-- 报表9-->
+		<action name="VIEWBB00009_B" class="Bb00009_bActionBean">
+			<result name="success">/BB00009_B/VIEWBB00009_B.jsp</result>
+		</action>
+		<action name="FINDBB00009_B" class="Bb00009_bActionBean" method="query">
+			<result name="success" type="json"/>
+		</action>
+		<action name="VIEWBB00009_BPDF" class="Bb00009_bActionBean" method="query">
+			<result name="success" type="jasper">
+                <param name="location">/reports/Report09.jasper</param>
+                <param name="dataSource">operList</param>
+                <param name="format">PDF</param>
+                <param name="documentName">Report9</param>
+			</result>
+		</action>	
+		<action name="VIEWBB00009_BXLS" class="Bb00009_bActionBean" method="query">
+			<result name="success" type="jasper">
+                <param name="location">/reports/Report09.jasper</param>
+                <param name="dataSource">operList</param>
+                <param name="format">XLS</param>
+                <param name="documentName">Report9</param>
+			</result>
+		</action>
+		<!-- 报表10-->
+		<action name="VIEWBB00010_B" class="Bb00010_bActionBean">
+			<result name="success">/BB00010_B/VIEWBB00010_B.jsp</result>
+		</action>
+		<action name="FINDBB00010_B" class="Bb00010_bActionBean" method="query">
+			<result name="success" type="json"/>
+		</action>
+		<action name="VIEWBB00010_BPDF" class="Bb00010_bActionBean" method="query">
+			<result name="success" type="jasper">
+                <param name="location">/reports/Report10.jasper</param>
+                <param name="dataSource">operList</param>
+                <param name="format">PDF</param>
+                <param name="documentName">Report10</param>
+			</result>
+		</action>	
+		<action name="VIEWBB00010_BXLS" class="Bb00010_bActionBean" method="query">
+			<result name="success" type="jasper">
+                <param name="location">/reports/Report10.jasper</param>
+                <param name="dataSource">operList</param>
+                <param name="format">XLS</param>
+                <param name="documentName">Report10</param>
+			</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,636 @@
+﻿body,p,h1,h2,h3,h4,table,form {
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: "宋体";
+	font-size: 12px;
+}
+
+#apDiv1 {
+	position: absolute;
+	z-index: 2;
+	background-color: #FFF;
+	border: 1px solid #999;
+	display: none;
+	padding: 5px;
+}
+
+.apDiv1 {
+	position: absolute;
+	z-index: 2;
+	background-color: #FFF;
+	border: 1px solid #999;
+	display: none;
+	padding: 5px;
+}
+
+a {
+	color: #2e6e9e;
+}
+
+
+.liststyle ul,li {
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: "宋体";
+}
+
+blockquote {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.divConect {
+	padding: 0px;
+}
+
+.divConect a {
+	color: #00F !important;
+}
+
+.qtxz {
+	width: 100%;
+	display: block;
+}
+
+.ReportTitle {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.ReportName {
+	font-size: 24px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.txtNumber {
+	text-align: right;
+	/*width: 80px;*/
+}
+
+.txtNumber1 {
+	text-align: right;
+	background-color: #DCDCDC;
+}
+
+.txtCode {
+	width: 65px;
+}
+
+.txtfocus {
+	background-color: #FFE6E6;
+}
+.txtfocus1{
+      background-color: #BCDDF5;
+}
+
+.txtInfonm{
+	display:inline-block;border:1px solid #71a9d2;width:130px;	
+	}
+	
+.txtInfonm input{
+	background-color:transparent;border:0 none;width:112px;
+	}
+.txtInfonm span{
+	display:inline-block;
+	background:url(../images/ico/select.gif) no-repeat;
+	width:16px;	
+	height:13px;
+	cursor: hand;
+	}
+.txtInfonm1
+{
+	/*background-color:#D9D9D9;*/
+	background:url(../images/ico/select.gif) no-repeat right;
+}
+.txtNoEnable
+{
+	background-color:#DCDCDC;	
+}
+.txtRed {
+	font-style: normal;
+	color: #F00;
+	font-weight: bold;
+}
+
+.txtGreen {
+	font-style: normal;
+	color: green;
+	font-weight: bold;
+}
+
+.txtDateTime { /*width: 70px;*/
+	
+}
+
+.txtNSRMC { /*width: 180px;*/
+	
+}
+
+.txtFWZLDZ { /*width: 220px;*/
+	
+}
+
+.txtBH { /*width: 80px;*/
+	
+}
+
+.txtID { /*width: 140px;*/
+	
+}
+
+.txtID2
+{
+	background-color: #DCDCDC;
+}
+
+#loading {
+	position: absolute;
+	left: 300px;
+	top: 240px;
+	z-index: 1;
+	display: none;
+}
+
+.MsoNormal {
+	margin: 0cm 0cm 10pt;
+	text-indent: 22pt;
+	line-height: 20pt;
+	mso-char-indent-count: 2.0;
+	mso-line-height-rule: exactly;
+	color: #000000;
+	font-size: 10.5pt;
+}
+
+body {
+	font-family: 宋体, Tahoma, Arial, sans-serif;
+	font-size: 9pt;
+	background-color: #ffffff;
+	SCROLLBAR-FACE-COLOR: #eaedf2;
+	SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;
+	SCROLLBAR-SHADOW-COLOR: #FFFFFF;
+	SCROLLBAR-3DLIGHT-COLOR: #D4D0C8;
+	SCROLLBAR-ARROW-COLOR: #808080;
+	SCROLLBAR-TRACK-COLOR: #FFFFFF;
+	SCROLLBAR-DARKSHADOW-COLOR: #D4D0C8;
+}
+
+.bodybg {
+	background: #B4B4B4 url(../images/body_bg.gif) repeat left top;
+}
+
+.HrefText {
+	cursor: hand;
+	color: blue;
+}
+
+.CloseImg {
+	background: url(../images/center_close.gif) no-repeat left top;
+}
+
+.OpenImg {
+	background: url(../images/center_open.gif) no-repeat left top;
+}
+
+.HiddenColumn {
+	display: none;
+}
+
+/* Master Page Layout */
+#master_header {
+	width: 1000px;
+	margin-top: -1px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+
+#master_headertop {
+	background: url(../images/headertop_img.jpg) no-repeat left top;
+}
+
+#master_headerbottom {
+	background: url(../images/headerbottom_img.png) no-repeat left top;
+}
+
+#master_page {
+	margin: 5px auto 20px auto;
+	width: 1000px;
+}
+
+#master_menu {
+	float: left;
+	width: 200px;
+	padding-right: 5px;
+}
+
+.divbottom {
+	height: 30px;
+	border-top-width: 1px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-color: #a6c9e2;
+	padding:2px;
+}
+.divbottom a {
+	color: #2e6e9e !important;
+}
+
+/*列表的样式*/
+.divlistStyle {
+	overflow: auto;
+	border: 2px inset #a6c9e2;
+	/*background-color:#edf5fa;*/
+}
+
+.infoBg { 
+	font-weight: bold;
+	color: #2779aa;
+	/*text-align: center;*/
+	
+}
+
+.sidebar {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.sidebarheader {
+	height: 24px;
+	padding: 10px 0 0 35px;
+	background: url(../images/sidebar_header.png) no-repeat left top;
+	color: #FFF;
+	font-family: 宋体, Arial, Helvetica, sans-serif;
+	font-size: 1.2em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.sidebarcontent {
+	border: 1px solid #0F2543;
+	padding: 20px 0px 20px 20px;
+	line-height: 1.5em;
+	font-weight: bold;
+	height: 460px;
+	overflow: auto;
+	width: 178px;
+}
+
+#master_sidebarSamples {
+	padding-top: 3px;
+	background: #FFF url(../images/samples_bg.gif) no-repeat left top;
+}
+
+#master_sidebarWalkthroughs {
+	padding-top: 72px;
+	background: #FFF url(../images/walkthrough_bg.gif) no-repeat left top;
+}
+
+.sidebarcontent a {
+	padding: 2px 5px;
+	color: #5377A9;
+	text-decoration: none;
+}
+
+.sidebarcontent a:hover {
+	background-color: #0F2543;
+	color: #FFF;
+}
+
+.sidebarcontent a:visited {
+	font-weight: normal;
+}
+
+#master_content { /*width: 1000px;*/
+	float: left;
+	width: 790px;
+	margin-right: -750px;
+	color: #000000;
+}
+
+#master_content ul {
+	margin: 0 25px 0 30px;
+}
+
+#master_content ul li ul li {
+	list-style-type: disc;
+}
+
+#tt1 ul li {
+	list-style-type: none;
+	margin: 0 -25px 0 -30px;
+}
+#tt1 li {
+	list-style-type: none;
+	margin: 0 -25px 0 -30px;
+}
+
+#master_contentheader {
+	height: 25px;
+	padding: 0px 0 0 30px;
+	background: url(../images/rightcoltop.gif) no-repeat right top;
+}
+
+#master_contentheader1 {
+	height: 25px;
+	padding: 0px 0 0 0px;
+	background: url(../images/rightcoltop1.gif) no-repeat right top;
+}
+
+#master_contentplaceholder {
+	padding: 5px 20px 40px 20px;
+	border-left: 1px solid #0F2543;
+	border-right: 1px solid #0F2543;
+	border-bottom: 1px solid #0F2543;
+	background-color: #EFEFEF;
+	line-height: 1.5em;
+}
+
+#master_contentfooter {
+	clear: both;
+	padding: 10px 0 5px 10px;
+	color: #333;
+	font-size: 12px;
+	letter-spacing: 0.1em;
+}
+
+/* Content Page Layout */
+.demoarea {
+	padding: 20px;
+	background: #FFF url(../images/demotop.png) no-repeat left top;
+}
+
+.demoarea p {
+	padding: 5px;
+}
+
+.demoheading {
+	padding-bottom: 20px;
+	color: #5377A9;
+	font-family: 宋体, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+.demobottom {
+	height: 8px;
+	background: #FFF url(../images/demobottom.png) no-repeat left bottom;
+}
+
+.heading {
+	padding: 1em 0 1em 0;
+	color: #5377A9;
+	font-family: 宋体, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.subheading {
+	padding: .8em 0 0.5em 0;
+	color: #0F2543;
+	font-weight: bold;
+	font-family: 宋体, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+p {
+	
+}
+
+em {
+	font-style: italic;
+}
+
+i {
+	font-style: italic;
+}
+
+strong {
+	font-weight: bold;
+}
+
+.codeReference {
+	font-family: 宋体, Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: bold;
+}
+
+pre,code {
+	display: block;
+	margin: 15px 15px 15px 0;
+	padding: 10px;
+	border: 1px dashed #CCC;
+	background-color: #FFF;
+	color: #000;
+	font-family: 宋体, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+}
+
+.releaseList {
+	list-style-type: disc;
+}
+
+/* Styles for the Animation Reference */
+.animationReferenceTable {
+	
+}
+
+.animationReferenceRow {
+	
+}
+
+.animationReferenceField {
+	text-align: right;
+	vertical-align: top;
+	padding-top: 5px;
+}
+
+.animationReferenceCode {
+	margin-top: 5px;
+	vertical-align: top;
+	font-family: 宋体, Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	display: block;
+	background-color: #FFF;
+	color: #000;
+	font-size: 12px;
+	margin-bottom: 5px;
+}
+
+.animationReferenceItems {
+	vertical-align: top;
+}
+
+.animationReferenceItemTable {
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+.animationReferenceItemRow {
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+.animationReferenceItem {
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+	padding-bottom: 10px;
+}
+
+.animationReferenceItemCode {
+	display: block;
+	background-color: #FFF;
+	color: #000;
+	font-family: 宋体, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+}
+
+/******************************/
+	/**Styling information specific to individual content pages**/
+	/* Accordion */
+.accordionHeader {
+	border: 1px solid #2F4F4F;
+	color: white;
+	background-color: #2E4d7B;
+	font-family: 宋体, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 5px;
+	margin-top: 5px;
+	cursor: pointer;
+}
+
+#master_content .accordionHeader a {
+	color: #FFFFFF;
+	background: none;
+	text-decoration: none;
+}
+
+#master_content .accordionHeader a:hover {
+	background: none;
+	text-decoration: underline;
+}
+
+.accordionHeaderSelected {
+	border: 1px solid #2F4F4F;
+	color: white;
+	background-color: #5078B3;
+	font-family: 宋体, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 5px;
+	margin-top: 5px;
+	cursor: pointer;
+}
+
+#master_content .accordionHeaderSelected a {
+	color: #FFFFFF;
+	background: none;
+	text-decoration: none;
+}
+
+#master_content .accordionHeaderSelected a:hover {
+	background: none;
+	text-decoration: underline;
+}
+
+.accordionContent {
+	background-color: #D3DEEF;
+	border: 1px dashed #2F4F4F;
+	border-top: none;
+	padding: 5px;
+	padding-top: 10px;
+}
+
+/*AutoComplete flyout */
+.autocomplete_completionListElement {
+	visibility: hidden;
+	margin: 0px !important;
+	background-color: inherit;
+	color: windowtext;
+	border: buttonshadow;
+	border-width: 1px;
+	border-style: solid;
+	cursor: 'default';
+	overflow: auto;
+	height: 200px;
+	text-align: left;
+	list-style-type: none;
+}
+
+/* AutoComplete highlighted item */
+.autocomplete_highlightedListItem {
+	background-color: #ffff99;
+	color: black;
+	padding: 1px;
+}
+
+/* AutoComplete item */
+.autocomplete_listItem {
+	background-color: window;
+	color: windowtext;
+	padding: 1px;
+}
+
+/*Cascading DropDown*/ /*CollapsiblePanel*/
+.collapsePanel {
+	background-color: white;
+	overflow: hidden;
+}
+
+.collapsePanelHeader {
+	width: 100%;
+	height: 30px;
+	background-image: url(../images/bg-menu-main.png);
+	background-repeat: repeat-x;
+	color: #FFF;
+	font-weight: bold;
+}
+
+#master_content .collapsePanelHeader a {
+	color: #FFF;
+}
+
+#master_content .collapsePanelHeader a:hover {
+	text-decoration: none;
+	background: none;
+}
+
+.txtZYZK{
+	text-align: right;
+	background-color: #DCDCDC;
+	width:100px;
+}
+.txtZYZKnum{
+	text-align: right;
+	background-color: white;
+	width:100px;
+}
+.txtZYZKstr{
+	text-align: left;
+	background-color: white;
+	width:100px;
+}
+.txtZYZKdate{
+	text-align: left;
+	background-color: white;
+	width:100px;
+}
+
+.swselect{
+	background-color: #FFE6E6;
+}

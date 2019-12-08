@@ -1,0 +1,213 @@
+﻿/* form elements */
+input.button {
+	border-right: #4297d7 1px solid;
+	padding-right: 2px;
+	border-top: #4297d7 1px solid;
+	padding-left: 2px;
+	font-size: 12px;
+ 	FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#C3DAF5);
+	border-left: #4297d7 1px solid;
+	cursor: hand;
+	color: #2779aa;
+	padding-top: 2px;
+	border-bottom: #4297d7 1px solid;
+}
+input.select {
+	BORDER-BOTTOM-COLOR: #000000; 
+	BORDER-BOTTOM-WIDTH: 1px; 
+	BORDER-LEFT-COLOR: #000000; 
+	BORDER-LEFT-WIDTH: 1px; 
+	BORDER-RIGHT-COLOR: #000000; 
+	BORDER-RIGHT-WIDTH: 1px; 
+	BORDER-TOP-COLOR: #000000; 
+	BORDER-TOP-WIDTH: 1px;
+}
+input.radio  {
+	border:none;	
+}
+
+img {
+	border: 0px;
+}
+
+input, select, textarea {
+	border: 1px solid #71a9d2;
+	/*height:20px;*/
+	font-family: "宋体";
+	font-size: 12px;
+	
+}
+label.error, label.error {
+	/* remove the next line when you have trouble in IE6 with labels in list */
+	color: red;
+	font-style: italic
+}
+table.table1{
+	width:100%;
+	font-family: 宋体;
+	background-color: #FFFFFF;
+	}
+div.error {
+	display: none;
+}
+
+#infoTreeDIV ul{	
+	margin-left:10px;
+	margin-top:2px;
+	margin-right:2px;
+	margin-bottom:2px;
+	padding:0px;
+	list-style:none;
+}
+
+div.infodiv {
+	height:300px;
+	width:200px;
+	text-align: left;
+	overflow:auto;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding: 0px;
+	border-top-width: 0px;
+	border-right-width: 1px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-color: #a6c9e2;
+	}
+div.infodivbz {
+	height:300px;
+	width:200px;
+	text-align: left;
+	overflow:auto;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding: 0px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-color: #a6c9e2;
+	}	
+div.infodiv ul{	
+	margin-left:10px;
+	margin-top:2px;
+	margin-right:2px;
+	margin-bottom:2px;
+	padding:0px;
+	list-style:none;
+}
+div.infodivbz ul{	
+	margin-left:10px;
+	margin-top:2px;
+	margin-right:2px;
+	margin-bottom:2px;
+	padding:0px;
+	list-style:none;
+}
+.error {
+	color: #FF0000;
+}
+
+select {
+	padding: 0;
+}
+/*** FORM BLOCK ELEMENTS ***/
+
+form label {
+	padding:2px 0px;	
+	width: 160px;
+	float:left;
+}
+
+.label1 {
+	padding:2px 0px;
+	width: 160px;
+	float:left;
+}
+
+form .error {
+	color: #c00;
+}
+form label.error {
+	color: #c00;
+	font-size: 100%;
+	font-weight: bold;
+	font-variant:small-caps;
+	padding:3px 0px 0px 5px;
+	clear:both;
+	float:none;
+}
+form label.info {
+	font-size: 100%;
+	font-weight: bold;
+	font-variant:small-caps;
+	padding:3px 0px 0px 5px;
+	float:none;
+}
+.spanPage {
+	cursor: pointer;
+	border: 1px solid #2e6e9e;
+	color: #2e6e9e;
+}
+.actionMessage {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.actionMessage span {
+	color:#390;
+	font-weight:bold;
+	
+}
+
+.errorMessage {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.errorMessage span {
+	color:#F00;
+	font-weight:bold;
+	
+}
+.zcdz{
+	width:100px;
+}
+#divDJXX .tabDJXX{
+	border-collapse:collapse;
+	border: 1px solid #CCC;
+}
+#divDJXX .tabDJXX1{
+	border-collapse:collapse;
+	border: 1px solid #CCC;
+}
+#divDJXX .tabDJXXtd{
+	
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #CCC;
+}
+#divDJXX .tabDJXXtd1{
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #CCC;
+}
+.divZhxz {
+	padding: 2px 20px 0px 0px;
+	width:740px;
+	height:40px;
+	overflow:auto;
+	background-color:#FFFFFF;
+}

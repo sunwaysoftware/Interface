@@ -1,0 +1,226 @@
+package com.sunway.vo;
+
+import java.util.Date;
+
+/**
+ * Bb00007 entity. 
+ * @author Lee
+ */
+
+public class PgvBb00007 implements java.io.Serializable {
+
+	private static final long serialVersionUID = 1496870082547457662L;
+	private String cd00002Pssd;
+	private Double se;
+	private Double cbpgjg;
+	private Double cbdcypgjg;
+	private String cd00001Jjlx;
+	private String cd00001Ssgx;
+	private Date upddate;
+	private String cd00002Czr;
+	private String note;
+	private Double cbsl;
+	private Double dcpg;
+	private Double dcsl;
+	private String jjlx;
+	private Double sl;
+	private Double jsbl;
+	private Integer bm;
+
+	/** default constructor */
+	public PgvBb00007() {
+	}
+
+	/**
+	 * @return the cd00002Pssd
+	 */
+	public String getCd00002Pssd() {
+		return cd00002Pssd;
+	}
+	/**
+	 * @param cd00002Pssd the cd00002Pssd to set
+	 */
+	public void setCd00002Pssd(String cd00002Pssd) {
+		this.cd00002Pssd = cd00002Pssd;
+	}
+	/**
+	 * @return the se
+	 */
+	public Double getSe() {
+		return se;
+	}
+	/**
+	 * @param se the se to set
+	 */
+	public void setSe(Double se) {
+		this.se = se;
+	}
+	/**
+	 * @return the cbpgjg
+	 */
+	public Double getCbpgjg() {
+		return cbpgjg;
+	}
+	/**
+	 * @param cbpgjg the cbpgjg to set
+	 */
+	public void setCbpgjg(Double cbpgjg) {
+		this.cbpgjg = cbpgjg;
+	}
+	/**
+	 * @return the cbdcypgjg
+	 */
+	public Double getCbdcypgjg() {
+		return cbdcypgjg;
+	}
+	/**
+	 * @param cbdcypgjg the cbdcypgjg to set
+	 */
+	public void setCbdcypgjg(Double cbdcypgjg) {
+		this.cbdcypgjg = cbdcypgjg;
+	}
+	/**
+	 * @return the cd00001Jjlx
+	 */
+	public String getCd00001Jjlx() {
+		return cd00001Jjlx;
+	}
+	/**
+	 * @param cd00001Jjlx the cd00001Jjlx to set
+	 */
+	public void setCd00001Jjlx(String cd00001Jjlx) {
+		this.cd00001Jjlx = cd00001Jjlx;
+	}
+	/**
+	 * @return the cd00001Ssgx
+	 */
+	public String getCd00001Ssgx() {
+		return cd00001Ssgx;
+	}
+	/**
+	 * @param cd00001Ssgx the cd00001Ssgx to set
+	 */
+	public void setCd00001Ssgx(String cd00001Ssgx) {
+		this.cd00001Ssgx = cd00001Ssgx;
+	}
+	/**
+	 * @return the upddate
+	 */
+	public Date getUpddate() {
+		return upddate;
+	}
+	/**
+	 * @param upddate the upddate to set
+	 */
+	public void setUpddate(Date upddate) {
+		this.upddate = upddate;
+	}
+	/**
+	 * @return the cd00002Czr
+	 */
+	public String getCd00002Czr() {
+		return cd00002Czr;
+	}
+	/**
+	 * @param cd00002Czr the cd00002Czr to set
+	 */
+	public void setCd00002Czr(String cd00002Czr) {
+		this.cd00002Czr = cd00002Czr;
+	}
+	/**
+	 * @return the note
+	 */
+	public String getNote() {
+		return note;
+	}
+	/**
+	 * @param note the note to set
+	 */
+	public void setNote(String note) {
+		this.note = note;
+	}
+	/**
+	 * @return the cbsl
+	 */
+	public Double getCbsl() {
+		return cbsl;
+	}
+	/**
+	 * @param cbsl the cbsl to set
+	 */
+	public void setCbsl(Double cbsl) {
+		this.cbsl = cbsl;
+	}
+	/**
+	 * @return the dcpg
+	 */
+	public Double getDcpg() {
+		return dcpg;
+	}
+	/**
+	 * @param dcpg the dcpg to set
+	 */
+	public void setDcpg(Double dcpg) {
+		this.dcpg = dcpg;
+	}
+	/**
+	 * @return the dcsl
+	 */
+	public Double getDcsl() {
+		return dcsl;
+	}
+	/**
+	 * @param dcsl the dcsl to set
+	 */
+	public void setDcsl(Double dcsl) {
+		this.dcsl = dcsl;
+	}
+	/**
+	 * @return the jjlx
+	 */
+	public String getJjlx() {
+		return jjlx;
+	}
+	/**
+	 * @param jjlx the jjlx to set
+	 */
+	public void setJjlx(String jjlx) {
+		this.jjlx = jjlx;
+	}
+	/**
+	 * @return the sl
+	 */
+	public Double getSl() {
+		return sl;
+	}
+	/**
+	 * @param sl the sl to set
+	 */
+	public void setSl(Double sl) {
+		this.sl = sl;
+	}
+	/**
+	 * @return the jsbl
+	 */
+	public Double getJsbl() {
+		return jsbl;
+	}
+	/**
+	 * @param jsbl the jsbl to set
+	 */
+	public void setJsbl(Double jsbl) {
+		this.jsbl = jsbl;
+	}
+	/**
+	 * @return the bm
+	 */
+	public Integer getBm() {
+		return bm;
+	}
+	/**
+	 * @param bm the bm to set
+	 */
+	public void setBm(Integer bm) {
+		this.bm = bm;
+	}
+}

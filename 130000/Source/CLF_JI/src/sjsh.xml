@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 数据審核 -->
+	<package name="SJSH" extends="AppDefault" namespace="/sjsh">
+	
+		<!-- 成本法 未審核 -->
+		<action name="VIEWSH10001" class="Sh10001ActionBean">
+			<result name="input">/SH10000/SH10001W.jsp</result>
+			<result name="success">/SH10000/SH10001W.jsp</result>
+		</action>
+		<action name="FINDSH10001" class="Sh10001ActionBean" method="query">
+			<result name="input">/SH10000/SH10001W.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+		<action name="EXECSH10001" class="Sh10001ActionBean" method="executeSH">
+<!-- 			<interceptor-ref name="defaultStack" />
+			<interceptor-ref name="execAndWait" />
+			<result name="wait">/wait.jsp</result>	 -->	
+			<result name="input">/SH10000/SH10001W.jsp</result>
+			<result name="success">/SH10000/SH10001W.jsp</result>
+		</action>
+		<action name="FINDCBSHNGMX" class="Sh10001ActionBean" method="queryNgMxList">
+			<param name="flagSH">1</param>
+			<result name="input">/T12084/VIEWT12084.jsp</result>
+			<result name="success">/T12084/VIEWT12084.jsp</result>
+		</action>
+		<action name="VIEWSH1200112" class="Sh10001ActionBean" method="init1200112">
+			<result name="input">/SH10000/SH1200112.jsp</result>
+			<result name="success">/SH10000/SH1200112.jsp</result>
+		</action>
+		<action name="FINDSH1200112" class="Sh10001ActionBean" method="query1200112">
+			<result name="input">/SH10000/SH1200112.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+
+		<!-- 成本法 審核通過 -->
+		<action name="VIEWSH10002" class="Sh10002ActionBean">
+			<result name="input">/SH10000/SH10001Y.jsp</result>
+			<result name="success">/SH10000/SH10001Y.jsp</result>
+		</action>
+		<action name="FINDSH10002" class="Sh10002ActionBean" method="query">
+			<result name="input">/SH10000/SH10001Y.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+		<action name="EXECSH10002" class="Sh10002ActionBean" method="executeShAgain">
+			<result name="input">/SH10000/SH10001Y.jsp</result>
+			<result name="success">/SH10000/SH10001Y.jsp</result>
+		</action>
+
+		<!-- 收益法 未審核 -->
+		<action name="VIEWSH20001" class="Sh20001ActionBean">
+			<result name="input">/SH20000/SH20001W.jsp</result>
+			<result name="success">/SH20000/SH20001W.jsp</result>
+		</action>
+		<action name="FINDSH20001" class="Sh20001ActionBean" method="query">
+			<result name="input">/SH20000/SH20001W.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+		<action name="EXECSH20001" class="Sh20001ActionBean" method="executeSH">
+<!-- 			<interceptor-ref name="defaultStack" />
+			<interceptor-ref name="execAndWait" />		
+			<result name="wait">/wait.jsp</result>	 -->		
+			<result name="input">/SH20000/SH20001W.jsp</result>
+			<result name="success">/SH20000/SH20001W.jsp</result>
+		</action>
+		<action name="FINDSYSHNGMX" class="Sh20001ActionBean" method="queryNgMxList">
+			<param name="flagSH">2</param>
+			<result name="input">/T12084/VIEWT12084.jsp</result>
+			<result name="success">/T12084/VIEWT12084.jsp</result>
+		</action>
+
+		<!-- 收益法 審核通過 -->
+		<action name="VIEWSH20002" class="Sh20002ActionBean">
+			<result name="input">/SH20000/SH20001Y.jsp</result>
+			<result name="success">/SH20000/SH20001Y.jsp</result>
+		</action>
+		<action name="FINDSH20002" class="Sh20002ActionBean" method="query">
+			<result name="input">/SH20000/SH20001Y.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+		<action name="EXECSH20002" class="Sh20002ActionBean" method="executeShAgain">
+			<result name="input">/SH20000/SH20001Y.jsp</result>
+			<result name="success">/SH20000/SH20001Y.jsp</result>
+		</action>
+
+		<!-- 市場法 未審核 -->
+		<action name="VIEWSH30001" class="Sh30001ActionBean">
+			<result name="input">/SH30000/SH30001W.jsp</result>
+			<result name="success">/SH30000/SH30001W.jsp</result>
+		</action>
+		<action name="FINDSH30001" class="Sh30001ActionBean" method="query">
+			<result name="input">/SH30000/SH30001W.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+		<action name="EXECSH30001" class="Sh30001ActionBean" method="executeSH">
+<!-- 			<interceptor-ref name="defaultStack" />
+			<interceptor-ref name="execAndWait" />		
+			<result name="wait">/wait.jsp</result>	 -->		
+			<result name="input">/SH30000/SH30001W.jsp</result>
+			<result name="success">/SH30000/SH30001W.jsp</result>
+		</action>
+		<action name="FINDSCSHNGMX" class="Sh30001ActionBean" method="queryNgMxList">
+			<result name="input">/T00384/VIEWT00384.jsp</result>
+			<result name="success">/T00384/VIEWT00384.jsp</result>
+		</action>
+		<action name="VIEWSH0030112" class="Sh30001ActionBean" method="init0030112">
+			<result name="input">/SH30000/SH0030112.jsp</result>
+			<result name="success">/SH30000/SH0030112.jsp</result>
+		</action>
+		<action name="FINDSH0030112" class="Sh30001ActionBean" method="query0030112">
+			<result name="input">/SH30000/SH0030112.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+
+		<!-- 市場法 審核通過 -->
+		<action name="VIEWSH30002" class="Sh30002ActionBean">
+			<result name="input">/SH30000/SH30001Y.jsp</result>
+			<result name="success">/SH30000/SH30001Y.jsp</result>
+		</action>
+		<action name="FINDSH30002" class="Sh30002ActionBean" method="query">
+			<result name="input">/SH30000/SH30001Y.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+		<action name="EXECSH30002" class="Sh30002ActionBean" method="executeShAgain">
+			<result name="input">/SH30000/SH30001Y.jsp</result>
+			<result name="success">/SH30000/SH30001Y.jsp</result>
+		</action>
+
+	</package>
+
+</struts>

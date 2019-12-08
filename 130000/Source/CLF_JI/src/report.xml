@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- 统计报表 -->
+    <package name="REPORT" extends="AppDefault" namespace="/report">
+		
+        <!-- 交易量走势图(正常)-->
+        <action name="VIEWBB00001" class="BB00001ActionBean">
+            <result name="success">/reports/VIEWBB00001.jsp</result>
+        </action>
+        <action name="FINDBB00001" class="BB00001ActionBean" method="query">
+            <result name="success" type="json">
+                <param name="includeProperties">tabList.*</param> 
+            </result>
+        </action>	
+		
+		
+        <!-- 交易量走势图(个案)-->
+        <action name="VIEWBB00002" class="BB00002ActionBean">
+            <result name="success">/reports/VIEWBB00002.jsp</result>
+        </action>
+        <action name="FINDBB00002" class="BB00002ActionBean" method="query">
+            <result name="success" type="json">
+                <param name="includeProperties">tabList.*</param> 
+            </result>
+        </action>	
+		
+        <!-- 价格走势图-->
+        <action name="VIEWBB00003" class="BB00003ActionBean">
+            <result name="success">/reports/VIEWBB00003.jsp</result>
+        </action>
+        <action name="FINDBB00003" class="BB00003ActionBean" method="query">
+            <result name="input">/reports/VIEWBB00003.jsp</result>
+            <result name="success" type="json">
+                <param name="root">chartData</param> 
+            </result>
+        </action>	
+		
+        <!-- 交易量走势图-->
+        <action name="VIEWBB00004" class="BB00004ActionBean">
+            <result name="success">/reports/VIEWBB00004.jsp</result>
+        </action>
+        <action name="FINDBB00004" class="BB00004ActionBean" method="query">
+            <result name="input">/reports/VIEWBB00004.jsp</result>
+            <result name="success" type="json">
+                <param name="root">data</param> 
+            </result>
+        </action>	
+		
+        <!-- 个案正常对比分析-->
+        <action name="VIEWBB00005" class="BB00005ActionBean">
+            <result name="success">/reports/VIEWBB00005.jsp</result>
+        </action>
+        <action name="FINDBB00005" class="BB00005ActionBean" method="query">
+            <result name="input">/reports/VIEWBB00005.jsp</result>
+            <result name="success" type="json">
+                <param name="root">data</param> 
+            </result>
+        </action>	
+		
+        <!-- 交易纳税评估数量统计表 -->
+        <action name="VIEWBB00006" class="BB00006ActionBean">
+            <result name="input">/reports/VIEWBB00006.jsp</result>
+            <result name="success">/reports/VIEWBB00006.jsp</result>
+        </action>
+        <action name="FINDBB00006" class="BB00006ActionBean" method="query">
+            <result name="success" type="json">
+                <param name="includeProperties">tabList.*</param> 
+            </result>
+        </action>
+        <action name="EXPBB00006" class="BB00006ActionBean" method="exportData">
+            <result name="success" type="stream">
+                <param name="contentType">application/vnd.ms-excel</param>
+                <param name="inputName">excelStream</param>
+                <param name="contentDisposition">filename="export_jynspgsltjb.xls"</param>
+                <param name="bufferSize">2048</param>
+            </result>
+            <result name="input">/reports/VIEWBB00006.jsp</result>
+        </action>
+		
+        <!-- 年度湘潭市存量房交易纳税评估已开票完税统计表 -->
+        <action name="VIEWBB00007" class="BB00007ActionBean">
+            <result name="input">/reports/VIEWBB00007.jsp</result>
+            <result name="success">/reports/VIEWBB00007.jsp</result>
+        </action>
+        <action name="FINDBB00007" class="BB00007ActionBean" method="query">
+            <result name="success" type="json">
+                <param name="includeProperties">tabList.*</param> 
+            </result>
+        </action>
+        <action name="EXPBB00007" class="BB00007ActionBean" method="exportData">
+            <result name="success" type="stream">
+                <param name="contentType">application/vnd.ms-excel</param>
+                <param name="inputName">excelStream</param>
+                <param name="contentDisposition">filename="export_jynspgykpwstjb.xls"</param>
+                <param name="bufferSize">2048</param>
+            </result>
+            <result name="input">/reports/VIEWBB00007.jsp</result>
+        </action>
+		
+        <!-- 交易纳税评估分区域统计表 -->
+        <action name="VIEWBB00008" class="BB00008ActionBean">
+            <result name="input">/reports/VIEWBB00008.jsp</result>
+            <result name="success">/reports/VIEWBB00008.jsp</result>
+        </action>
+        <action name="FINDBB00008" class="BB00008ActionBean" method="query">
+            <result name="success" type="json">
+                <param name="includeProperties">tabList.*</param> 
+            </result>
+        </action>
+        <action name="EXPBB00008" class="BB00008ActionBean" method="exportData">
+            <result name="success" type="stream">
+                <param name="contentType">application/vnd.ms-excel</param>
+                <param name="inputName">excelStream</param>
+                <param name="contentDisposition">filename="export_jynspgfqytjb.xls"</param>
+                <param name="bufferSize">2048</param>
+            </result>
+            <result name="input">/reports/VIEWBB00008.jsp</result>
+        </action>
+		
+        <!-- SVG图形导出-->
+        <action name="ExportChart" class="ChartExportActionBean">	
+            <result name="success">/OK.html</result>
+        </action>			
+		
+        <!-- 统计：征收单位-->
+        <action name="VIEWTJ00001" class="TJ00001ActionBean">
+            <result name="success">/reports/VIEWTJ00001.jsp</result>
+        </action>
+        <action name="FINDTJ00001" class="TJ00001ActionBean" method="query">
+            <result name="success" type="json"/>
+        </action>
+        <action name="VIEWTJ00001PDF" class="TJ00001ActionBean" method="ExportData">
+            <result name="success" type="jasper">
+                <param name="location">/reports/rpt001.jasper</param>
+                <param name="dataSource">tabList</param>
+                <param name="format">PDF</param>
+                <param name="documentName">TJ00001</param>
+            </result>
+        </action>	
+        <action name="VIEWTJ00001XLS" class="TJ00001ActionBean" method="ExportData">
+            <result name="success" type="jasper">
+                <param name="location">/reports/rpt001.jasper</param>
+                <param name="dataSource">tabList</param>
+                <param name="format">XLS</param>
+                <param name="documentName">TJ00001</param>
+            </result>
+        </action>
+		
+        <!-- 统计：分税种统计-->        
+        <action name="VIEWTJ00002" class="TJ00002ActionBean">
+            <result name="success">/reports/VIEWTJ00002.jsp</result>
+        </action>
+        <action name="FINDTJ00002" class="TJ00002ActionBean" method="query">
+            <result name="input">/reports/VIEWTJ00002.jsp</result>
+            <result name="success" type="json">
+                <param name="root">data</param> 
+            </result>
+        </action>               
+                
+                
+    </package>
+</struts>

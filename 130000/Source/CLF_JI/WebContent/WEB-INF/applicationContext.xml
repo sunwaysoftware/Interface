@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list><value>WEB-INF/jdbc.properties</value></list>
+		</property>
+	</bean>
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	
+		<!-- 最大等待连接中的数量,设0 为没有限制 -->
+		<property name="maxIdle" value="20" />
+		<!-- 最大连接数据库连接数,设0 为没有限制  -->
+		<property name="maxActive" value="50" />
+		<!-- 最大连接的最大等待时间(ms)-->
+		<property name="maxWait" value="30000" />
+		<!-- 连接关闭时是否要清除缓存 -->
+		<property name="removeAbandoned" value="true" />
+		<!-- 清空等待时间(秒) -->
+		<property name="removeAbandonedTimeout" value="60" />
+		<!-- 是否输出日志 -->
+		<property name="logAbandoned" value="true" />
+		<!-- 连接池初始化时连接池的个数 -->
+		<property name="initialSize" value="10" />
+	</bean>
+
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.format_sql">true</prop>  
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+			</props>
+		</property>
+		<!-- //加载实体类的映射文件位置及名称 -->
+        <property name="mappingDirectoryLocations" value="classpath:com/sunway/vo"></property>
+	</bean>
+
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+    <bean id="transactionBase" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" lazy-init="true" abstract="true">
+        <!-- 配置事务管理器 -->
+        <property name="transactionManager" ref="transactionManager" />
+        <!-- 配置事务属性 -->
+        <property name="transactionAttributes">
+            <props>
+                <prop key="*">PROPAGATION_REQUIRED</prop>
+            </props>
+        </property>
+    </bean>
+
+	<bean id="BaseDAOBean" class="com.sunway.dao.impl.BaseDAO" abstract="true">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<import resource="spring-config/dao.xml" />
+	<import resource="spring-config/service.xml" />
+	<import resource="spring-config/action.xml" />
+
+</beans>

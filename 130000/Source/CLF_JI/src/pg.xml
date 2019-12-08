@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 房地產評估 -->
+	<package name="PG" extends="AppDefault" namespace="/pg">
+
+		<!-- 成本法 未評估 -->
+		<action name="VIEWPG10001" class="Pg10001ActionBean">
+			<result name="input">/PG10000/PG10001W.jsp</result>
+			<result name="success">/PG10000/PG10001W.jsp</result>
+		</action>
+		<action name="FINDPG10001" class="Pg10001ActionBean" method="query">
+			<result name="input">/PG10000/PG10001W.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+		<action name="EXECPG10001" class="Pg10001ActionBean" method="executePG">
+<!-- 			<interceptor-ref name="defaultStack" />
+			<interceptor-ref name="execAndWait" />
+			<result name="wait">/wait.jsp</result> -->
+			<result name="input">/PG10000/PG10001W.jsp</result>
+			<result name="success">/PG10000/PG10001W.jsp</result>
+		</action>
+		<action name="FINDCBPGNGMX" class="Pg10001ActionBean" method="queryNgMxList">
+			<param name="flagSH">1</param>
+			<result name="input">/T12084/VIEWT12084.jsp</result>
+			<result name="success">/T12084/VIEWT12084.jsp</result>
+		</action>
+
+		<!-- 成本法 評估通過 -->
+		<action name="VIEWPG10002" class="Pg10002ActionBean">
+			<result name="input">/PG10000/PG10001Y.jsp</result>
+			<result name="success">/PG10000/PG10001Y.jsp</result>
+		</action>
+		<action name="FINDPG10002" class="Pg10002ActionBean" method="query">
+			<result name="input">/PG10000/PG10001Y.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+		<action name="EXECPG10002" class="Pg10002ActionBean" method="executePgAgain">
+			<result name="input">/PG10000/PG10001Y.jsp</result>
+			<result name="success">/PG10000/PG10001Y.jsp</result>
+		</action>
+
+		<!-- 收益法 未評估 -->
+		<action name="VIEWPG20001" class="Pg20001ActionBean">
+			<result name="input">/PG20000/PG20001W.jsp</result>
+			<result name="success">/PG20000/PG20001W.jsp</result>
+		</action>
+		<action name="FINDPG20001" class="Pg20001ActionBean" method="query">
+			<result name="input">/PG20000/PG20001W.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+		<action name="EXECPG20001" class="Pg20001ActionBean" method="executePG">
+<!-- 			<interceptor-ref name="defaultStack" />
+			<interceptor-ref name="execAndWait" />
+			<result name="wait">/wait.jsp</result> -->
+			<result name="input">/PG20000/PG20001W.jsp</result>
+			<result name="success">/PG20000/PG20001W.jsp</result>
+		</action>
+		<action name="FINDSYPGNGMX" class="Pg20001ActionBean" method="queryNgMxList">
+			<param name="flagSH">2</param>
+			<result name="input">/T12084/VIEWT12084.jsp</result>
+			<result name="success">/T12084/VIEWT12084.jsp</result>
+		</action>
+
+		<!-- 收益法 評估通過 -->
+		<action name="VIEWPG20002" class="Pg20002ActionBean">
+			<result name="input">/PG20000/PG20001Y.jsp</result>
+			<result name="success">/PG20000/PG20001Y.jsp</result>
+		</action>
+		<action name="FINDPG20002" class="Pg20002ActionBean" method="query">
+			<result name="input">/PG20000/PG20001Y.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+		<action name="EXECPG20002" class="Pg20002ActionBean" method="executePgAgain">
+			<result name="input">/PG20000/PG20001Y.jsp</result>
+			<result name="success">/PG20000/PG20001Y.jsp</result>
+		</action>
+
+		<!-- 市場法 未評估 -->
+		<action name="VIEWPG30001" class="Pg30001ActionBean">
+			<result name="input">/PG30000/PG30001W.jsp</result>
+			<result name="success">/PG30000/PG30001W.jsp</result>
+		</action>
+		<action name="FINDPG30001" class="Pg30001ActionBean" method="query">
+			<result name="input">/PG30000/PG30001W.jsp</result>
+			<result name="success" type="json" >
+				<param name="includeProperties">tabList.*,pageIndex,pageSize,rowCount</param>
+			</result>
+		</action>
+		<action name="EXECPG30001" class="Pg30001ActionBean" method="executePG">
+<!-- 			<interceptor-ref name="defaultStack" />
+			<interceptor-ref name="execAndWait" />
+			<result name="wait">/wait.jsp</result> -->
+			<result name="input">/PG30000/PG30001W.jsp</result>
+			<result name="success">/PG30000/PG30001W.jsp</result>
+<!--				<result name="success" type="json" />-->
+		</action>
+		<action name="EXECPG300011" class="Pg30001ActionBean" method="executePG">
+<!-- 			<result name="wait">/wait.jsp</result> -->
+			<result name="input">/PG30000/PG30001W.jsp</result>
+			<result name="success" type="json" />
+		</action>
+		<action name="FINDSCPGNGMX" class="Pg30001ActionBean" method="queryNgMxList">
+			<result name="input">/T00384/VIEWT00384.jsp</result>
+			<result name="success">/T00384/VIEWT00384.jsp</result>
+		</action>
+		<action name="FINDQMPGXX" class="T00320ActionBean" method="loadPgCWXX">
+			<result name="input">/T00384/VIEWT003842.jsp</result>
+			<result name="success">/T00384/VIEWT003842.jsp</result>
+		</action>
+
+		<!-- 市場法 評估通過 -->
+		<action name="VIEWPG30002" class="Pg30002ActionBean">
+			<result name="input">/PG30000/PG30001Y.jsp</result>
+			<result name="success">/PG30000/PG30001Y.jsp</result>
+		</action>
+		<action name="FINDPG30002" class="Pg30002ActionBean" method="query">
+			<result name="input">/PG30000/PG30001Y.jsp</result>
+			<result name="success" type="json" >
+				<param name="includeProperties">tabList.*,pageIndex,pageSize,rowCount</param>
+			</result>
+		</action>
+		<action name="EXECPG30002" class="Pg30002ActionBean" method="executePgAgain">
+			<result name="input">/T00390/VIEWT00391.jsp</result>
+			<result name="success">/T00390/VIEWT00391.jsp</result>
+		</action>
+
+		<!-- *********************************[個案評估]********************************** -->
+
+		<!-- 成本法 評估 -->
+		<action name="VIEWPG10001G" class="Pg10001gActionBean">
+			<result name="input">/PG10000G/PG10001G.jsp</result>
+			<result name="success">/PG10000G/PG10001G.jsp</result>
+		</action>
+		<action name="FINDPG10001G" class="Pg10001gActionBean" method="query">
+			<result name="input">/PG10000G/PG10001G.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+		<action name="EDITPG10001G" class="T10031ActionBean">
+			<result name="input">/T10031/EDITT10031.jsp</result>
+			<result name="success">/T10031/EDITT10031.jsp</result>
+		</action>
+		<action name="SHOWT10031" class="T10031ActionBean" method="show">
+			<result name="success">/T10031/INFOT10031.jsp</result>
+		</action>
+		<action name="FINDT10031" class="T10031ActionBean" method="queryBySwid">
+			<result name="success" type="json" />
+		</action>
+
+		<!-- 成本法评估结果 -->
+		<action name="VIEWT10031" class="T10031ActionBean">
+			<result name="input">/T10031/VIEWT10031.jsp</result>
+			<result name="success">/T10031/VIEWT10031.jsp</result>
+		</action>
+
+		<!-- 成本法个案评估其它修正参数表 -->
+		<action name="VIEWT10033" class="T10033ActionBean">
+			<result name="input">/T10033/EDITT10033.jsp</result>
+			<result name="success">/T10033/EDITT10033.jsp</result>
+		</action>
+		<action name="EDITT10033" class="T10033ActionBean" method="update">
+			<result name="input">/T10033/EDITT10033.jsp</result>
+			<result name="success">/T10033/EDITT10033.jsp</result>
+		</action>
+
+		<!-- 收益法 評估 -->
+		<action name="VIEWPG20001G" class="Pg20001gActionBean">
+			<result name="input">/PG20000G/PG20001G.jsp</result>
+			<result name="success">/PG20000G/PG20001G.jsp</result>
+		</action>
+		<action name="FINDPG20001G" class="Pg20001gActionBean" method="query">
+			<result name="input">/PG20000G/PG20001G.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+		<action name="EDITPG20001G" class="T02031ActionBean">
+			<result name="input">/T02031/EDITT02031.jsp</result>
+			<result name="success">/T02031/EDITT02031.jsp</result>
+		</action>
+		<action name="SHOWT02031" class="T02031ActionBean" method="show">
+			<result name="success">/T02031/INFOT02031.jsp</result>
+		</action>
+		<action name="FINDT02031" class="T02031ActionBean" method="queryBySwid">
+			<result name="success" type="json" />
+		</action>
+
+		<!-- 收益法评估结果 -->
+		<action name="VIEWT02031" class="T02031ActionBean">
+			<result name="input">/T02031/VIEWT02031.jsp</result>
+			<result name="success">/T02031/VIEWT02031.jsp</result>
+		</action>
+
+		<!-- 收益法个案评估其它修正参数表 -->
+		<action name="VIEWT02033" class="T02033ActionBean">
+			<result name="input">/T02033/EDITT02033.jsp</result>
+			<result name="success">/T02033/EDITT02033.jsp</result>
+		</action>
+		<action name="EDITT02033" class="T02033ActionBean" method="update">
+			<result name="input">/T02033/EDITT02033.jsp</result>
+			<result name="success">/T02033/EDITT02033.jsp</result>
+		</action>
+
+		<!-- 市場法 評估 -->
+		<action name="VIEWPG30001G" class="Pg30001gActionBean">
+			<result name="input">/PG30000G/PG30001G.jsp</result>
+			<result name="success">/PG30000G/PG30001G.jsp</result>
+		</action>
+		<action name="FINDPG30001G" class="Pg30001gActionBean" method="query">
+			<result name="input">/PG30000G/PG30001G.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+		<action name="SHOWT00331" class="T00331ActionBean" method="show">
+			<result name="success">/T00331/INFOT00331.jsp</result>
+		</action>
+		<action name="FINDT00331" class="T00331ActionBean" method="queryBySwid">
+			<result name="success" type="json" />
+		</action>
+
+		<!-- 市場法评估结果 -->
+		<action name="VIEWT00331" class="T00331ActionBean">
+			<result name="input">/T00331/EDITT00331.jsp</result>
+			<result name="success">/T00331/EDITT00331.jsp</result>
+		</action>
+
+		<!-- 市场法参与评估的实例库 -->
+		<action name="VIEWT00334" class="T00334ActionBean">
+			<result name="input">/T00334/VIEWT00334.jsp</result>
+			<result name="success">/T00334/VIEWT00334.jsp</result>
+		</action>
+        
+        <action name="VIEWT00334_B" class="T00334ActionBean" method="execute_B">
+			<result name="input">/T00334/VIEWT00334_B.jsp</result>
+			<result name="success">/T00334/VIEWT00334_B.jsp</result>
+		</action>
+        
+		<!-- 参与评估的实例库其它修正 -->
+		<action name="VIEWT00334A" class="T00334aActionBean">
+			<result name="input">/T00334A/VIEWT00334A.jsp</result>
+			<result name="success">/T00334A/VIEWT00334A.jsp</result>
+		</action>
+
+		
+		
+		<action name="VIEWT00334C" class="T00334cActionBean">
+			<result name="input">/T00334C/VIEWT00334C.jsp</result>
+			<result name="success">/T00334C/VIEWT00334C.jsp</result>
+		</action>
+		
+        <action name="VIEWT00334C_B" class="T00334cActionBean" method="execute_B">
+			<result name="input">/T00334C/VIEWT00334C.jsp</result>
+			<result name="success">/T00334C/VIEWT00334C.jsp</result>
+		</action>
+		
+		<!-- 市场法个案评估其它修正参数表 -->
+		<action name="VIEWT00333" class="T00333ActionBean">
+			<result name="input">/T00333/EDITT00333.jsp</result>
+			<result name="success">/T00333/EDITT00333.jsp</result>
+		</action>
+		<action name="EDITT00333" class="T00333ActionBean" method="update">
+			<result name="input">/T00333/EDITT00333.jsp</result>
+			<result name="success">/T00333/EDITT00333.jsp</result>
+		</action>
+		<action name="UPDT00333" class="T00333ActionBean" method="modify">
+			<result name="input">/T00333/EDITT00333.jsp</result>
+			<result name="success">/T00333/EDITT00333.jsp</result>
+		</action>
+
+		<!-- 临时的实例库 -->
+		<action name="VIEWT00358" class="T00358ActionBean">
+			<result name="input">/T00358/VIEWT00358.jsp</result>
+			<result name="success">/T00358/VIEWT00358.jsp</result>
+		</action>
+		<action name="FINDT00358" class="T00358ActionBean" method="query">
+			<result name="input">/T00358/VIEWT00358.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+
+		<!-- 市場法個案評估 -->
+		<action name="EXECPG30000G" class="Pg30001gActionBean" method="execPG">
+			<result name="input">/T00358/VIEWT00358.jsp</result>
+			<result name="success" type="chain">VIEWT00333</result>
+		</action>
+
+		<!-- 历史个案 -->
+		<action name="EXEV10033A" class="V10033aActionBean">
+			<result name="input">/T10033/EDITT10033.jsp</result>
+			<result name="success" type="chain">VIEWT10033</result>
+		</action>
+
+		<action name="EXEV02033A" class="V02033aActionBean">
+			<result name="input">/T02033/EDITT02033.jsp</result>
+			<result name="success" type="chain">VIEWT02033</result>
+		</action>
+
+		<action name="EXEV00333A" class="V00333aActionBean">
+			<result name="input">/T00333/EDITT00333.jsp</result>
+			<result name="success" type="chain">VIEWT00333</result>
+		</action>
+
+		<!-- 市场法个案参与评估的实例库 -->
+		<action name="VIEWT00335" class="T00335ActionBean">
+			<result name="input">/T00335/VIEWT00335.jsp</result>
+			<result name="success">/T00335/VIEWT00335.jsp</result>
+		</action>
+
+		<!-- 参与个案评估的实例库其它修正 -->
+		<action name="VIEWT00335A" class="T00335aActionBean">
+			<result name="input">/T00335A/VIEWT00335A.jsp</result>
+			<result name="success">/T00335A/VIEWT00335A.jsp</result>
+		</action>
+
+		<!-- 交税认定处理 -->
+		<action name="VIEWT00390" class="T00390ActionBean">
+			<result name="input">/T00390/VIEWT00390.jsp</result>
+			<result name="success">/T00390/VIEWT00390.jsp</result>
+		</action>
+
+		<action name="VIEWT00391" class="T00390ActionBean" method="execute00391">
+			<result name="input">/T00390/VIEWT00391.jsp</result>
+			<result name="success">/T00390/VIEWT00391.jsp</result>
+		</action>
+
+		<action name="VIEWT00392" class="T00390ActionBean" method="execute00392">
+			<result name="input">/T00390/VIEWT00392.jsp</result>
+			<result name="success">/T00390/VIEWT00392.jsp</result>
+		</action>
+
+		<action name="FINDT00391" class="T00390ActionBean" method="query00391">
+			<result name="input">/T00390/VIEWT00391.jsp</result>
+			<result name="success" type="json" >
+				<param name="includeProperties">tabList.*,pageIndex,pageSize,rowCount</param>
+			</result>
+		</action>
+
+		<action name="FINDT00392" class="T00390ActionBean" method="query00392">
+			<result name="input">/T00390/VIEWT00392.jsp</result>
+			<result name="success" type="json">
+				<param name="includeProperties">tabList.*,pageIndex,pageSize,rowCount</param>
+			</result>
+		</action>
+
+		<!-- 交税认定 -->
+		<action name="EXECT00392" class="T00390ActionBean" method="exec00392RD">
+			<result name="input">/T00390/VIEWT00392.jsp</result>
+			<result name="success" type="json"><param name="RD" /></result>
+		</action>
+
+		<!-- 打印通知书 -->
+		<action name="EXECT00391" class="T00390ActionBean" method="exec00391TZS">
+			<result name="success" type="jasper">
+                <param name="location">/reports/notice.jasper</param>
+                <param name="dataSource">bf00000List</param>
+                <param name="format">PDF</param>
+                <param name="documentName">notice</param>
+			</result>
+		</action>
+		
+		<!-- 估价后的数据，进行变更 -->
+		<action name="EXECINFOBG" class="Pg30002ActionBean" method="executeInfoBg">
+			<result name="success" type="json"><param name="RD" /></result>
+		</action>
+		
+</package>
+
+</struts>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 评税结果处理 -->
+	<package name="PSJGJY" extends="AppDefault" namespace="/psjgjy">
+	
+
+		<!-- 成本法评税结果检验 -->
+		<action name="VIEWCBPSJGJY" class="PsjgjyCBActionBean" >
+			<result name="success">/CBPSJGJY/VIEWCBPSJGJY.jsp</result>
+		</action>
+		<action name="FINDCBPSJGJY" class="PsjgjyCBActionBean" method="query">
+			<result name="success" type="json"/>
+		</action>
+		<action name="CHECKOUTCBJY" class="PsjgjyCBActionBean" method="checkout">
+			<result name="success">/CBPSJGJY/VIEWCBJYJG.jsp</result>
+		</action>
+		<action name="CHECKOUTCBPSJGJY" class="PsjgjyCBActionBean" method="reCheckout">
+			<result name="success">/CBPSJGJY/VIEWCBJYJG.jsp</result>
+		</action>
+		<action name="FINDCBJYJG" class="PsjgjyCBActionBean" method="queryCheckout">
+			<result name="success" type="json"/>
+		</action>
+		<action name="SHOWCBSYJYJG" class="PsjgjyCBActionBean" method="viewJYJG">
+			<result name="success">/CBPSJGJY/JYJGInfo.jsp</result>
+		</action>
+		<!-- 收益法评税结果检验 -->
+		<action name="VIEWSYPSJGJY" class="PsjgjySYActionBean" >
+			<result name="success">/SYPSJGJY/VIEWSYPSJGJY.jsp</result>
+		</action>
+		<action name="FINDSYPSJGJY" class="PsjgjySYActionBean" method="query">
+			<result name="success" type="json"/>
+		</action>
+		<action name="CHOISESYPSJGJY" class="PsjgjySYActionBean" method="checkout">
+			<result name="success">/SYPSJGJY/VIEWSYJYJG.jsp</result>
+		</action>
+		<action name="CHECKOUTSYPSJGJY" class="PsjgjySYActionBean" method="reCheckout">
+			<result name="success">/SYPSJGJY/VIEWSYJYJG.jsp</result>
+		</action>	
+		<action name="FINDSYPSJGJYCHECKOUT" class="PsjgjySYActionBean" method="queryCheckout">
+			<result name="success" type="json"/>
+		</action>
+		
+		<!-- 市场法评税结果检验 -->
+		<action name="VIEWSCPSJGJY" class="PsjgjySCActionBean" >
+			<result name="success">/SCPSJGJY/VIEWSCPSJGJY.jsp</result>
+		</action>
+		<action name="FINDSCPSJGJY" class="PsjgjySCActionBean" method="query">
+			<result name="success" type="json"/>
+		</action>
+		<action name="CHOISESCPSJGJY" class="PsjgjySCActionBean" method="checkout">
+			<result name="success">/SCPSJGJY/VIEWSCJYJG.jsp</result>
+		</action>
+		<action name="CHECKOUTSCPSJGJY" class="PsjgjySCActionBean" method="reCheckout">
+			<result name="success">/SCPSJGJY/VIEWSCJYJG.jsp</result>
+		</action>	
+		<action name="FINDSCPSJGJYCHECKOUT" class="PsjgcxjySCActionBean" method="queryCheckout">
+			<result name="success" type="json"/>
+		</action>
+		<action name="SHOWSCJYJG" class="PsjgjySCActionBean" method="viewJYJG">
+			<result name="success">/SCPSJGJY/JYJGInfo.jsp</result>
+		</action>
+	</package>
+</struts>

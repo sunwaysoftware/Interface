@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 评税结果处理 -->
+	<package name="PSJGCL" extends="AppDefault" namespace="/psjgcl">
+	
+		<!-- 税率测算-->
+		<action name="VIEWCZ00042" class="Cz00042ActionBean">
+			<result name="success">/CZ00042/VIEWCZ00042.jsp</result>
+		</action>
+		<action name="FINDCZ00042" class="Cz00042ActionBean" method="query">
+			<result name="input">/CZ00042/VIEWCZ00042.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+
+		<!-- ********************* 稅算處理 ********************* -->
+
+		<!-- 成本法 未算稅 -->
+		<action name="VIEWSS10001" class="Ss10001ActionBean">
+			<result name="input">/SS10000/SS10001W.jsp</result>
+			<result name="success">/SS10000/SS10001W.jsp</result>
+		</action>
+		<action name="EXECSS10001" class="Ss10001ActionBean" method="executeSS">
+<!-- 			<interceptor-ref name="defaultStack" />
+			<interceptor-ref name="execAndWait" />		
+			<result name="wait">/wait.jsp</result>	 -->		
+			<result name="input">/SS10000/SS10001W.jsp</result>
+			<result name="success">/SS10000/SS10001W.jsp</result>
+		</action>
+
+		<!-- 成本法 算稅通過 -->
+		<action name="VIEWSS10002" class="Ss10002ActionBean">
+			<result name="input">/SS10000/SS10001Y.jsp</result>
+			<result name="success">/SS10000/SS10001Y.jsp</result>
+		</action>
+		<action name="EXECSS10002" class="Ss10002ActionBean" method="executeSsAgain">
+			<result name="input">/SS10000/SS10001Y.jsp</result>
+			<result name="success">/SS10000/SS10001Y.jsp</result>
+		</action>
+		<action name="VIEWNSCB" class="Ss10002ActionBean" method="executeNsNotice">
+			<result name="success">/SS10000/VIEWSS10001Y.jsp</result>
+		</action>
+		<action name="PrintNSCB" class="Ss10002ActionBean" method="printNsNotice">
+			<result name="success">/SS10000/PRINT1.jsp</result>
+		</action>
+
+		<!-- 收益法 未算稅 -->
+		<action name="VIEWSS20001" class="Ss20001ActionBean">
+			<result name="input">/SS20000/SS20001W.jsp</result>
+			<result name="success">/SS20000/SS20001W.jsp</result>
+		</action>
+		<action name="EXECSS20001" class="Ss20001ActionBean" method="executeSS">
+<!-- 			<interceptor-ref name="defaultStack" />
+			<interceptor-ref name="execAndWait" />		
+			<result name="wait">/wait.jsp</result>	 -->		
+			<result name="input">/SS20000/SS20001W.jsp</result>
+			<result name="success">/SS20000/SS20001W.jsp</result>
+		</action>
+
+		<!-- 收益法 算稅通過 -->
+		<action name="VIEWSS20002" class="Ss20002ActionBean">
+			<result name="input">/SS20000/SS20001Y.jsp</result>
+			<result name="success">/SS20000/SS20001Y.jsp</result>
+		</action>
+		<action name="EXECSS20002" class="Ss20002ActionBean" method="executeSsAgain">
+			<result name="input">/SS20000/SS20001Y.jsp</result>
+			<result name="success">/SS20000/SS20001Y.jsp</result>
+		</action>
+		<action name="VIEWNSSY" class="Ss20002ActionBean" method="executeNsNotice">
+			<result name="success">/SS20000/VIEWSS20001Y.jsp</result>
+		</action>
+		<action name="PrintNSSY" class="Ss20002ActionBean" method="printNsNotice">
+			<result name="success">/SS20000/PRINT2.jsp</result>
+		</action>
+
+		<!-- 市場法 未算稅 -->
+		<action name="VIEWSS30001" class="Ss30001ActionBean">
+			<result name="input">/SS30000/SS30001W.jsp</result>
+			<result name="success">/SS30000/SS30001W.jsp</result>
+		</action>
+		<action name="EXECSS30001" class="Ss30001ActionBean" method="executeSS">
+<!-- 			<interceptor-ref name="defaultStack" />
+			<interceptor-ref name="execAndWait" />		
+			<result name="wait">/wait.jsp</result>	 -->		
+			<result name="input">/SS30000/SS30001W.jsp</result>
+			<result name="success">/SS30000/SS30001W.jsp</result>
+		</action>
+
+		<!-- 市場法 算稅通過 -->
+		<action name="VIEWSS30002" class="Ss30002ActionBean">
+			<result name="input">/SS30000/SS30001Y.jsp</result>
+			<result name="success">/SS30000/SS30001Y.jsp</result>
+		</action>
+		<action name="EXECSS30002" class="Ss30002ActionBean" method="executeSsAgain">
+			<result name="input">/SS30000/SS30001Y.jsp</result>
+			<result name="success">/SS30000/SS30001Y.jsp</result>
+		</action>
+		<action name="VIEWNSSC" class="Ss30002ActionBean" method="executeNsNotice">
+			<result name="success">/SS30000/VIEWSS30001Y.jsp</result>
+		</action>
+		<action name="PrintNSSC" class="Ss30002ActionBean" method="printNsNotice">
+			<result name="success">/SS30000/PRINT3.jsp</result>
+		</action>
+
+		<!-- 应纳税款计算表 -->
+		<action name="FINDT00041CB" class="T00041ActionBean" method="query">
+			<param name="SSLX">1</param>
+			<result name="input">/SS10000/SS10001Y.jsp</result>
+			<result name="success" type="json"/>
+		</action>		
+		<action name="FINDT00041SY" class="T00041ActionBean" method="query">
+			<param name="SSLX">2</param>
+			<result name="input">/SS20000/SS20001Y.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+		<action name="FINDT00041SC" class="T00041ActionBean" method="query">
+			<param name="SSLX">3</param>
+			<result name="input">/SS30000/SS30001Y.jsp</result>
+			<result name="success" type="json"/>
+		</action>
+
+	</package>
+</struts>

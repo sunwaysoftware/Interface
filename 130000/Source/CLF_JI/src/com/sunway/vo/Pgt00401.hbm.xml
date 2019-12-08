@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.sunway.vo.Pgt00401" table="PGT00401" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="ID" length="50" />
+            <generator class="uuid" />
+        </id>
+        <property name="szqy" type="string">
+            <column name="SZQY" length="100">
+            </column>
+        </property>
+        <property name="zldz" type="string">
+            <column name="ZLDZ" length="200">
+            </column>
+        </property>
+        <property name="jzjg" type="string">
+            <column name="JZJG" length="100">
+            </column>
+        </property>
+        <property name="ghyt" type="string">
+            <column name="GHYT" length="100">
+            </column>
+        </property>
+        <property name="lc" type="string">
+            <column name="LC" length="50">
+            </column>
+        </property>
+        <property name="bdcdyh" type="string">
+            <column name="BDCDYH" length="100">
+            </column>
+        </property>
+        <property name="jzmj" type="big_decimal">
+            <column name="JZMJ" precision="22" scale="0" not-null="true">
+            </column>
+        </property>
+        <property name="qllx" type="string">
+            <column name="QLLX" length="100">
+            </column>
+        </property>
+        <property name="qlxz" type="string">
+            <column name="QLXZ" length="100">
+            </column>
+        </property>
+        <property name="qlqtzk" type="string">
+            <column name="QLQTZK" length="500">
+            </column>
+        </property>
+        <property name="syqx" type="string">
+            <column name="SYQX" length="200">
+            </column>
+        </property>
+        <property name="jcnf" type="string">
+            <column name="JCNF" length="50">
+            </column>
+        </property>
+        <property name="htjg" type="big_decimal">
+            <column name="HTJG" precision="22" scale="0" not-null="true">
+            </column>
+        </property>
+        <property name="zhxz" type="string">
+            <column name="ZHXZ" length="500">
+            </column>
+        </property>
+        <property name="pgjg" type="big_decimal">
+            <column name="PGJG" precision="22" scale="0" not-null="true">
+            </column>
+        </property>
+        <property name="qlr" type="string">
+            <column name="QLR" length="200">
+            </column>
+        </property>
+        <property name="gyqk" type="string">
+            <column name="GYQK" length="500">
+            </column>
+        </property>
+        <property name="bdczh" type="string">
+        	<column name="BDCZH" length="200"></column>
+        </property>
+        <property name="note" type="string">
+        	<column name="NOTE" length="500"></column>
+        </property>  
+        <property name="cd00002Czr" type="string">
+        	<column name="CD_00002_CZR" length="100"></column>
+        </property>         
+        <property name="updDate" type="timestamp">
+        	<column name="UPDDATE"></column>
+        </property>   
+        <property name="cd00001Ssgx" type="string">
+        	<column name="CD_00001_SSGX" length="100"></column>
+        </property>    
+        <property name="jysj" type="date">
+        	<column name="JYSJ"></column>
+        </property>                              
+    </class>
+</hibernate-mapping>
