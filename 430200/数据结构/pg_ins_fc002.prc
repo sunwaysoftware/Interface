@@ -13,77 +13,103 @@ CREATE OR REPLACE PROCEDURE PG_INS_FC002(I_SLID      IN FC002.SLID%TYPE,
                                          I_PGID      IN FC002.PGID%TYPE,
                                          I_PGJG      IN FC002.PGJG%TYPE,
                                          I_NOTE      IN FC002.NOTE%TYPE) IS
-  L_CNT NUMBER := 0;
+
+  l_xzqh fc002.xzqh%type;
 BEGIN
-  --读取存在个数
-  SELECT COUNT(*)
-    INTO L_CNT
-    FROM FC002 T
-   WHERE T.SLID = I_SLID
-     AND T.SSQY = I_SSQY;
   --判断是否存在
   BEGIN
-    IF L_CNT = 0 THEN
-      --如果不存在，则添加
-      INSERT INTO FC002
-        (SLID,
-         SSQY,
-         DJZ_QS,
-         DJZ_YYS,
-         DJZ_CJS,
-         DJZ_DFJYS,
-         DJZ_GRSDS,
-         DJZ_YHS,
-         DJZ_TDZZS,
-         FPHM,
-         QSSPHM,
-         DFGSSPHM,
-         UPDATETIME,
-         PGID,
-         PGJG,
-         NOTE)
-      VALUES
-        (I_SLID,
-         I_SSQY,
-         I_DJZ_QS,
-         I_DJZ_YYS,
-         I_DJZ_CJS,
-         I_DJZ_DFJYS,
-         I_DJZ_GRSDS,
-         I_DJZ_YHS,
-         I_DJZ_TDZZS,
-         I_FPHM,
-         I_QSSPHM,
-         I_DFGSSPHM,
-         SYSDATE,
-         I_PGID,
-         I_PGJG,
-         I_NOTE);
-    ELSE
-      --如果存在，则进行更新
-      UPDATE FC002
-         SET DJZ_QS     = I_DJZ_QS,
-             DJZ_YYS    = I_DJZ_YYS,
-             DJZ_CJS    = I_DJZ_CJS,
-             DJZ_DFJYS  = I_DJZ_DFJYS,
-             DJZ_GRSDS  = I_DJZ_GRSDS,
-             DJZ_YHS    = I_DJZ_YHS,
-             DJZ_TDZZS  = I_DJZ_TDZZS,
-             FPHM       = I_FPHM,
-             QSSPHM     = I_QSSPHM,
-             DFGSSPHM   = I_DFGSSPHM,
-             UPDATETIME = SYSDATE,
-             PGID       = I_PGID,
-             PGJG       = I_PGJG,
-             NOTE       = I_NOTE
-       WHERE SLID = I_SLID
-         AND SSQY = I_SSQY;
-    END IF;
+    select xzqh
+      into l_xzqh
+      from fc001 t
+     WHERE T.SLID = I_SLID
+       and t.ssqy = i_ssqy;
+  
+    delete FROM bdc_wbjh.TAX_BDC@BDC T
+     WHERE T.SLID = I_SLID
+       and t.ssqy = i_ssqy;
+    --向不动产推送完税数据
+    INSERT INTO bdc_wbjh.TAX_BDC@BDC
+      (SLID,
+       SSQY,
+       DJZ_QS,
+       DJZ_YYS,
+       DJZ_CJS,
+       DJZ_DFJYS,
+       DJZ_GRSDS,
+       DJZ_YHS,
+       DJZ_TDZZS,
+       FPHM,
+       QSSPHM,
+       DFGSSPHM,
+       UPDATETIME,
+       PGID,
+       PGJG,
+       NOTE,
+       xzqh)
+    VALUES
+      (I_SLID,
+       I_SSQY,
+       I_DJZ_QS,
+       I_DJZ_YYS,
+       I_DJZ_CJS,
+       I_DJZ_DFJYS,
+       I_DJZ_GRSDS,
+       I_DJZ_YHS,
+       I_DJZ_TDZZS,
+       I_FPHM,
+       I_QSSPHM,
+       I_DFGSSPHM,
+       SYSDATE,
+       I_PGID,
+       I_PGJG,
+       I_NOTE,
+       L_xzqh);
+  
+    --向本地表保存数据
+    delete FROM FC002 T
+     WHERE T.SLID = I_SLID
+       and t.ssqy = i_ssqy;
+    INSERT INTO FC002
+      (SLID,
+       SSQY,
+       DJZ_QS,
+       DJZ_YYS,
+       DJZ_CJS,
+       DJZ_DFJYS,
+       DJZ_GRSDS,
+       DJZ_YHS,
+       DJZ_TDZZS,
+       FPHM,
+       QSSPHM,
+       DFGSSPHM,
+       UPDATETIME,
+       PGID,
+       PGJG,
+       NOTE,
+       xzqh)
+    VALUES
+      (I_SLID,
+       I_SSQY,
+       I_DJZ_QS,
+       I_DJZ_YYS,
+       I_DJZ_CJS,
+       I_DJZ_DFJYS,
+       I_DJZ_GRSDS,
+       I_DJZ_YHS,
+       I_DJZ_TDZZS,
+       I_FPHM,
+       I_QSSPHM,
+       I_DFGSSPHM,
+       SYSDATE,
+       I_PGID,
+       I_PGJG,
+       I_NOTE,
+       L_xzqh);
   EXCEPTION
     WHEN OTHERS THEN
       RAISE_APPLICATION_ERROR(SQLCODE, SQLERRM);
+      --RAISE_APPLICATION_ERROR(-20001, SQLERRM);
   END;
 
 END PG_INS_FC002;
 /
-
