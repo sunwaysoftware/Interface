@@ -10,8 +10,8 @@
 <hr>
 <form id="findForm" class="am-form am-form-horizontal">
     <div class="am-form-group">
-        <div class="am-u-sm-4 am-u-md-2 am-text-right">使用权期限</div>
-        <div class="am-u-sm-4 am-u-md-3">
+        <div class="am-u-sm-2 am-u-md-2 am-text-right">使用权期限</div>
+        <div class="am-u-sm-3 am-u-md-3">
             <div class="am-input-group am-datepicker-date am-input-group-sm" data-am-datepicker="{format: 'yyyy-mm-dd'}">
                 <input id="txtQssj" type="text" class="am-form-field am-input-sm" readonly placeholder="开始时间">
                 <span class="am-input-group-btn am-datepicker-add-on">
@@ -19,7 +19,7 @@
                 </span>
             </div>
         </div>
-        <div class="am-u-sm-4 am-u-md-3">
+        <div class="am-u-sm-3 am-u-md-3">
             <div class="am-input-group am-datepicker-date am-input-group-sm" data-am-datepicker="{format: 'yyyy-mm-dd'}">
                 <input id="txtJssj" type="text" class="am-form-field am-input-sm" readonly placeholder="结束时间">
                 <span class="am-input-group-btn am-datepicker-add-on">
@@ -34,11 +34,11 @@
         </div>
     </div>
     <div class="am-form-group">
-        <div class="am-u-sm-4 am-u-md-2 am-text-right">权利人</div>
-        <div class="am-u-sm-4 am-u-md-3">
+        <div class="am-u-sm-2 am-u-md-2 am-text-right">权利人</div>
+        <div class="am-u-sm-3 am-u-md-3">
             <input type="text" id="txtQlr" name="qlr" class="am-form-field am-input-sm">
         </div>
-        <div class="am-u-sm-4 am-u-md-3">
+        <div class="am-u-sm-3 am-u-md-3">
         </div>
         <div class="am-u-sm-4 am-u-md-4">
             <div>
@@ -90,6 +90,7 @@
             "iDisplayLength": 20, //默认显示的记录数
             "bLengthChange": false, //显示数据数量
             "destroy": true,
+            "order":[0, "desc"],
             ajax: {
                 type: 'POST',
                 url: '/bdc/zd/viewlist',
@@ -97,7 +98,7 @@
                 dataSrc: ''
             },
             columns: [
-                {title: "业务编号", data: "ywh", defaultContent: "--"},
+                {title: "业务号", data: "ywh", defaultContent: "--"},
                 {title: "宗地代码", data: "zddm", defaultContent: "--"},
                 {title: "宗地号", data: "zdh", defaultContent: "--"},
                 {title: "地籍号", data: "djh", defaultContent: "--"},

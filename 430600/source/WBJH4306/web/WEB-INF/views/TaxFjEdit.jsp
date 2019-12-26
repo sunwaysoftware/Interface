@@ -3,8 +3,8 @@
 <!-- content start -->
 <div class="am-cf am-padding am-padding-bottom-0">
     <div class="am-fl am-cf">
-        <strong class="am-text-primary am-text-lg">税票附件信息表</strong> /
-        <small>对税务税票附件信息进行管理</small>
+        <strong class="am-text-primary am-text-lg">涉税资料信息表</strong> /
+        <small>对不动产交易中涉税务资料电子档信息进行管理</small>
     </div>
 </div>
 <hr>
@@ -14,7 +14,7 @@
     <input type="hidden" name="ljdz" value="${vo.ljdz}">
     <div class="am-g am-margin-top">
         <div class="am-u-sm-4 am-u-md-2 am-text-right">
-            业务编号
+            业务号
         </div>
         <div class="am-u-sm-8 am-u-md-4">
             <input type="text" class="am-input-sm" id="txtYwh" name="ywh" value="${vo.ywh}" required>
@@ -28,11 +28,11 @@
         <div class="am-u-sm-8 am-u-md-4">
             <input type="text" class="am-input-sm" id="txtSplx" name="splx" value="${vo.splx}" required>
         </div>
-        <div class="am-hide-sm-only am-u-md-6 am-text-danger">*必填</div>
+        <div class="am-hide-sm-only am-u-md-6 am-text-danger"></div>
     </div>
     <div class="am-g am-margin-top">
         <div class="am-u-sm-4 am-u-md-2 am-text-right">
-            税票日期
+            资料日期
         </div>
         <div class="am-u-sm-8 am-u-md-4">
             <div class="am-input-group am-input-group-sm am-datepicker-date" data-am-datepicker="{format: 'yyyy-mm-dd'}">
@@ -46,7 +46,7 @@
     </div>
     <div class="am-g am-margin-top">
         <div class="am-u-sm-4 am-u-md-2 am-text-right">
-            选择扫描件
+            选择资料
         </div>
         <div class="am-u-sm-8 am-u-md-4">
             <input type="file" class="am-input-sm" id="txtLjdz" name="file">

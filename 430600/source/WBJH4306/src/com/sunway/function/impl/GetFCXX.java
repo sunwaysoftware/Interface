@@ -10,6 +10,9 @@ import com.sunway.entity.BdcCq;
 import com.sunway.entity.BdcFwsx;
 import com.sunway.entity.BdcQlr;
 
+import com.sunway.service.BdcCqService;
+import com.sunway.service.BdcFwsxService;
+import com.sunway.service.BdcQlrService;
 import com.sunway.util.CheckUtil;
 import com.sunway.util.FormatUtil;
 import org.apache.commons.text.StringEscapeUtils;
@@ -31,11 +34,11 @@ public class GetFCXX extends BaseFunction implements IBaseObject{
 	private static Logger logger = LogManager.getLogger(GetFCXX.class);
 	private static GetFCXX fcxxUtil;
 	@Autowired
-	private BdcFwsxDao bdcFwsxDao;
+	private BdcFwsxService bdcFwsxDao;
 	@Autowired
-	private BdcCqDao bdcCqDao;
+	private BdcCqService bdcCqDao;
 	@Autowired
-	private BdcQlrDao bdcQlrDao;
+	private BdcQlrService bdcQlrDao;
 
 	@PostConstruct
 	public void init(){
@@ -53,6 +56,7 @@ public class GetFCXX extends BaseFunction implements IBaseObject{
 	public String executeFunction(Element element) {
 		ArrayList<PgtFCXX> fcxxList = new ArrayList<PgtFCXX>();
 		String result = null;
+		logger.info("准备读取不动产交易数据...");
 		fcxx = new PgtFCXX();
 		fcxx.setParamName(element.elements().get(0).attributes().get(0).getName());
 		fcxx.setParamVal(element.elements().get(0).attributeValue(fcxx.getParamName()));
@@ -64,14 +68,16 @@ public class GetFCXX extends BaseFunction implements IBaseObject{
 			for (BdcFwsx b: fcxxUtil.bdcFwsxDao.getDataByYwh(fwsx)) {
 				fcxxList.add(setFCXXParameters(b));
 			}
+			logger.info("交易数据读取完成，状态正常...");
 			result = combineFunctionXML(fcxxList);
+			logger.info("报文组装完成，状态正常...");
 		} catch(Exception e) {
 			logger.error("提取不动产交易数据出错！", e);
 			errorSign = true;
 			errorMessage = e.getMessage();
 			result = combineFunctionXML(fcxxList);
 		} finally {
-			//
+			logger.info("读取不动产交易数据完成。");
 		}
 		return result;
 	}
@@ -88,8 +94,8 @@ public class GetFCXX extends BaseFunction implements IBaseObject{
 		BdcCq cq = new BdcCq();
 		cq.setYwh(ocrs.getYwh());
 		for (BdcCq b: fcxxUtil.bdcCqDao.getDataByYwh(cq)) {
-			e.setYfczh(b.getYbdcqzh());
-			e.setHtzj(String.valueOf(CheckUtil.chkNull(b.getJyjg())*10000));// 国土价格为万元，需转换
+//			e.setYfczh(b.getYbdcqzh());
+			e.setHtzj(String.valueOf(CheckUtil.chkNull(b.getJyjg())));
 			e.setJysj(FormatUtil.toYYYYMMDD(b.getJysj()));
 			e.setFzrq(FormatUtil.toYYYYMMDD(b.getFzrq()));
 		}
@@ -109,7 +115,10 @@ public class GetFCXX extends BaseFunction implements IBaseObject{
 		if(null!=ocrs.getDictJylx())
 			e.setJylx(ocrs.getDictJylx().getTaxNm());
 		e.setJzmj(String.valueOf(ocrs.getBarea()));
-
+		e.setYfczh(ocrs.getBdczh());
+//		e.setHtzj(String.valueOf(ocrs.getHtzj()));
+//		e.setJysj(FormatUtil.toYYYYMMDD(ocrs.getJysj()));
+//		e.setFzrq(FormatUtil.toYYYYMMDD(ocrs.getFzrq()));
 		e.setDf(ocrs.getDf());
 		e.setCx(ocrs.getCx());
 		e.setCg(ocrs.getCg());
@@ -197,7 +206,6 @@ public class GetFCXX extends BaseFunction implements IBaseObject{
 						"</Result>" +
 					"</Results>"+
 			 	 "</Request>";
-		logger.info("获取交易报文：", result);
 		return result;
 	}
 

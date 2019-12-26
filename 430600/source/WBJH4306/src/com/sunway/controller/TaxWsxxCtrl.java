@@ -5,6 +5,8 @@ import com.google.gson.GsonBuilder;
 import com.sunway.entity.TaxWsxx;
 import com.sunway.service.TaxWsxxService;
 import com.sunway.util.DateUtil;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,12 +21,14 @@ import java.util.List;
 @Controller
 @RequestMapping(value = "/tax/ws")
 public class TaxWsxxCtrl {
+    private static Logger logger = LogManager.getLogger(TaxWsxxCtrl.class);
 
 	@Autowired
     private TaxWsxxService taxWsxxService;
 
     @RequestMapping(method = RequestMethod.GET, value = "/view")
     public ModelAndView gotoViewPage(HttpServletRequest request){
+        logger.info("{}跳转进入【完税信息】页面", request.getRemoteUser());
         ModelAndView modelAndView = new ModelAndView("TaxWsView");
         return modelAndView;
     }

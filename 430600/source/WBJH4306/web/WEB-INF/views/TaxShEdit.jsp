@@ -14,7 +14,7 @@
     <input type="hidden" name="id" id="txtId" value="${vo.id}">
     <div class="am-g am-margin-top">
         <div class="am-u-sm-4 am-u-md-2 am-text-right">
-            业务编号
+            业务号
         </div>
         <div class="am-u-sm-8 am-u-md-4">
             <input type="text" class="am-input-sm" id="txtYwh" name="ywh" value="${vo.ywh}" required>

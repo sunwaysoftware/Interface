@@ -26,7 +26,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class BdcJyfj implements Serializable {
 	private static final long serialVersionUID = -8749096367206415551L;
 	@Id
-    @GenericGenerator(name = "appID", strategy = "uuid")
+    @GenericGenerator(name = "appID", strategy = "org.hibernate.id.UUIDGenerator")
     @GeneratedValue(generator = "appID")
     private String id;
 	private String caseno;

@@ -3,8 +3,8 @@
 <!-- content start -->
 <div class="am-cf am-padding am-padding-bottom-0">
     <div class="am-fl am-cf am-u-sm-6 am-u-md-10">
-        <strong class="am-text-primary am-text-lg">税票附件信息表</strong> /
-        <small>对税务税票附件信息进行管理</small>
+        <strong class="am-text-primary am-text-lg">涉税资料信息表</strong> /
+        <small>对不动产交易中涉税务资料电子档信息进行管理</small>
     </div>
     <div class="am-u-sm-6 am-u-md-2">
         <div class="am-btn-toolbar">
@@ -99,6 +99,7 @@
             "iDisplayLength": 20, //默认显示的记录数
             "bLengthChange": false, //显示数据数量
             "destroy": true,
+            "order":[0, "desc"],
             ajax: {
                 type: 'POST',
                 url: '/tax/fj/viewlist',
@@ -106,7 +107,7 @@
                 dataSrc: ''
             },
             columns: [
-                {title: "业务编号", data: "ywh", defaultContent: "--"},
+                {title: "业务号", data: "ywh", defaultContent: "--"},
                 {title: "税票号码", data: "splx", defaultContent: "--"},
                 {title: "税票日期", data: "sprq", defaultContent: "--"},
                 {title: "备注", data: "bz", defaultContent: "--", width: "20%"},
@@ -116,7 +117,7 @@
                 targets: 4,
                 title: "扫描件",
                 render: function (data, type, full) {
-                    return "<a href='/upload/tax/" + full.ljdz + "' target=\"FJ_win\"><span class=\"am-icon-file\"></span></a>";
+                    return "<a href='/upload/tax/" + encodeURI(full.ljdz) + "' target=\"FJ_win\"><span class=\"am-icon-file\"></span></a>";
                 }
             }, {
                 targets: 5,

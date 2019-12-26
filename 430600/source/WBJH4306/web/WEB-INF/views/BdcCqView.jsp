@@ -10,8 +10,8 @@
 <hr>
 <form id="findForm" class="am-form am-form-horizontal">
     <div class="am-form-group">
-        <div class="am-u-sm-4 am-u-md-2 am-text-right">申请登记时间</div>
-        <div class="am-u-sm-4 am-u-md-3">
+        <div class="am-u-sm-2 am-u-md-2 am-text-right">申请登记时间</div>
+        <div class="am-u-sm-3 am-u-md-3">
             <div class="am-input-group am-datepicker-date am-input-group-sm" data-am-datepicker="{format: 'yyyy-mm-dd'}">
                 <input id="txtCssj" type="text" class="am-form-field am-input-sm" readonly>
                 <span class="am-input-group-btn am-datepicker-add-on">
@@ -19,11 +19,11 @@
                 </span>
             </div>
         </div>
-        <div class="am-u-sm-4 am-u-md-1 am-text-right">权利人</div>
-        <div class="am-u-sm-4 am-u-md-3">
+        <div class="am-u-sm-2 am-u-md-1 am-text-right">权利人</div>
+        <div class="am-u-sm-3 am-u-md-3">
             <input type="text" id="txtQlr" name="qlr" class="am-form-field am-input-sm">
         </div>
-        <div class="am-u-sm-4 am-u-md-3">
+        <div class="am-u-sm-2 am-u-md-3">
             <div>
                 <button id="btnSearch" class="am-btn am-btn-sm" type="button"><span class="am-icon-search"></span>
                     查询
@@ -72,6 +72,7 @@
             "iDisplayLength": 20, //默认显示的记录数
             "bLengthChange": false, //显示数据数量
             "destroy": true,
+            "order":[0, "desc"],
             ajax: {
                 type: 'POST',
                 url: '/bdc/cq/viewlist',
@@ -79,11 +80,11 @@
                 dataSrc: ''
             },
             columns: [
-                {title: "业务编号", data: "ywh"},
-                {title: "交易价格", data: "jyjg", defaultContent: "--"},
+                {title: "业务号", data: "ywh"},
                 {title: "发证日期", data: "fzrq", defaultContent: "--"},
                 {title: "不动产证号", data: "bdcqzh", defaultContent: "--"},
                 {title: "原不动产证号", data: "ybdcqzh", defaultContent: "--"},
+                {title: "交易价格", data: "jyjg", defaultContent: "--"},
             ],
             // 定义操作列
             columnDefs: [{

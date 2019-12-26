@@ -103,6 +103,7 @@
             "iDisplayLength": 20, //默认显示的记录数
             "bLengthChange": false, //显示数据数量
             "destroy": true,
+            "order":[0, "desc"],
             ajax: {
                 type: 'POST',
                 url: '/tax/ws/viewlist',
@@ -110,7 +111,7 @@
                 dataSrc: ''
             },
             columns: [
-                {title: "业务编号", data: "ywh", defaultContent: "--"},
+                {title: "业务号", data: "ywh", defaultContent: "--"},
                 {title: "完税日期", data: "wsrq", defaultContent: "--"},
                 {title: "评估编号", data: "pgid", defaultContent: "--"},
                 {title: "评估价格", data: "pgjg", defaultContent: "--"},

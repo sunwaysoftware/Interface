@@ -42,6 +42,7 @@ public class WriFCXX extends BaseFunction implements IBaseObject{
 	public String executeFunction(Element element) {
 		ArrayList<String> fcxx_wList = new ArrayList<String>();
 		String result = null;
+		logger.info("准备解析缴税报文...");
 		fcxx_w = new PgtFCXX_W();
 		fcxx_w.setFcslh(element.elements().get(0).attributeValue("FCSLH"));
 		fcxx_w.setFpid(element.elements().get(1).attributeValue("FPID"));
@@ -65,7 +66,7 @@ public class WriFCXX extends BaseFunction implements IBaseObject{
 		fcxx_w.setDjz_yhs(Double.valueOf(element.elements().get(18).attributeValue("YHS")));
 		fcxx_w.setDjz_tdzzs(Double.valueOf(element.elements().get(19).attributeValue("TDZZS")));
 		fcxx_w.setPgid(element.elements().get(20).attributeValue("PGID"));
-
+		logger.info("报文解析完成，准备保存缴税数据...");
 		TaxWsxx wsxx = new TaxWsxx();
 		try{
 			wsxx.setYwh(fcxx_w.getFcslh());
@@ -86,13 +87,17 @@ public class WriFCXX extends BaseFunction implements IBaseObject{
 				fcxx_wList.add("OK");
 			else
 				fcxx_wList.add("NO");
+			logger.info("保存缴税数据完成，状态正常...");
 			result = combineFunctionXML(fcxx_wList);
+			logger.info("报文组装完成，状态正常...");
 		}catch(Exception e){
-			logger.error("回写完税数据出错！", e);
+			logger.error("回写缴税数据出错！", e);
 			errorMessage = e.getMessage();
 			fcxx_wList.add("NO");
 			result = combineFunctionXML(fcxx_wList);
 			return result;
+		} finally {
+			logger.info("回写缴税数据完成。");
 		}
 		return result;
 	}
@@ -108,7 +113,6 @@ public class WriFCXX extends BaseFunction implements IBaseObject{
 						"</Result>" +
 					 "</Results>" +
 				   "</Request>",list.get(0), errorMessage);
-		logger.info("完税反馈报文：", result);
 		return result;
 	}
 

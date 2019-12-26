@@ -12,7 +12,7 @@ import java.util.Date;
 public class TaxShxx implements Serializable {
 	private static final long serialVersionUID = -8712173041203403464L;
 	@Id
-    @GenericGenerator(name = "appID", strategy = "uuid")
+    @GenericGenerator(name = "appID", strategy = "org.hibernate.id.UUIDGenerator")
     @GeneratedValue(generator = "appID")
     private String id;
     private String ywh;

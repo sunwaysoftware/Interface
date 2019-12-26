@@ -20,7 +20,7 @@
             <div class="am-tab-panel am-fade am-in am-active" id="tab1">
                 <div class="am-g am-margin-top">
                     <div class="am-u-sm-4 am-u-md-2 am-text-right">
-                        业务编号
+                        业务号
                     </div>
                     <div class="am-u-sm-8 am-u-md-4">
                         <input type="text" class="am-input-sm" value="${vo.ywh}" required>

@@ -99,6 +99,7 @@
             "iDisplayLength": 20, //默认显示的记录数
             "bLengthChange": false, //显示数据数量
             "destroy": true,
+            "order":[0, "desc"],
             ajax: {
                 type: 'POST',
                 url: '/tax/sh/viewlist',
@@ -106,7 +107,7 @@
                 dataSrc: ''
             },
             columns: [
-                {title: "业务编号", data: "ywh", defaultContent: "--"},
+                {title: "业务号", data: "ywh", defaultContent: "--"},
                 {title: "审核人", data: "shr", defaultContent: "--"},
                 {title: "审核意见", data: "shyj", defaultContent: "--"},
                 {title: "审核时间", data: "shsj", defaultContent: "--"},

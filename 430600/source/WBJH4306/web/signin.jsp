@@ -4,7 +4,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>外部交换平台</title>
+    <title>不动产交易涉税信息管理平台</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
@@ -19,20 +19,32 @@
             color: #fff;
         }
         .header h1 {
-            font-size: 200%;
+            font-size: 250%;
             color: #ffffff;
             margin-top: 30px;
         }
-        .header p {
-            font-size: 14px;
+        .text {
+            position:relative;
+        }
+        span {
+            text-shadow:
+            0 -1px 0 #858585,
+            0 1px 10px rgba(0,0,0,.6),
+            0 6px 1px rgba(0,0,0,.1),
+            0 0 5px rgba(0,0,0,.2),
+            0 1px 3px rgba(0,0,0,.3),
+            0 3px 5px rgba(0,0,0,.2),
+            0 7px 10px rgba(0,0,0,.25),
+            0 15px 10px rgba(0,0,0,.2),
+            0 25px 15px rgba(0,0,0,.15);
         }
     </style>
 </head>
 <body>
 <div class="header">
     <div class="am-g">
-        <h1>国家税务总局岳阳市税务局</h1>
-        <h1>存量房交易价格评估系统外部交换平台</h1>
+        <h1 class="text"><span>国家税务总局岳阳市税务局</span></h1>
+        <h1 class="text"><span>不 动 产 交 易 涉 税 信 息 管 理 平 台</span></h1>
     </div>
     <hr/>
 </div>

@@ -12,7 +12,7 @@ import java.util.Date;
 public class BdcFwsx implements Serializable {
 	private static final long serialVersionUID = -347713159785154664L;
 	@Id
-    @GenericGenerator(name = "appID", strategy = "uuid")
+    @GenericGenerator(name = "appID", strategy = "org.hibernate.id.UUIDGenerator")
     @GeneratedValue(generator = "appID")
     private String id;
     private String ywh;
@@ -52,6 +52,15 @@ public class BdcFwsx implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date qswsrq;
     private Double qswsjs;
+    private Double htzj;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Temporal(TemporalType.DATE)
+    private Date fzrq;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Temporal(TemporalType.DATE)
+    private Date jysj;
+    private String bdczh;
+    private String slbh;
 
     //---------------- 查询使用，不映射 ----------------------------------------
     @Transient
@@ -272,5 +281,45 @@ public class BdcFwsx implements Serializable {
 
     public void setQlr(String qlr) {
         this.qlr = qlr;
+    }
+
+    public Double getHtzj() {
+        return htzj;
+    }
+
+    public void setHtzj(Double htzj) {
+        this.htzj = htzj;
+    }
+
+    public Date getFzrq() {
+        return fzrq;
+    }
+
+    public void setFzrq(Date fzrq) {
+        this.fzrq = fzrq;
+    }
+
+    public Date getJysj() {
+        return jysj;
+    }
+
+    public void setJysj(Date jysj) {
+        this.jysj = jysj;
+    }
+
+    public String getBdczh() {
+        return bdczh;
+    }
+
+    public void setBdczh(String bdczh) {
+        this.bdczh = bdczh;
+    }
+
+    public String getSlbh() {
+        return slbh;
+    }
+
+    public void setSlbh(String slbh) {
+        this.slbh = slbh;
     }
 }

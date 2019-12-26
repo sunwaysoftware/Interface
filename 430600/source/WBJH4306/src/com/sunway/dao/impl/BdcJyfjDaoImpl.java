@@ -5,6 +5,7 @@ package com.sunway.dao.impl;
 
 import java.util.List;
 
+import com.sunway.util.FormatUtil;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
@@ -26,9 +27,10 @@ public class BdcJyfjDaoImpl extends BaseDaoImpl<BdcJyfj> implements BdcJyfjDao {
         try {
             // 创建session对象
             session = getSessionFactory().getCurrentSession();
-            String hql = "from BdcJyfj where to_char(upfiletime, 'yyyy-MM-dd') = to_char(:pInsTime, 'yyyy-MM-dd')";
+            String hql = "from BdcJyfj where caseno like :ywh and slbh like :slbh";
             Query query = session.createQuery(hql);
-            query.setParameter("pInsTime", bean.getUpfiletime());
+            query.setParameter("ywh", "%"+bean.getCaseno()+"%");
+            query.setParameter("slbh", "%"+bean.getSlbh()+"%");
             query.setFirstResult((pageIndex - 1) * pageSize);
             query.setMaxResults(pageSize);
             // 返回查询结果集

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -23,12 +24,13 @@ public class BdcFwsxServiceImpl implements BdcFwsxService {
     }
 
     @Override
+    public List<BdcFwsx> getDataByYwh(BdcFwsx bean) {
+        return bdcFwsxDao.getDataByYwh(bean);
+    }
+
+    @Override
     public List<BdcFwsx> getAllData(BdcFwsx bean, int pageIndex, int pageSize) {
         return bdcFwsxDao.getAllData(bean, pageIndex, pageSize);
     }
 
-    @Override
-    public List<ChartJsVo> getCountGroupMonthByYear(Integer year) {
-        return bdcFwsxDao.getCountGroupMonthByYear(year);
-    }
 }

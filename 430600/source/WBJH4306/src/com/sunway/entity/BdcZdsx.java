@@ -12,7 +12,7 @@ import java.util.Date;
 public class BdcZdsx implements Serializable {
 	private static final long serialVersionUID = -7026788337274851239L;
 	@Id
-    @GenericGenerator(name = "appID", strategy = "uuid")
+    @GenericGenerator(name = "appID", strategy = "org.hibernate.id.UUIDGenerator")
     @GeneratedValue(generator = "appID")
     private String id;
     private String ywh;

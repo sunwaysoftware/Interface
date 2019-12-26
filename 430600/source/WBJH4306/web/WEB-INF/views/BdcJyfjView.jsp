@@ -10,16 +10,15 @@
 <hr>
 <form id="findForm" class="am-form am-form-horizontal">
     <div class="am-form-group">
-        <div class="am-u-sm-4 am-u-md-2 am-text-right">上传日期</div>
-        <div class="am-u-sm-4 am-u-md-3">
-            <div class="am-input-group am-datepicker-date am-input-group-sm" data-am-datepicker="{format: 'yyyy-mm-dd'}">
-                <input id="txtSprq" type="text" class="am-form-field am-input-sm" readonly>
-                <span class="am-input-group-btn am-datepicker-add-on">
-                    <button id="btnDate" class="am-btn am-btn-sm" type="button"><span class="am-icon-calendar"></span></button>
-                </span>
-            </div>
+        <div class="am-u-sm-2 am-u-md-1 am-text-right">业务号</div>
+        <div class="am-u-sm-3 am-u-md-3">
+            <input id="txtYwh" type="text" class="am-form-field am-input-sm">
         </div>
-        <div class="am-u-sm-4 am-u-md-7">
+        <div class="am-u-sm-2 am-u-md-2 am-text-right">受理编号</div>
+        <div class="am-u-sm-3 am-u-md-3">
+            <input type="text" id="txtSlbh" class="am-form-field am-input-sm">
+        </div>
+        <div class="am-u-sm-2 am-u-md-3">
             <div>
                 <button id="btnSearch" class="am-btn am-btn-sm" type="button"><span class="am-icon-search"></span> 查询</button>
                 <button id="btnClear" class="am-btn am-btn-sm" type="reset"><span class="am-icon-eraser"></span> 清空</button>
@@ -37,31 +36,6 @@
 <script>
     $(document).ready(function () {
         ShowDataTable();
-
-        // 初始化刪除按钮
-        $('#myTable tbody').on('click', 'button.am-text-danger', function (obj) {
-            var tr = $(this).parents('tr');
-            if (confirm("确定要删除该条数据？")) {
-                $.ajax({
-                    type: 'POST',
-                    url: "/tax/fj/crud/" + obj.target.id,
-                    data: {
-                        _method: 'DELETE'
-                    },
-                    success: function (data) {
-                        $('#myTable').DataTable().row(tr).remove().draw();
-                        $.growl.notice({message: "<spring:message code='app.msg.del.ok'/>"});
-                    },
-                    error: function (xhr) {
-                        if (xhr.status == 403) {
-                            $.growl.warning({message: "<spring:message code='app.msg.nopermit'/>"});
-                        } else {
-                            $.growl.error({message: xhr.status + "\n" + xhr.statusText});
-                        }
-                    }
-                });
-            }
-        });
         // 查询
         $("#btnSearch").click(function () {
             var form = $("#findForm");
@@ -70,12 +44,11 @@
                 return false;
             }
             //使用ajax 重新请求数据结果  装入 表格对象
-            var dt_data = {upfiletime: $('#txtSprq').val()};
+            var dt_data = {
+                caseno: $('#txtYwh').val(),
+                slbh: $('#txtSlbh').val(),
+            };
             ShowDataTable(dt_data);
-        });
-
-        $('#btnDate').datepicker().on('changeDate.datepicker.amui', function (event) {
-            $('#txtSprq').val($('#btnDate').data('date'));
         });
     });
 
@@ -91,6 +64,7 @@
             "iDisplayLength": 20, //默认显示的记录数
             "bLengthChange": false, //显示数据数量
             "destroy": true,
+            "order":[0, "desc"],
             ajax: {
                 type: 'POST',
                 url: '/bdc/fj/viewlist',
@@ -98,10 +72,10 @@
                 dataSrc: ''
             },
             columns: [
-                {title: "业务编号", data: "caseno", defaultContent: "--"},
-                {title: "受理号码", data: "slbh", defaultContent: "--"},
-                {title: "文件名称", data: "filename", defaultContent: "--"},
-                {title: "材料大小(KB)", data: "filesize", defaultContent: "--"},
+                {title: "业务号", data: "caseno", defaultContent: "--"},
+                {title: "受理编号", data: "slbh", defaultContent: "--"},
+                {title: "资料名称", data: "materialname", defaultContent: "--"},
+                {title: "大小(KB)", data: "filesize", defaultContent: "--", width: "15%"},
             ],
             // 定义操作列
             columnDefs: [{
@@ -109,7 +83,7 @@
                 title: "附件",
                 width: "10%",
                 render: function (data, type, full) {
-                    return "<a href='/upload/bdc/" + full.filepath + "' target=\"FJ_win\"><span class=\"am-icon-file\"></span></a>";
+                    return "<a href='/upload/bdc/" + encodeURI(full.filepath + "/" + full.filename) + "' target=\"FJ_win\"><span class=\"am-icon-file\"></span></a>";
                 }
             }]
         });

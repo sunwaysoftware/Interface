@@ -10,8 +10,8 @@
 <hr>
 <form id="findForm" class="am-form am-form-horizontal">
     <div class="am-form-group">
-        <div class="am-u-sm-4 am-u-md-2 am-text-right">产生时间</div>
-        <div class="am-u-sm-4 am-u-md-3">
+        <div class="am-u-sm-2 am-u-md-2 am-text-right">产生时间</div>
+        <div class="am-u-sm-3 am-u-md-3">
             <div class="am-input-group am-datepicker-date am-input-group-sm" data-am-datepicker="{format: 'yyyy-mm-dd'}">
                 <input id="txtCssj" type="text" class="am-form-field am-input-sm" readonly>
                 <span class="am-input-group-btn am-datepicker-add-on">
@@ -19,11 +19,11 @@
                 </span>
             </div>
         </div>
-        <div class="am-u-sm-4 am-u-md-1 am-text-right">权利人</div>
-        <div class="am-u-sm-4 am-u-md-3">
+        <div class="am-u-sm-2 am-u-md-1 am-text-right">权利人</div>
+        <div class="am-u-sm-3 am-u-md-3">
             <input type="text" id="txtQlr" name="qlr" class="am-form-field am-input-sm">
         </div>
-        <div class="am-u-sm-4 am-u-md-3">
+        <div class="am-u-sm-2 am-u-md-3">
             <div>
                 <button id="btnSearch" class="am-btn am-btn-sm" type="button"><span class="am-icon-search"></span> 查询</button>
                 <button id="btnClear" class="am-btn am-btn-sm" type="reset"><span class="am-icon-eraser"></span> 清空</button>
@@ -68,6 +68,7 @@
             "iDisplayLength": 20, //默认显示的记录数
             "bLengthChange": false, //显示数据数量
             "destroy": true,
+            "order":[0, "desc"],
             ajax: {
                 type: 'POST',
                 url: '/bdc/fw/viewlist',
@@ -75,10 +76,10 @@
                 dataSrc: ''
             },
             columns: [
-                {title: "业务编号", data: "ywh", defaultContent: "--"},
+                {title: "业务号", data: "ywh", defaultContent: "--"},
                 {title: "不动产单元号", data: "bdcdyh", defaultContent: "--"},
-                {title: "面积", data: "barea", defaultContent: "--"},
-                {title: "坐落", data: "bsit", defaultContent: "--"}
+                {title: "坐落", data: "bsit", defaultContent: "--"},
+                {title: "面积", data: "barea", defaultContent: "--", width:"10%"}
             ],
             // 定义操作列
             columnDefs: [{

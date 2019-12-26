@@ -12,13 +12,14 @@ import java.util.Date;
 public class TaxSpfj implements Serializable {
 	private static final long serialVersionUID = -8002456170910206909L;
 	@Id
-    @GenericGenerator(name = "appID", strategy = "uuid")
+    @GenericGenerator(name = "appID", strategy = "org.hibernate.id.UUIDGenerator")
     @GeneratedValue(generator = "appID")
     private String id;
     private String ywh;
     private String splx;
     private String ljdz;
     private String bz;
+    private String filename;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
     private Date sprq;
@@ -74,5 +75,13 @@ public class TaxSpfj implements Serializable {
 
     public void setSprq(Date sprq) {
         this.sprq = sprq;
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
     }
 }

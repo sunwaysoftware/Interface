@@ -14,8 +14,15 @@ public class Process {
      * @return
      */
     public String PgProcess(String info) {
+        logger.debug("不动产接口请求报文：\n{}" , info);
+
+        long startTime = System.currentTimeMillis();    //获取开始时间
         BaseFunction bf = new BaseFunction();
-        logger.info("接口请求报文：" , info);
-        return bf.combineXML(bf.parseFunction(bf.parseXML(info)));
+        String strRtn = bf.combineXML(bf.parseFunction(bf.parseXML(info)));
+        long endTime = System.currentTimeMillis();    //获取结束时间
+        logger.info("不动产接口处理共耗时：{}ms", endTime-startTime);      //输出程序运行时
+
+        logger.debug("不动产接口响应报文：\n{}", strRtn);
+        return strRtn;
     }
 }

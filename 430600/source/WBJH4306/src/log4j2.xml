@@ -14,7 +14,7 @@ configure.monitorInterval 监控间隔 指log4j2每隔600秒（10分钟），自
 	</properties>
 	<Appenders>
 		<Console name="Console" target="SYSTEM_OUT">
-			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{36} %L %M - [%X{uID}]%msg%xEx%n" />
+			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{36} %L %M - %msg%xEx%n" />
 		</Console>
 		<!-- 配置日志输出文件名字 追加读写 -->
 		<!-- Error console log -->
@@ -82,11 +82,11 @@ configure.monitorInterval 监控间隔 指log4j2每隔600秒（10分钟），自
 		</RollingFile>
 	</Appenders>
 	<Loggers>
-		<Logger name="com.sunway" level="TRACE" additivity="true">
+		<Logger name="com.sunway" level="DEBUG" additivity="true">
 			<AppenderRef ref="DebugLog" />
 			<AppenderRef ref="InfoLog" />
 		</Logger>
-		<Root level="DEBUG">
+		<Root level="INFO">
 			<AppenderRef ref="Console" />
 			<AppenderRef ref="WarnLog" />
 			<AppenderRef ref="ErrLog" />

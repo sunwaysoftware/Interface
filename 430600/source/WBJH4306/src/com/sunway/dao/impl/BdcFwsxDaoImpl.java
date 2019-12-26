@@ -63,24 +63,4 @@ public class BdcFwsxDaoImpl extends BaseDaoImpl<BdcFwsx> implements BdcFwsxDao {
         }
         return resultList;
     }
-
-    @Override
-    public List<ChartJsVo> getCountGroupMonthByYear(Integer year) {
-        List<ChartJsVo> resultList = null;
-        Session session = null;
-        try {
-            // 创建session对象
-            session = getSessionFactory().getCurrentSession();
-            String hql = "select new com.sunway.vo.ChartJsVo(month(cssj), count(id)) from BdcFwsx where year(cssj) = :pYear group by month(cssj) order by month(cssj)";
-            Query query = session.createQuery(hql);
-            query.setParameter("pYear", year);
-            // 返回查询结果集
-            resultList = query.getResultList();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            //session.close();
-        }
-        return resultList;
-    }
 }

@@ -29,23 +29,20 @@ import com.sunway.util.DateUtil;
 @Controller
 @RequestMapping(value = "/bdc/fj")
 public class BdcJyfjCtrl {
-
-    private static Logger log = LogManager.getLogger(BdcJyfjCtrl.class);
+    private static Logger logger = LogManager.getLogger(BdcJyfjCtrl.class);
     @Autowired
     private BdcJyfjService bdcJyfjService;
 
     @RequestMapping(method = RequestMethod.GET, value = "/view")
     public ModelAndView gotoViewPage(HttpServletRequest request){
+        logger.info("{}跳转进入【交易附件】页面", request.getRemoteUser());
         ModelAndView modelAndView = new ModelAndView("BdcJyfjView");
-        log.info("转入 不动产交易附件 页面...");
         return modelAndView;
     }
 
     @ResponseBody
     @RequestMapping(method = RequestMethod.POST, value = "/viewlist", produces = "text/html;charset=UTF-8")
     public String loadView(HttpServletRequest request, BdcJyfj pageBean){
-        if (null == pageBean.getUpfiletime())
-            pageBean.setUpfiletime(DateUtil.getNowDate());
         List<BdcJyfj> jyfjList = bdcJyfjService.getAllData(pageBean,1, 500);
         Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
         return gson.toJson(jyfjList);

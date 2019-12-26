@@ -122,6 +122,37 @@
                         <input type="text" class="am-input-sm" value="${vo.dictJylx.bdcNm}">
                     </div>
                 </div>
+
+                <div class="am-g am-margin-top">
+                    <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                        不动产证号
+                    </div>
+                    <div class="am-u-sm-8 am-u-md-4">
+                        <input type="text" class="am-input-sm" value="${vo.bdczh}">
+                    </div>
+                    <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                        合同总价
+                    </div>
+                    <div class="am-u-sm-8 am-u-md-4">
+                        <input type="text" class="am-input-sm" value="${vo.htzj}">
+                    </div>
+                </div>
+
+                <div class="am-g am-margin-top">
+                    <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                        发证日期
+                    </div>
+                    <div class="am-u-sm-8 am-u-md-4">
+                        <input type="text" class="am-input-sm" value="${vo.fzrq}">
+                    </div>
+                    <div class="am-u-sm-4 am-u-md-2 am-text-right">
+                        交易时间
+                    </div>
+                    <div class="am-u-sm-8 am-u-md-4">
+                        <input type="text" class="am-input-sm" value="${vo.jysj}">
+                    </div>
+                </div>
+
             </div>
 
             <div class="am-tab-panel am-fade" id="tab2">

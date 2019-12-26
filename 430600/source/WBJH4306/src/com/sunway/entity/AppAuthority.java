@@ -10,7 +10,7 @@ import java.io.Serializable;
 public class AppAuthority implements Serializable {
 	private static final long serialVersionUID = 4318268079272096056L;
 	@Id
-    @GenericGenerator(name = "appID", strategy = "uuid")
+    @GenericGenerator(name = "appID", strategy = "org.hibernate.id.UUIDGenerator")
     @GeneratedValue(generator = "appID")
     private String id;
     @Column

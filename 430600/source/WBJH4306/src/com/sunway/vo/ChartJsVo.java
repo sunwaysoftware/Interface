@@ -8,7 +8,7 @@ public class ChartJsVo implements Serializable {
     private long data;
 
     public ChartJsVo(int label, long data) {
-        this.label = label + "月";
+        this.label = String.valueOf(label);
         this.data = data;
     }
 

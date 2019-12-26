@@ -6,6 +6,9 @@ import com.sunway.entity.BdcCq;
 import com.sunway.entity.BdcQlr;
 import com.sunway.service.BdcCqService;
 import com.sunway.service.BdcQlrService;
+import com.sunway.util.DateUtil;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +23,7 @@ import java.util.List;
 @Controller
 @RequestMapping(value = "/bdc/cq")
 public class BdcCqCtrl {
+    private static Logger logger = LogManager.getLogger(BdcCqCtrl.class);
     @Autowired
     private BdcCqService bdcCqService;
     @Autowired
@@ -27,6 +31,7 @@ public class BdcCqCtrl {
 
     @RequestMapping(method = RequestMethod.GET, value = "/view")
     public ModelAndView gotoViewPage(HttpServletRequest request){
+        logger.info("{}跳转进入【产权信息】页面", request.getRemoteUser());
         ModelAndView modelAndView = new ModelAndView("BdcCqView");
         return modelAndView;
     }

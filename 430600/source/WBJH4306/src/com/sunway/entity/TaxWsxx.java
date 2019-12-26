@@ -1,5 +1,6 @@
 package com.sunway.entity;
 
+import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -14,7 +15,7 @@ import java.util.Date;
 public class TaxWsxx implements Serializable {
 	private static final long serialVersionUID = -4170917501304579891L;
 	@Id
-    @GenericGenerator(name = "appID", strategy = "uuid")
+    @GenericGenerator(name = "appID", strategy = "org.hibernate.id.UUIDGenerator")
     @GeneratedValue(generator = "appID")
     private String id;
     private String ywh;
@@ -45,7 +46,7 @@ public class TaxWsxx implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     @UpdateTimestamp
     private Date updTime;
-    private Integer flagSyn;
+
     //-------------------------------------------------------
     public TaxWsxx(){}
     public TaxWsxx(String id){
@@ -220,11 +221,4 @@ public class TaxWsxx implements Serializable {
         this.id = id;
     }
 
-    public Integer getFlagSyn() {
-        return flagSyn;
-    }
-
-    public void setFlagSyn(Integer flagSyn) {
-        this.flagSyn = flagSyn;
-    }
 }

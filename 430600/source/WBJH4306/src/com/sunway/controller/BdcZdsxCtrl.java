@@ -6,6 +6,9 @@ import com.sunway.entity.BdcQlr;
 import com.sunway.entity.BdcZdsx;
 import com.sunway.service.BdcQlrService;
 import com.sunway.service.BdcZdsxService;
+import com.sunway.util.DateUtil;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,7 +23,7 @@ import java.util.List;
 @Controller
 @RequestMapping(value = "/bdc/zd")
 public class BdcZdsxCtrl {
-
+    private static Logger logger = LogManager.getLogger(BdcZdsxCtrl.class);
     @Autowired
     private BdcZdsxService bdcZdsxService;
     @Autowired
@@ -28,6 +31,7 @@ public class BdcZdsxCtrl {
 
     @RequestMapping(method = RequestMethod.GET, value = "/view")
     public ModelAndView gotoViewPage(HttpServletRequest request){
+        logger.info("{}跳转进入【宗地属性】页面", request.getRemoteUser());
         ModelAndView modelAndView = new ModelAndView("BdcZdsxView");
         return modelAndView;
     }

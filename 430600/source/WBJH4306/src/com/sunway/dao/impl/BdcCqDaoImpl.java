@@ -3,6 +3,7 @@ package com.sunway.dao.impl;
 import com.sunway.dao.BdcCqDao;
 import com.sunway.entity.BdcCq;
 import com.sunway.util.FormatUtil;
+import com.sunway.vo.ChartJsVo;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -53,6 +54,26 @@ public class BdcCqDaoImpl extends BaseDaoImpl<BdcCq> implements BdcCqDao {
                 query.setParameter("pCssj", bean.getCssj());
             query.setFirstResult((pageIndex - 1) * pageSize);
             query.setMaxResults(pageSize);
+            // 返回查询结果集
+            resultList = query.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            //session.close();
+        }
+        return resultList;
+    }
+
+    @Override
+    public List<ChartJsVo> getCountGroupMonthByYear(Integer year) {
+        List<ChartJsVo> resultList = null;
+        Session session = null;
+        try {
+            // 创建session对象
+            session = getSessionFactory().getCurrentSession();
+            String hql = "select new com.sunway.vo.ChartJsVo(month(cssj), count(id)) from BdcCq where year(cssj) = :pYear group by month(cssj) order by month(cssj)";
+            Query query = session.createQuery(hql);
+            query.setParameter("pYear", year);
             // 返回查询结果集
             resultList = query.getResultList();
         } catch (Exception e) {

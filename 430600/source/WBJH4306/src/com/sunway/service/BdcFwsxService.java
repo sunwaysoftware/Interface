@@ -8,6 +8,7 @@ import java.util.List;
 public interface BdcFwsxService {
 
     public BdcFwsx getDataById(BdcFwsx bean);
+    public List<BdcFwsx> getDataByYwh(BdcFwsx bean);
     public List<BdcFwsx> getAllData(BdcFwsx bean, int pageIndex, int pageSize);
-    public List<ChartJsVo> getCountGroupMonthByYear(Integer year);
+
 }

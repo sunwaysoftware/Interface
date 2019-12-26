@@ -99,6 +99,7 @@
             "iDisplayLength": 20, //默认显示的记录数
             "bLengthChange": false, //显示数据数量
             "destroy": true,
+            "order":[0, "desc"],
             ajax: {
                 type: 'POST',
                 url: '/tax/ts/viewlist',
@@ -106,7 +107,7 @@
                 dataSrc: ''
             },
             columns: [
-                {title: "业务编号", data: "ywh", defaultContent: "--"},
+                {title: "业务号", data: "ywh", defaultContent: "--"},
                 {title: "纳税人识别号", data: "nsrsbh", defaultContent: "--"},
                 {title: "纳税人名称", data: "nsrmc", defaultContent: "--"},
                 {title: "退税金额", data: "tsje", defaultContent: "--"},

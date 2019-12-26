@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.sunway.entity.TaxSpfj;
 import com.sunway.service.TaxSpfjService;
 import com.sunway.util.DateUtil;
+import com.sunway.util.MakeUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,15 +23,15 @@ import java.util.List;
 @Controller
 @RequestMapping(value = "tax/fj")
 public class TaxSpfjCtrl {
-    private static Logger log = LogManager.getLogger(TaxSpfjCtrl.class);
+    private static Logger logger = LogManager.getLogger(TaxSpfjCtrl.class);
     @Autowired
     private TaxSpfjService taxSpfjService;
     private static String uploadPath = "/uploadFiles/tax/";
 
     @RequestMapping(method = RequestMethod.GET, value = "/view")
     public ModelAndView gotoViewPage(HttpServletRequest request) {
+        logger.info("{}跳转进入【税票附件】页面", request.getRemoteUser());
         ModelAndView modelAndView = new ModelAndView("TaxFjView");
-        log.info("转入【税票附件信息表】页面");
         return modelAndView;
     }
 
@@ -49,12 +50,11 @@ public class TaxSpfjCtrl {
     public String saveData(HttpServletRequest request, TaxSpfj pageBean, @RequestParam(value = "file", required = false) CommonsMultipartFile file) {
         boolean bRtn = false;
         try {
-            String fName = uploadFile(request, file);
-            pageBean.setLjdz(fName);
+            pageBean = uploadFile(request, file, pageBean);
             taxSpfjService.execInsert(pageBean);
             bRtn = true;
         } catch (Exception e) {
-            log.error("保存时异常：", e);
+            logger.error("保存时异常：", e);
         }
         return String.valueOf(bRtn);
     }
@@ -69,12 +69,11 @@ public class TaxSpfjCtrl {
             File delFile = new File(absPath);
             delFile.delete();
             //--------------------------------------
-            String fName = uploadFile(request, file);
-            pageBean.setLjdz(fName);
+            pageBean = uploadFile(request, file, pageBean);
             taxSpfjService.execUpdate(pageBean);
             bRtn = true;
         } catch (Exception e) {
-            log.error("更新时异常：", e);
+            logger.error("更新时异常：", e);
         }
         return String.valueOf(bRtn);
     }
@@ -92,7 +91,7 @@ public class TaxSpfjCtrl {
             delFile.delete();
             bRtn = true;
         } catch (Exception e) {
-            log.error("删除时异常：", e);
+            logger.error("删除时异常：", e);
         }
         return String.valueOf(bRtn);
     }
@@ -113,17 +112,20 @@ public class TaxSpfjCtrl {
      * 保存上传的文件
      * @param request
      */
-    private String uploadFile(HttpServletRequest request, CommonsMultipartFile file) {
-        String fileNm = new Date().getTime() + file.getOriginalFilename();
-        String absPath = request.getServletContext().getRealPath(uploadPath + fileNm);
-        log.info(absPath);
+    private TaxSpfj uploadFile(HttpServletRequest request, CommonsMultipartFile file, TaxSpfj pageBean) {
+        String fileNm = System.currentTimeMillis()+ "_" + file.getOriginalFilename();
+        String filePath = String.format("TAX%s/TAX%s", MakeUtil.currentMonthF(), fileNm);
+        String absPath = request.getServletContext().getRealPath(uploadPath + filePath);
         try {
             File newFile = new File(absPath);
             file.transferTo(newFile);
+            pageBean.setFilename(fileNm);
+            pageBean.setLjdz(filePath);
         } catch (IOException e) {
-            log.error("上传文件失败！", e);
-            fileNm = "";
+            logger.error("上传文件失败！", e);
+        } finally {
+
         }
-        return fileNm;
+        return pageBean;
     }
 }

@@ -147,7 +147,7 @@
                     <span class="am-icon-btn am-icon-recycle"></span><br/>退税信息</a>
                 </li>
                 <li><a href="javascript:showPage('/tax/fj/view');">
-                    <span class="am-icon-btn am-icon-wpforms"></span><br/>税票附件</a>
+                    <span class="am-icon-btn am-icon-wpforms"></span><br/>涉税资料</a>
                 </li>
             </ul>
             <ul class="am-avg-sm-1 am-avg-md-4 am-margin am-padding am-text-center admin-content-list ">
@@ -160,8 +160,8 @@
                 <li><a href="javascript:showPage('/bdc/cq/view');">
                     <span class="am-icon-btn am-icon-plug"></span><br/>产权信息</a>
                 </li>
-                <li><a href="javascript:showPage('/sys/users/view');">
-                    <span class="am-icon-btn am-icon-user"></span><br/>用户信息</a>
+                <li><a href="javascript:showPage('/bdc/fj/view');">
+                    <span class="am-icon-btn am-icon-folder-open"></span><br/>交易附件</a>
                 </li>
             </ul>
         </div>
@@ -190,7 +190,6 @@
 <script>
     $(document).ready(function () {
         var json = ${chartData};
-        console.log("数据：" + json);
         var chartjsData = [];
         for (var i = 0; i < json.length; i++) {
             chartjsData.push(json[i].data);
@@ -201,14 +200,14 @@
         }
         var ctx = document.getElementById("appChart").getContext('2d');
         var myChart = new Chart(ctx, {
-            type: 'line',
+            type: 'bar',
             data: {
                 labels: chartjslabel,
                 datasets: [{
-                    label: '不动产交易量走势',
+                    label: '不动产权交易量',
                     data: chartjsData,
-                    backgroundColor: ["rgba(255, 99, 132, 0.2)"],
-                    borderColor: ["rgb(255, 99, 132)"],
+                    backgroundColor: "rgba(255, 99, 132, 0.5)",
+                    borderColor: "rgb(255, 99, 132)",
                     borderWidth: 1
                 }]
             }
